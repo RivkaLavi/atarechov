@@ -1,0 +1,45 @@
+<html lang="he">
+
+<head>
+    <title>כפר סבא מדרחוב ירושלים</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+
+
+  <style>
+    html, body {height:100%; margin:0; padding:0;}
+    .map {height:100%}
+  </style>
+</head>
+<body>
+  <div id="map" class="map desk-three-forth"></div>
+  <script type="text/javascript">
+    var map;
+    function initMap() {
+      var myLatLng = {lat: 32.178568, lng: 34.906726};
+      map = new google.maps.Map(document.getElementById('map'), {
+         zoom: 20,
+         center: myLatLng,
+         styles: [{"stylers": [{ "saturation": -100 }]}]
+      });
+    }
+var marker = new google.maps.Marker({
+	position: {lat: 32.178547, lng: 34.906727},
+	map: map,
+	title: 'PEPSized Coffee',
+	icon: {
+		url: "icons/pizza.png",
+		scaledSize: new google.maps.Size(64, 64)
+	}
+});
+ 
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?callback=initMap"></script>
+</body>
+</html>
+

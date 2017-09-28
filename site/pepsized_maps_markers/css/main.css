@@ -1,0 +1,26 @@
+
+/*jeneral*/
+body{
+    direction: rtl
+}
+/*map*/
+
+
+.map-wrapper{
+    height: 700px;
+
+}
+.map-wrapper img{
+
+}
+#markerLayer img {
+    border: 1px solid red !important;
+}
+.map-icon-label .map-icon {
+	font-size: 24px;
+	color: #000;
+    content: "dfaasf";
+	line-height: 48px;
+	text-align: center;
+	white-space: nowrap;
+}

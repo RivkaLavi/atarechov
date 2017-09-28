@@ -1,0 +1,13 @@
+
+/*jeneral*/
+body{
+    text-align: right;
+}
+/*upper-menu*/
+.navbar-xs { min-height:22px; border-radius:0; padding: 0 15px;} 
+.navbar-xs .navbar-brand{ padding: 2px 8px;font-size: 14px;line-height: 14px; height: 22px; } 
+.navbar-xs .navbar-nav > li > a { border-right:1px solid #ddd; padding-top: 2px; padding-bottom: 2px; line-height: 16px }
+/*header*/
+.header date{
+    font-size: 5em;
+}

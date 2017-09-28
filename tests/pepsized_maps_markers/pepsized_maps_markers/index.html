@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>כפר סבא מדרחוב ירושלים</title>
+		<meta name="viewport" content="initial-scale=1.0">
+		<meta charset="utf-8">
+		<link href='https://fonts.googleapis.com/css?family=Raleway:300,800' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/bootstrap.css" type="text/css" media="all">
+		<link rel="stylesheet" href="style.css" type="text/css" media="all">
+		<script src="modernizr.js"></script>
+	</head>
+	<body>
+		<div id="map" class="map col-md-6 col-sm-12 col-xs-12"></div>
+		<div class="map-legend col-md-6 col-sm-12 col-xs-12">
+			<div class="location location-1">
+				<div class="location--inner">
+					<img src="images/markers/svg/Coffee_3.svg" alt="Coffee Shop icon">
+					<h3>PEPSized Coffee</h3>
+					<p>13 Place de PEPS</p>
+					<h4>Opening Hours:</h4>
+					<p>Opened daily:</p>
+					<p>9am - 8pm</p>
+				</div>
+			</div>
+			<div class="location location-2">
+				<div class="location--inner">
+					<img src="images/markers/svg/Arrow_1.svg" alt="PEPSized Office icon" width="48" height="48">
+					<h3>PEPSized Office</h3>
+					<p>1 Place de PEPS</p>
+					<h4>Opening Hours:</h4>
+					<p>Tuesday - Saturday</p>
+					<p>9am - 8pm</p>
+				</div>
+			</div>
+		</div>
+		<script>
+			var map,
+				desktopScreen = Modernizr.mq( "only screen and (min-width:1024px)" ),
+				zoom = desktopScreen ? 18 : 17,
+				scrollable = draggable = !Modernizr.hiddenscroll || desktopScreen,
+				isIE11 = !!(navigator.userAgent.match(/Trident/) && navigator.userAgent.match(/rv[ :]11/));
+
+			function initMap() {
+				var myLatLng = {lat: 32.178000, lng: 34.906730};
+				map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 19,
+					center: myLatLng,
+					mapTypeId: google.maps.MapTypeId.ROADMAP,
+					scrollwheel: scrollable,
+					draggable: draggable,
+					styles: [{"stylers": [{ "saturation": -100 }]}],
+				});
+
+				var locations = [
+					{
+						title: 'פיצה זיגי מאשרום',
+						position: {lat: 32.178555, lng: 34.906730},
+						icon: {
+							url: isIE11 ? "images/markers/png/Food_6.png" : "images/markers/svg/Food_6.svg",
+							scaledSize: new google.maps.Size(40, 40)
+						}
+
+					},
+					{
+						title: 'גיטר פיקס',
+						position: {lat: 32.178522, lng: 34.906721},
+						icon: {
+							url: isIE11 ? "images/markers/png/Arrow_1.png" : "images/markers/svg/Arrow_1.svg",
+							scaledSize: new google.maps.Size(40, 40)
+						}
+					}					
+				];
+				
+				locations.forEach( function( element, index ){	
+					var marker = new google.maps.Marker({
+						position: element.position,
+						map: map,
+						title: element.title,
+						icon: element.icon,
+					});
+				});	
+			}
+
+		</script>
+		<script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script>
+		<!-- replace the above with <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script> -->
+	</body>
+</html>
