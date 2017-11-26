@@ -10,22 +10,29 @@
     <link rel="apple-touch-icon" href="images/icon-fire.png">
     <link rel="apple-touch-icon" sizes="48x48" href="48x48.png">
     <link rel="apple-touch-icon" sizes="32x32" href="32x32.png">
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/main.css">
 
     <!--styles-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-    <!--fonts-->
-
-    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/rehov.css">
     <link rel="stylesheet" href="css/street.css">
 
+    <!--script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
+
     <!--fonts-->
+
+    <link rel="stylesheet" href="css/font-awesome.css">
+
     <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
@@ -38,10 +45,10 @@
             <!--top brand row-->
             <div class="col-md-12 margin0 header-address">
                 <div class="col-md-1 pull-right brand-cat">
-                  <img src="images/cat.svg" alt="logo">
+                    <img src="images/cat.svg" alt="logo">
                 </div>
                 <div class="col-md-11 pull-right">
-                   
+
                     <h1 class="main-address  pull-right"><span class="label-bold">אתר רחוב</span><span class="label-light">כפר סבא - מדרחוב ירושלים</span></h1>
                 </div>
             </div>
@@ -74,7 +81,7 @@
             <section>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div id="map" class="col-md-8 col-sm-8 col-xs-12 map-wrapper">
+                        <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper " >
                             <img src="images/map_midrechov.svg" alt="map">
                             <div class="street-info">
                                 <button type="button" formaction="#street-info" class="open-info-street">
@@ -84,84 +91,115 @@
                               <span class="icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab"></i>
                              </button>
                             </div>
+                            <table id="business_details" class="table table-condensed table-striped"></table>
                             <!-- block1 -->
-                            <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
-                                  <nav class="nav-sidebar">
-                                    <ul class="nav tabs">
-                                       <li class="open"><a href="#tab1" data-toggle="tab" title="NisimLine - מספרה"><span class="icon icon-hair-care"></span><span class="business-name" >Nisim Line</span></a></li>
-                                        <li class="open margin1"><a href="#tab2" data-toggle="tab" title="זיגי מאשרום - פיצה"><span class="icon  icon-pizza-slice"></span><span class="business-name">פיצה זיגי מאשרום</span></a></li>
-                                        <li class="margin1 open"><a href="#tab3" data-toggle="tab" title="LIZA - קוסמטיקה"><span class="icon icon-hand-mirror"></span><span class="business-name">Liza טיפוח</span></a></li>
-                                        <li class="margin1 open"><a href="#tab4" data-toggle="tab" title="Guitar Fix - תיקון גיטרות"><span class="icon icon-acoustic-guitar"></span><span class="business-name">Guitar Fix</span></a></li>
-                                        <li class="margin1 open"><a href="#tab5" data-toggle="tab"  title="להיט בראש - חנות צעצועים, משחקים ומכשירי כתיבה"><span class="icon icon-robot"></span><span class="business-name">להיט בראש</span></a></li>
-                                        <li class=" margin2 action open"><a href="#tab6" data-toggle="tab"  title="Benny's Cask Ale Pub‬"><span class="icon icon-beer"></span><span class="business-name">Benny's Pub‬</span></a></li>
-                                        <li class="margin1 open"><a href="#tab7" data-toggle="tab"  title=""><span class="icon icon-sketch"></span><span class="business-name">פרגר לוי אדריכלים</span></a></li>
-                                        <li class="margin1 open"><a href="#tab8" data-toggle="tab"  title=""><span class="icon icon-hand-mirror"></span><span class="business-name">אתי</span></a></li>
-                                        <li class="margin1 open"><a href="#tab9" data-toggle="tab"  title=""><span class="icon icon-three-buildings"></span><span class="business-name">אנדרסון נדל"ן</span></a></li>
-                                        <li class="margin1 open"><a href="#tab10" data-toggle="tab"  title=""><span class="icon icon-exercise"></span><span class="business-name">Vibe</span></a></li>
-                                        <li class="margin1 open"><a href="#tab11" data-toggle="tab"  title=""><span class="icon icon-hair-care"></span><span class="business-name">Doron Sadeh</span></a></li>
-                                        <li class="margin1 open"><a href="#tab12" data-toggle="tab"  title=""><span class="icon icon-dress"></span><span class="business-name">תשומת לב</span></a></li>
-                                        <li class="margin1 open"><a href="#tab13" data-toggle="tab"  title=""><span class="icon icon-vegetables-juice"></span><span class="business-name">בריא טרי</span></a></li>
-                                        <li class="margin1 open"><a href="#tab14" data-toggle="tab"  title=""><span class="icon icon-hair-care"></span><span class="business-name">שני גולסה</span></a></li>
-                                        <li class="margin1 open"><a href="#tab15" data-toggle="tab"  title=""><span class="icon icon-coffe-cup"></span><span class="business-name">קקאו</span></a></li>
 
+                            <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
+                                <nav class="nav-sidebar">
+                                    <ul id="biz" class="nav tabs">
+                                        <script id="biz-template" type="text/x-handlebars-template">
+                                            {{#equal cells.position_group 'group1'}}
+                                            <li class="{{cells.action}} open">
+                                                <a href="#{{cells.tab_link}}" data-toggle="tab"  title="{{cells.business_name}}">
+                                  <span class="icon {{cells.icon}}"></span>
+                                  <strong>{{cells.business_name}}</strong> </a>
+                                            </li>
+                                            {{/equal}}
+                                        </script>
                                     </ul>
                                 </nav>
                             </div>
-                                 <!-- block2 -->
+                            <!-- block2 -->
+
                             <div class="business-map position2 buisness-tabs crosswise-icon  bottom-icon">
                                 <nav class="nav-sidebar">
-                                    <ul class="nav tabs width441">
-                                        <li class="pull-right margin2 action open"><a href="#tab4" data-toggle="tab"><span class="business-name">תמרה שמלות כלה</span><span class="icon icon-dress"></span></a></li>
-                                        <li class="pull-right margin1 open"><a href="#tab3" data-toggle="tab"><span class="business-name">לבן טיפוח</span><span class="icon icon-hand-mirror"></span></a></li>
-                                        <li class="pull-right margin1 open"><a href="#tab2" data-toggle="tab"><span class="business-name">כוכבים בגדי ילדים</span><span class="icon icon-clothing-store"></span></a></li>
-                                        <li class="pull-right margin1 open nav-item"><a href="#tab2" data-toggle="tab"><span class="business-name">בגדים</span><span class="icon icon-clothing-store"></span></a></li>
-                                        <li class="pull-right action open nav-item"><a href="#tab1" data-toggle="tab"><span class="business-name">לחם אריזן</span><span class="icon icon-bakery"></span></a></li>
+                                    <ul id="biz2" class="nav tabs width441">
+                                        <script id="biz2-template" type="text/x-handlebars-template">
+                                            {{#equal cells.position_group 'group2'}}
+                                            <li class="open {{cells.action}} pull-right">
+                                                <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
+                                       <span class="icon {{cells.icon}}"></span>
+                                       <strong class="business-name">{{cells.business_name}}</strong> </a>
+                                            </li>
+                                            {{/equal}}
+                                        </script>
                                     </ul>
                                 </nav>
                             </div>
+
+                            <!-- block3 -->
+
                             <div class="business-map position3 buisness-tabs lengthwise-icon left-icon">
                                 <nav class="nav-sidebar">
-                                    <ul class="nav tabs">
-                                        <li class="action open"><a href="#tab1" data-toggle="tab"><span class="icon icon-coffe-cup"></span><span class="business-name">קפה המדרחוב</span></a></li>
+                                    <ul id="biz3" class="nav tabs">
+                                        <script id="biz3-template" type="text/x-handlebars-template">
+                                            {{#equal cells.position_group 'group3'}}
+                                            <li class="open {{cells.action}}">
+                                                <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
+                                      <span class="icon {{cells.icon}}"></span>
+                                      <strong class="business-name">{{cells.business_name}}</strong> </a>
+                                            </li>
+                                            {{/equal}}
+                                        </script>
                                     </ul>
                                 </nav>
                             </div>
+                            <!-- block4 -->
+
                             <div class="business-map position4 buisness-tabs lengthwise-icon right-icon">
                                 <nav class="nav-sidebar">
-                                    <ul class="nav tabs">
-                                        <li class="action open"><a href="#tab1" data-toggle="tab"><span class="icon icon-big-book"></span><span class="business-name">שחר מלכה</span></a></li>
+                                    <ul id="biz4" class="nav tabs">
+                                        <script id="biz4-template" type="text/x-handlebars-template">
+                                            {{#equal cells.position_group 'group4'}}
+                                            <li class="open {{cells.action}}">
+                                                <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
+                                  <span class="icon {{cells.icon}}"></span>
+                                  <strong class="business-name">{{cells.business_name}}</strong> </a>
+                                            </li>
+                                            {{/equal}}
+                                        </script>
                                     </ul>
                                 </nav>
                             </div>
-                                  <!-- block3 -->
+                            <!-- block5 -->
+
+
+
 
                             <div class="business-map position5 buisness-tabs crosswise-icon  top-icon">
                                 <nav class="nav-sidebar">
-                                    <ul class="nav tabs width487">
-                                     
-                                         <li class="pull-right action open"><a href="#tab1" data-toggle="tab"><span class="icon icon-restaurant"></span><span class="business-name">HOMIES</span></a></li>
-                                         <li class="pull-right  open"><a href="#tab3" data-toggle="tab"><span class="business-name">T&amp;R</span><span class="icon icon-lamp"></span></a></li>
-                                        <li class="pull-right  open"><a href="#tab2" data-toggle="tab"><span class="business-name">ינשופים</span><span class="icon icon-paint-board-and-brush"></span></a></li>
-                                        <li class="pull-right  open nav-item"><a href="#tab2" data-toggle="tab"><span class="business-name">החנות הורודה</span><span class="icon icon-clothing-store"></span></a></li>
-                                       <li class="pull-right action open nav-item"><a href="#tab1" data-toggle="tab"><span class="business-name">סטודיו 30</span><span class="icon icon-art-board"></span></a></li>
-                                       <li class="pull-right action open nav-item"><a href="#tab1" data-toggle="tab"><span class="business-name">עמוס זרד</span><span class="icon icon-hair-care"></span></a></li>
-                                       </ul>
-                                </nav>
-                            </div>
-                            <div class="business-map position6 buisness-tabs lengthwise-icon left-icon">
-                                <nav class="nav-sidebar">
-                                    <ul class="nav tabs">
-                                        <li class="action margin1 open"><a href="#tab1" data-toggle="tab"><span class="icon icon-art-board"></span><span class="business-name">גלריה נולה</span></a></li>
-                                        <li class="action margin1 open"><a href="#tab1" data-toggle="tab"><span class="icon icon-print"></span><span class="business-name">דיו נט</span></a></li>
-                                        <li class="action margin1 open"><a href="#tab1" data-toggle="tab"><span class="icon icon-hand-mirror"></span><span class="business-name">אולגה</span></a></li>
+                                    <ul id="biz5" class="nav tabs width560">
+                                        <script id="biz5-template" type="text/x-handlebars-template">
+                                            {{#equal cells.position_group 'group5'}}
+                                            <li class="open {{cells.action}} pull-right">
+                                                <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
+                                  <span class="icon {{cells.icon}}"></span>
+                                  <strong class="business-name">{{cells.business_name}}</strong> </a>
+                                            </li>
+                                            {{/equal}}
+                                        </script>
                                     </ul>
                                 </nav>
                             </div>
+                            <!-- block6 -->
 
+
+                            <div class="business-map position6 buisness-tabs lengthwise-icon left-icon">
+                                <nav class="nav-sidebar">
+                                    <ul id="biz6" class="nav tabs">
+                                        <script id="biz6-template" type="text/x-handlebars-template">
+                                            {{#equal cells.position_group 'group6'}}
+                                            <li class="open {{cells.action}}">
+                                                <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
+                                  <span class="icon {{cells.icon}}"></span>
+                                  <strong class="business-name">{{cells.business_name}}</strong> </a>
+                                            </li>
+                                            {{/equal}}
+                                        </script>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
-
-
-
                         <!--street info-->
 
                         <div class="col-md-4  col-sm-4 col-xs-12  street-info-wrapper landscape-12 xs-visibity visibityclose" id="street-info">
@@ -253,221 +291,134 @@
                         <!--end street-info-wrapper-->
 
                         <!--campaign-info-wrapper-->
-                       
-                            <div class="col-md-4  col-sm-4 col-xs-12  campaign-info-wrapper landscape-12 xs-visibity visibityclose display_none" id="campaign-info">
+
+                        <div class="col-md-4  col-sm-4 col-xs-12  campaign-info-wrapper landscape-12 xs-visibity visibityclose display_none" id="campaign-info">
                             <div class="hidden-md hidden-sm hidden-lg ">
                                 <button type="button" class="close top-close" title="סגירה">
                                <i class="fa fa-times" aria-hidden="true"></i></button>
                             </div>
-                                <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
-                                    <h2>כל המבצעים ברחוב</h2>
+                            <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
+                                <h2>כל המבצעים ברחוב</h2>
 
-                                    <ul class="campaign-list">
-                                        <li class="campaign-unit padding0 open">
-                                            <img src='images/pizza-zigi/portrait.jpg' class="">
-                                            <h3><a href="#tab1">פיצה זיגי מאשרום </a></h3>
-                                            <p>
-                                                היום פיצות לוהטות במיוחד. על כל פיצה משפחתית הנחה של עשרה שקלים <a href=" ">במיספרה של דורון</a>
-                                            </p>
-                                        </li>
-                                            <li class="campaign-unit margin1">
-                                                <img src='images/pizza-zigi/portrait.jpg' class="">
-                                                <h3><a href=" ">המיספרה של דורון</a></h3>
-                                                <p>
-                                                    אכלתם אצל זיגי פיצה משפחתית? בואו לקבל 10 שקלים הנחה על כל התיספורות לכל המשפחה
-                                                </p>
-                                            </li>
-                                    </ul>
-                                </div>
+                                <ul class="campaign-list">
+                                    <li class="campaign-unit padding0 open">
+                                        <img src='images/pizza-zigi/portrait.jpg' class="">
+                                        <h3><a href="#tab1">פיצה זיגי מאשרום </a></h3>
+                                        <p>
+                                            היום פיצות לוהטות במיוחד. על כל פיצה משפחתית הנחה של עשרה שקלים <a href=" ">במיספרה של דורון</a>
+                                        </p>
+                                    </li>
+                                    <li class="campaign-unit margin1">
+                                        <img src='images/pizza-zigi/portrait.jpg' class="">
+                                        <h3><a href=" ">המיספרה של דורון</a></h3>
+                                        <p>
+                                            אכלתם אצל זיגי פיצה משפחתית? בואו לקבל 10 שקלים הנחה על כל התיספורות לכל המשפחה
+                                        </p>
+                                    </li>
+                                </ul>
                             </div>
-                       
+                        </div>
+
                         <!--end-campaign-info-wrapper-->
 
                         <!--business info-->
+
+
                         <div class="col-md-4  col-sm-4 col-xs-12 business-info-wrapper landscape-12">
 
-                            <div class="tab-content">
-                                <!--פיצה זיגי מאשרום-->
-                                <div class="tab-pane text-style" id="tab1">
-                                    <div class="hidden-md hidden-sm hidden-lg ">
-                                        <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
-                                    </div>
-                                    <img src='images/pizza-zigi/1.jpg'>
-                                    <h2>פיצה זיגי מאשרום</h2>
-                                    </h2>
-                                    <div class="col-md-12 col-xs-12 contact-wrapper padding0">
-                                        <address>
-                                            <div class="col-md-7 col-xs-12 landscape-6">
-                                                <span class="street-num pull-right">52</span><span class="street">Jerusalem Street</span>                                                </div>
-                                            <div class="col-md-5 col-xs-12 landscape-6"> <a href="tel:09-767-3332"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-767-3332</a></div>
-                                        </address>
-                                    </div>
-                                    <div class="col-md-12 col-xs-12 personal-wrapper margin2">
-                                        <div class="col-md-5 hidden-xs portrait pull-right">
-                                            <img src='images/pizza-zigi/portrait.jpg'>
+                            <ul id="business_info" class="tab-content">
+                              
+                                <script id="business-info-template" type="text/x-handlebars-template">
+                                    <li class="tab-pane text-style" id="{{cells.tab_link}}">
+                                        <div class="hidden-md hidden-sm hidden-lg ">
+                                            <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
                                         </div>
-                                        <div class="arrow-right text-baloon hidden-xs"></div>
-                                        <div class="col-md-7 col-xs-12 text-community">
-                                            <p>
-                                                <img src='images/pizza-zigi/portrait.jpg' class="hidden-md hidden-sm hidden-lg">
-                                                <span class="i i-fire2"></span> היום פיצות לוהטות במיוחד. על כל פיצה משפחתית
-                                                הנחה של עשרה שקלים <a href=" ">במיספרה של דורון</a>
-                                            </p>
+                                        <img src='{{cells.street_view}}'>
+                                        <h2>{{cells.business_name}}</h2>
+                                        </h2>
+                                        <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+                                            <address>
+                                                <div class="col-md-7 col-xs-12 landscape-6">
+                                                    <span class="street-num pull-right">52</span><span class="street">Jerusalem Street</span>                                                    </div>
+                                                <div class="col-md-5 col-xs-12 landscape-6"> <a href="{{cells.business_phone}}"><span class="icon fa fa-mobile" aria-hidden="true"></span> {{cells.business_phone}}</a></div>
+                                            </address>
+                                        </div>
+                                        <div class="col-md-12 col-xs-12 personal-wrapper margin2">
+                                            <div class="col-md-5 hidden-xs portrait pull-right">
+                                                <img src='images/pizza-zigi/portrait.jpg'>
+                                            </div>
+                                            <div class="arrow-right text-baloon hidden-xs"></div>
+                                            <div class="col-md-7 col-xs-12 text-community">
+                                                <p>
+                                                    <img src='images/pizza-zigi/portrait.jpg' class="hidden-md hidden-sm hidden-lg">
+                                                    <span class="i i-fire2"></span> היום פיצות לוהטות במיוחד. על כל פיצה
+                                                    משפחתית הנחה של עשרה שקלים <a href=" ">במיספרה של דורון</a>
+                                                </p>
+
+                                            </div>
 
                                         </div>
 
-                                    </div>
-
-                                    <div class="col-md-12 col-xs-12 opening-hours margin1">
-                                        <h2 class="open-close pull-right col-md-5 col-xs-12">פתוח עכשיו</h2>
-                                        <div class="col-md-7 col-xs-12 opening-hours-info">
-                                            <p>
-                                                <span class="day">
+                                        <div class="col-md-12 col-xs-12 opening-hours margin1">
+                                            <h2 class="open-close pull-right col-md-5 col-xs-12">פתוח עכשיו</h2>
+                                            <div class="col-md-7 col-xs-12 opening-hours-info">
+                                                <p>
+                                                    <span class="day">
                                             ראשון - חמישי :
                                      </span>
-                                                <span class="hours">
+                                                    <span class="hours">
                                                  18:00 - 24:00
                                      </span>
-                                            </p>
+                                                </p>
 
-                                            <p>
-                                                <span class="day">
+                                                <p>
+                                                    <span class="day">
                                            שישי :
                                      </span>
-                                                <span class="hours">
+                                                    <span class="hours">
                                                  12:00 - 16:00
                                      </span>
-                                            </p>
-                                            <p>
-                                                <span class="day">
+                                                </p>
+                                                <p>
+                                                    <span class="day">
                                           שבת :
                                      </span>
-                                                <span class="hours">
+                                                    <span class="hours">
                                                סגור
                                      </span>
-                                            </p>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-12 features margin1 hidden-xs">
-                                        <div class="col-md-2 feature pull-right">כשר</div>
-                                        <div class="col-md-2 feature pull-right">נחמדים לילדים</div>
-                                        <div class="col-md-2 feature pull-right">נגיש לכיסא גלגלים</div>
-                                        <div class="col-md-2 feature pull-right">יש מישלוחים</div>
-                                        <div class="col-md-2 feature pull-right">הרבה צל</div>
+                                        <div class="col-md-12 features margin1 hidden-xs">
+                                            <div class="col-md-2 feature pull-right">כשר</div>
+                                            <div class="col-md-2 feature pull-right">נחמדים לילדים</div>
+                                            <div class="col-md-2 feature pull-right">נגיש לכיסא גלגלים</div>
+                                            <div class="col-md-2 feature pull-right">יש מישלוחים</div>
+                                            <div class="col-md-2 feature pull-right">הרבה צל</div>
 
-                                    </div>
-                                    <div class="socials col-md-12 margin2">
-                                        <div class="col-md-5 social pull-right">
-                                            <span class="fa fa-facebook" title="facebook">
+                                        </div>
+                                        <div class="socials col-md-12 margin2">
+                                            <div class="col-md-5 social pull-right">
+                                                <span class="fa fa-facebook" title="facebook">
                                         </span>
-                                        </div>
-                                        <div class="col-md-2 external-link">
+                                            </div>
+                                            <div class="col-md-2 external-link">
+
+                                            </div>
 
                                         </div>
-
-                                    </div>
-                                </div>
-                                <div class="tab-pane text-style" id="tab2">
-                                    <h2>גיטר פיקס</h2>
-                                    <p>Dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                                        labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-                                        est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
-                                        elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                                        erat, sed diam voluptua.</p>
-                                    <hr>
-                                    <img src="http://placehold.it/150x90" class="img-rounded pull-left">
-                                </div>
-                                <div class="tab-pane text-style" id="tab3">
-                                    <h2>להיט בראש</h2>
-                                    <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Duis
-                                        autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat,
-                                        vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
-                                        dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait
-                                        nulla facilisi. Lorem ipsum dolor sit amet,
-                                    </p>
-                                    <hr>
-                                    <div class="col-xs-6 col-md-3">
-                                        <img src="http://placehold.it/150x150" class="img-rounded pull-right">
-                                    </div>
-                                </div>
-                                <div class="tab-pane text-style" id="tab4">
-                                    <h2>Beny's Pub</h2>
-                                    <div class="col-md-12 contact-wrapper">
-                                        <address>
-                                            <span class="icon fa fa-map-marker" aria-hidden="true"></span>
-                                            <span>46 Jerusalem Street</span>
-                                        </address>
-                                        <a href="tel:09-771-7627"><span class="icon fa fa-mobile" aria-hidden="true"></span>09-771-7627</a>
-                                    </div>
-                                    <div class="col-md-12 content-wrapper">
-                                        <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-                                            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                            consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan
-                                            et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis
-                                            dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
-                                        </p>
-                                    </div>
-                                    <hr>
-                                    <div class="col-xs-12 col-md-12 gallery-wrapper">
-                                        <img src="http://placehold.it/150x150" class="img-rounded pull-right">
-                                    </div>
-                                </div>
-                            </div>
-
+                                    </li>
+                                </script>
+                            </ul>
                         </div>
                     </div>
-                </div>
             </section>
+            </div>
         </div>
-    </div>
-    <script>
-
-        // open tab
-        $('.open').click(function () {
-            $('.business-info-wrapper').removeClass('display_none');
-            $('.street-info-wrapper').addClass('display_none');
-            $('.campaign-info-wrapper').addClass('display_none');
-        });
-
-        // open close street-info-wrapper
-
-
-        // open street-info-wrapper
-        $('.open-info-street').click(function () {
-            $('.business-info-wrapper').addClass('display_none');
-            $('.campaign-info-wrapper').addClass('display_none');
-            $('.street-info-wrapper').removeClass('display_none');
-
-        });
-
-        // open campaign-info-wrapper
-        $('.open-campaign-info').click(function () {
-            $('.business-info-wrapper').addClass('display_none');
-            $('.street-info-wrapper').addClass('display_none');
-            $('.campaign-info-wrapper').removeClass('display_none');
-        });
-        // xs-visibity
-        $('.open-info-street').click(function () {
-            $('.xs-visibity').addClass('visibityopen');
-        });
-
-        $('.open-campaign-info').click(function () {
-            $('.xs-visibity').addClass('visibityopen');
-        });
-
-
-        // close button
-        $('.close').click(function () {
-            $('.business-info-wrapper').addClass('display_none');
-            $('.xs-visibity').removeClass('visibityopen');
-
-        });
-
-        function myFunction() {
-            document.getElementById("map").style.overflow = "scroll";
-        }
-    </script>
+        
+        <!-- database connection -->
+        <script src="render_templates.js"></script>
+        <script src="content_changer.js"></script>
 </body>
 
 </html>

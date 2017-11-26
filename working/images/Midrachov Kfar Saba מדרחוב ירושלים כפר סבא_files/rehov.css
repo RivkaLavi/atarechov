@@ -112,27 +112,15 @@ body {
   overflow: scroll; }
 
 a {
-  cursor: url(../images/Cat-button-icon.png), auto;
+  cursor: url(../images/Cat-Track-icon.png), auto;
   /* fallback: no `url()` support or images disabled */
-  cursor: url(../images/Cat-button-icon.png), auto;
+  cursor: url(../images/Cat-Track-icon.png), auto;
   /* fallback: Internet Explorer */
-  cursor: url(../images/Cat-button-icon.png), auto;
+  cursor: url(../images/Cat-Track-icon.png), auto;
   /* Chrome 1-21, Safari 4+ */
-  cursor: url(../images/Cat-button-icon.png), auto;
+  cursor: url(../images/Cat-Track-icon.png), auto;
   /* Firefox 1.5-26 */
-  cursor: url(../images/Cat-button-icon.png), auto;
-  /* W3C standards syntax, should come least */ }
-
-button {
-  cursor: url(../images/Cat-button-icon.png), auto;
-  /* fallback: no `url()` support or images disabled */
-  cursor: url(../images/Cat-button-icon.png), auto;
-  /* fallback: Internet Explorer */
-  cursor: url(../images/Cat-button-icon.png), auto;
-  /* Chrome 1-21, Safari 4+ */
-  cursor: url(../images/Cat-button-icon.png), auto;
-  /* Firefox 1.5-26 */
-  cursor: url(../images/Cat-button-icon.png), auto;
+  cursor: url(../images/Cat-Track-icon.png), auto;
   /* W3C standards syntax, should come least */ }
 
 .navbar-inverse {
