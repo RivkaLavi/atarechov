@@ -15,25 +15,12 @@ var biz3_template = Handlebars.compile($('#biz3-template').html());
 var biz4_template = Handlebars.compile($('#biz4-template').html());
 var biz5_template = Handlebars.compile($('#biz5-template').html());
 var biz6_template = Handlebars.compile($('#biz6-template').html());
-// map-li
-$.when(
-    $('#biz').sheetrock({
-        url: mySpreadsheet,
-        rowTemplate: biz_template
-    })
-).then(
-    function () {
-        console.log('bu');
-        // open tab
-        var openClasses = $('.open').click(function () {
-            $('.business-info-wrapper').removeClass('display_none');
-            $('.street-info-wrapper').addClass('display_none');
-            $('.campaign-info-wrapper').addClass('display_none');
-            }
-        )
-        console.log(openClasses);    
-}   
-) ;
+$('#biz').sheetrock({
+    url: mySpreadsheet,
+    rowTemplate: biz_template,
+    // Call changeClasses AFTER finishing with the template
+    callback: changeClasses
+});
 $('#biz2').sheetrock({
     url: mySpreadsheet,
     rowTemplate: biz2_template
@@ -60,3 +47,12 @@ $('#business_info').sheetrock({
     url: mySpreadsheet,
     rowTemplate: business_info_template
 });
+
+function changeClasses(error, options, response) {
+    var openClasses = $('li.open').click(function () {
+        $('.business-info-wrapper').removeClass('display_none');
+        $('.street-info-wrapper').addClass('display_none');
+        $('.campaign-info-wrapper').addClass('display_none');
+        }
+    )
+}
