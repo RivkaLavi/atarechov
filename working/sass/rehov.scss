@@ -937,9 +937,13 @@ img{width: 100%;}
        }
 
        .personal-wrapper{
-       .portrait img{
-             width: 100%;
+       .portrait 
+       {text-align: center;
+         img{
+             width:65%;
+             
          }
+        }
          .text-community{
              -webkit-animation: animationOpacity 1s ease-in; /* Safari 4+ */
              -moz-animation:animationOpacity 1s ease-in; /* Fx 5+ */

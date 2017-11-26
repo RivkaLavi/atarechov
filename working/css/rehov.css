@@ -724,8 +724,10 @@ body {
     .business-info-wrapper .contact-wrapper {
       font-size: 1.3em; } }
 
-.business-info-wrapper .personal-wrapper .portrait img {
-  width: 100%; }
+.business-info-wrapper .personal-wrapper .portrait {
+  text-align: center; }
+  .business-info-wrapper .personal-wrapper .portrait img {
+    width: 65%; }
 
 .business-info-wrapper .personal-wrapper .text-community {
   -webkit-animation: animationOpacity 1s ease-in;
