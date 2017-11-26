@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>Business Details</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  </head>
+  <body>
+    <table id="business_details" class="table table-condensed table-striped"></table>
+    <h4>Businesses from group 1</h4>
+	  <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
+    <nav class="nav-sidebar">
+    <ul id="biz" class="nav tabs">
+      <script id="biz-template" type="text/x-handlebars-template">
+      {{#equal cells.position_group 'group1'}}
+        <li class="open">
+          <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
+          <span class="icon {{cells.icon}}"></span>
+          <strong>{{cells.business_name}}</strong> </a>
+        </li>
+      {{/equal}}
+      </script>
+    </ul>
+    </nav>
+    </div>
+    <h4>Businesses from group 6</h4>
+	  <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
+    <nav class="nav-sidebar">
+    <ul id="biz6" class="nav tabs">
+      <script id="biz2-template" type="text/x-handlebars-template">
+      {{#equal cells.position_group 'group6'}}
+        <li class="open">
+          <a href="#tab1" data-toggle="tab" title="{{cells.business_name}}">
+          <span class="icon {{cells.icon}}"></span>
+          <strong>{{cells.business_name}}</strong> </a>
+        </li>
+      {{/equal}}
+      </script>
+    </ul>
+    </nav>
+    </div>
+    <script type="text/javascript">
+    var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1bKSwg7AncfiV6KZKO8b-IaqVdgMe9doLWJdxkY7QMto/edit#gid=0';
+		Handlebars.registerHelper('equal', function(lvalue, rvalue, options) {
+				if (arguments.length < 3)
+						throw new Error("Handlebars Helper equal needs 2 parameters");
+				if( lvalue!=rvalue ) {
+						return options.inverse(this);
+				} else {
+						return options.fn(this);
+				}
+		});
+    // Compile the Handlebars template
+    var biz_template = Handlebars.compile($('#biz-template').html());
+    var biz2_template = Handlebars.compile($('#biz2-template').html());
+    $('#biz').sheetrock({
+			url: mySpreadsheet,
+  		rowTemplate: biz_template
+		});
+    $('#biz6').sheetrock({
+			url: mySpreadsheet,
+  		rowTemplate: biz2_template
+		});
+    </script>
+  </body>
+</html>

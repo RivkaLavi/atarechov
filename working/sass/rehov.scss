@@ -238,7 +238,29 @@ body{
         
     }
   }
-
+  // general
+ .dragscroll{
+  cursor:url(../images/Cat-Track-icon.png), auto; /* fallback: no `url()` support or images disabled */
+  cursor: url(../images/Cat-Track-icon.png), auto; /* fallback: Internet Explorer */
+  cursor: url(../images/Cat-Track-icon.png), auto; /* Chrome 1-21, Safari 4+ */
+  cursor: url(../images/Cat-Track-icon.png), auto; /* Firefox 1.5-26 */
+  cursor: url(../images/Cat-Track-icon.png), auto; /* W3C standards syntax, should come least */
+  overflow: scroll;
+  }
+  a{
+    cursor:url(../images/Cat-button-icon.png), auto; /* fallback: no `url()` support or images disabled */
+    cursor: url(../images/Cat-button-icon.png), auto; /* fallback: Internet Explorer */
+    cursor: url(../images/Cat-button-icon.png), auto; /* Chrome 1-21, Safari 4+ */
+    cursor: url(../images/Cat-button-icon.png), auto; /* Firefox 1.5-26 */
+    cursor: url(../images/Cat-button-icon.png), auto; /* W3C standards syntax, should come least */
+  }
+  button{
+    cursor:url(../images/Cat-button-icon.png), auto; /* fallback: no `url()` support or images disabled */
+    cursor: url(../images/Cat-button-icon.png), auto; /* fallback: Internet Explorer */
+    cursor: url(../images/Cat-button-icon.png), auto; /* Chrome 1-21, Safari 4+ */
+    cursor: url(../images/Cat-button-icon.png), auto; /* Firefox 1.5-26 */
+    cursor: url(../images/Cat-button-icon.png), auto; /* W3C standards syntax, should come least */
+  }
 // top navbar
 .navbar-inverse {
     background-color: #fff;
@@ -600,6 +622,7 @@ width: 100%;
 
    &.left-icon{
   li{
+    margin-bottom: 10px;
      &.action{
     &:hover{
          &:after{
@@ -632,7 +655,7 @@ width: 100%;
     ul{
     overflow: hidden;
     &.width441{width: 411px;}
-    &.width487{width: 487px;}
+    &.width560{width: 560px;}
      li{
        float: left;
        margin: 23px 0 30px 13px;
@@ -685,7 +708,7 @@ width: 100%;
           &.action{
     &:hover{
          &:after{
-    top: -26px;
+    top: -23px;
      right: 13px
           }
     }
@@ -735,8 +758,8 @@ width: 100%;
       right:539px;
       }
       &.position6{
-        top:344px;
-        right:  982px;
+        top: 486px;
+        right: 925px;
         }
 
 
