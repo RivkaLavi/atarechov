@@ -911,7 +911,7 @@ img{width: 100%;}
             
           }
           a{
-              font-size: 30px;
+              font-size: 28px;
               display: inline; 
            @media screen and (max-width: $break-small) {
          font-size:1.3em;
@@ -937,9 +937,12 @@ img{width: 100%;}
        }
 
        .personal-wrapper{
-       .portrait img{
+       .portrait{
+
+       img{
              width: 100%;
          }
+        }
          .text-community{
              -webkit-animation: animationOpacity 1s ease-in; /* Safari 4+ */
              -moz-animation:animationOpacity 1s ease-in; /* Fx 5+ */
@@ -971,16 +974,15 @@ img{width: 100%;}
 
                  .open-close{
             font-size:30px;
-            text-align: center;
+            text-align: right;
             line-height: 40px;
-            background-color: $theme-color2;
-            color:$text1;
+
                      @media screen and (max-width: $break-small) {
          padding: 0;
          margin: 10px 0;
-          color:$secondary;
+
             text-align: right;
-             background-color: #fff;
+   
              border-bottom: 1px solid $theme-color2-bright;
             }
 

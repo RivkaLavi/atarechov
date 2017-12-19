@@ -705,7 +705,7 @@ body {
         height: 40px;
         text-align: center; } }
   .business-info-wrapper .contact-wrapper a {
-    font-size: 30px;
+    font-size: 28px;
     display: inline; }
     @media screen and (max-width: 450px) {
       .business-info-wrapper .contact-wrapper a {
@@ -754,17 +754,13 @@ body {
 
 .business-info-wrapper .opening-hours .open-close {
   font-size: 30px;
-  text-align: center;
-  line-height: 40px;
-  background-color: #42709e;
-  color: #fff; }
+  text-align: right;
+  line-height: 40px; }
   @media screen and (max-width: 450px) {
     .business-info-wrapper .opening-hours .open-close {
       padding: 0;
       margin: 10px 0;
-      color: #ff3c00;
       text-align: right;
-      background-color: #fff;
       border-bottom: 1px solid #d9f4ff; } }
 
 @media screen and (max-width: 450px) {
