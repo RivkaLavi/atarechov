@@ -1,0 +1,23 @@
+/* ------ header ------ */
+
+/* --- search --- */
+.street-search-form .search-box-inline:first-child,.street-search-form .search-box-inline:last-child {
+    border-radius: 0 !important;
+}
+.street-search-form .search-box-inline:last-child {
+padding: 0 !important
+}
+.street-search-form .search-box-inline > .jv-submit-button {
+border-radius: 0 !important;
+height: 100%;
+}
+ /* --- switcher for Hebrew version --- */
+.street-search-form .search-box-inline.field-listing_location_with_google_search .lynk-switcher {
+right: auto !important;
+left: 0;
+}
+ /* --- field-google for Hebrew version --- */
+.street-search-form .search-box-inline .field-google i{
+right: auto !important;
+left: 60px;
+}
