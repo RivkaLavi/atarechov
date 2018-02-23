@@ -48,6 +48,14 @@ $('#business_info').sheetrock({
     rowTemplate: business_info_template
 });
 
+// campaign_template
+
+var campaign_template = Handlebars.compile($('#campaign_template').html());
+$('#business_info').sheetrock({
+    url: mySpreadsheet,
+    rowTemplate: campaign_template
+});
+
 function changeClasses(error, options, response) {
     var openClasses = $('li.open').click(function () {
         $('.business-info-wrapper').removeClass('display_none');

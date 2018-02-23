@@ -301,6 +301,7 @@
                                 <h2>כל המבצעים ברחוב</h2>
 
                                 <ul class="campaign-list">
+                               <script id="campaign_template" type="text/x-handlebars-template">
                                     <li class="campaign-unit padding0 open">
                                         <img src='images/pizza-zigi/portrait.jpg' class="">
                                         <h3><a href="#tab1">פיצה זיגי מאשרום </a></h3>
@@ -308,6 +309,7 @@
                                             היום פיצות לוהטות במיוחד. על כל פיצה משפחתית הנחה של עשרה שקלים <a href=" ">במיספרה של דורון</a>
                                         </p>
                                     </li>
+                                    </script>
                                     <li class="campaign-unit margin1">
                                         <img src='images/pizza-zigi/portrait.jpg' class="">
                                         <h3><a href=" ">המיספרה של דורון</a></h3>
@@ -339,8 +341,8 @@
                                         <div class="col-md-12 col-xs-12 contact-wrapper padding0">
                                             <address>
                                                 <div class="col-md-7 col-xs-12 landscape-6">
-                                                    <span class="street-num pull-right">52</span><span class="street">Jerusalem Street</span>                                                    </div>
-                                                <div class="col-md-5 col-xs-12 landscape-6"> <a href="{{cells.business_phone}}"><span class="icon fa fa-mobile" aria-hidden="true"></span> {{cells.business_phone}}</a></div>
+                                                    <span class="street-num pull-right">{{cells.address_num}}</span><span class="street">{{cells.address_street}}</span>                                                    </div>
+                                                <div class="col-md-5 col-xs-12 landscape-6"> <a href="#{{cells.business_phone}}"><span class="icon fa fa-mobile" aria-hidden="true"></span> {{cells.business_phone}}</a></div>
                                             </address>
                                         </div>
                                         <div class="col-md-12 col-xs-12 personal-wrapper margin2">
@@ -369,7 +371,7 @@
                                             ראשון - חמישי :
                                      </span>
                                                     <span class="hours">
-                                                 18:00 - 24:00
+                                                        {{cells.opening_hours_su_th}}
                                      </span>
                                                 </p>
 
@@ -378,7 +380,7 @@
                                            שישי :
                                      </span>
                                                     <span class="hours">
-                                                 12:00 - 16:00
+                                                        {{cells.opening_hours_fr}}
                                      </span>
                                                 </p>
                                                 <p>
@@ -386,7 +388,7 @@
                                           שבת :
                                      </span>
                                                     <span class="hours">
-                                               סגור
+                                                        {{cells.opening_hours_sa}}
                                      </span>
                                                 </p>
                                             </div>
@@ -401,8 +403,8 @@
                                         </div>
                                         <div class="socials col-md-12 margin2">
                                             <div class="col-md-5 social pull-right">
-                                                <span class="fa fa-facebook" title="facebook">
-                                        </span>
+                                                <a href="{{cells.facebook_link}}" class="fa fa-facebook" title="facebook">
+                                                </a>
                                             </div>
                                             <div class="col-md-2 external-link">
 

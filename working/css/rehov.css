@@ -736,11 +736,11 @@ body {
   /* Opera 12+ */
   animation: animationOpacity 1s ease-in;
   /* IE 10+, Fx 29+ */
-  border: 3px solid #d9f4ff;
+  border: 3px solid #ff3c00;
+  outline: 3px solid #fdc415;
   padding: 5px;
   background-color: #fff;
-  z-index: 3;
-  box-shadow: 1px 1px 30px 5px rgba(51, 51, 51, 0.13); }
+  z-index: 3; }
   .business-info-wrapper .personal-wrapper .text-community span.i {
     color: #fdc415; }
   .business-info-wrapper .personal-wrapper .text-community img {
