@@ -43,11 +43,11 @@
     <div class="container-fluid">
         <div class="row">
             <!--top brand row-->
-            <div class="col-md-12 margin0 header-address">
-                <div class="col-md-1 pull-right brand-cat">
+            <div class="col-md-12 col-sm-12 col-xs-12 margin0 header-address">
+                <div class="col-md-1 col-sm-1 col-xs-1 pull-right padding0 brand-cat">
                     <img src="images/cat.svg" alt="logo">
                 </div>
-                <div class="col-md-11 pull-right">
+                <div class="col-md-11 col-sm-11 col-xs-11 pull-right">
 
                     <h1 class="main-address  pull-right"><span class="label-bold">אתר רחוב</span><span class="label-light">כפר סבא - מדרחוב ירושלים</span></h1>
                 </div>
@@ -55,14 +55,14 @@
             <!--promotion-->
             <section class="poster-header">
                 <div class="container">
-
+                    <div class="row">
                     <div class="col-md-12 header">
 
                         <div class="col-md-4 col-sm-4 col-xs-12 pull-right date-wrapper">
                             <date><span class="poster-date">12/2/17</span></br><span class="poster-hour">18:00</span></date>
                             <p class="poster-location">נפגשים מול בניס ליד הצב</p>
                         </div>
-                        <div class="col-md-8 pull-right content-wrapper">
+                        <div class="col-md-8 col-sm-8 col-xs-12 pull-right content-wrapper">
                             <h2> <span class="title-part-1">
                        מיפגש
                                 </span>
@@ -76,10 +76,11 @@
 
                     </div>
                 </div>
+            </div>
             </section>
             <!--map-->
             <section>
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper " >
                             <img src="images/map_midrechov.svg" alt="map">
@@ -202,16 +203,16 @@
                         </div>
                         <!--street info-->
 
-                        <div class="col-md-4  col-sm-4 col-xs-12  street-info-wrapper landscape-12 xs-visibity visibityclose" id="street-info">
+                        <div class="col-md-4  col-sm-4 col-xs-12  street-info-wrapper landscape-12 padding0 xs-visibity visibityclose" id="street-info">
                             <div class="hidden-md hidden-sm hidden-lg ">
                                 <button type="button" class="close top-close" title="סגירה">
                                <i class="fa fa-times" aria-hidden="true"></i></button>
                             </div>
-                            <div class="col-md-6 col-sm-6 col-xs-12 pull-right">
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 pull-right">
                                 <h2>רחוב ירושלים כפר סבא</h2>
                             </div>
                             <!--menu-->
-                            <div class="menu-external-links col-md-6 col-sm-6 col-xs-12">
+                            <div class="menu-external-links col-lg-6 col-md-12 col-sm12 col-xs-12">
                                 <button type="button" formaction=""><span class="fa fa-facebook" aria-hidden="true"></span></button>
                                 <button type="button" onclick="location.href='https://goo.gl/maps/H9XztmygCJ92';" value="Go to Google maps"><span class="fa fa-map" aria-hidden="true"></span></button>
                             </div>
@@ -336,34 +337,27 @@
                                             <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
                                         </div>
                                         <img src='{{cells.street_view}}'>
+                                        <div class="hidden-xs portrait pull-right  ">
+                                            <img src='{{cells.profile_image}}' class="img-circle">
+                                        </div>
                                         <h2>{{cells.business_name}}</h2>
-                                        </h2>
-                                        <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+                                         <div class="col-md-12 col-xs-12 contact-wrapper padding0">
                                             <address>
                                                 <div class="col-md-7 col-xs-12 landscape-6">
                                                     <span class="street-num pull-right">{{cells.address_num}}</span><span class="street">{{cells.address_street}}</span>                                                    </div>
                                                 <div class="col-md-5 col-xs-12 landscape-6"> <a href="#{{cells.business_phone}}"><span class="icon fa fa-mobile" aria-hidden="true"></span> {{cells.business_phone}}</a></div>
                                             </address>
                                         </div>
-                                        <div class="col-md-12 col-xs-12 personal-wrapper margin2">
-                                            <div class="col-md-3 hidden-xs portrait pull-right  ">
-                                                <img src='{{cells.profile_image}}' class="img-circle">
-                                            </div>
-                                          
-                                            <div class="col-md-9 col-xs-12 text-community ">
+
+                                              <div class="col-md-12 col-xs-12 text-community ">
                                                 <p>
                                                     <img src='{{cells.profile_image}}' class="hidden-md hidden-sm hidden-lg ">
                                                     <span class="i i-fire2"></span>
                                                    <span  class="{{cells.action}}"> {{cells.campaing_string}}</span>
                                                     <a href="{{cells.cross_campaign_link}}">{{cells.cross_campaign_partner}}</a>
                                                 </p>
-
                                             </div>
-
-                                        </div>
-
-                                        <div class="col-md-12 col-xs-12 opening-hours margin1">
-                                            
+                                                                         
                                             <div class="col-md-12 col-xs-12 opening-hours-info">
                                                     <h2 class="open-close">פתוח עכשיו</h2>
                                                 <p>
@@ -392,7 +386,7 @@
                                      </span>
                                                 </p>
                                             </div>
-                                        </div>
+
                                         <div class="col-md-12 features margin1 hidden-xs">
                                             <div class="col-md-2 feature pull-right">כשר</div>
                                             <div class="col-md-2 feature pull-right">נחמדים לילדים</div>
@@ -401,11 +395,11 @@
                                             <div class="col-md-2 feature pull-right">הרבה צל</div>
 
                                         </div>
-                                        <div class="socials col-md-12 margin2">
-                                            <div class="col-md-5 social pull-right">
-                                                <a href="{{cells.facebook_link}}" class="fa fa-facebook" title="facebook">
+                                        <div class="col-md-12 margin2">
+                                        
+                                                <a class="col-md-5 social pull-right fa fa-facebook" href="{{cells.facebook_link}}"  title="facebook">
                                                 </a>
-                                            </div>
+                                      
                                             <div class="col-md-2 external-link">
 
                                             </div>

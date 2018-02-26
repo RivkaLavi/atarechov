@@ -3,10 +3,11 @@ $primary: #c0f1ff;
 $secondary: #ff3c00;
 $theme-color2:#42709e;
 $theme-color2-bright:#d9f4ff;
+$cat:#000;
 $yellow:#fdc415;
+
 $text1:#fff;
 $text2:#000;
-$brand:#000;
 
 
 // media variable
@@ -15,15 +16,15 @@ $break-sm: 568px;
 $break-md: 768px;
 $break-lg: 1200px;
 
-// mixing
-
 @mixin linear-gradient($direction, $color-stops...) {
+
 background: nth(nth($color-stops, 1), 1);
 background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
 background: linear-gradient($direction, $color-stops);
 }
 
 @mixin menu-wrapper {
+
 position: absolute;
 top: 0px;
 background: rgba(0, 0, 0, 0.63);
@@ -41,14 +42,14 @@ transition-duration: .5s;
 -moz-transition-timing-function: linear;
 -o-transition-timing-function: linear;
 transition-timing-function: linear;
-@media screen and (max-width: $break-xs) {
+@media screen and (max-width: $break-small) {
 margin: 10px 0 0 0;
 }
+&:hover{
+box-shadow: -1px 1px 40px rgba(0, 0, 0, 0.43);
+background: rgba(0, 0, 0, 0.63);
 
-    &:hover{
-    box-shadow: -1px 1px 40px rgba(0, 0, 0, 0.43);
-    background: rgba(0, 0, 0, 0.63);
-    }
+}
 }
 
 @mixin menu-button{
@@ -73,18 +74,17 @@ transition-duration: .5s;
 -moz-transition-timing-function: linear;
 -o-transition-timing-function: linear;
 transition-timing-function: linear;
-
-    &:hover{
-    color: $text1;
-    background-color: $yellow;
-    }
+&:hover{
+color: $text1;
+background-color: $yellow;
 }
-
+}
 @mixin menu-button-2{
 width: 60px;
 height: 60px;
 color: $theme-color2;
 background-color: #ffffff;
+
 text-align: center;
 font-size: 30px;
 border: 3px solid $theme-color2-bright;
@@ -101,13 +101,11 @@ transition-duration: .5s;
 -moz-transition-timing-function: linear;
 -o-transition-timing-function: linear;
 transition-timing-function: linear;
-
-    &:hover{
-    color: $text1;
-    background-color: $theme-color2;
-    }
+&:hover{
+color: $text1;
+background-color: $theme-color2;
 }
-
+}
 @mixin shadow{
 box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.6);
 -webkit-transition-property: box-shadow;
@@ -122,20 +120,30 @@ transition-duration: .3s;
 -moz-transition-timing-function: ease-out;
 -o-transition-timing-function: ease-out;
 transition-timing-function: ease-out;
-    &:hover{
-    box-shadow: 0px 3px 26px rgba(0, 0, 0, 0.6);
-    }
+&:hover{
+box-shadow: 0px 3px 26px rgba(0, 0, 0, 0.6);
 }
-
-
-//visibility - info colun
-
+}
 .xs-visibity{
-&.visibityclose {
-@media screen and (max-width: $break-xs), screen and (max-width: $break-md) and (orientation: landscape) { display: none; }
+&.visibityclose{
+@media screen and (max-width: $break-small)
+{
+display: none;
+}
+@media screen and (max-width: $break-max-cell-wide) and (orientation: landscape)
+{
+display: none;
+}
 }
 &.visibityopen{
-@media screen and (max-width: $break-xs), screen and (max-width: $break-md) and (orientation: landscape) { display:block; }
+@media screen and (max-width: $break-small)
+{
+display:block;
+}
+@media screen and (max-width: $break-max-cell-wide) and (orientation: landscape)
+{
+display:block;
+}
 }
 }
 
@@ -176,170 +184,293 @@ margin:30px 0 0 0;
 padding:0 0 0 0;
 }
 
-
-// grid
-@media  screen and (max-width: $break-md) and (orientation: landscape) { .landscape-6 { width: 50% } .landscape-12{ width: 96%; }}
-
-/* \/\/--- Jeneral ---\/\/ */
-.display_none{ display: none !important; }
-
-body {  direction:rtl; text-align: right;  font-family: $font-stack; }
-
-p { font-size: 16px;}
-
-section { display: block;   margin-bottom: 20px;}
-
-//labels
-
-.label-bold { font-size: 35px; font-weight: 700;
-  @media screen and (max-width: $break-md) { font-size: 25px; }
-@media  screen and (max-width: $break-md) and (orientation: landscape) { font-size: 20px;}
-@media screen and (max-width: $break-xs) { font-size: 14px; }
+// jeneral
+.display_none{
+display: none !important;
+}
+section { 
+display: block;
 }
 
-.label-light{ font-size: 35px; font-weight:400;
-@media screen and (max-width: $break-md) { font-size: 25px; }
-@media  screen and (max-width: $break-md) and (orientation: landscape) { font-size: 20px; }
-@media screen and (max-width: $break-xs) { font-size: 14px; }
+.label-bold{
+font-size: 1em;
+font-weight:700;
+padding-left: 10px;
+@media screen and (max-width: $break-small) {
+font-size: .5em;
+}
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+font-size: .7em;
 }
 
-//arrow
+}
+.label-light{
+font-size: 1em;
+font-weight:400;
+padding-left: 10px;
+@media screen and (max-width: $break-small) {
+font-size: .5em;
+}
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+font-size: .7em;
+}
+}
+body{
+font-family: $font-stack;
+p{
+font-size: 1.5em;
+}
+}
+
 .arrow-right {
 border-top: 19px solid transparent;
 border-bottom: 19px solid transparent;
 border-left: 19px solid $theme-color2-bright;
 }
 
+// grid
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+.landscape-6{
+width: 50%
+}
+.landscape-12{
+width: 96%;
 
-// cursor
+}
+}
+// general
 .dragscroll{
-cursor:url(../images/Cat-Track-icon.png), auto; 
+cursor:url(../images/Cat-Track-icon.png), auto; /* fallback: no `url()` support or images disabled */
+cursor: url(../images/Cat-Track-icon.png), auto; /* fallback: Internet Explorer */
+cursor: url(../images/Cat-Track-icon.png), auto; /* Chrome 1-21, Safari 4+ */
+cursor: url(../images/Cat-Track-icon.png), auto; /* Firefox 1.5-26 */
+cursor: url(../images/Cat-Track-icon.png), auto; /* W3C standards syntax, should come least */
 overflow: scroll;
 }
-a, button {
+a{
 cursor:url(../images/Cat-button-icon.png), auto; /* fallback: no `url()` support or images disabled */
+cursor: url(../images/Cat-button-icon.png), auto; /* fallback: Internet Explorer */
+cursor: url(../images/Cat-button-icon.png), auto; /* Chrome 1-21, Safari 4+ */
+cursor: url(../images/Cat-button-icon.png), auto; /* Firefox 1.5-26 */
+cursor: url(../images/Cat-button-icon.png), auto; /* W3C standards syntax, should come least */
 }
-
-/* \/\/--- Top line ---\/\/ */
+button{
+cursor:url(../images/Cat-button-icon.png), auto; /* fallback: no `url()` support or images disabled */
+cursor: url(../images/Cat-button-icon.png), auto; /* fallback: Internet Explorer */
+cursor: url(../images/Cat-button-icon.png), auto; /* Chrome 1-21, Safari 4+ */
+cursor: url(../images/Cat-button-icon.png), auto; /* Firefox 1.5-26 */
+cursor: url(../images/Cat-button-icon.png), auto; /* W3C standards syntax, should come least */
+}
+// top navbar
+.navbar-inverse {
+background-color: #fff;
+border-color: #fff;
+margin: 0;
+.navbar-nav li a {
+color:$text2;
+&:hover{
+color:$secondary;
+}
+}
+} 
 
 // header-address
 .header-address{
 @include linear-gradient(to right,$yellow, $secondary);
-height: 50px;
+max-height: 44px;
 
 // media       
-@media screen and (max-width: $break-xs) { height: 24px; }
-@media  screen and (max-width: $break-md) and (orientation: landscape) { height: 24px; }
+@media screen and (max-width: $break-small) {
+height: 24px;
+
+}
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+height: 24px;
+}
 
 .brand-cat{ 
 img{
-width: 100%;
-@media screen and (max-width: $break-md) { margin-top: 15px; }
-@media  screen and (max-width: $break-md) and (orientation: landscape) { right: 8px;  width: 32px;}
-@media screen and (max-width: $break-xs), screen and (max-width: $break-md) and (orientation: landscape) { margin-top: 0px; }
+position: absolute;
+right: 36px;
+top: -22px;
+
+@media screen and (max-width: $break-small) {
+right: 8px;
+top: 3px;
+width: 32px;
+
+}
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+right: 8px;
+top: 3px;
+width: 32px;
+}
 }     
+
 }
-h1.main-address { color: $text1; line-height: 8px;
-  @media screen and (max-width: $break-xs), screen and (max-width: $break-md) and (orientation: landscape) { margin-top: 0px; }
- }
+.i{
+font-size: 30px;
+color:$yellow;
+text-align: center;
+margin-top: 10px;
+
+@media screen and (max-width: $break-small) {
+font-size: 19px;
+margin-top: 0;
+}
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+margin: 0;
+font-size: 19px;
+}
+}
+h1.main-address {
+color:$text1;
+line-height: 14px;
+display: inline;
+//    media
+@media screen and (max-width: $break-small) {
+margin: 0;
+}
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+margin: 0;
 }
 
-/* \/\/--- Intro -Event ---\/\/ */
+}
 
+
+}
+
+body{
+
+text-align: right;
+direction:rtl;
+section{
+margin-bottom: 20px;
+}
+}
+.navbar-xs{
+min-height:22px; border-radius:0; padding: 0 15px;
+.navbar-brand{
+padding: 2px 8px;font-size: 14px;line-height: 14px; height: 22px;
+li > a{
+border-right:1px solid #ddd; padding-top: 2px; padding-bottom: 2px; line-height: 16px
+}  
+}
+}
+
+/*header*/
 .poster-header{
 background-image:url(../images/poster2.jpg);
 background-size: cover;
 background-repeat: no-repeat;
-  @media screen and (max-width: $break-xs),screen and (max-width: $break-md) and (orientation: landscape) {
-  background-image:inherit;
-  background-color: $theme-color2-bright;
-  padding-bottom: 5px;
-  }
-  .header {
-    .content-wrapper{
-    @media  screen and (max-width: $break-md) and (orientation: landscape) {
-    width: 50%;
-    }
-   }
-  }
-
-  .date-wrapper{
-  padding: 20px;
-  text-align:center;
-  @media screen and (max-width: $break-xs) {padding: 0px;}
-  @media  screen and (max-width: $break-md) and (orientation: landscape) {
-  width: 50%;
-  }
-    date {
-    font-size:60px;
-    font-family: 'Poppins';
-    line-height: 1.3em;
-    color: $secondary;
-    .poster-date{  font-weight: 700;}
-    .poster-hour{
-    font-weight: 300;
-    letter-spacing: 0.1em;
-    display: block;
-    background-color: $secondary;
-    color:$text1;
-    line-height: 1em;
-    padding: 5px 0 0 0;
-    }
-   }
-  .poster-location{
-  color:$text1;
-  background-color:$secondary;
-  font-size:20px;
-  margin-top: -12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  padding: 5px;
-  }
+@media screen and (max-width: $break-small) {
+background-image:inherit;
+background-color: $theme-color2-bright;
+padding-bottom: 5px;
 }
-    h2 {   
-    color:$text2;
-    font-size:60px;
-    font-weight: 700;
-      @media  screen and (max-width: $break-md) and (orientation: landscape) {
-      font-size: 26px;
-      }
-      @media screen and (max-width: $break-xs) {
-        font-size: 26px;
-        margin: 0;
-        text-align: center
-       }
-    }
-  p {
-  font-size: 30px;
-  line-height: 1.3em;
-  font-weight: 700;
-  @media screen and (max-width: $break-xs) {
-  font-size: 26px;
-  margin: 0;
-  text-align: center
-  }
-  @media  screen and (max-width: $break-md) and (orientation: landscape) {
-  font-size: 26px;
-  }
- }
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+background-image:inherit;
+background-color: $theme-color2-bright;
+padding-bottom: 5px;
+}
+}
+.header {
+.content-wrapper{
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+width: 50%;
+}
+}
+.date-wrapper{
+padding: 20px;
+text-align:center;
+@media screen and (max-width: $break-small) {padding: 0px;}
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+width: 50%;
+}
+date{ font-size:5em;
+font-family: 'Poppins';
+line-height: 1.3em;
+color:$secondary;
+.poster-date{  font-weight: 700;}
+.poster-hour{
+font-weight: 300;
+letter-spacing: 0.1em;
+display: block;
+background-color: $secondary;
+color:$text1;
+line-height: 1em;
+padding: 5px 0 0 0;
+}
+}
+.poster-location{
+color:$text1;
+background-color:$secondary;
+font-size:20px;
+margin-top: -12px;
+font-weight: 700;
+letter-spacing: 1px;
+padding: 5px;
+}
+
+}
+h2{     color:$text2;
+font-size:60px;
+font-weight: 700;
+@media screen and (max-width: $break-small) {
+font-size: 26px;
+margin: 0;
+text-align: center
+}
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+font-size: 26px;
+}
+}
+p{
+font-size: 30px;
+line-height: 1.3em;
+font-weight: 700;
+@media screen and (max-width: $break-small) {
+font-size: 26px;
+margin: 0;
+text-align: center
+}
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
+font-size: 26px;
+}
+}
 }
 /*map*/
 .map-wrapper{
+
 overflow: scroll;
-height: 2000px;
+height: 700px;
 position: relative;
-  img{
-  width: 1700px;
-  position: absolute;
-  top: -70px;
-  right: -317px;
-  }
-  .street-info{
-  @include menu-wrapper;
-  button{
-  @include menu-button;
-  }
-    }
+img{
+width: 143%;
+position: absolute;
+top: -70px;
+right: -317px;}
+.street-info{
+@include menu-wrapper;
+button{
+@include menu-button;
+}
+}
+
+
+
+img{
+
+@media screen and (max-width: $break-small) {
+position: absolute;
+right: -128px;
+position: absolute;
+right: -299px;
+width: 513%;
+top: -69px;
+}
+
+}
 }
 .street-info-wrapper{
 .top-close{
@@ -352,14 +483,14 @@ opacity: 1;
 float:left;
 }
 background-color:#fff;
-@media screen and (max-width: $break-xs){
+@media screen and (max-width: $break-small){
 position:absolute;
 top: 0px;
 right: 0;
 padding: 0px 0 10px 0;
 background-color: #fff;
 }
-@media  screen and (max-width: $break-md) and (orientation: landscape) {
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
 position:absolute;
 top: 0px;
 padding: 0px 0 10px 0;
@@ -372,13 +503,16 @@ line-height: 1em;
 font-weight: 700;
 }
 .menu-external-links{
-  button{ @include menu-button-2;  }
+
+
+button{
+@include menu-button-2;
+}
 }
 .gallery-wrapper{
 .picture-unit{
-
-@media screen and (max-width: $break-xs), screen and (max-width: $break-lg){
-width:100%;
+@media screen and (max-width: $break-small){
+width: 97%;
 }
 
 position: relative;
@@ -389,9 +523,7 @@ margin: 2%;
 padding: 0;
 overflow: hidden;
 img{
-  max-width: fit-content;
-  min-width: 100%;
-  height: auto;
+width: 100%;
 
 }
 
@@ -629,7 +761,7 @@ right: 925px;
 }
 
 
-@media screen and (max-width: $break-xs) {
+@media screen and (max-width: $break-small) {
 right: 10px;
 }
 li{  
@@ -765,7 +897,7 @@ color:$secondary;
 }
 
 h2{
-@media screen and (max-width: $break-xs) {
+@media screen and (max-width: $break-small) {
 margin-top: 10px;
 padding: 0 15px;
 }
@@ -782,7 +914,7 @@ line-height: 20px;
 font-size: 40px; 
 color:$secondary;
 margin-left:10px;
-@media screen and (max-width: $break-xs) {
+@media screen and (max-width: $break-small) {
 width: 40px;
 height: 40px;
 text-align: center;
@@ -793,7 +925,7 @@ text-align: center;
 a{
 font-size: 28px;
 display: inline; 
-@media screen and (max-width: $break-xs) {
+@media screen and (max-width: $break-small) {
 font-size:1.3em;
 }
 
@@ -810,7 +942,7 @@ padding: 5px;
 text-align: center;
 margin-left: 10px;
 }
-@media screen and (max-width: $break-xs) {
+@media screen and (max-width: $break-small) {
 font-size: 1.3em;
 }
 
@@ -836,6 +968,9 @@ width: 40px;
 }
 
 }
+.text-baloon{
+
+}
 
 .opening-hours{  
 
@@ -844,7 +979,7 @@ font-size:30px;
 text-align: right;
 line-height: 40px;
 
-  @media screen and (max-width: $break-xs) {
+  @media screen and (max-width: $break-small) {
 padding: 0;
 margin: 10px 0;
 
@@ -856,12 +991,12 @@ border-bottom: 1px solid $theme-color2-bright;
 
 }
 .opening-hours-info{
-@media screen and (max-width: $break-xs) {
+@media screen and (max-width: $break-small) {
 padding: 0;
 
 }
 }
-@media screen and (max-width: $break-xs) {
+@media screen and (max-width: $break-small) {
 p{font-size: 1.2em;
 line-height: 1.2em;
 } 
@@ -881,13 +1016,15 @@ padding: 10px 10px;
 
 }
 
-
+.socials{
 .social{
 text-align: center;
 line-height: 68px;        
 height: 70px;
 width: 40%;
 font-size: 40px;
+border-top-left-radius:10px;
+border-bottom-left-radius:10px;
 border: 3px solid $theme-color2;
 background:#fff;
 color:$theme-color2;
@@ -903,32 +1040,34 @@ transition-duration: .5s;
 -moz-transition-timing-function: linear;
 -o-transition-timing-function: linear;
 transition-timing-function: linear;
-  @media screen and (max-width: $break-xs){
-  line-height: 48px;
-  width: 80px;
-  font-size: 30px;
-  height: 50px;
-  }
-
-  &:hover{
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  background-color:$theme-color2;
-  color:$text1;
-  text-decoration: none;
-  }
+@media screen and (max-width: $break-small){
+line-height: 48px;
+width: 80px;
+font-size: 30px;
+height: 50px;
 
 }
 
 
+&:hover{
+box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+background-color:$theme-color2;
+color:$text1;
+}
+
+}
+
+}
+
 // mobile business-info-wrapper
-@media screen and (max-width: $break-xs){
+@media screen and (max-width: $break-small){
 position:absolute;
 top: 0px;
 right: 0;
 padding: 0px 0 10px 0;
 background-color: #fff;
 }
-@media  screen and (max-width: $break-md) and (orientation: landscape) {
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
 position:absolute;
 top: 0px;
 padding: 0px 0 10px 0;
@@ -939,14 +1078,14 @@ background-color: #fff;
 
 .campaign-info-wrapper{
 
-@media screen and (max-width: $break-xs){
+@media screen and (max-width: $break-small){
 position:absolute;
 top: 0px;
 right: 0;
 padding: 0px 0 10px 0;
 background-color: #fff;
 }
-@media  screen and (max-width: $break-md) and (orientation: landscape) {
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
 position:absolute;
 top: 0px;
 padding: 0px 0 10px 0;
@@ -962,10 +1101,10 @@ opacity: 1;
 float:left;
 }
 h2{
-@media screen and (max-width: $break-xs){
+@media screen and (max-width: $break-small){
 margin-top: -30px;
 }
-@media  screen and (max-width: $break-md) and (orientation: landscape) {
+@media  screen and (max-width: $break-max-cell-wide) and (orientation: landscape) {
 margin-top: -30px;
 }
 }
