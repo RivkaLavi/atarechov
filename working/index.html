@@ -16,18 +16,25 @@
     <!--styles-->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/main.css">
+    <link href="css/animate.min.css" rel="stylesheet" type="text/css" />
+    
     <link rel="stylesheet" href="css/rehov.css">
     <link rel="stylesheet" href="css/street.css">
+
 
     <!--script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
     <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
+
+    <script type = "text/javascript" src = "js/scroll.js"></script> 
+    <script type = "text/javascript">
+     window.onscroll = myFunction; //calling myFunction each time we scroll
+    </script> 
 
     <!--fonts-->
 
@@ -35,13 +42,14 @@
 
     <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Secular+One" rel="stylesheet">
 
 </head>
 
 <body>
 
-    <div class="container-fluid">
-        <div class="row">
+    <div>
+   
             <!--top brand row-->
             <div class="col-md-12 col-sm-12 col-xs-12 margin0 header-address">
                 <div class="col-md-1 col-sm-1 col-xs-1 pull-right padding0 brand-cat">
@@ -58,11 +66,11 @@
                     <div class="row">
                     <div class="col-md-12 header">
 
-                        <div class="col-md-4 col-sm-4 col-xs-12 pull-right date-wrapper">
-                            <date><span class="poster-date">12/2/17</span></br><span class="poster-hour">18:00</span></date>
+                        <div class="col-md-4 col-sm-4 col-xs-12 pull-right date-wrapper animate-container animated wow zoomIn">
+                            <date><span class="poster-date ">12/2/17</span></br><span class="poster-hour">18:00</span></date>
                             <p class="poster-location">נפגשים מול בניס ליד הצב</p>
                         </div>
-                        <div class="col-md-8 col-sm-8 col-xs-12 pull-right content-wrapper">
+                        <div class="col-md-8 col-sm-8 col-xs-12 pull-right content-wrapper animate-container animated wow bounceIn">
                             <h2> <span class="title-part-1">
                        מיפגש
                                 </span>
@@ -80,7 +88,7 @@
             </section>
             <!--map-->
             <section>
-                <div class="row">
+                <div>
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper " >
                             <img src="images/map_midrechov.svg" alt="map">
@@ -119,7 +127,7 @@
                                             {{#equal cells.position_group 'group2'}}
                                             <li class="open {{cells.action}} pull-right">
                                                 <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
-                                       <span class="icon {{cells.icon}}"></span>
+                                       <span class="{{cells.icon}}"></span>
                                        <strong class="business-name">{{cells.business_name}}</strong> </a>
                                             </li>
                                             {{/equal}}
@@ -200,6 +208,24 @@
                                     </ul>
                                 </nav>
                             </div>
+
+                            <!-- block7 -->
+
+                            <div class="business-map position7 buisness-tabs lengthwise-icon left-icon">
+                                <nav class="nav-sidebar">
+                                    <ul id="biz7" class="nav tabs">
+                                        <script id="biz7-template" type="text/x-handlebars-template">
+                                            {{#equal cells.position_group 'group7'}}
+                                            <li class="open {{cells.action}}">
+                                                <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
+                                    <span class="icon {{cells.icon}}"></span>
+                                    <strong class="business-name">{{cells.business_name}}</strong> </a>
+                                            </li>
+                                            {{/equal}}
+                                        </script>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                         <!--street info-->
 
@@ -223,7 +249,7 @@
                                         <div class="picture-ïnfo">
                                             <span class="fa fa-info icon"></span>
                                             <p>
-                                                הפאב השכונתי "בניס". שותים בירה וסיידר בדברים עם חברים ומשחקים עם הילדים בשישי בצהריים.
+                                            הפאב השכונתי "בניס"
                                             </p>
                                         </div>
                                         <img src="images/gallery/gal-s-1.jpg">
@@ -246,17 +272,17 @@
                                         <div class="picture-ïnfo">
                                             <span class="fa fa-info icon"></span>
                                             <p>
-                                                הרבה קשתות? כמה בדיוק? למה קשתות? ומה עושים עם זה?
+                                                הומיז, אחד המקומות שעושים את כפר סבא
                                             </p>
                                         </div>
-                                        <img src="images/gallery/gal-s-3.jpg">
+                                        <img src="images/gallery/homies.jpg">
                                     </div>
                                     <!--picture-unit 4-->
                                     <div class="picture-unit">
                                         <div class="picture-ïnfo">
                                             <span class="fa fa-info icon"></span>
                                             <p>
-                                                צב! איך קוראים לו? מי ברא אותו? מטפסים עליו הרבה, הוא זז, אבל ממש לאט.
+                                         צב!
                                             </p>
                                         </div>
                                         <img src="images/gallery/gal-s-4.jpg">
@@ -269,7 +295,7 @@
                                         <div class="picture-ïnfo">
                                             <span class="fa fa-info icon"></span>
                                             <p>
-                                                מתקנים כאן גיטרות וכלי מיטר נוספים, יש גם שיעורי מוזיקה
+                                                תיקוני כלי נגינה ושיעורי נגינה
                                             </p>
                                         </div>
                                         <img src="images/gallery/gal-s-5.jpg">
@@ -279,7 +305,7 @@
                                         <div class="picture-ïnfo">
                                             <span class="fa fa-info icon"></span>
                                             <p>
-                                                אחד המקומות האיכותיים בכפר סבא לקניית כל מיני דברים בריאים וטעימים.
+                                                מגיעים במיוחד כדי לקנות פיצוחים טריים
                                             </p>
                                         </div>
                                         <img src="images/gallery/gal-s-6.jpg">
@@ -327,7 +353,7 @@
                         <!--business info-->
 
 
-                        <div class="col-md-4  col-sm-4 col-xs-12 business-info-wrapper landscape-12">
+                        <div id="business_info_wrapper"class="col-md-4  col-sm-4 col-xs-12 business-info-wrapper landscape-12">
 
                             <ul id="business_info" class="tab-content">
                               
@@ -352,8 +378,8 @@
                                               <div class="col-md-12 col-xs-12 text-community ">
                                                 <p>
                                                     <img src='{{cells.profile_image}}' class="hidden-md hidden-sm hidden-lg ">
-                                                    <span class="i i-fire2"></span>
-                                                   <span  class="{{cells.action}}"> {{cells.campaing_string}}</span>
+                                                    <span class="{{cells.action}}"></span>
+                                                   <span> {{cells.campaing_string}}</span>
                                                     <a href="{{cells.cross_campaign_link}}">{{cells.cross_campaign_partner}}</a>
                                                 </p>
                                             </div>
@@ -387,12 +413,24 @@
                                                 </p>
                                             </div>
 
-                                        <div class="col-md-12 features margin1 hidden-xs">
-                                            <div class="col-md-2 feature pull-right">כשר</div>
-                                            <div class="col-md-2 feature pull-right">נחמדים לילדים</div>
-                                            <div class="col-md-2 feature pull-right">נגיש לכיסא גלגלים</div>
-                                            <div class="col-md-2 feature pull-right">יש מישלוחים</div>
-                                            <div class="col-md-2 feature pull-right">הרבה צל</div>
+                                        <div class="col-md-12 margin1 hidden-xs">
+                                            <div class="feature pull-right">
+                                      <img src="images/my-icons/kosher.svg">
+                                      <span class ="description"> כשר</span>
+                                            </div>
+                                            <div class=" feature pull-right"><img src="images/my-icons/Children.svg">
+                                                    <span class ="description">נחמדים לילדים</span>
+                                            </div>
+                                            <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg">
+                                                    <span class ="description">נגיש</span>
+                                            </div>
+                                            <div class="feature pull-right"><img src="images/my-icons/Scooter.svg">
+                                                    <span class ="description">יש מישלוחים</span>
+                                            </div>
+                                            <div class="feature pull-right">
+                                            <img src="images/my-icons/Sun.svg">
+                                            <span class ="description" > הרבה צל</span>
+                                              </div>
 
                                         </div>
                                         <div class="col-md-12 margin2">
@@ -412,7 +450,7 @@
                     </div>
             </section>
             </div>
-        </div>
+
         
         <!-- database connection -->
         <script src="render_templates.js"></script>

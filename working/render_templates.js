@@ -15,6 +15,7 @@ var biz3_template = Handlebars.compile($('#biz3-template').html());
 var biz4_template = Handlebars.compile($('#biz4-template').html());
 var biz5_template = Handlebars.compile($('#biz5-template').html());
 var biz6_template = Handlebars.compile($('#biz6-template').html());
+var biz7_template = Handlebars.compile($('#biz7-template').html());
 $('#biz').sheetrock({
     url: mySpreadsheet,
     rowTemplate: biz_template,
@@ -40,6 +41,10 @@ $('#biz5').sheetrock({
 $('#biz6').sheetrock({
     url: mySpreadsheet,
     rowTemplate: biz6_template
+});
+$('#biz7').sheetrock({
+    url: mySpreadsheet,
+    rowTemplate: biz7_template
 });
 // business_info
 var business_info_template = Handlebars.compile($('#business-info-template').html());

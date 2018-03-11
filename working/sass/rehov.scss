@@ -4,16 +4,41 @@ $secondary: #ff3c00;
 $theme-color2:#42709e;
 $theme-color2-bright:#d9f4ff;
 $yellow:#fdc415;
+$pink:#FD1576;
 $text1:#fff;
 $text2:#000;
 $brand:#000;
-
-
 // media variable
 $break-xs: 450px;
 $break-sm: 568px;
 $break-md: 768px;
 $break-lg: 1200px;
+section{
+/* width */
+
+::-webkit-scrollbar {
+    width: 20px;
+    @media screen and (max-width: $break-xs) { width: 5px; }
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $secondary; 
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $theme-color2; 
+}
+}
+
 
 // mixing
 
@@ -130,6 +155,7 @@ transition-timing-function: ease-out;
 
 //visibility - info colun
 
+
 .xs-visibity{
 &.visibityclose {
 @media screen and (max-width: $break-xs), screen and (max-width: $break-md) and (orientation: landscape) { display: none; }
@@ -181,7 +207,7 @@ padding:0 0 0 0;
 @media  screen and (max-width: $break-md) and (orientation: landscape) { .landscape-6 { width: 50% } .landscape-12{ width: 96%; }}
 
 /* \/\/--- Jeneral ---\/\/ */
-.display_none{ display: none !important; }
+.display_none { display: none!important; }
 
 body {  direction:rtl; text-align: right;  font-family: $font-stack; }
 
@@ -213,7 +239,7 @@ border-left: 19px solid $theme-color2-bright;
 
 // cursor
 .dragscroll{
-cursor:url(../images/Cat-Track-icon.png), auto; 
+cursor: url(../images/Cat-Track-icon.png), auto; 
 overflow: scroll;
 }
 a, button {
@@ -257,9 +283,11 @@ background-repeat: no-repeat;
   }
   .header {
     .content-wrapper{
+      animation-delay:.3s;
     @media  screen and (max-width: $break-md) and (orientation: landscape) {
     width: 50%;
-    }
+   
+     }
    }
   }
 
@@ -464,51 +492,51 @@ padding: 10px;
 
 //  lengthwise-icons
 &.lengthwise-icon{
-&.right-icon{
-li{
-&.action{
-&:hover{
-&:after{
-top: 9px;
-right: -22px;
-}
-}
-&:after{
-top: 13px;
-right: -15px;
-}
-}
-a span.icon{
-float: right;
-right: -5px;
+    &.right-icon{
+      li{
+        &.action{
+          &:hover{
+            &:after{
+            top: 9px;
+            right: -22px;
+            }
+        }
+      &:after{
+      top: 13px;
+      right: -15px;
+      }
+    }
+    a span.icon{
+    float: right;
+    right: -5px;
 
-}
-}
-}
+    }
+    }
+    }
 
-&.left-icon{
-li{
-margin-bottom: 10px;
-&.action{
-&:hover{
-&:after{
-top: 9px;
-right:auto;
-left:-17px;
-}
-}
-&:after{
-top: 13px;
-right:auto;
-left: -13px;
-}
-}
-a span.icon{
-float: left;
-right: 5px;
+      &.left-icon{
+      li{
+      margin-bottom: 10px;
+      &.action{
+      &:hover{
+      &:after{
+      top: 9px;
+      right:auto;
+      left:-17px;
+      }
+      }
+    &:after{
+    top: 13px;
+    right:auto;
+    left: -13px;
+    }
+    }
+    a span.icon{
+    float: left;
+    right: 5px;
 
-}
-}
+    }
+  }
 }
 
 }
@@ -572,10 +600,16 @@ a{
 padding-top: 0px;
 }
 &.action{
+  &:after{
+    top: -23px;
+    right: 18px;
+
+    }
 &:hover{
 &:after{
 top: -23px;
-right: 13px
+right: 13px;
+
 }
 }
 &:after{
@@ -628,7 +662,11 @@ top: 486px;
 right: 925px;
 }
 
-
+  &.position7{
+    top: 1400px;
+    right: 35px;
+    }
+  
 @media screen and (max-width: $break-xs) {
 right: 10px;
 }
@@ -647,44 +685,38 @@ background-color: #0b3967;
 
 
 &.action{
+  &.campaign:after{ content: '\e000'; background-color: $yellow;}
+  &.party:after{ content: '\78'  ; background-color : $pink ; }
+  &:after{
+    font-family: st;
+    font-size: 18px;
+    color: #ffffff;
+    position: absolute;
+    top: 13px;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    border-radius: 50%;
+    -webkit-transition-property: height,width,top,font-size;
+    -moz-transition-property: height,width,top,font-size;
+    -o-transition-property: height,width,top,font-size;
+    transition-property:height,width,top,font-size;
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
 
-&:hover{
 
-&:after{
-height: 35px;
-width: 35px;
-font-size: 25px;
-top: 9px;
-background: $secondary;
-}
+      }
+      &:hover{
+              &:after{
+              height: 35px;
+              width: 35px;
+              font-size: 25px;
+              top: 9px;
+              }
 
-}
-&:after{
--webkit-transition-property:background,height,width,right,top,font-size;
--moz-transition-property: background,height,width,right,top,font-size;
--o-transition-property: background,height,width,right,top,font-size;
-transition-property: background,height,width,right,top,font-size;
--webkit-transition-duration: .3s;
--moz-transition-duration: .3s;
--o-transition-duration: .3s;
-transition-duration: .3s;
--webkit-transition-timing-function: ease-out;
--moz-transition-timing-function:  ease-out;
--o-transition-timing-function:  ease-out;
-transition-timing-function:  ease-out;
-font-family: st;
-content: '\e000';
-font-size: 18px;
-color: #ffffff;
-position: absolute;
-top: 13px;
-height: 25px;
-width: 25px;
-text-align: center;
-border-radius: 50%;
-background-color: $yellow;
-
-}
+        }
 }
 a{
 @include shadow;
@@ -731,7 +763,10 @@ transition-timing-function:  ease-out;
 
 
 // business-info
-.business-info-wrapper{
+
+#business_info_wrapper.business-info-wrapper{
+  position: relative; 
+  padding-right: 0;
 ul {padding: 0;}
 .tab-pane{
 position: relative; 
@@ -825,11 +860,28 @@ border: 3px solid $theme-color2-bright;
 padding: 15px;
 margin-top: 20px;
 background-color: #fff;
-font-size:18px;
+p { 
+  font-size:18px;
 
+}
 
-span.i{
-color:$yellow;
+.action{
+    &.campaign{
+    &:before{
+    font-family: st;
+    font-size: 18px;
+    content: '\e000';
+    color:$yellow
+  } 
+  }
+ &.party{
+    &:before{
+    font-family: st;
+    font-size: 18px;
+    content: '\78';
+    color:$pink
+  } 
+  }
 }
 img{
 width: 40px;
@@ -838,46 +890,66 @@ width: 40px;
 }
 
 .opening-hours{  
-
-.open-close{
-font-size:30px;
-text-align: right;
-line-height: 40px;
-
-  @media screen and (max-width: $break-xs) {
-padding: 0;
-margin: 10px 0;
-
-text-align: right;
-
-border-bottom: 1px solid $theme-color2-bright;
-}
-
-
-}
-.opening-hours-info{
-@media screen and (max-width: $break-xs) {
-padding: 0;
-
-}
-}
-@media screen and (max-width: $break-xs) {
-p{font-size: 1.2em;
-line-height: 1.2em;
-} 
-}
+  .open-close{
+  font-size:30px;
+  text-align: right;
+  line-height: 40px;
+    @media screen and (max-width: $break-xs) {
+    padding: 0;
+    margin: 10px 0;
+    text-align: right;
+    border-bottom: 1px solid $theme-color2-bright;
+    }
+  }
+    .opening-hours-info{
+      p { font-size: 18px; }
+    @media screen and (max-width: $break-xs) { padding: 0; }
+    }
+    @media screen and (max-width: $break-xs) {
+    p{ font-size: 1.2em; line-height: 1.2em; } 
+    }
 }  
+
 .feature{
-height: 68px;
 color: $text2;
 background-color: $theme-color2-bright;
 margin-left: 1%;
-width: 19%;
 text-align: center;
 font-size: 1.3em;
 line-height: 1.3em;
-padding: 10px 10px;
+padding: 10px 2px;
+width: 19%;
+height: 50px;
 
+
+@media screen and (max-width: $break-lg) {
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+cursor: url(../images/info.png), auto;
+.description {
+  display:none;
+  color: transparent;
+
+}
+img{
+  color:#000;
+  -webkit-transition: color .3s ease-in-out;
+  -moz-transition: color .3s ease-in-out;
+  -o-transition: color .3s ease-in-out;
+  transition: color .3s ease-in;
+  height: 30px;
+ }
+
+&:hover { 
+  img { color: transparent; display: none; }
+  .description { display:block; color: #000;}
+  @media screen and (max-width: $break-lg) {
+    height: 68px;
+  }
+  
+ }
 
 }
 
@@ -886,7 +958,7 @@ padding: 10px 10px;
 text-align: center;
 line-height: 68px;        
 height: 70px;
-width: 40%;
+width: 100%;
 font-size: 40px;
 border: 3px solid $theme-color2;
 background:#fff;
@@ -915,6 +987,7 @@ transition-timing-function: linear;
   background-color:$theme-color2;
   color:$text1;
   text-decoration: none;
+
   }
 
 }
@@ -960,6 +1033,7 @@ height: 40px;
 width: 40px;
 opacity: 1;
 float:left;
+border: 3px solid $secondary;
 }
 h2{
 @media screen and (max-width: $break-xs){

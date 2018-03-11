@@ -33,12 +33,6 @@ $('.open-campaign-info').click(function () {
 });
 
 
-// close button
-$('.close').click(function () {
-    $('.business-info-wrapper').addClass('display_none');
-    $('.xs-visibity').removeClass('visibityopen');
-
-});
 
 function myFunction() {
     document.getElementById("map").style.overflow = "scroll";
@@ -71,13 +65,15 @@ $('.open-campaign-info').click(function () {
 });
 
 
+
+function myFunction() {
+    document.getElementById("map").style.overflow = "scroll";
+}
+
+
 // close button
 $('.close').click(function () {
     $('.business-info-wrapper').addClass('display_none');
     $('.xs-visibity').removeClass('visibityopen');
 
 });
-
-function myFunction() {
-    document.getElementById("map").style.overflow = "scroll";
-}
