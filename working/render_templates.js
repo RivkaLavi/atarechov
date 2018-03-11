@@ -1,4 +1,4 @@
-var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/1bKSwg7AncfiV6KZKO8b-IaqVdgMe9doLWJdxkY7QMto/edit#gid=0';
+var mySpreadsheet = 'https://docs.google.com/spreadsheets/d/13GF2bPo1B7ayrJiSc2shi5M4dmII3tgaLhqzovOok_o/edit#gid=0';
 Handlebars.registerHelper('equal', function (lvalue, rvalue, options) {
     if (arguments.length < 3)
         throw new Error("Handlebars Helper equal needs 2 parameters");
