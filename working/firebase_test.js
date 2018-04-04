@@ -5,18 +5,40 @@ var config = {
 };
 firebase.initializeApp(config);
 
-var businesses = document.getElementById('businesses');
-var ref = firebase.database().ref().child('businesses').child('data');
-
-ref.on('value', function(snapshot) {
-  snapshot.forEach(function(childSnapshot) {
-    var childKey = childSnapshot.key;
-    var childData = childSnapshot.val();
-    //console.log(childKey);
-    //console.log(childData);
-    var node = document.createElement("li");
-    node.className="collection-repeat";
-    node.textContent = JSON.stringify(childSnapshot.val(), null, 2);
-    businesses.appendChild(node)
-  });
+/*
+// On document ready:
+document.addEventListener('DOMContentLoaded', function() {
+    var source   = document.getElementById("entry-template").innerHTML;
+    var template = Handlebars.compile(source);
+    var context = {title: "My New Post", body: "This is my first post!"};
+    var html    = template(context);
+    var parser = new DOMParser();
+    var convertedHtml = parser.parseFromString(html, 'text/xml');
+    document.getElementById("entry-template").parentElement.appendChild(convertedHtml.documentElement);
 });
+*/
+
+var source = document.getElementById("biz-template").innerHTML;
+var template = Handlebars.compile(source);
+// From https://bit.ly/2Ejxtxo
+function snapshotToArray(snapshot) {
+    var returnArr = [];
+    snapshot.forEach(function(childSnapshot) {
+        var item = childSnapshot.val();
+        item.key = childSnapshot.key;
+        returnArr.push(item);
+    });
+    return returnArr;
+};
+
+var ref = firebase.database().ref().child('businesses').child('data');
+ref.on('value', function(snapshot) {
+  var biz = {business: snapshotToArray(snapshot)};
+  var html = template(biz);
+  //console.log(html)
+  var parser = new DOMParser();
+  var convertedHtml = parser.parseFromString(html, 'text/xml');
+  //console.log(convertedHtml.documentElement);
+  document.getElementById("biz-template").parentElement.appendChild(convertedHtml.documentElement);
+});
+

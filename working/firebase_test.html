@@ -2,9 +2,21 @@
   <head>
     <meta charset="utf-8"/>
     <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <title>Firebase example</title>
   </head>
   <body>
+  <script id="biz-template" type="text/x-handlebars-template">
+		<ul id="biz" class="nav tabs">
+			{{#each business}}
+			<li class="{{this.action}} open">
+				<a href="#{{this.tab_link}}" data-toggle="tab"  title="{{this.business_name}}">
+				<span class="icon {{this.icon}}"></span>
+				<strong>{{business_name}}</strong> </a>
+			</li>
+			{{/each}}
+		</ul>
+  </script>
     <pre id="businesses"></pre>
     <script src="firebase_test.js"></script>
   </body>
