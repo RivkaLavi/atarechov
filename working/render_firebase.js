@@ -5,23 +5,6 @@ var config = {
 };
 firebase.initializeApp(config);
 
-/*
-// On document ready:
-document.addEventListener('DOMContentLoaded', function() {
-  var source   = document.getElementById("entry-template").innerHTML;
-  var template = Handlebars.compile(source);
-  var context = {title: "My New Post", body: "This is my first post!"};
-  var html    = template(context);
-  var parser = new DOMParser();
-  var convertedHtml = parser.parseFromString(html, 'text/xml');
-  document.getElementById("entry-template").parentElement.appendChild(convertedHtml.documentElement);
-});
-*/
-
-var mapTemplate = document.getElementById("map-template");
-var source = mapTemplate.innerHTML;
-var template = Handlebars.compile(source);
-
 // From https://bit.ly/2Ejxtxo
 function snapshotToArray(snapshot) {
   var returnArr = [];
@@ -55,17 +38,30 @@ function changeClasses(error, options, response) {
 
 var observer = new MutationObserver(changeClasses);
 
+var mapTemplate = document.getElementById("map-template");
+var mapSource = mapTemplate.innerHTML;
+var compiledMapTemplate = Handlebars.compile(mapSource);
+
+// business_info
+var bizTemplate = document.getElementById("business-info-template");
+var bizSource = bizTemplate.innerHTML;
+var compiledBizTemplate = Handlebars.compile(bizSource);
+
 var ref = firebase.database().ref().child('businesses').child('data');
 ref.once('value', function(snapshot) {
   var list = snapshotToArray(snapshot);
   var biz = {business: list};
   var prep_biz = prearePositionGroups(list);
-  //console.log(prep_biz);
-  var html = template(prep_biz);
-  //console.log(html)
+  var mapHtml = compiledMapTemplate(prep_biz);
+  //console.log(mapHtml)
+  var bizHtml = compiledBizTemplate({biz_info: list});
+  //console.log(bizHtml)
   var parser = new DOMParser();
-  var convertedHtml = parser.parseFromString(html, 'text/xml');
+  var convertedMapHtml = parser.parseFromString(mapHtml, 'text/xml');
+  var convertedBizHtml = parser.parseFromString(bizHtml, 'text/xml');
   var mapTemplateParent = mapTemplate.parentElement;
+  var bizTemplateParent = bizTemplate.parentElement;
   observer.observe(mapTemplateParent, {childList: true});
-  mapTemplateParent.appendChild(convertedHtml.documentElement);
+  mapTemplateParent.appendChild(convertedMapHtml.documentElement);
+  bizTemplateParent.appendChild(convertedBizHtml.documentElement);
 });

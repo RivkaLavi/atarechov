@@ -246,7 +246,7 @@
                     <p> היום פיצות לוהטות במיוחד. על כל פיצה משפחתית הנחה של עשרה שקלים <a href=" ">במיספרה של דורון</a> </p>
                   </li>
                 </script>
-                <li class="campaign-unit margin1"> <img src='images/pizza-zigi/portrait.jpg' class="">
+                <li class="campaign-unit margin1"> <img src='images/business/zigimashroom/portrait.jpg' class="">
                   <h3><a href=" ">המיספרה של דורון</a></h3>
                   <p> אכלתם אצל זיגי פיצה משפחתית? בואו לקבל 10 שקלים הנחה על כל התיספורות לכל המשפחה </p>
                 </li>
@@ -255,55 +255,92 @@
           </div>
           <!--end-campaign-info-wrapper-->
           <!--business info-->
-          <div id="business_info_wrapper" class="col-md-4  col-sm-4 col-xs-12 business-info-wrapper landscape-12">
-            <ul id="business_info" class="tab-content">
-              <script id="business-info-template" type="text/x-handlebars-template">
-                <li class="tab-pane text-style" id="{{cells.tab_link}}">
-                  <div class="hidden-md hidden-sm hidden-lg "> <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button> </div> <img src='{{cells.street_view}}'>
-                  <div class="hidden-xs portrait pull-right  "> <img src='{{cells.profile_image}}' class="img-circle"> </div>
-                  <h2>{{cells.business_name}}</h2>
-                  <div class="col-md-12 col-xs-12 contact-wrapper padding0"> <address>
-                                                <div class="col-md-7 col-xs-12 landscape-6">
-                                                    <span class="street-num pull-right">{{cells.address_num}}</span><span class="street">{{cells.address_street}}</span>                                                    </div>
-                                                <div class="col-md-5 col-xs-12 landscape-6"> <a href="#{{cells.business_phone}}"><span class="icon fa fa-mobile" aria-hidden="true"></span> {{cells.business_phone}}</a></div>
-                                            </address> </div>
-                  <div class="col-md-12 col-xs-12 text-community ">
-                    <p> <img src='{{cells.profile_image}}' class="hidden-md hidden-sm hidden-lg "> <span class="{{cells.action}}"></span> <span> {{cells.campaing_string}}</span> <a href="{{cells.cross_campaign_link}}">{{cells.cross_campaign_partner}}</a> </p>
-                  </div>
-                  <div class="col-md-12 col-xs-12 opening-hours-info">
-                    <h2 class="open-close">פתוח עכשיו</h2>
-                    <p> <span class="day">
-                                            ראשון - חמישי :
-                                     </span> <span class="hours">
-                                                        {{cells.opening_hours_su_th}}
-                                     </span> </p>
-                    <p> <span class="day">
-                                           שישי :
-                                     </span> <span class="hours">
-                                                        {{cells.opening_hours_fr}}
-                                     </span> </p>
-                    <p> <span class="day">
-                                          שבת :
-                                     </span> <span class="hours">
-                                                        {{cells.opening_hours_sa}}
-                                     </span> </p>
-                  </div>
-                  <div class="col-md-12 margin1 hidden-xs">
-                    <div class="feature pull-right"> <img src="images/my-icons/kosher.svg"> <span class="description"> כשר</span> </div>
-                    <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> <span class="description">נחמדים לילדים</span> </div>
-                    <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> <span class="description">נגיש</span> </div>
-                    <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> <span class="description">יש מישלוחים</span> </div>
-                    <div class="feature pull-right"> <img src="images/my-icons/Sun.svg"> <span class="description"> הרבה צל</span> </div>
-                  </div>
-                  <div class="col-md-12 margin2"> <a class="col-md-5 social pull-right fa fa-facebook" href="{{cells.facebook_link}}" title="facebook">
-                                                </a>
-                    <div class="col-md-2 external-link"> </div>
-                  </div>
-                </li>
-              </script>
-            </ul>
+   <div id="business_info_wrapper" class="col-md-4  col-sm-4 col-xs-12 business-info-wrapper landscape-12">
+    <script id="business-info-template" type="text/x-handlebars-template">
+    <ul id="business_info" class="tab-content">
+      {{#each biz_info}}
+      <li class="tab-pane text-style" id="{{this.tab_link}}">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
           </div>
-        </div>
+          <img src='{{this.street_view}}'> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src='{{this.profile_image}}' class="img-circle"> </img>
+          </div>
+          <h2>{{this.business_name}}</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">{{this.address_num}}</span><span class="street">{{this.address_street}}</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#{{this.business_phone}}"><span class="icon fa fa-mobile" aria-hidden="true"></span> {{this.business_phone}}</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src='{{this.profile_image}}' class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class="{{this.action}}"></span>
+                     <span> {{this.campaing_string}}</span>
+                      <a href="{{this.cross_campaign_link}}">{{this.cross_campaign_partner}}</a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          {{this.opening_hours_su_th}}
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          {{this.opening_hours_fr}}
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          {{this.opening_hours_sa}}
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class ="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class ="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class ="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class ="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class ="description" > הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="{{this.facebook_link}}"  title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+    {{/each}}
+    </ul>
+  </script>
+  </div>
+      </div>
     </section>
     </div>
     <!-- database connection -->
