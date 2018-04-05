@@ -67,49 +67,57 @@
     <section>
       <div>
         <div class="col-md-12 col-sm-12 col-xs-12">
-          <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper "> <img src="images/map_midrechov.svg" alt="map">
-            <div class="street-info"> <button type="button" formaction="#street-info" class="open-info-street">
-                                 <span class="fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab"></i>
-                               </button> <button type="button" formaction="#campaign-info" class="open-campaign-info">
-                              <span class="icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab"></i>
-                             </button> </div>
+        <script id="map-template" type="text/x-handlebars-template">
+          <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper ">
+          <img src="images/map_midrechov.svg" alt="map"> </img>
+          <div class="street-info">
+            <button type="button" formaction="#street-info" class="open-info-street">
+              <span class="fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
+              </span></button>
+              <button type="button" formaction="#campaign-info" class="open-campaign-info">
+                <span class="icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab">
+                </span></button>
+          </div>
             <table id="business_details" class="table table-condensed table-striped"></table>
             <!-- block1 -->
             <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
               <nav class="nav-sidebar">
                 <ul id="biz" class="nav tabs">
-                  <script id="biz-template" type="text/x-handlebars-template">
-										<ul id="biz" class="nav tabs">
-											{{#each group1}}
-											<li class="{{this.action}} open">
-												<a href="#{{this.tab_link}}" data-toggle="tab"  title="{{this.business_name}}">
-												<span class="icon {{this.icon}}"></span>
-												<strong>{{this.business_name}}</strong> </a>
-											</li>
-											{{/each}}
-										</ul>
-                    </script>
+                  {{#each group1}}
+                  <li class="{{this.action}} open">
+                    <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                    <span class="icon {{this.icon}}"></span>
+                    <strong>{{this.business_name}}</strong> </a>
+                  </li>
+                  {{/each}}
+                </ul>
               </nav>
             </div>
             <!-- block2 -->
-            <div class="business-map position2 buisness-tabs crosswise-icon  bottom-icon">
+						<div class="business-map position2 buisness-tabs crosswise-icon bottom-icon">
               <nav class="nav-sidebar">
                 <ul id="biz2" class="nav tabs width441">
-                  <script id="biz2-template" type="text/x-handlebars-template"> {{#equal cells.position_group 'group2'}}
-                    <li class="open {{cells.action}} pull-right"> <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
-                                       <span class="{{cells.icon}}"></span>
-                                       <strong class="business-name">{{cells.business_name}}</strong> </a> </li> {{/equal}} </script>
+                    {{#each group2}}
+                    <li class="open {{this.action}} pull-right">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="{{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
                 </ul>
               </nav>
             </div>
             <!-- block3 -->
-            <div class="business-map position3 buisness-tabs lengthwise-icon left-icon">
+						<div class="business-map position3 buisness-tabs lengthwise-icon left-icon">
               <nav class="nav-sidebar">
                 <ul id="biz3" class="nav tabs">
-                  <script id="biz3-template" type="text/x-handlebars-template"> {{#equal cells.position_group 'group3'}}
-                    <li class="open {{cells.action}}"> <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
-                                      <span class="icon {{cells.icon}}"></span>
-                                      <strong class="business-name">{{cells.business_name}}</strong> </a> </li> {{/equal}} </script>
+                    {{#each group3}}
+                    <li class="open {{this.action}}">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="icon {{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
                 </ul>
               </nav>
             </div>
@@ -117,10 +125,13 @@
             <div class="business-map position4 buisness-tabs lengthwise-icon right-icon">
               <nav class="nav-sidebar">
                 <ul id="biz4" class="nav tabs">
-                  <script id="biz4-template" type="text/x-handlebars-template"> {{#equal cells.position_group 'group4'}}
-                    <li class="open {{cells.action}}"> <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
-                                  <span class="icon {{cells.icon}}"></span>
-                                  <strong class="business-name">{{cells.business_name}}</strong> </a> </li> {{/equal}} </script>
+                    {{#each group4}}
+                    <li class="open {{this.action}}">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="icon {{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
                 </ul>
               </nav>
             </div>
@@ -128,10 +139,13 @@
             <div class="business-map position5 buisness-tabs crosswise-icon  top-icon">
               <nav class="nav-sidebar">
                 <ul id="biz5" class="nav tabs width560">
-                  <script id="biz5-template" type="text/x-handlebars-template"> {{#equal cells.position_group 'group5'}}
-                    <li class="open {{cells.action}} pull-right"> <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
-                                  <span class="icon {{cells.icon}}"></span>
-                                  <strong class="business-name">{{cells.business_name}}</strong> </a> </li> {{/equal}} </script>
+                    {{#each group5}}
+                    <li class="open {{this.action}} pull-right">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="icon {{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
                 </ul>
               </nav>
             </div>
@@ -139,10 +153,13 @@
             <div class="business-map position6 buisness-tabs lengthwise-icon left-icon">
               <nav class="nav-sidebar">
                 <ul id="biz6" class="nav tabs">
-                  <script id="biz6-template" type="text/x-handlebars-template"> {{#equal cells.position_group 'group6'}}
-                    <li class="open {{cells.action}}"> <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
-                                  <span class="icon {{cells.icon}}"></span>
-                                  <strong class="business-name">{{cells.business_name}}</strong> </a> </li> {{/equal}} </script>
+                    {{#each group6}}
+                    <li class="open {{this.action}}">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="icon {{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
                 </ul>
               </nav>
             </div>
@@ -150,15 +167,19 @@
             <div class="business-map position7 buisness-tabs lengthwise-icon left-icon">
               <nav class="nav-sidebar">
                 <ul id="biz7" class="nav tabs">
-                  <script id="biz7-template" type="text/x-handlebars-template"> {{#equal cells.position_group 'group7'}}
-                    <li class="open {{cells.action}}"> <a href="#{{cells.tab_link}}" data-toggle="tab" title="{{cells.business_name}}">
-                                    <span class="icon {{cells.icon}}"></span>
-                                    <strong class="business-name">{{cells.business_name}}</strong> </a> </li> {{/equal}} 
-                </script>
+                    {{#each group7}}
+                    <li class="open {{this.action}}">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="icon {{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
                 </ul>
               </nav>
             </div>
           </div>
+        </script>
+       </div>
           <!--street info-->
           <div class="col-md-4  col-sm-4 col-xs-12  street-info-wrapper landscape-12 padding0 xs-visibity visibityclose" id="street-info">
             <div class="hidden-md hidden-sm hidden-lg "> <button type="button" class="close top-close" title="סגירה">
