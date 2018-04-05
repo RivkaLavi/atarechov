@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 */
 
-var source = document.getElementById("biz-template").innerHTML;
+var bizTemplate = document.getElementById("biz-template");
+var source = bizTemplate.innerHTML;
 var template = Handlebars.compile(source);
 
 // From https://bit.ly/2Ejxtxo
@@ -43,6 +44,17 @@ function prearePositionGroups(bizArray) {
   return rv;
 };
 
+function changeClasses(error, options, response) {
+  console.log('After Load');
+	var openClasses = $('li.open').click(function () {
+		$('.business-info-wrapper').removeClass('display_none');
+		$('.street-info-wrapper').addClass('display_none');
+		$('.campaign-info-wrapper').addClass('display_none');
+	});
+}
+
+var observer = new MutationObserver(changeClasses);
+
 var ref = firebase.database().ref().child('businesses').child('data');
 ref.once('value', function(snapshot) {
   var list = snapshotToArray(snapshot);
@@ -50,8 +62,10 @@ ref.once('value', function(snapshot) {
   var prep_biz = prearePositionGroups(list);
   //console.log(prep_biz);
   var html = template(prep_biz);
-  console.log(html)
+  //console.log(html)
   var parser = new DOMParser();
   var convertedHtml = parser.parseFromString(html, 'text/xml');
-  document.getElementById("biz-template").parentElement.appendChild(convertedHtml.documentElement);
+  var bizTemplateParent = bizTemplate.parentElement;
+  observer.observe(bizTemplateParent, {childList: true});
+  bizTemplateParent.appendChild(convertedHtml.documentElement);
 });
