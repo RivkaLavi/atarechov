@@ -18,8 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 */
 
-var bizTemplate = document.getElementById("biz-template");
-var source = bizTemplate.innerHTML;
+var mapTemplate = document.getElementById("map-template");
+var source = mapTemplate.innerHTML;
 var template = Handlebars.compile(source);
 
 // From https://bit.ly/2Ejxtxo
@@ -65,7 +65,7 @@ ref.once('value', function(snapshot) {
   //console.log(html)
   var parser = new DOMParser();
   var convertedHtml = parser.parseFromString(html, 'text/xml');
-  var bizTemplateParent = bizTemplate.parentElement;
-  observer.observe(bizTemplateParent, {childList: true});
-  bizTemplateParent.appendChild(convertedHtml.documentElement);
+  var mapTemplateParent = mapTemplate.parentElement;
+  observer.observe(mapTemplateParent, {childList: true});
+  mapTemplateParent.appendChild(convertedHtml.documentElement);
 });
