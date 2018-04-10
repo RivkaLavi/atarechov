@@ -1,4 +1,4 @@
-function myFunction(){
+function bizInfoScroller(){
     var element = document.getElementById("business_info_wrapper");
     var desiredPosition = 300;
     if(window.pageYOffset >= desiredPosition){
