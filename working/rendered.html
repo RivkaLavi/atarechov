@@ -1,0 +1,3693 @@
+﻿<html lang="he"><head>
+  <title>Midrachov Kfar Saba מדרחוב ירושלים כפר סבא</title>
+  <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="images/icon-fire.png">
+  <link rel="apple-touch-icon" sizes="48x48" href="48x48.png">
+  <link rel="apple-touch-icon" sizes="32x32" href="32x32.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--styles-->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="css/animate.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/rehov.css">
+  <link rel="stylesheet" href="css/street.css">
+  <!--script -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
+  <script type="text/javascript" src="js/scroll.js"></script>
+  <script type="text/javascript">
+    window.onscroll = myFunction; //calling myFunction each time we scroll
+  </script>
+  <!--fonts-->
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link href="https://fonts.googleapis.com/css?family=Assistant" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Secular+One" rel="stylesheet">
+</head>
+
+<body>
+  <div>
+    <!--top brand row-->
+    <div class="col-md-12 col-sm-12 col-xs-12 margin0 header-address">
+      <div class="col-md-1 col-sm-1 col-xs-1 pull-right padding0 brand-cat"> <img src="images/cat.svg" alt="logo"> </div>
+      <div class="col-md-11 col-sm-11 col-xs-11 pull-right">
+        <h1 class="main-address  pull-right"><span class="label-bold">אתר רחוב</span><span class="label-light">כפר סבא - מדרחוב ירושלים</span></h1>
+      </div>
+    </div>
+    <!--promotion-->
+    <section class="poster-header">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 header">
+            <div class="col-md-4 col-sm-4 col-xs-12 pull-right date-wrapper animate-container animated wow zoomIn">
+              <date><span class="poster-date ">12/2/17</span><br><span class="poster-hour">18:00</span></date>
+              <p class="poster-location">נפגשים מול בניס ליד הצב</p>
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-12 pull-right content-wrapper animate-container animated wow bounceIn">
+              <h2> <span class="title-part-1">
+                       מיפגש
+                                </span> <span class="title-part-2">
+                                 הורים + ביביסטריות
+                                  </span> </h2>
+              <p>מתרשמים, מחליפים פרטים, שותים בירה, אוכלים פיצה וממשיכים עם תקוות לעתיד</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--map-->
+    <section>
+      <div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+        <script id="map-template" type="text/x-handlebars-template">
+          <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper ">
+          <img src="images/map_midrechov.svg" alt="map"> </img>
+          <div class="street-info">
+            <button type="button" formaction="#street-info" class="open-info-street">
+              <span class="fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
+              </span></button>
+              <button type="button" formaction="#campaign-info" class="open-campaign-info">
+                <span class="icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab">
+                </span></button>
+          </div>
+            <table id="business_details" class="table table-condensed table-striped"></table>
+            <!-- block1 -->
+            <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz" class="nav tabs">
+                  {{#each group1}}
+                  <li class="{{this.action}} open">
+                    <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                    <span class="icon {{this.icon}}"></span>
+                    <strong>{{this.business_name}}</strong> </a>
+                  </li>
+                  {{/each}}
+                </ul>
+              </nav>
+            </div>
+            <!-- block2 -->
+						<div class="business-map position2 buisness-tabs crosswise-icon bottom-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz2" class="nav tabs width441">
+                    {{#each group2}}
+                    <li class="open {{this.action}} pull-right">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="{{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
+                </ul>
+              </nav>
+            </div>
+            <!-- block3 -->
+						<div class="business-map position3 buisness-tabs lengthwise-icon left-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz3" class="nav tabs">
+                    {{#each group3}}
+                    <li class="open {{this.action}}">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="icon {{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
+                </ul>
+              </nav>
+            </div>
+            <!-- block4 -->
+            <div class="business-map position4 buisness-tabs lengthwise-icon right-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz4" class="nav tabs">
+                    {{#each group4}}
+                    <li class="open {{this.action}}">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="icon {{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
+                </ul>
+              </nav>
+            </div>
+            <!-- block5 -->
+            <div class="business-map position5 buisness-tabs crosswise-icon  top-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz5" class="nav tabs width560">
+                    {{#each group5}}
+                    <li class="open {{this.action}} pull-right">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="icon {{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
+                </ul>
+              </nav>
+            </div>
+            <!-- block6 -->
+            <div class="business-map position6 buisness-tabs lengthwise-icon left-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz6" class="nav tabs">
+                    {{#each group6}}
+                    <li class="open {{this.action}}">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="icon {{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
+                </ul>
+              </nav>
+            </div>
+            <!-- block7 -->
+            <div class="business-map position7 buisness-tabs lengthwise-icon left-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz7" class="nav tabs">
+                    {{#each group7}}
+                    <li class="open {{this.action}}">
+                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                      <span class="icon {{this.icon}}"></span>
+                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                    </li>
+                    {{/each}}
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </script>
+       <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper ">
+          <img src="images/map_midrechov.svg" alt="map"> </img>
+          <div class="street-info">
+            <button type="button" formaction="#street-info" class="open-info-street">
+              <span class="fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
+              </span></button>
+              <button type="button" formaction="#campaign-info" class="open-campaign-info">
+                <span class="icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab">
+                </span></button>
+          </div>
+            <table id="business_details" class="table table-condensed table-striped"></table>
+            <!-- block1 -->
+            <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz" class="nav tabs">
+                  <li class="action campaign open">
+                    <a href="#nisimline" data-toggle="tab" title="ניסים ליין">
+                    <span class="icon icon icon-hair-care"></span>
+                    <strong>ניסים ליין</strong> </a>
+                  </li>
+                  <li class="action campaign open">
+                    <a href="#zigimashroom" data-toggle="tab" title="פיצה זיגי מאשרום">
+                    <span class="icon icon icon-pizza-slice"></span>
+                    <strong>פיצה זיגי מאשרום</strong> </a>
+                  </li>
+                  <li class=" action party open">
+                    <a href="#liza" data-toggle="tab" title="LIZA">
+                    <span class="icon icon icon-hand-mirror"></span>
+                    <strong>LIZA</strong> </a>
+                  </li>
+                  <li class=" open">
+                    <a href="#guitarfix" data-toggle="tab" title="Guitar Fix">
+                    <span class="icon icon icon-acoustic-guitar"></span>
+                    <strong>Guitar Fix</strong> </a>
+                  </li>
+                  <li class=" open">
+                    <a href="#lahitbarosh" data-toggle="tab" title="להיט בראש">
+                    <span class="icon icon icon-robot"></span>
+                    <strong>להיט בראש</strong> </a>
+                  </li>
+                  <li class="action campaign open">
+                    <a href="#bennys" data-toggle="tab" title="Benny's">
+                    <span class="icon icon icon-beer"></span>
+                    <strong>Benny's</strong> </a>
+                  </li>
+                  <li class=" open">
+                    <a href="#pergar" data-toggle="tab" title="פרגר לוי אדריכלים">
+                    <span class="icon icon icon-sketch"></span>
+                    <strong>פרגר לוי אדריכלים</strong> </a>
+                  </li>
+                  <li class=" open">
+                    <a href="#eti" data-toggle="tab" title="אתי">
+                    <span class="icon icon icon-hand-mirror"></span>
+                    <strong>אתי</strong> </a>
+                  </li>
+                  <li class=" open">
+                    <a href="#anderson" data-toggle="tab" title="אנדרסון נדל&quot;ן">
+                    <span class="icon icon icon-three-buildings"></span>
+                    <strong>אנדרסון נדל"ן</strong> </a>
+                  </li>
+                  <li class=" open">
+                    <a href="#vibe" data-toggle="tab" title="Vibe">
+                    <span class="icon icon icon-exercise"></span>
+                    <strong>Vibe</strong> </a>
+                  </li>
+                  <li class=" open">
+                    <a href="#doron" data-toggle="tab" title="Doron Sadeh">
+                    <span class="icon icon icon-hair-care"></span>
+                    <strong>Doron Sadeh</strong> </a>
+                  </li>
+                  <li class=" open">
+                    <a href="#tsumat" data-toggle="tab" title="תשומת לב">
+                    <span class="icon icon icon-dress"></span>
+                    <strong>תשומת לב</strong> </a>
+                  </li>
+                  <li class=" open">
+                    <a href="#bari" data-toggle="tab" title="בריא טרי">
+                    <span class="icon icon icon-vegetables-juice"></span>
+                    <strong>בריא טרי</strong> </a>
+                  </li>
+                  <li class=" open">
+                    <a href="#shani" data-toggle="tab" title="שני גולסה">
+                    <span class="icon icon icon-hair-care"></span>
+                    <strong>שני גולסה</strong> </a>
+                  </li>
+                  <li class=" open">
+                    <a href="#kakao" data-toggle="tab" title="קקאו">
+                    <span class="icon icon icon-coffe-cup"></span>
+                    <strong>קקאו</strong> </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- block2 -->
+						<div class="business-map position2 buisness-tabs crosswise-icon bottom-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz2" class="nav tabs width441">
+                    <li class="open  pull-right">
+                      <a href="#tamara" data-toggle="tab" title="TAMARA">
+                      <span class="icon icon-dress"></span>
+                      <strong class="business-name">TAMARA</strong> </a>
+                    </li>
+                    <li class="open  pull-right">
+                      <a href="#lavan" data-toggle="tab" title="LAVAN">
+                      <span class="icon icon-hand-mirror"></span>
+                      <strong class="business-name">LAVAN</strong> </a>
+                    </li>
+                    <li class="open  pull-right">
+                      <a href="#kochavim" data-toggle="tab" title="כוכבים">
+                      <span class="icon icon-clothing-store"></span>
+                      <strong class="business-name">כוכבים</strong> </a>
+                    </li>
+                    <li class="open  pull-right">
+                      <a href="#" data-toggle="tab" title="חנות בלי שם">
+                      <span class="icon"></span>
+                      <strong class="business-name">חנות בלי שם</strong> </a>
+                    </li>
+                    <li class="open  pull-right">
+                      <a href="#artizan" data-toggle="tab" title="ארטיזן">
+                      <span class="icon icon-bakery"></span>
+                      <strong class="business-name">ארטיזן</strong> </a>
+                    </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- block3 -->
+						<div class="business-map position3 buisness-tabs lengthwise-icon left-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz3" class="nav tabs">
+                    <li class="open ">
+                      <a href="#midrechov" data-toggle="tab" title="קפה המדרחוב">
+                      <span class="icon icon icon-coffe-cup"></span>
+                      <strong class="business-name">קפה המדרחוב</strong> </a>
+                    </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- block4 -->
+            <div class="business-map position4 buisness-tabs lengthwise-icon right-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz4" class="nav tabs">
+                    <li class="open ">
+                      <a href="#shahar" data-toggle="tab" title="Shahar Malka">
+                      <span class="icon icon icon-hair-care"></span>
+                      <strong class="business-name">Shahar Malka</strong> </a>
+                    </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- block5 -->
+            <div class="business-map position5 buisness-tabs crosswise-icon  top-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz5" class="nav tabs width560">
+                    <li class="open  pull-right">
+                      <a href="#homies" data-toggle="tab" title="Homies">
+                      <span class="icon icon icon-restaurant"></span>
+                      <strong class="business-name">Homies</strong> </a>
+                    </li>
+                    <li class="open  pull-right">
+                      <a href="#tr" data-toggle="tab" title="T&amp;R">
+                      <span class="icon icon icon-lamp"></span>
+                      <strong class="business-name">T&amp;R</strong> </a>
+                    </li>
+                    <li class="open  pull-right">
+                      <a href="#yanshufim" data-toggle="tab" title="ינשופים">
+                      <span class="icon icon icon-paint-board-and-brush"></span>
+                      <strong class="business-name">ינשופים</strong> </a>
+                    </li>
+                    <li class="open action campaign pull-right">
+                      <a href="#vruda" data-toggle="tab" title="החנות הורודה">
+                      <span class="icon icon icon-clothing-store"></span>
+                      <strong class="business-name">החנות הורודה</strong> </a>
+                    </li>
+                    <li class="open  pull-right">
+                      <a href="#studio30" data-toggle="tab" title="סטודיו 30">
+                      <span class="icon icon icon-hand-mirror"></span>
+                      <strong class="business-name">סטודיו 30</strong> </a>
+                    </li>
+                    <li class="open  pull-right">
+                      <a href="#amos" data-toggle="tab" title="עמוס זרד">
+                      <span class="icon icon icon-hair-care"></span>
+                      <strong class="business-name">עמוס זרד</strong> </a>
+                    </li>
+                    <li class="open  pull-right">
+                      <a href="#nola" data-toggle="tab" title="גלריה נולה">
+                      <span class="icon icon icon-art-board"></span>
+                      <strong class="business-name">גלריה נולה</strong> </a>
+                    </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- block6 -->
+            <div class="business-map position6 buisness-tabs lengthwise-icon left-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz6" class="nav tabs">
+                    <li class="open ">
+                      <a href="#dionet" data-toggle="tab" title="דיו-נט">
+                      <span class="icon icon icon-print"></span>
+                      <strong class="business-name">דיו-נט</strong> </a>
+                    </li>
+                    <li class="open ">
+                      <a href="#olga" data-toggle="tab" title="אולגה">
+                      <span class="icon icon icon-hand-mirror"></span>
+                      <strong class="business-name">אולגה</strong> </a>
+                    </li>
+                    <li class="open ">
+                      <a href="#amit" data-toggle="tab" title="עמית יקיר">
+                      <span class="icon icon icon-hand-mirror"></span>
+                      <strong class="business-name">עמית יקיר</strong> </a>
+                    </li>
+                </ul>
+              </nav>
+            </div>
+            <!-- block7 -->
+            <div class="business-map position7 buisness-tabs lengthwise-icon left-icon">
+              <nav class="nav-sidebar">
+                <ul id="biz7" class="nav tabs">
+                    <li class="open ">
+                      <a href="#bleeker" data-toggle="tab" title="בליקר בייקרי">
+                      <span class="icon icon icon-restaurant"></span>
+                      <strong class="business-name">בליקר בייקרי</strong> </a>
+                    </li>
+                    <li class="open ">
+                      <a href="#mispara" data-toggle="tab" title="Mispara">
+                      <span class="icon icon icon-hair-care"></span>
+                      <strong class="business-name">Mispara</strong> </a>
+                    </li>
+                    <li class="open ">
+                      <a href="#derechhashemesh" data-toggle="tab" title="דרך השמש">
+                      <span class="icon fa fa-balance-scale"></span>
+                      <strong class="business-name">דרך השמש</strong> </a>
+                    </li>
+                    <li class="open ">
+                      <a href="#lv" data-toggle="tab" title="L &amp; V">
+                      <span class="icon icon icon-clothing-store"></span>
+                      <strong class="business-name">L &amp; V</strong> </a>
+                    </li>
+                    <li class="open ">
+                      <a href="#manel" data-toggle="tab" title="Manel">
+                      <span class="icon fa fa-window-maximize"></span>
+                      <strong class="business-name">Manel</strong> </a>
+                    </li>
+                    <li class="open ">
+                      <a href="#leeinechabilvad" data-toggle="tab" title="לעיניך בלבד">
+                      <span class="icon fa fa-eye"></span>
+                      <strong class="business-name">לעיניך בלבד</strong> </a>
+                    </li>
+                    <li class="open ">
+                      <a href="#mirpaaklalit" data-toggle="tab" title="מרפאה כללית">
+                      <span class="icon fa fa-heartbeat"></span>
+                      <strong class="business-name">מרפאה כללית</strong> </a>
+                    </li>
+                    <li class="open ">
+                      <a href="#gilibar" data-toggle="tab" title="Gili Bar">
+                      <span class="icon icon icon-hair-care"></span>
+                      <strong class="business-name">Gili Bar</strong> </a>
+                    </li>
+                </ul>
+              </nav>
+            </div>
+          </div></div>
+          <!--street info-->
+          <div class="col-md-4  col-sm-4 col-xs-12  street-info-wrapper landscape-12 padding0 xs-visibity visibityclose" id="street-info">
+            <div class="hidden-md hidden-sm hidden-lg "> <button type="button" class="close top-close" title="סגירה">
+                               <i class="fa fa-times" aria-hidden="true"></i></button> </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 pull-right">
+              <h2>רחוב ירושלים כפר סבא</h2>
+            </div>
+            <!--menu-->
+            <div class="menu-external-links col-lg-6 col-md-12 col-sm12 col-xs-12"> <button type="button" formaction=""><span class="fa fa-facebook" aria-hidden="true"></span></button> <button type="button" onclick="location.href='https://goo.gl/maps/H9XztmygCJ92';" value="Go to Google maps"><span class="fa fa-map" aria-hidden="true"></span></button> </div>
+            <div class="col-md-12 padding0 gallery-wrapper">
+              <div class="col-md-12 gallery-row">
+                <!--picture-unit 1-->
+                <div class="picture-unit ">
+                  <div class="picture-ïnfo"> <span class="fa fa-info icon"></span>
+                    <p> הפאב השכונתי "בניס" </p>
+                  </div> <img src="images/gallery/gal-s-1.jpg"> </div>
+                <!--picture-unit 2-->
+                <div class="picture-unit">
+                  <div class="picture-ïnfo"> <span class="fa fa-info icon"></span>
+                    <p> הילדים משחקים בזמן שההורים שותים בירה בבניס </p>
+                  </div> <img src="images/gallery/gal-s-2.jpg"> </div>
+              </div>
+              <!--end gallery-row-->
+              <div class="col-md-12 gallery-row">
+                <!--picture-unit 3-->
+                <div class="picture-unit">
+                  <div class="picture-ïnfo"> <span class="fa fa-info icon"></span>
+                    <p> הומיז, אחד המקומות שעושים את כפר סבא </p>
+                  </div> <img src="images/gallery/homies.jpg"> </div>
+                <!--picture-unit 4-->
+                <div class="picture-unit">
+                  <div class="picture-ïnfo"> <span class="fa fa-info icon"></span>
+                    <p> צב! </p>
+                  </div> <img src="images/gallery/gal-s-4.jpg"> </div>
+              </div>
+              <!--end gallery-row-->
+              <div class="col-md-12 gallery-row">
+                <!--picture-unit 5-->
+                <div class="picture-unit">
+                  <div class="picture-ïnfo"> <span class="fa fa-info icon"></span>
+                    <p> תיקוני כלי נגינה ושיעורי נגינה </p>
+                  </div> <img src="images/gallery/gal-s-5.jpg"> </div>
+                <!--picture-unit 6-->
+                <div class="picture-unit">
+                  <div class="picture-ïnfo"> <span class="fa fa-info icon"></span>
+                    <p> מגיעים במיוחד כדי לקנות פיצוחים טריים </p>
+                  </div> <img src="images/gallery/gal-s-6.jpg"> </div>
+              </div>
+              <!--end gallery-row-->
+            </div>
+            <!--end gallery-wrapper-->
+          </div>
+          <!--end street-info-wrapper-->
+          <!--campaign-info-wrapper-->
+          <div class="col-md-4  col-sm-4 col-xs-12  campaign-info-wrapper landscape-12 xs-visibity visibityclose display_none" id="campaign-info">
+            <div class="hidden-md hidden-sm hidden-lg "> <button type="button" class="close top-close" title="סגירה">
+                               <i class="fa fa-times" aria-hidden="true"></i></button> </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
+              <h2>כל המבצעים ברחוב</h2>
+              <ul class="campaign-list">
+                <script id="campaign_template" type="text/x-handlebars-template">
+                  <li class="campaign-unit padding0 open"> <img src='images/pizza-zigi/portrait.jpg' class="">
+                    <h3><a href="#tab1">פיצה זיגי מאשרום </a></h3>
+                    <p> היום פיצות לוהטות במיוחד. על כל פיצה משפחתית הנחה של עשרה שקלים <a href=" ">במיספרה של דורון</a> </p>
+                  </li>
+                </script>
+                <li class="campaign-unit margin1"> <img src="images/business/zigimashroom/portrait.jpg" class="">
+                  <h3><a href=" ">המיספרה של דורון</a></h3>
+                  <p> אכלתם אצל זיגי פיצה משפחתית? בואו לקבל 10 שקלים הנחה על כל התיספורות לכל המשפחה </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!--end-campaign-info-wrapper-->
+          <!--business info-->
+   <div id="business_info_wrapper" class="col-md-4  col-sm-4 col-xs-12 business-info-wrapper landscape-12" style="position: relative; top: 10px; bottom: auto; right: auto; left: 0px;">
+    <script id="business-info-template" type="text/x-handlebars-template">
+    <ul id="business_info" class="tab-content">
+      {{#each biz_info}}
+      <li class="tab-pane text-style" id="{{this.tab_link}}">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src='{{this.street_view}}'> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src='{{this.profile_image}}' class="img-circle"> </img>
+          </div>
+          <h2>{{this.business_name}}</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">{{this.address_num}}</span><span class="street">{{this.address_street}}</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#{{this.business_phone}}"><span class="icon fa fa-mobile" aria-hidden="true"></span> {{this.business_phone}}</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src='{{this.profile_image}}' class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class="{{this.action}}"></span>
+                     <span> {{this.campaing_string}}</span>
+                      <a href="{{this.cross_campaign_link}}">{{this.cross_campaign_partner}}</a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          {{this.opening_hours_su_th}}
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          {{this.opening_hours_fr}}
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          {{this.opening_hours_sa}}
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class ="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class ="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class ="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class ="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class ="description" > הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="{{this.facebook_link}}"  title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+    {{/each}}
+    </ul>
+  </script>
+  <ul id="business_info" class="tab-content">
+      <li class="tab-pane text-style" id="nisimline">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/nisimline/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="" class="img-circle"> </img>
+          </div>
+          <h2>ניסים ליין</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">52</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-765-3450"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-765-3450</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class="action campaign"></span>
+                     <span> קרם לחות לשיער מתנה למסתפרים עד השעה 12:00, בקביעת תור מראש</span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/nisimline?ref=br_rs" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="zigimashroom">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/zigimashroom/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/zigimashroom/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>פיצה זיגי מאשרום</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">52</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-7673332"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-7673332</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/zigimashroom/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class="action campaign"></span>
+                     <span> תוספת לפיצה מתנה לקונים של להיט בראש</span>
+                      <a href="lahitbarosh">להיט בראש</a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/profile.php?id=100007803101077" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="liza">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/liza/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/liza/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>LIZA</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">52</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#053-729-3365"><span class="icon fa fa-mobile" aria-hidden="true"></span> 053-729-3365</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/liza/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=" action party"></span>
+                     <span> מסיבת לקים היום בערב, עלות כרטיס 20 ש"ח. כיבוד בריא, הרצאת סטיילינג והרבה לק</span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/liza.cosmetics4u/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="guitarfix">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/guitarfix/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/guitarfix/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>Guitar Fix</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">50</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-740-6067"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-740-6067</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/guitarfix/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/fixguitar/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="lahitbarosh">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/lahitbarosh/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/lahitbarosh/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>להיט בראש</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">50</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-7665429"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-7665429</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/lahitbarosh/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/%D7%9C%D7%94%D7%99%D7%98-%D7%91%D7%A8%D7%90%D7%A9-%D7%9B%D7%A4%D7%A8-%D7%A1%D7%91%D7%90-1216646428396378/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="bennys">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/bennys/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/bennys/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>Benny's</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">46</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-771-7627"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-771-7627</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/bennys/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class="action campaign"></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/bennyscaskale/?ref=br_rs" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="pergar">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/pergar/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/pergar/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>פרגר לוי אדריכלים</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">46</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-8866097"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-8866097</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/pergar/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/PragerLeviArchitects/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="eti">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/eti/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/eti/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>אתי</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">46</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-7678521"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-7678521</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/eti/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="anderson">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/anderson/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/anderson/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>אנדרסון נדל"ן</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">46</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#052-614-8527"><span class="icon fa fa-mobile" aria-hidden="true"></span> 052-614-8527</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/anderson/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/andersonnadlan/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="vibe">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/vibe/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/vibe/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>Vibe</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">46</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-8827151"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-8827151</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/vibe/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/Ems.kfarsaba/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="doron">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/doron/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/doron/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>Doron Sadeh</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">44</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-7676697"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-7676697</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/doron/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/pages/%D7%93%D7%95%D7%A8%D7%95%D7%9F-%D7%A9%D7%93%D7%94-%D7%A2%D7%99%D7%A6%D7%95%D7%91-%D7%A9%D7%99%D7%A2%D7%A8/169248693129670" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="tsumat">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/tsumat/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/tsumat/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>תשומת לב</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">44</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-7658267"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-7658267</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/tsumat/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/tsumatlev.co.il/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="bari">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/bari/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/bari/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>בריא טרי</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">44</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-773-4442"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-773-4442</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/bari/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/baritarifruits/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="shani">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/shani/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/shani/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>שני גולסה</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">44</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#054-306-0877"><span class="icon fa fa-mobile" aria-hidden="true"></span> 054-306-0877</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/shani/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/SG-Design-%D7%A9%D7%A0%D7%99-%D7%92%D7%95%D7%9C%D7%A1%D7%94-%D7%A2%D7%99%D7%A6%D7%95%D7%91%D7%99%D7%9D-109075115831785/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="kakao">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/kakao/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/kakao/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>קקאו</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">44</span><span class="street">רחוב ירושלים</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-880-6870"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-880-6870</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/kakao/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/kakaokefarsaba/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="homies">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/homies/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/homies/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>Homies</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">8</span><span class="street">דוד אלעזר</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#business_phone"><span class="icon fa fa-mobile" aria-hidden="true"></span> business_phone</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/homies/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/zohar.gabbay" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="tr">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/tr/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/tr/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>T&amp;R</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">8</span><span class="street">דוד אלעזר</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-7412934"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-7412934</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/tr/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/T.AND.R.lighting/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="yanshufim">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/yanshufim/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/yanshufim/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>ינשופים</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">8</span><span class="street">דוד אלעזר</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#053-5254515"><span class="icon fa fa-mobile" aria-hidden="true"></span> 053-5254515</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/yanshufim/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/yanshufim.studio/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="vruda">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/vruda/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/vruda/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>החנות הורודה</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">8</span><span class="street">דוד אלעזר</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#050-792-5264"><span class="icon fa fa-mobile" aria-hidden="true"></span> 050-792-5264</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/vruda/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class="action campaign"></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/PinkShop.F/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="studio30">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/studio30/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/studio30/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>סטודיו 30</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">8</span><span class="street">דוד אלעזר</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#506400872"><span class="icon fa fa-mobile" aria-hidden="true"></span> 506400872</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/studio30/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/NAILSMORAN/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="amos">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/amos/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/amos/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>עמוס זרד</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">8</span><span class="street">דוד אלעזר</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-742-9145"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-742-9145</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/amos/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/%D7%A2%D7%9E%D7%95%D7%A1-%D7%96%D7%A8%D7%93-%D7%9E%D7%A2%D7%A6%D7%91-%D7%A9%D7%99%D7%A2%D7%A8-%D7%9E%D7%A7%D7%A6%D7%95%D7%A2%D7%99-1124417670933733/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="nola">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/nola/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/nola/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>גלריה נולה</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">8</span><span class="street">דוד אלעזר</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#077-505-1315"><span class="icon fa fa-mobile" aria-hidden="true"></span> 077-505-1315</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/nola/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/gallery.nola/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="dionet">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/dionet/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/dionet/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>דיו-נט</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">18</span><span class="street">כרמל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-7681470"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-7681470</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/dionet/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="olga">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/olga/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/olga/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>אולגה</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">18</span><span class="street">כרמל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#052-6333439"><span class="icon fa fa-mobile" aria-hidden="true"></span> 052-6333439</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/olga/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="amit">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/amit/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/amit/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>עמית יקיר</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">18</span><span class="street">כרמל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#054-474-6447"><span class="icon fa fa-mobile" aria-hidden="true"></span> 054-474-6447</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/amit/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/Amitipur/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="tamara">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/tamara/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/tamara/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>TAMARA</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">16</span><span class="street">כרמל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#077-9979877"><span class="icon fa fa-mobile" aria-hidden="true"></span> 077-9979877</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/tamara/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="lavan">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/lavan/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/lavan/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>LAVAN</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">16</span><span class="street">הכרמל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#business_phone"><span class="icon fa fa-mobile" aria-hidden="true"></span> business_phone</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/lavan/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/LavanBeautyBoutique/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="kochavim">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/kochavim/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/kochavim/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>כוכבים</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">16</span><span class="street">הכרמל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-8800172"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-8800172</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/kochavim/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src=""> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/xxx/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>חנות בלי שם</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">16</span><span class="street">הכרמל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#"><span class="icon fa fa-mobile" aria-hidden="true"></span> </a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/xxx/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="artizan">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/artizan/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/artizan/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>ארטיזן</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right"></span><span class="street"></span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-7666473"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-7666473</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/artizan/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/ArtisanalBreads/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="midrechov">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/midrechov/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/midrechov/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>קפה המדרחוב</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right"></span><span class="street"></span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#"><span class="icon fa fa-mobile" aria-hidden="true"></span> </a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/midrechov/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/CafeHamidrahov/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="shahar">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/shahar/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/shahar/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>Shahar Malka</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">3</span><span class="street">ארבל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#09-7666530"><span class="icon fa fa-mobile" aria-hidden="true"></span> 09-7666530</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/shahar/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/profile.php?id=100006879916437" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="bleeker">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/bleeker/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/bleeker/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>בליקר בייקרי</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">3</span><span class="street">ארבל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="# 09-773-2323"><span class="icon fa fa-mobile" aria-hidden="true"></span> 
+09-773-2323</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/bleeker/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/BleeckerBakeryKfarSaba/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="mispara">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/mispara/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/mispara/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>Mispara</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">3</span><span class="street">ארבל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="# 09-832-9992"><span class="icon fa fa-mobile" aria-hidden="true"></span> 
+09-832-9992</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/mispara/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/Mispara-686406634767949/?ref=br_rs" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="derechhashemesh">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/derechhashemesh/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/derechhashemesh/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>דרך השמש</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">3</span><span class="street">ארבל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="# 054-247-3153"><span class="icon fa fa-mobile" aria-hidden="true"></span> 
+054-247-3153</a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/derechhashemesh/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/derechhashemesh/" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="lv">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/ly/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/ly/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>L &amp; V</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">3</span><span class="street">ארבל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#"><span class="icon fa fa-mobile" aria-hidden="true"></span> </a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/ly/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="manel">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/manel/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/manel/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>Manel</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">3</span><span class="street">ארבל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#"><span class="icon fa fa-mobile" aria-hidden="true"></span> </a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/manel/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="leeinechabilvad">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/leeinechabilvad/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/leeinechabilvad/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>לעיניך בלבד</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">3</span><span class="street">ארבל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#"><span class="icon fa fa-mobile" aria-hidden="true"></span> </a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/leeinechabilvad/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="mirpaaklalit">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/mirpaaklalit/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/mirpaaklalit/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>מרפאה כללית</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">3</span><span class="street">ארבל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#"><span class="icon fa fa-mobile" aria-hidden="true"></span> </a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/mirpaaklalit/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+      <li class="tab-pane text-style" id="gilibar">
+          <div class="hidden-md hidden-sm hidden-lg ">
+              <button type="button" class="close top-close" title="סגירה"><i class="fa fa-times" aria-hidden="true"></i></button>
+          </div>
+          <img src="images/business/gilibar/entrance.jpg"> </img>
+          <div class="hidden-xs portrait pull-right  ">
+              <img src="images/business/gilibar/portrait.jpg" class="img-circle"> </img>
+          </div>
+          <h2>Gili Bar</h2>
+           <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+              <address>
+                  <div class="col-md-7 col-xs-12 landscape-6">
+                      <span class="street-num pull-right">3</span><span class="street">ארבל</span>                                                    </div>
+                  <div class="col-md-5 col-xs-12 landscape-6"> <a href="#"><span class="icon fa fa-mobile" aria-hidden="true"></span> </a></div>
+              </address>
+          </div>
+    
+                <div class="col-md-12 col-xs-12 text-community ">
+                  <p>
+                      <img src="images/business/gilibar/portrait.jpg" class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class=""></span>
+                     <span> </span>
+                      <a href=""></a>
+                  </p>
+              </div>
+                                           
+              <div class="col-md-12 col-xs-12 opening-hours-info">
+                      <h2 class="open-close">פתוח עכשיו</h2>
+                  <p>
+                      <span class="day">
+              ראשון - חמישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+             שישי :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+                  <p>
+                      <span class="day">
+            שבת :
+       </span>
+                      <span class="hours">
+                          
+       </span>
+                  </p>
+              </div>
+          <div class="col-md-12 margin1 hidden-xs">
+              <div class="feature pull-right">
+        <img src="images/my-icons/kosher.svg"> </img>
+        <span class="description"> כשר</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Children.svg"> </img>
+                      <span class="description">נחמדים לילדים</span>
+              </div>
+              <div class=" feature pull-right"><img src="images/my-icons/Wheelchair.svg"> </img>
+                      <span class="description">נגיש</span>
+              </div>
+              <div class="feature pull-right"><img src="images/my-icons/Scooter.svg"> </img>
+                      <span class="description">יש מישלוחים</span>
+              </div>
+              <div class="feature pull-right">
+              <img src="images/my-icons/Sun.svg"> </img>
+              <span class="description"> הרבה צל</span>
+             </div>
+          </div>
+          <div class="col-md-12 margin2">
+          <a class="col-md-5 social pull-right fa fa-facebook" href="https://www.facebook.com/gili.bar.98" title="facebook"> </a>
+       <div class="col-md-2 external-link"> </div>
+    </div>
+    </li>
+    </ul></div>
+      </div>
+    </section>
+    </div>
+    <!-- database connection -->
+    <script src="render_firebase.js"></script>
+    <script src="content_changer.js"></script>
+
+
+</body></html>
