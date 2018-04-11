@@ -17,8 +17,8 @@ function snapshotToArray(snapshot) {
 };
 
 // Make an object with groups out of firebase array
-function prearePositionGroups(bizArray) {
-  rv = {}
+function preparePositionGroups(bizArray) {
+  var rv = {}
   for (var i = 0; i < bizArray.length; i++) {
     var row = bizArray[i];
     group = row['position_group']
@@ -31,6 +31,19 @@ function prearePositionGroups(bizArray) {
   }
   return rv;
 };
+
+// Filter rows with empty campaign strings
+function filterCampaigns(bizArray) {
+  var rv = [];
+  for (var i = 0; i < bizArray.length; i++) {
+    var row = bizArray[i];
+    var campaign = row['campaign_string'];
+    if (campaign != "") {
+      rv.push(row)
+    }
+  }
+  return rv;
+}
 
 function changeClasses(error, options, response) {
   console.log('Should run after loading the biz-map template');
@@ -59,10 +72,10 @@ var compiledSalesTemplate = Handlebars.compile(salesTemplate.innerHTML);
 var ref = firebase.database().ref().child('businesses').child('data');
 ref.once('value', function (snapshot) {
   var list = snapshotToArray(snapshot);
-  var prep_biz = prearePositionGroups(list);
+  var prep_biz = preparePositionGroups(list);
   var mapHtml = compiledMapTemplate(prep_biz);
   var bizHtml = compiledBizTemplate({biz_info: list});
-  var salesHtml = compiledSalesTemplate({sale: list});
+  var salesHtml = compiledSalesTemplate({sale: filterCampaigns(list)});
 
   var bizTemplateParent = bizTemplate.parentElement;
   // Watch for changes on bizTemplateParent
