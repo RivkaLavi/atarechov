@@ -75,6 +75,18 @@
         </div>
       </div>
     </section>
+    <div class="col-md-12">
+        <div class="street-info">
+            <button type="button" formaction="#street-info" class="open-info-street">
+              <span class="fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
+              </span>
+            </button>
+            <button type="button" formaction="#campaign-info" class="open-campaign-info">
+              <span class="icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab">
+              </span>
+            </button>
+          </div>
+    </div>
     <!--map-->
     <section>
       <div class="col-md-12 col-sm-12 col-xs-12">
@@ -82,16 +94,7 @@
           <script id="map-template" type="text/x-handlebars-template">
             <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper ">
               <img src="images/map_midrechov.svg" alt="map"> </img>
-              <div class="street-info">
-                <button type="button" formaction="#street-info" class="open-info-street">
-                  <span class="fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
-                  </span>
-                </button>
-                <button type="button" formaction="#campaign-info" class="open-campaign-info">
-                  <span class="icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab">
-                  </span>
-                </button>
-              </div>
+
               <table id="business_details" class="table table-condensed table-striped"></table>
               <!-- block1 -->
               <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
