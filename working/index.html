@@ -75,8 +75,8 @@
         </div>
       </div>
     </section>
-    <div class="col-md-12">
-        <div class="street-info">
+    <!-- content changer buttons -->
+    <div class="col-md-12 content-changer-buttons">
             <button type="button" formaction="#street-info" class="open-info-street">
               <span class="fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
               </span>
@@ -85,7 +85,6 @@
               <span class="icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab">
               </span>
             </button>
-          </div>
     </div>
     <!--map-->
     <section>
@@ -288,26 +287,17 @@
           </div>
           <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
             <h2>כל המבצעים ברחוב</h2>
-            <ul class="campaign-list">
-              <script id="campaign_template" type="text/x-handlebars-template">
-                <li class="campaign-unit padding0 open">
-                  <img src='images/pizza-zigi/portrait.jpg' class="">
-                  <h3>
-                    <a href="#tab1">פיצה זיגי מאשרום </a>
-                  </h3>
-                  <p> היום פיצות לוהטות במיוחד. על כל פיצה משפחתית הנחה של עשרה שקלים
-                    <a href=" ">במיספרה של דורון</a>
-                  </p>
-                </li>
-              </script>
-              <li class="campaign-unit margin1">
-                <img src='images/business/zigimashroom/portrait.jpg' class="">
-                <h3>
-                  <a href=" ">המיספרה של דורון</a>
-                </h3>
-                <p> אכלתם אצל זיגי פיצה משפחתית? בואו לקבל 10 שקלים הנחה על כל התיספורות לכל המשפחה </p>
-              </li>
-            </ul>
+            <div id="sales_template_parent">
+                <script id="sales-template" type="text/x-handlebars-template">
+                  <ul>
+                    {{#each sale}}
+                     <li>
+                        <span class='business-name'>{{this.business_name}}</span> <span class='{{this.action}}'></span> <span class='campaing-string'>{{this.campaing_string}}</span>
+                     </li>
+                    {{/each}}
+                  </ul>
+                </script>
+              </div>
           </div>
         </div>
         <!--end-campaign-info-wrapper-->

@@ -48,34 +48,6 @@ background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
 background: linear-gradient($direction, $color-stops);
 }
 
-@mixin menu-wrapper {
-position: absolute;
-top: 0px;
-background: rgba(0, 0, 0, 0.63);
-padding: 5px 10px;
-box-shadow: -1px 1px 2px rgba(0, 0, 0, 0);
--webkit-transition-property: background,color,box-shadow;
--moz-transition-property: background,color,box-shadow;
--o-transition-property: background,color,box-shadow;
-transition-property: background,color,box-shadow;
--webkit-transition-duration: .5s;
--moz-transition-duration: .5s;
--o-transition-duration: .5s;
-transition-duration: .5s;
--webkit-transition-timing-function: linear;
--moz-transition-timing-function: linear;
--o-transition-timing-function: linear;
-transition-timing-function: linear;
-@media screen and (max-width: $break-xs) {
-margin: 10px 0 0 0;
-}
-
-    &:hover{
-    box-shadow: -1px 1px 40px rgba(0, 0, 0, 0.43);
-    background: rgba(0, 0, 0, 0.63);
-    }
-}
-
 @mixin menu-button{
 width: 60px;
 height: 60px;
@@ -351,6 +323,13 @@ background-repeat: no-repeat;
   }
  }
 }
+
+
+.content-changer-buttons{
+  button{
+  @include menu-button;
+  }
+  }
 /*map*/
 .map-wrapper{
 overflow: scroll;
@@ -362,12 +341,7 @@ position: relative;
   top: -70px;
   right: -317px;
   }
-  .street-info{
-  @include menu-wrapper;
-  button{
-  @include menu-button;
-  }
-    }
+
 }
 .street-info-wrapper{
 .top-close{
