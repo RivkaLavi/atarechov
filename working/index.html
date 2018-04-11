@@ -65,121 +65,121 @@
     </section>
     <!--map-->
     <section>
-      <div>
-        <div class="col-md-12 col-sm-12 col-xs-12">
-        <script id="map-template" type="text/x-handlebars-template">
-          <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper ">
-          <img src="images/map_midrechov.svg" alt="map"> </img>
-          <div class="street-info">
-            <button type="button" formaction="#street-info" class="open-info-street">
-              <span class="fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
-              </span></button>
-              <button type="button" formaction="#campaign-info" class="open-campaign-info">
-                <span class="icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab">
+         <div class="col-md-12 col-sm-12 col-xs-12">
+         <div id="map_template_parent">
+          <script id="map-template" type="text/x-handlebars-template">
+            <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper ">
+            <img src="images/map_midrechov.svg" alt="map"> </img>
+            <div class="street-info">
+              <button type="button" formaction="#street-info" class="open-info-street">
+                <span class="fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
                 </span></button>
-          </div>
-            <table id="business_details" class="table table-condensed table-striped"></table>
-            <!-- block1 -->
-            <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
-              <nav class="nav-sidebar">
-                <ul id="biz" class="nav tabs">
-                  {{#each group1}}
-                  <li class="{{this.action}} open">
-                    <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
-                    <span class="icon {{this.icon}}"></span>
-                    <strong>{{this.business_name}}</strong> </a>
-                  </li>
-                  {{/each}}
-                </ul>
-              </nav>
+                <button type="button" formaction="#campaign-info" class="open-campaign-info">
+                  <span class="icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab">
+                  </span></button>
             </div>
-            <!-- block2 -->
-						<div class="business-map position2 buisness-tabs crosswise-icon bottom-icon">
-              <nav class="nav-sidebar">
-                <ul id="biz2" class="nav tabs width441">
-                    {{#each group2}}
-                    <li class="open {{this.action}} pull-right">
-                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
-                      <span class="{{this.icon}}"></span>
-                      <strong class="business-name">{{this.business_name}}</strong> </a>
-                    </li>
-                    {{/each}}
-                </ul>
-              </nav>
-            </div>
-            <!-- block3 -->
-						<div class="business-map position3 buisness-tabs lengthwise-icon left-icon">
-              <nav class="nav-sidebar">
-                <ul id="biz3" class="nav tabs">
-                    {{#each group3}}
-                    <li class="open {{this.action}}">
+              <table id="business_details" class="table table-condensed table-striped"></table>
+              <!-- block1 -->
+              <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
+                <nav class="nav-sidebar">
+                  <ul id="biz" class="nav tabs">
+                    {{#each group1}}
+                    <li class="{{this.action}} open">
                       <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
                       <span class="icon {{this.icon}}"></span>
-                      <strong class="business-name">{{this.business_name}}</strong> </a>
+                      <strong>{{this.business_name}}</strong> </a>
                     </li>
                     {{/each}}
-                </ul>
-              </nav>
+                  </ul>
+                </nav>
+              </div>
+              <!-- block2 -->
+              <div class="business-map position2 buisness-tabs crosswise-icon bottom-icon">
+                <nav class="nav-sidebar">
+                  <ul id="biz2" class="nav tabs width441">
+                      {{#each group2}}
+                      <li class="open {{this.action}} pull-right">
+                        <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                        <span class="{{this.icon}}"></span>
+                        <strong class="business-name">{{this.business_name}}</strong> </a>
+                      </li>
+                      {{/each}}
+                  </ul>
+                </nav>
+              </div>
+              <!-- block3 -->
+              <div class="business-map position3 buisness-tabs lengthwise-icon left-icon">
+                <nav class="nav-sidebar">
+                  <ul id="biz3" class="nav tabs">
+                      {{#each group3}}
+                      <li class="open {{this.action}}">
+                        <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                        <span class="icon {{this.icon}}"></span>
+                        <strong class="business-name">{{this.business_name}}</strong> </a>
+                      </li>
+                      {{/each}}
+                  </ul>
+                </nav>
+              </div>
+              <!-- block4 -->
+              <div class="business-map position4 buisness-tabs lengthwise-icon right-icon">
+                <nav class="nav-sidebar">
+                  <ul id="biz4" class="nav tabs">
+                      {{#each group4}}
+                      <li class="open {{this.action}}">
+                        <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                        <span class="icon {{this.icon}}"></span>
+                        <strong class="business-name">{{this.business_name}}</strong> </a>
+                      </li>
+                      {{/each}}
+                  </ul>
+                </nav>
+              </div>
+              <!-- block5 -->
+              <div class="business-map position5 buisness-tabs crosswise-icon  top-icon">
+                <nav class="nav-sidebar">
+                  <ul id="biz5" class="nav tabs width560">
+                      {{#each group5}}
+                      <li class="open {{this.action}} pull-right">
+                        <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                        <span class="icon {{this.icon}}"></span>
+                        <strong class="business-name">{{this.business_name}}</strong> </a>
+                      </li>
+                      {{/each}}
+                  </ul>
+                </nav>
+              </div>
+              <!-- block6 -->
+              <div class="business-map position6 buisness-tabs lengthwise-icon left-icon">
+                <nav class="nav-sidebar">
+                  <ul id="biz6" class="nav tabs">
+                      {{#each group6}}
+                      <li class="open {{this.action}}">
+                        <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                        <span class="icon {{this.icon}}"></span>
+                        <strong class="business-name">{{this.business_name}}</strong> </a>
+                      </li>
+                      {{/each}}
+                  </ul>
+                </nav>
+              </div>
+              <!-- block7 -->
+              <div class="business-map position7 buisness-tabs lengthwise-icon left-icon">
+                <nav class="nav-sidebar">
+                  <ul id="biz7" class="nav tabs">
+                      {{#each group7}}
+                      <li class="open {{this.action}}">
+                        <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                        <span class="icon {{this.icon}}"></span>
+                        <strong class="business-name">{{this.business_name}}</strong> </a>
+                      </li>
+                      {{/each}}
+                  </ul>
+                </nav>
+              </div>
             </div>
-            <!-- block4 -->
-            <div class="business-map position4 buisness-tabs lengthwise-icon right-icon">
-              <nav class="nav-sidebar">
-                <ul id="biz4" class="nav tabs">
-                    {{#each group4}}
-                    <li class="open {{this.action}}">
-                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
-                      <span class="icon {{this.icon}}"></span>
-                      <strong class="business-name">{{this.business_name}}</strong> </a>
-                    </li>
-                    {{/each}}
-                </ul>
-              </nav>
-            </div>
-            <!-- block5 -->
-            <div class="business-map position5 buisness-tabs crosswise-icon  top-icon">
-              <nav class="nav-sidebar">
-                <ul id="biz5" class="nav tabs width560">
-                    {{#each group5}}
-                    <li class="open {{this.action}} pull-right">
-                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
-                      <span class="icon {{this.icon}}"></span>
-                      <strong class="business-name">{{this.business_name}}</strong> </a>
-                    </li>
-                    {{/each}}
-                </ul>
-              </nav>
-            </div>
-            <!-- block6 -->
-            <div class="business-map position6 buisness-tabs lengthwise-icon left-icon">
-              <nav class="nav-sidebar">
-                <ul id="biz6" class="nav tabs">
-                    {{#each group6}}
-                    <li class="open {{this.action}}">
-                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
-                      <span class="icon {{this.icon}}"></span>
-                      <strong class="business-name">{{this.business_name}}</strong> </a>
-                    </li>
-                    {{/each}}
-                </ul>
-              </nav>
-            </div>
-            <!-- block7 -->
-            <div class="business-map position7 buisness-tabs lengthwise-icon left-icon">
-              <nav class="nav-sidebar">
-                <ul id="biz7" class="nav tabs">
-                    {{#each group7}}
-                    <li class="open {{this.action}}">
-                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
-                      <span class="icon {{this.icon}}"></span>
-                      <strong class="business-name">{{this.business_name}}</strong> </a>
-                    </li>
-                    {{/each}}
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </script>
-       </div>
+          </script>
+        </div>
           <!--street info-->
           <div class="col-md-4  col-sm-4 col-xs-12  street-info-wrapper landscape-12 padding0 xs-visibity visibityclose" id="street-info">
             <div class="hidden-md hidden-sm hidden-lg "> <button type="button" class="close top-close" title="סגירה">
@@ -255,8 +255,9 @@
           </div>
           <!--end-campaign-info-wrapper-->
           <!--business info-->
-   <div id="business_info_wrapper" class="col-md-4  col-sm-4 col-xs-12 business-info-wrapper landscape-12">
-    <script id="business-info-template" type="text/x-handlebars-template">
+        <div id="business_info_wrapper" class="col-md-4  col-sm-4 col-xs-12 business-info-wrapper landscape-12">
+          <div id="biz_template_parent">
+            <script id="business-info-template" type="text/x-handlebars-template">
     <ul id="business_info" class="tab-content">
       {{#each biz_info}}
       <li class="tab-pane text-style" id="{{this.tab_link}}">
@@ -338,11 +339,12 @@
     </li>
     {{/each}}
     </ul>
-  </script>
-  </div>
+            </script>
+          </div>  
+       </div>
       </div>
     </section>
-    </div>
+
     <!-- database connection -->
     <script src="render_firebase.js"></script>
     <script src="content_changer.js"></script>
