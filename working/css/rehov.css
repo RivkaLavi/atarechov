@@ -228,30 +228,19 @@ a, button {
         font-size: 26px; } }
 
 .content-changer-buttons button {
-  width: 60px;
-  height: 60px;
-  color: #fdc415;
+  color: #42709e;
   background-color: #ffffff;
   border-radius: 50%;
   text-align: center;
   font-size: 30px;
-  border: 3px solid #d9f4ff;
-  margin: 5px 5px;
-  -webkit-transition-property: background,color,box-shadow;
-  -moz-transition-property: background,color;
-  -o-transition-property: background,color;
-  transition-property: background,color;
-  -webkit-transition-duration: .5s;
-  -moz-transition-duration: .5s;
-  -o-transition-duration: .5s;
-  transition-duration: .5s;
-  -webkit-transition-timing-function: linear;
-  -moz-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  transition-timing-function: linear; }
-  .content-changer-buttons button:hover {
-    color: #fff;
-    background-color: #fdc415; }
+  border: none;
+  margin: 5px 5px; }
+  .content-changer-buttons button .menu-icon {
+    color: #fdc415;
+    width: 30px;
+    font-size: 25px; }
+  .content-changer-buttons button:hover .menu-icon {
+    font-size: 30px; }
 
 /*map*/
 .map-wrapper {
@@ -692,40 +681,6 @@ a, button {
     #business_info_wrapper.business-info-wrapper .opening-hours p {
       font-size: 1.2em;
       line-height: 1.2em; } }
-  #business_info_wrapper.business-info-wrapper .feature {
-    color: #000;
-    background-color: #d9f4ff;
-    margin-left: 1%;
-    text-align: center;
-    font-size: 1.3em;
-    line-height: 1.3em;
-    padding: 10px 2px;
-    width: 19%;
-    height: 50px;
-    cursor: url(../images/info.png), auto; }
-    @media screen and (max-width: 1200px) {
-      #business_info_wrapper.business-info-wrapper .feature {
-        width: 100%;
-        margin-bottom: 5px; } }
-    #business_info_wrapper.business-info-wrapper .feature .description {
-      display: none;
-      color: transparent; }
-    #business_info_wrapper.business-info-wrapper .feature img {
-      color: #000;
-      -webkit-transition: color .3s ease-in-out;
-      -moz-transition: color .3s ease-in-out;
-      -o-transition: color .3s ease-in-out;
-      transition: color .3s ease-in;
-      height: 30px; }
-    #business_info_wrapper.business-info-wrapper .feature:hover img {
-      color: transparent;
-      display: none; }
-    #business_info_wrapper.business-info-wrapper .feature:hover .description {
-      display: block;
-      color: #000; }
-    @media screen and (max-width: 1200px) {
-      #business_info_wrapper.business-info-wrapper .feature:hover {
-        height: 68px; } }
   #business_info_wrapper.business-info-wrapper .social {
     text-align: center;
     line-height: 68px;
@@ -824,4 +779,60 @@ a, button {
       font-size: 20px;
       margin-left: 10px; }
 
-/***** medias******/
+.feature {
+  color: #000;
+  background-color: #d9f4ff;
+  margin-left: 1%;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  padding: 10px 2px;
+  width: 19%;
+  height: 50px;
+  cursor: url(../images/info.png), auto; }
+  @media screen and (max-width: 1200px) {
+    .feature {
+      width: 100%;
+      margin-bottom: 5px; } }
+  .feature .description {
+    display: none;
+    color: transparent; }
+  .feature img {
+    color: #000;
+    -webkit-transition: color .3s ease-in-out;
+    -moz-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in;
+    height: 30px; }
+  .feature:hover img {
+    color: transparent;
+    display: none; }
+  .feature:hover .description {
+    display: block;
+    color: #000; }
+  @media screen and (max-width: 1200px) {
+    .feature:hover {
+      height: 68px; } }
+
+ul#features li {
+  width: 19%;
+  margin-left: 1%;
+  list-style: none;
+  color: transparent;
+  background-color: #d9f4ff;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  padding: 10px 2px;
+  height: 50px;
+  cursor: url(../images/info.png), auto;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center; }
+  ul#features li.כשר {
+    background-image: url(../images/my-icons/kosher.svg); }
+  ul#features li.כשר {
+    background-image: url(../images/my-icons/kosher.svg); }
+  ul#features li:hover {
+    background-image: none !important;
+    color: #000; }

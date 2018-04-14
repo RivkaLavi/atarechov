@@ -78,13 +78,16 @@
     <!-- content changer buttons -->
     <div class="col-md-12 content-changer-buttons">
             <button type="button" formaction="#street-info" class="open-info-street">
-              <span class="fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
+              <span class="menu-icon fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
               </span>
+              <span>מידע על הרחוב</span>    
             </button>
             <button type="button" formaction="#campaign-info" class="open-campaign-info">
-              <span class="icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab">
+              <span class="menu-icon icon-fire-1" aria-hidden="true" title="campaign-information" href="#campaign-info" data-toggle="tab">
               </span>
+              <span>המבצעים והארועים</span>
             </button>
+
     </div>
     <!--map-->
     <section>
@@ -314,9 +317,11 @@
                     </button>
                   </div>
                   <img src='{{this.street_view}}'> </img>
+                  {{#if this.profile_image}}
                   <div class="hidden-xs portrait pull-right  ">
                     <img src='{{this.profile_image}}' class="img-circle"> </img>
                   </div>
+                  {{/if}}
                   <h2>{{this.business_name}}</h2>
                   <div class="col-md-12 col-xs-12 contact-wrapper padding0">
                     <address>
@@ -369,29 +374,16 @@
                     </p>
                   </div>
                   <div class="col-md-12 margin1 hidden-xs">
-                    <div class="feature pull-right">
-                      <img src="images/my-icons/kosher.svg"> </img>
-                      <span class="description"> כשר</span>
-                    </div>
-                    <div class=" feature pull-right">
-                      <img src="images/my-icons/Children.svg"> </img>
-                      <span class="description">נחמדים לילדים</span>
-                    </div>
-                    <div class=" feature pull-right">
-                      <img src="images/my-icons/Wheelchair.svg"> </img>
-                      <span class="description">נגיש</span>
-                    </div>
-                    <div class="feature pull-right">
-                      <img src="images/my-icons/Scooter.svg"> </img>
-                      <span class="description">יש מישלוחים</span>
-                    </div>
-                    <div class="feature pull-right">
-                      <img src="images/my-icons/Sun.svg"> </img>
-                      <span class="description"> הרבה צל</span>
-                    </div>
-                  </div>
+                    <ul id="features">
+                     {{#each tag_list}}
+                     <li class="{{this}} pull-right"> <span class="description">{{this}}</span></li>
+                     {{/each}}
+                  </ul>
+                   
                   <div class="col-md-12 margin2">
+                      {{#if this.facebook_link}}
                     <a class="col-md-5 social pull-right fa fa-facebook" href="{{this.facebook_link}}" title="facebook"> </a>
+                    {{/if}}
                     <div class="col-md-2 external-link"> </div>
                   </div>
                 </li>

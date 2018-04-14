@@ -49,31 +49,24 @@ background: linear-gradient($direction, $color-stops);
 }
 
 @mixin menu-button{
-width: 60px;
-height: 60px;
-color: $yellow;
+color: $theme-color2;
 background-color: #ffffff;
 border-radius: 50%;
 text-align: center;
 font-size: 30px;
-border: 3px solid $theme-color2-bright;
+border: none;
 margin: 5px 5px;
--webkit-transition-property: background,color,box-shadow;
--moz-transition-property: background,color;
--o-transition-property: background,color;
-transition-property: background,color;
--webkit-transition-duration: .5s;
--moz-transition-duration: .5s;
--o-transition-duration: .5s;
-transition-duration: .5s;
--webkit-transition-timing-function: linear;
--moz-transition-timing-function: linear;
--o-transition-timing-function: linear;
-transition-timing-function: linear;
 
+.menu-icon {
+  color: $yellow;
+  width: 30px;
+  font-size: 25px;
+}
     &:hover{
-    color: $text1;
-    background-color: $yellow;
+      .menu-icon {
+        font-size: 30px;
+      }
+   
     }
 }
 
@@ -459,11 +452,7 @@ padding: 10px;
 }
 
 /*map tabs*/
-
-
-
 .buisness-tabs{
-
 //  lengthwise-icons
 &.lengthwise-icon{
     &.right-icon{
@@ -658,40 +647,40 @@ background-color: #0b3967;
 }
 
 
-&.action{
-  &.campaign:after{ content: '\e000'; background-color: $yellow;}
-  &.party:after{ content: '\78'  ; background-color : $pink ; }
-  &:after{
-    font-family: st;
-    font-size: 18px;
-    color: #ffffff;
-    position: absolute;
-    top: 13px;
-    height: 25px;
-    width: 25px;
-    text-align: center;
-    border-radius: 50%;
-    -webkit-transition-property: height,width,top,font-size;
-    -moz-transition-property: height,width,top,font-size;
-    -o-transition-property: height,width,top,font-size;
-    transition-property:height,width,top,font-size;
-    -webkit-transition-duration: .3s;
-    -moz-transition-duration: .3s;
-    -o-transition-duration: .3s;
-    transition-duration: .3s;
+    &.action{
+      &.campaign:after{ content: '\e000'; background-color: $yellow;}
+      &.party:after{ content: '\78'  ; background-color : $pink ; }
+      &:after{
+        font-family: st;
+        font-size: 18px;
+        color: #ffffff;
+        position: absolute;
+        top: 13px;
+        height: 25px;
+        width: 25px;
+        text-align: center;
+        border-radius: 50%;
+        -webkit-transition-property: height,width,top,font-size;
+        -moz-transition-property: height,width,top,font-size;
+        -o-transition-property: height,width,top,font-size;
+        transition-property:height,width,top,font-size;
+        -webkit-transition-duration: .3s;
+        -moz-transition-duration: .3s;
+        -o-transition-duration: .3s;
+        transition-duration: .3s;
 
 
-      }
-      &:hover{
-              &:after{
-              height: 35px;
-              width: 35px;
-              font-size: 25px;
-              top: 9px;
-              }
+          }
+          &:hover{
+                  &:after{
+                  height: 35px;
+                  width: 35px;
+                  font-size: 25px;
+                  top: 9px;
+                  }
 
-        }
-}
+            }
+    }
 a{
 @include shadow;
 padding: 10px 5px;
@@ -884,48 +873,7 @@ width: 40px;
     }
 }  
 
-.feature{
-color: $text2;
-background-color: $theme-color2-bright;
-margin-left: 1%;
-text-align: center;
-font-size: 1.3em;
-line-height: 1.3em;
-padding: 10px 2px;
-width: 19%;
-height: 50px;
 
-
-@media screen and (max-width: $break-lg) {
-  width: 100%;
-  margin-bottom: 5px;
-}
-
-cursor: url(../images/info.png), auto;
-.description {
-  display:none;
-  color: transparent;
-
-}
-img{
-  color:#000;
-  -webkit-transition: color .3s ease-in-out;
-  -moz-transition: color .3s ease-in-out;
-  -o-transition: color .3s ease-in-out;
-  transition: color .3s ease-in;
-  height: 30px;
- }
-
-&:hover { 
-  img { color: transparent; display: none; }
-  .description { display:block; color: #000;}
-  @media screen and (max-width: $break-lg) {
-    height: 68px;
-  }
-  
- }
-
-}
 
 
 .social{
@@ -1042,7 +990,79 @@ margin-left: 10px;
 }
 }
 
-/***** medias******/
+// tags
+.feature{
+  color: $text2;
+  background-color: $theme-color2-bright;
+  margin-left: 1%;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  padding: 10px 2px;
+  width: 19%;
+  height: 50px;
+  cursor: url(../images/info.png), auto;
+  
+      @media screen and (max-width: $break-lg) {
+        width: 100%;
+        margin-bottom: 5px;
+      }
+  
+
+      .description {
+        display:none;
+        color: transparent;
+      }
+    img{
+      color:#000;
+      -webkit-transition: color .3s ease-in-out;
+      -moz-transition: color .3s ease-in-out;
+      -o-transition: color .3s ease-in-out;
+      transition: color .3s ease-in;
+      height: 30px;
+    }
+  
+  &:hover { 
+    img { color: transparent; display: none; }
+    .description { display:block; color: #000;}
+    @media screen and (max-width: $break-lg) {
+      height: 68px;
+    }
+    
+   }
+  
+  }
+
+ul#features li {
+  width: 19%;
+  margin-left: 1%;
+  list-style: none;
+  color: transparent;
+  background-color: #d9f4ff;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  padding: 10px 2px;
+  height: 50px;
+  cursor: url(../images/info.png), auto;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center;
+  &.כשר {
+    background-image: url(../images/my-icons/kosher.svg);
+     }
+  &.כשר {
+  background-image: url(../images/my-icons/kosher.svg);
+    }
+     &:hover {
+      background-image:none !important;
+      color: #000;
+     }
+
+
+}
+
+
 
 
 
