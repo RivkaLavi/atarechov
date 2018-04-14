@@ -5,6 +5,27 @@ var config = {
 };
 firebase.initializeApp(config);
 
+// Initialize tag dictionary
+tagDict = {
+"כשר": "kosher",
+"בשרי": "meat",
+"חלבי": "dairy",
+"דגים": "fish",
+"מישלוחים": "delivery",
+"בירה מהחבית": "draft-beer",
+"הרבה צל": "shade",
+"נחמדים לילדים": "child-friendly",
+"ידידותי לצליאק": "gluten-free",
+"ידידותי לטבעונים": "vegan-friendly",
+"נגיש": "accessible",
+"ציור שמן": "oil-painting",
+"קרמיקה": "ceramics",
+"סריגה": "knitting",
+"תפירה": "sewing",
+"מידות גדולות": "large-sizes",
+"test": "best"
+};
+
 // Convert firebase snapshot to Array - from https://bit.ly/2Ejxtxo
 function snapshotToArray(snapshot) {
   var returnArr = [];
@@ -45,8 +66,29 @@ function filterCampaigns(bizArray) {
   return rv;
 }
 
+// Enrich business tags
+function enrichBizTags(bizArray, tagDict) {
+  var rv = [];
+  for (var i = 0; i < bizArray.length; i++) {
+    var row = bizArray[i];
+    var tags = row['tag_list'];
+    var enrichedTags = [];
+    for (var j = 0; j < tags.length; j++) {
+      var description = tags[j];
+      var klass = tagDict[description];
+      if (klass === undefined) {
+        console.log("No class found for "+ description)
+      }
+      enrichedTags.push({"klass": klass, "description": description})
+    }
+    row['tag_list'] = enrichedTags;
+    rv.push(row)
+  }
+  return rv;
+}
+
 function changeClasses(error, options, response) {
-  console.log('Should run after loading the biz-map template');
+  console.log('Running changeClasses()');
   var openClasses = $('li.open').click(function () {
     $('.business-info-wrapper').removeClass('display_none');
     $('.street-info-wrapper').addClass('display_none');
@@ -74,7 +116,8 @@ ref.once('value', function (snapshot) {
   var list = snapshotToArray(snapshot);
   var prep_biz = preparePositionGroups(list);
   var mapHtml = compiledMapTemplate(prep_biz);
-  var bizHtml = compiledBizTemplate({biz_info: list});
+  var enrichedInfo = enrichBizTags(list, tagDict);
+  var bizHtml = compiledBizTemplate({biz_info: enrichedInfo});
   var salesHtml = compiledSalesTemplate({sale: filterCampaigns(list)});
 
   var bizTemplateParent = bizTemplate.parentElement;
