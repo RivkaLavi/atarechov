@@ -51,20 +51,18 @@ background: linear-gradient($direction, $color-stops);
 @mixin menu-button{
 color: $theme-color2;
 background-color: #ffffff;
-border-radius: 50%;
-text-align: center;
 font-size: 30px;
 border: none;
 margin: 5px 5px;
 
 .menu-icon {
   color: $yellow;
-  width: 30px;
   font-size: 25px;
+  transition: color .2s ease;
 }
     &:hover{
       .menu-icon {
-        font-size: 30px;
+        color: $secondary;
       }
    
     }
@@ -319,6 +317,11 @@ background-repeat: no-repeat;
 
 
 .content-changer-buttons{
+  h3 {
+    font-size: 30px;
+    line-height: 30px;
+    margin: 5px 5px
+  }
   button{
   @include menu-button;
   }
@@ -1035,31 +1038,38 @@ margin-left: 10px;
 
 ul#features li {
   width: 19%;
-  margin-left: 1%;
+  margin: .5%;
   list-style: none;
-  color: transparent;
+  color: #000;
   background-color: #d9f4ff;
   text-align: center;
-  font-size: 1.3em;
-  line-height: 1.3em;
+  font-size: 14px;
+  line-height: 68px;
   padding: 10px 2px;
-  height: 50px;
+  height: 57px;
   cursor: url(../images/info.png), auto;
   text-align: center;
   background-repeat: no-repeat;
-  background-position: center;
-  &.כשר {
-    background-image: url(../images/my-icons/kosher.svg);
-     }
-  &.כשר {
-  background-image: url(../images/my-icons/kosher.svg);
-    }
-     &:hover {
-      background-image:none !important;
-      color: #000;
-     }
-
-
+  background-position: center 5px;
+  background-size: 30px;
+&.kosher {  background-image: url(../images/my-icons/kosher.svg)}
+&.meat { background-image: url(../images/my-icons/kosher.svg)}
+&.dairy { background-image: url(../images/my-icons/Children.svg)}
+&.fish { background-image: url(../images/my-icons/kosher.svg)}
+&.delivery { background-image: url(../images/my-icons/Helmet.svg)}
+&.draft-beer { background-image: url(../images/my-icons/Bar.svg)}
+&.shade { background-image: url(../images/my-icons/Beach.svg)}
+&.child-friendly { background-image: url(../images/my-icons/Children.svg)}
+&.gluten-free { background-image: url(../images/my-icons/kosher.svg)}
+&.vegan-friendly { background-image: url(../images/my-icons/Healthy.svg)}
+&.accessible { background-image: url(../images/my-icons/Wheelchair.svg)}
+&.oil-painting { background-image: url(../images/my-icons/kosher.svg)}
+&.ceramics { background-image: url(../images/my-icons/kosher.svg)}
+&.knitting { background-image: url(../images/my-icons/kosher.svg)}
+&.sewing { background-image: url(../images/my-icons/kosher.svg)}
+&.large-sizes { background-image: url(../images/my-icons/kosher.svg)}
+&.free-consultation { background-image: url(../images/my-icons/kosher.svg)}
+&.personal-escort { background-image: url(../images/my-icons/kosher.svg) }
 }
 
 

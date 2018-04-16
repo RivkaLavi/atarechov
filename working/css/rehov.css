@@ -227,20 +227,23 @@ a, button {
       .poster-header p {
         font-size: 26px; } }
 
+.content-changer-buttons h3 {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 5px 5px; }
+
 .content-changer-buttons button {
   color: #42709e;
   background-color: #ffffff;
-  border-radius: 50%;
-  text-align: center;
   font-size: 30px;
   border: none;
   margin: 5px 5px; }
   .content-changer-buttons button .menu-icon {
     color: #fdc415;
-    width: 30px;
-    font-size: 25px; }
+    font-size: 25px;
+    transition: color .2s ease; }
   .content-changer-buttons button:hover .menu-icon {
-    font-size: 30px; }
+    color: #ff3c00; }
 
 /*map*/
 .map-wrapper {
@@ -816,23 +819,53 @@ a, button {
 
 ul#features li {
   width: 19%;
-  margin-left: 1%;
+  margin: .5%;
   list-style: none;
-  color: transparent;
+  color: #000;
   background-color: #d9f4ff;
   text-align: center;
-  font-size: 1.3em;
-  line-height: 1.3em;
+  font-size: 14px;
+  line-height: 68px;
   padding: 10px 2px;
-  height: 50px;
+  height: 57px;
   cursor: url(../images/info.png), auto;
   text-align: center;
   background-repeat: no-repeat;
-  background-position: center; }
-  ul#features li.כשר {
+  background-position: center 5px;
+  background-size: 30px; }
+  ul#features li.kosher {
     background-image: url(../images/my-icons/kosher.svg); }
-  ul#features li.כשר {
+  ul#features li.meat {
     background-image: url(../images/my-icons/kosher.svg); }
-  ul#features li:hover {
-    background-image: none !important;
-    color: #000; }
+  ul#features li.dairy {
+    background-image: url(../images/my-icons/Children.svg); }
+  ul#features li.fish {
+    background-image: url(../images/my-icons/kosher.svg); }
+  ul#features li.delivery {
+    background-image: url(../images/my-icons/Helmet.svg); }
+  ul#features li.draft-beer {
+    background-image: url(../images/my-icons/Bar.svg); }
+  ul#features li.shade {
+    background-image: url(../images/my-icons/Beach.svg); }
+  ul#features li.child-friendly {
+    background-image: url(../images/my-icons/Children.svg); }
+  ul#features li.gluten-free {
+    background-image: url(../images/my-icons/kosher.svg); }
+  ul#features li.vegan-friendly {
+    background-image: url(../images/my-icons/Healthy.svg); }
+  ul#features li.accessible {
+    background-image: url(../images/my-icons/Wheelchair.svg); }
+  ul#features li.oil-painting {
+    background-image: url(../images/my-icons/kosher.svg); }
+  ul#features li.ceramics {
+    background-image: url(../images/my-icons/kosher.svg); }
+  ul#features li.knitting {
+    background-image: url(../images/my-icons/kosher.svg); }
+  ul#features li.sewing {
+    background-image: url(../images/my-icons/kosher.svg); }
+  ul#features li.large-sizes {
+    background-image: url(../images/my-icons/kosher.svg); }
+  ul#features li.free-consultation {
+    background-image: url(../images/my-icons/kosher.svg); }
+  ul#features li.personal-escort {
+    background-image: url(../images/my-icons/kosher.svg); }

@@ -15,14 +15,17 @@ tagDict = {
 "בירה מהחבית": "draft-beer",
 "הרבה צל": "shade",
 "נחמדים לילדים": "child-friendly",
+"נחמדים לחיות": "animal-friendly",
 "ידידותי לצליאק": "gluten-free",
-"ידידותי לטבעונים": "vegan-friendly",
+"ידידותי למים": "vegan-friendly",
 "נגיש": "accessible",
 "ציור שמן": "oil-painting",
 "קרמיקה": "ceramics",
 "סריגה": "knitting",
 "תפירה": "sewing",
-"מידות גדולות": "large-sizes"
+"מידות גדולות": "large-sizes",
+"יעוץ חינם": "free-consultation",
+"ליווי אישי" :"personal-escort",
 };
 
 // Convert firebase snapshot to Array - from https://bit.ly/2Ejxtxo
