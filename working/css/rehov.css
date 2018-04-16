@@ -1,6 +1,5 @@
 @charset "UTF-8";
 section {
-  /* width */
   /* Track */
   /* Handle */
   /* Handle on hover */ }
@@ -119,10 +118,6 @@ section {
 .dragscroll {
   cursor: url(../images/Cat-Track-icon.png), auto;
   overflow: scroll; }
-
-a, button {
-  cursor: url(../images/Cat-button-icon.png), auto;
-  /* fallback: no `url()` support or images disabled */ }
 
 /* \/\/--- Top line ---\/\/ */
 .header-address {
@@ -730,57 +725,69 @@ a, button {
       padding: 0px 0 10px 0;
       background-color: #fff; } }
 
-@media screen and (max-width: 450px) {
-  .campaign-info-wrapper {
-    position: absolute;
-    top: 0px;
-    right: 0;
-    padding: 0px 0 10px 0;
-    background-color: #fff; } }
-
-@media screen and (max-width: 768px) and (orientation: landscape) {
-  .campaign-info-wrapper {
-    position: absolute;
-    top: 0px;
-    padding: 0px 0 10px 0;
-    background-color: #fff; } }
-
-.campaign-info-wrapper .top-close {
-  color: #ff3c00;
-  background-color: #d9f4ff;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  opacity: 1;
-  float: left;
-  border: 3px solid #ff3c00; }
-
-@media screen and (max-width: 450px) {
-  .campaign-info-wrapper h2 {
-    margin-top: -30px; } }
-
-@media screen and (max-width: 768px) and (orientation: landscape) {
-  .campaign-info-wrapper h2 {
-    margin-top: -30px; } }
-
-.campaign-info-wrapper .campaign-list {
-  list-style-type: none;
-  padding: 0; }
-  .campaign-info-wrapper .campaign-list .campaign-unit {
-    padding: 10px;
-    border: 1px solid #d9f4ff; }
-    .campaign-info-wrapper .campaign-list .campaign-unit h3 {
-      display: inline; }
-    .campaign-info-wrapper .campaign-list .campaign-unit img {
-      width: 70px; }
-    .campaign-info-wrapper .campaign-list .campaign-unit:before {
+.campaign-info-wrapper {
+  font-size: 18px; }
+  .campaign-info-wrapper .sales-list ul {
+    list-style: none;
+    padding: 0; }
+    .campaign-info-wrapper .sales-list ul li {
+      margin-bottom: 15px; }
+      .campaign-info-wrapper .sales-list ul li .icons {
+        color: #ff3c00;
+        margin-right: 5px; }
+      .campaign-info-wrapper .sales-list ul li .business-name {
+        color: #42709e;
+        font-weight: 700;
+        margin-right: 5px; }
+      .campaign-info-wrapper .sales-list ul li .campaign-string {
+        font-size: 20px;
+        color: #42709e; }
+  @media screen and (max-width: 450px) {
+    .campaign-info-wrapper {
       position: absolute;
-      right: -12px;
-      font-family: street;
-      content: '\0059';
-      color: #fdc415;
-      font-size: 20px;
-      margin-left: 10px; }
+      top: 0px;
+      right: 0;
+      padding: 0px 0 10px 0;
+      background-color: #fff; } }
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    .campaign-info-wrapper {
+      position: absolute;
+      top: 0px;
+      padding: 0px 0 10px 0;
+      background-color: #fff; } }
+  .campaign-info-wrapper .top-close {
+    color: #ff3c00;
+    background-color: #d9f4ff;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    opacity: 1;
+    float: left;
+    border: 3px solid #ff3c00; }
+  @media screen and (max-width: 450px) {
+    .campaign-info-wrapper h2 {
+      margin-top: -30px; } }
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    .campaign-info-wrapper h2 {
+      margin-top: -30px; } }
+  .campaign-info-wrapper .campaign-list {
+    list-style-type: none;
+    padding: 0; }
+    .campaign-info-wrapper .campaign-list .campaign-unit {
+      padding: 10px;
+      border: 1px solid #d9f4ff; }
+      .campaign-info-wrapper .campaign-list .campaign-unit h3 {
+        display: inline; }
+      .campaign-info-wrapper .campaign-list .campaign-unit img {
+        width: 70px; }
+      .campaign-info-wrapper .campaign-list .campaign-unit:before {
+        position: absolute;
+        right: -12px;
+        font-family: street;
+        content: '\0059';
+        color: #fdc415;
+        font-size: 20px;
+        margin-left: 10px; }
 
 .feature {
   color: #000;
@@ -836,11 +843,11 @@ ul#features li {
   ul#features li.kosher {
     background-image: url(../images/my-icons/kosher.svg); }
   ul#features li.meat {
-    background-image: url(../images/my-icons/kosher.svg); }
+    background-image: url(../images/my-icons/meat.svg); }
   ul#features li.dairy {
-    background-image: url(../images/my-icons/Children.svg); }
+    background-image: url(../images/my-icons/cheese.svg); }
   ul#features li.fish {
-    background-image: url(../images/my-icons/kosher.svg); }
+    background-image: url(../images/my-icons/fish.svg); }
   ul#features li.delivery {
     background-image: url(../images/my-icons/Helmet.svg); }
   ul#features li.draft-beer {
@@ -850,19 +857,19 @@ ul#features li {
   ul#features li.child-friendly {
     background-image: url(../images/my-icons/Children.svg); }
   ul#features li.gluten-free {
-    background-image: url(../images/my-icons/kosher.svg); }
+    background-image: url(../images/my-icons/gluten-free.svg); }
   ul#features li.vegan-friendly {
     background-image: url(../images/my-icons/Healthy.svg); }
   ul#features li.accessible {
     background-image: url(../images/my-icons/Wheelchair.svg); }
   ul#features li.oil-painting {
-    background-image: url(../images/my-icons/kosher.svg); }
+    background-image: url(../images/my-icons/paint-palette.svg); }
   ul#features li.ceramics {
-    background-image: url(../images/my-icons/kosher.svg); }
+    background-image: url(../images/my-icons/pottery.svg); }
   ul#features li.knitting {
-    background-image: url(../images/my-icons/kosher.svg); }
+    background-image: url(../images/my-icons/knitting.svg); }
   ul#features li.sewing {
-    background-image: url(../images/my-icons/kosher.svg); }
+    background-image: url(../images/my-icons/needle.svg); }
   ul#features li.large-sizes {
     background-image: url(../images/my-icons/kosher.svg); }
   ul#features li.free-consultation {

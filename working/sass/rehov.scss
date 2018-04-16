@@ -8,14 +8,15 @@ $pink:#FD1576;
 $text1:#fff;
 $text2:#000;
 $brand:#000;
+
 // media variable
 $break-xs: 450px;
 $break-sm: 568px;
 $break-md: 768px;
 $break-lg: 1200px;
-section{
-/* width */
 
+// scrollbar
+section{
 ::-webkit-scrollbar {
     width: 20px;
     @media screen and (max-width: $break-xs) { width: 5px; }
@@ -205,9 +206,9 @@ border-left: 19px solid $theme-color2-bright;
 cursor: url(../images/Cat-Track-icon.png), auto; 
 overflow: scroll;
 }
-a, button {
-cursor:url(../images/Cat-button-icon.png), auto; /* fallback: no `url()` support or images disabled */
-}
+// a, button {
+// cursor:url(../images/Cat-button-icon.png), auto; /* fallback: no `url()` support or images disabled */
+// }
 
 /* \/\/--- Top line ---\/\/ */
 
@@ -936,6 +937,16 @@ background-color: #fff;
 }
 
 .campaign-info-wrapper{
+  .sales-list {
+   ul { list-style: none; padding: 0;
+    li { margin-bottom: 15px;
+    .icons { color: $secondary; margin-right: 5px;}
+    .business-name { color: $theme-color2; font-weight: 700; margin-right: 5px;}
+    .campaign-string { font-size: 20px; color: $theme-color2;}
+   }
+  }
+}
+font-size: 18px;
 
 @media screen and (max-width: $break-xs){
 position:absolute;
@@ -1053,20 +1064,20 @@ ul#features li {
   background-position: center 5px;
   background-size: 30px;
 &.kosher {  background-image: url(../images/my-icons/kosher.svg)}
-&.meat { background-image: url(../images/my-icons/kosher.svg)}
-&.dairy { background-image: url(../images/my-icons/Children.svg)}
-&.fish { background-image: url(../images/my-icons/kosher.svg)}
+&.meat { background-image: url(../images/my-icons/meat.svg)}
+&.dairy { background-image: url(../images/my-icons/cheese.svg)}
+&.fish { background-image: url(../images/my-icons/fish.svg)}
 &.delivery { background-image: url(../images/my-icons/Helmet.svg)}
 &.draft-beer { background-image: url(../images/my-icons/Bar.svg)}
 &.shade { background-image: url(../images/my-icons/Beach.svg)}
 &.child-friendly { background-image: url(../images/my-icons/Children.svg)}
-&.gluten-free { background-image: url(../images/my-icons/kosher.svg)}
+&.gluten-free { background-image: url(../images/my-icons/gluten-free.svg)}
 &.vegan-friendly { background-image: url(../images/my-icons/Healthy.svg)}
 &.accessible { background-image: url(../images/my-icons/Wheelchair.svg)}
-&.oil-painting { background-image: url(../images/my-icons/kosher.svg)}
-&.ceramics { background-image: url(../images/my-icons/kosher.svg)}
-&.knitting { background-image: url(../images/my-icons/kosher.svg)}
-&.sewing { background-image: url(../images/my-icons/kosher.svg)}
+&.oil-painting { background-image: url(../images/my-icons/paint-palette.svg)}
+&.ceramics { background-image: url(../images/my-icons/pottery.svg)}
+&.knitting { background-image: url(../images/my-icons/knitting.svg)}
+&.sewing { background-image: url(../images/my-icons/needle.svg)}
 &.large-sizes { background-image: url(../images/my-icons/kosher.svg)}
 &.free-consultation { background-image: url(../images/my-icons/kosher.svg)}
 &.personal-escort { background-image: url(../images/my-icons/kosher.svg) }

@@ -112,6 +112,10 @@ var compiledBizTemplate = Handlebars.compile(bizTemplate.innerHTML);
 var salesTemplate = document.getElementById("sales-template");
 var compiledSalesTemplate = Handlebars.compile(salesTemplate.innerHTML);
 
+// compile events
+var eventsTemplate = document.getElementById("events-template");
+var compiledEventsTemplate = Handlebars.compile(eventsTemplate.innerHTML);
+
 // Fetch data from firebasem massage it, then compile and replace the templates
 var ref = firebase.database().ref().child('businesses').child('data');
 ref.once('value', function (snapshot) {
@@ -121,6 +125,7 @@ ref.once('value', function (snapshot) {
   var enrichedInfo = enrichBizTags(list, tagDict);
   var bizHtml = compiledBizTemplate({biz_info: enrichedInfo});
   var salesHtml = compiledSalesTemplate({sale: filterCampaigns(list)});
+  var eventsHtml = compiledEventsTemplate({sale: filterCampaigns(list)});
 
   var bizTemplateParent = bizTemplate.parentElement;
   // Watch for changes on bizTemplateParent
