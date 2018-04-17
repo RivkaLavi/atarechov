@@ -77,7 +77,7 @@
     </section>
     <!-- content changer buttons -->
     <div class="col-md-12 ">
-      <div class="col-md-4 pull-right content-changer-buttons">
+      <div class="col-md-4 col-sm-4 col-xs-12 pull-right content-changer-info-buttons">
           <button type="button" formaction="#street-info" class="open-info-street">
               <span class="menu-icon fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
               </span>
@@ -89,7 +89,7 @@
               <span>המבצעים והארועים</span>
             </button>
       </div>
-      <div class="col-md-8 content-changer-buttons">
+      <div class="col-md-8 col-sm-8 col-xs-12 content-changer-map-buttons">
          <h3>מפה - העסקים והארועים</h3> 
       </div>
     </div>
@@ -100,6 +100,16 @@
           <script id="map-template" type="text/x-handlebars-template">
             <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper ">
               <img src="images/map_midrechov.svg" alt="map"> </img>
+              <div class="local-event position-top-449"">
+                מפגש - הורים ביביסיטריות
+                <date><br>
+                 <span class="date"> 12/9/18</span> 
+                 <span class="hour"> 19:00</span> 
+                 <span class= "details">
+                  מתרשמים, מחליפים פרטים, שותים בירה, אוכלים פיצה וממשיכים עם תקוות לעתיד
+                 </span>
+                </date>
+              </div>"
 
               <table id="business_details" class="table table-condensed table-striped"></table>
               <!-- block1 -->

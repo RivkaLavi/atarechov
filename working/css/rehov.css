@@ -222,23 +222,42 @@ section {
       .poster-header p {
         font-size: 26px; } }
 
-.content-changer-buttons h3 {
+.content-changer-map-buttons h3 {
   font-size: 30px;
   line-height: 30px;
   margin: 5px 5px; }
+  @media screen and (max-width: 768px) {
+    .content-changer-map-buttons h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #42709e; } }
 
-.content-changer-buttons button {
+@media screen and (max-width: 768px) {
+  .content-changer-map-buttons {
+    text-align: center;
+    background-color: #e2e2e2; } }
+
+@media screen and (max-width: 768px) {
+  .content-changer-info-buttons {
+    text-align: center; } }
+
+.content-changer-info-buttons button {
   color: #42709e;
   background-color: #ffffff;
   font-size: 30px;
   border: none;
   margin: 5px 5px; }
-  .content-changer-buttons button .menu-icon {
+  .content-changer-info-buttons button .menu-icon {
     color: #fdc415;
     font-size: 25px;
+    width: 30px;
     transition: color .2s ease; }
-  .content-changer-buttons button:hover .menu-icon {
+  .content-changer-info-buttons button:hover .menu-icon {
     color: #ff3c00; }
+  @media screen and (max-width: 1557px) {
+    .content-changer-info-buttons button {
+      font-size: 18px;
+      padding: 0; } }
 
 /*map*/
 .map-wrapper {
@@ -261,7 +280,7 @@ section {
     width: 40px;
     opacity: 1;
     float: left; }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 768px) {
     .street-info-wrapper {
       position: absolute;
       top: 0px;
@@ -456,6 +475,36 @@ section {
   position: absolute;
   margin-top: 67px; }
 
+/*map events*/
+.local-event {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 0px 9px 50px rgba(0, 0, 0, 0.6);
+  -webkit-transition-property: box-shadow;
+  -moz-transition-property: box-shadow;
+  -o-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .3s;
+  -moz-transition-duration: .3s;
+  -o-transition-duration: .3s;
+  transition-duration: .3s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  padding: 5px; }
+  .local-event:hover {
+    box-shadow: 0px 9px 80px rgba(0, 0, 0, 0.6); }
+  .local-event .details {
+    display: none; }
+  .local-event:hover .details {
+    display: block; }
+  .local-event.position-top-449 {
+    top: 449px;
+    right: 283px; }
+
 .business-map {
   position: absolute; }
   .business-map.position1 {
@@ -569,7 +618,8 @@ section {
 
 #business_info_wrapper.business-info-wrapper {
   position: relative;
-  padding-right: 0; }
+  padding-right: 0;
+  background-color: #fff; }
   #business_info_wrapper.business-info-wrapper ul {
     padding: 0; }
   #business_info_wrapper.business-info-wrapper .tab-pane {
@@ -870,9 +920,3 @@ ul#features li {
     background-image: url(../images/my-icons/knitting.svg); }
   ul#features li.sewing {
     background-image: url(../images/my-icons/needle.svg); }
-  ul#features li.large-sizes {
-    background-image: url(../images/my-icons/kosher.svg); }
-  ul#features li.free-consultation {
-    background-image: url(../images/my-icons/kosher.svg); }
-  ul#features li.personal-escort {
-    background-image: url(../images/my-icons/kosher.svg); }

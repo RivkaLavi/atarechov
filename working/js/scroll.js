@@ -1,6 +1,6 @@
 function bizInfoScroller(){
     var element = document.getElementById("business_info_wrapper");
-    var desiredPosition = 300;
+    var desiredPosition = 315;
     if(window.pageYOffset >= desiredPosition){
        element.style.cssText += "position: fixed; top: 10px; bottom: auto; right: 10px; left: auto;"; 
       }

@@ -23,9 +23,6 @@ tagDict = {
 "קרמיקה": "ceramics",
 "סריגה": "knitting",
 "תפירה": "sewing",
-"מידות גדולות": "large-sizes",
-"יעוץ חינם": "free-consultation",
-"ליווי אישי" :"personal-escort",
 };
 
 // Convert firebase snapshot to Array - from https://bit.ly/2Ejxtxo
