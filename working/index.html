@@ -43,10 +43,21 @@
       <div class="col-md-11 col-sm-11 col-xs-11 pull-right">
         <h1 class="main-address  pull-right">
           <span class="label-bold">אתר רחוב</span>
-          <span class="label-light">כפר סבא - מדרחוב ירושלים</span>
+          <span class="label-light">כפר-סבא - מדרחוב ירושלים</span>
         </h1>
       </div>
     </div>
+        <!--header-->
+        <section class="header">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12 header">
+            <h1>כל מה שקורה במדרחוב ירושלים - המבצעים, הארועים והעסקים</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
     <!--promotion-->
     <section class="poster-header">
       <div class="container">
@@ -221,7 +232,7 @@
           </script>
         </div>
         <!--street info-->
-        <div class="col-md-4  col-sm-4 col-xs-12  street-info-wrapper landscape-12 padding0 xs-visibity visibityclose" id="street-info">
+        <div id="street-info" class="col-md-4  col-sm-4 col-xs-12  street-info-wrapper landscape-12 padding0 xs-visibity visibityclose display_none" >
           <div class="hidden-md hidden-sm hidden-lg ">
             <button type="button" class="close top-close" title="סגירה">
               <i class="fa fa-times" aria-hidden="true"></i>
@@ -296,7 +307,7 @@
         </div>
         <!--end street-info-wrapper-->
         <!--campaign-info-wrapper-->
-        <div class="col-md-4  col-sm-4 col-xs-12  campaign-info-wrapper landscape-12 xs-visibity visibityclose display_none" id="campaign-info">
+        <div id="campaign-info"  class="col-md-4  col-sm-4 col-xs-12  campaign-info-wrapper landscape-12 xs-visibity visibityclose " >
           <div class="hidden-md hidden-sm hidden-lg ">
             <button type="button" class="close top-close" title="סגירה">
               <i class="fa fa-times" aria-hidden="true"></i>
@@ -332,7 +343,7 @@
         </div>
         <!--end-campaign-info-wrapper-->
         <!--business info-->
-        <div id="business_info_wrapper" class="col-md-4  col-sm-4 col-xs-12 business-info-wrapper landscape-12">
+        <div id="business_info_wrapper" class="col-md-4  col-sm-4 col-xs-12 business-info-wrapper landscape-12 xs-visibity">
           <div id="biz_template_parent">
             <script id="business-info-template" type="text/x-handlebars-template">
               <ul id="business_info" class="tab-content">
@@ -436,7 +447,6 @@
     </section>
     <!-- database connection -->
     <script src="render_firebase.js"></script>
-    <script src="content_changer.js"></script>
 </body>
 
 </html>

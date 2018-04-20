@@ -7,22 +7,22 @@ firebase.initializeApp(config);
 
 // Initialize tag dictionary
 tagDict = {
-"כשר": "kosher",
-"בשרי": "meat",
-"חלבי": "dairy",
-"דגים": "fish",
-"מישלוחים": "delivery",
-"בירה מהחבית": "draft-beer",
-"הרבה צל": "shade",
-"נחמדים לילדים": "child-friendly",
-"נחמדים לחיות": "animal-friendly",
-"ידידותי לצליאק": "gluten-free",
-"ידידותי למים": "vegan-friendly",
-"נגיש": "accessible",
-"ציור שמן": "oil-painting",
-"קרמיקה": "ceramics",
-"סריגה": "knitting",
-"תפירה": "sewing",
+  "כשר": "kosher",
+  "בשרי": "meat",
+  "חלבי": "dairy",
+  "דגים": "fish",
+  "מישלוחים": "delivery",
+  "בירה מהחבית": "draft-beer",
+  "הרבה צל": "shade",
+  "נחמדים לילדים": "child-friendly",
+  "נחמדים לחיות": "animal-friendly",
+  "ידידותי לצליאק": "gluten-free",
+  "ידידותי למים": "vegan-friendly",
+  "נגיש": "accessible",
+  "ציור שמן": "oil-painting",
+  "קרמיקה": "ceramics",
+  "סריגה": "knitting",
+  "תפירה": "sewing",
 };
 
 // Convert firebase snapshot to Array - from https://bit.ly/2Ejxtxo
@@ -76,9 +76,12 @@ function enrichBizTags(bizArray, tagDict) {
       var description = tags[j];
       var klass = tagDict[description];
       if (klass === undefined) {
-        console.log("No class found for "+ description)
+        console.log("No class found for " + description)
       }
-      enrichedTags.push({"klass": klass, "description": description})
+      enrichedTags.push({
+        "klass": klass,
+        "description": description
+      })
     }
     row['tag_list'] = enrichedTags;
     rv.push(row)
@@ -95,7 +98,51 @@ function changeClasses(error, options, response) {
   });
 }
 
-var observer = new MutationObserver(changeClasses);
+function changeContent(error, options, response) {
+  console.log('Running changeClasses()');
+  var openClasses = $('li.open').click(function () {
+    $('.business-info-wrapper').removeClass('display_none');
+    $('.street-info-wrapper').addClass('display_none');
+    $('.campaign-info-wrapper').addClass('display_none');
+  });
+  console.log('Running changeContent()');
+  // open street-info-wrapper
+  $('.open-info-street').click(function () {
+    $('.business-info-wrapper').addClass('display_none');
+    $('.campaign-info-wrapper').addClass('display_none');
+    $('.street-info-wrapper').removeClass('display_none');
+
+  });
+
+  // open campaign-info-wrapper
+  $('.open-campaign-info').click(function () {
+    $('.business-info-wrapper').addClass('display_none');
+    $('.street-info-wrapper').addClass('display_none');
+    $('.campaign-info-wrapper').removeClass('display_none');
+  });
+
+  // xs-visibity
+  $('.open-info-street').click(function () {
+    $('.xs-visibity').addClass('visibityopen');
+  });
+
+  $('.open-campaign-info').click(function () {
+    $('.xs-visibity').addClass('visibityopen');
+  });
+
+  // xs-close-button
+  $('.top-close').click(function () {
+    console.log('close wrapper')
+    $('.xs-visibity').addClass('display_none');
+  });
+
+  function myFunction() {
+    document.getElementById("map").style.overflow = "scroll";
+  }
+}
+
+//var observer = new MutationObserver(changeClasses);
+var observer = new MutationObserver(changeContent);
 
 // compile map
 var mapTemplate = document.getElementById("map-template");
@@ -120,13 +167,21 @@ ref.once('value', function (snapshot) {
   var prep_biz = preparePositionGroups(list);
   var mapHtml = compiledMapTemplate(prep_biz);
   var enrichedInfo = enrichBizTags(list, tagDict);
-  var bizHtml = compiledBizTemplate({biz_info: enrichedInfo});
-  var salesHtml = compiledSalesTemplate({sale: filterCampaigns(list)});
-  var eventsHtml = compiledEventsTemplate({sale: filterCampaigns(list)});
+  var bizHtml = compiledBizTemplate({
+    biz_info: enrichedInfo
+  });
+  var salesHtml = compiledSalesTemplate({
+    sale: filterCampaigns(list)
+  });
+  var eventsHtml = compiledEventsTemplate({
+    sale: filterCampaigns(list)
+  });
 
   var bizTemplateParent = bizTemplate.parentElement;
   // Watch for changes on bizTemplateParent
-  observer.observe(bizTemplateParent, {childList: true});
+  observer.observe(bizTemplateParent, {
+    childList: true
+  });
   mapTemplate.parentElement.innerHTML = mapHtml;
   bizTemplateParent.innerHTML = bizHtml;
   salesTemplate.parentElement.innerHTML = salesHtml;
