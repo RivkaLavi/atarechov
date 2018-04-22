@@ -9,6 +9,8 @@ $text1:#fff;
 $text2:#000;
 $brand:#000;
 
+ 
+
 // media variable
 $break-xs: 450px;
 $break-sm: 568px;
@@ -42,6 +44,42 @@ section{
 
 
 // mixing
+
+// titles
+@mixin big-title-bold{
+  color: #000;
+  font-size: 60px;
+  font-weight: 700;
+}
+@mixin big-title-regular{
+  color: #000;
+  font-size: 60px;
+  font-weight: 400;
+}
+@mixin medium-title-bold{
+  color: #000;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+@mixin medium-title-regular{
+  color: #000;
+  font-size: 26px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+@mixin small-title-bold{
+  color: #000;
+  font-size: 20px;
+  font-weight: 700;
+}
+@mixin small-title-regular{
+  color: #000;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+
 
 @mixin linear-gradient($direction, $color-stops...) {
 background: nth(nth($color-stops, 1), 1);
@@ -201,7 +239,7 @@ section { display: block;   margin-bottom: 20px;}
 //labels
 
 .label-bold { font-size: 35px; font-weight: 700;
-  @media screen and (max-width: $break-md) { font-size: 25px; }
+@media screen and (max-width: $break-md) { font-size: 25px; }
 @media  screen and (max-width: $break-md) and (orientation: landscape) { font-size: 20px;}
 @media screen and (max-width: $break-xs) { font-size: 14px; }
 }
@@ -210,6 +248,11 @@ section { display: block;   margin-bottom: 20px;}
 @media screen and (max-width: $break-md) { font-size: 25px; }
 @media  screen and (max-width: $break-md) and (orientation: landscape) { font-size: 20px; }
 @media screen and (max-width: $break-xs) { font-size: 14px; }
+}
+
+.anderline{
+  border-bottom: 3px solid $theme-color2;
+  padding-bottom: 5px;
 }
 
 //arrow
@@ -785,213 +828,75 @@ transition-timing-function:  ease-out;
 
 
 // business-info
+.business-info-wrapper {
+  position: relative;
+  top: 10px;
+   bottom: auto; 
+   right: auto; left: 10px;
+  border: 1px solid $theme-color2;
 
-#business_info_wrapper.business-info-wrapper{
-  position: relative; 
-  padding-right: 0;
-  background-color: #fff;
-ul {padding: 0;}
-.tab-pane{
-position: relative; 
-.portrait{
-position: absolute;
-z-index: 1;
-top: 5px;
-right: 5px ;
-img{
-width: 60px;
-border: 3px solid $theme-color2-bright;
-}
-}
-}
-
-.top-close{  
-height: 50px;
-width: 50px;
-border-radius: 50%;
-background-color: #fff;
-color:$text2;
-font-size: 30px;
-position: absolute;
-left: -14px;
-top: -12px;
-opacity: 1;
-.fa-times{
-font-size: 30px;
-color:$secondary;
-}
-}
-
-h2{
-@media screen and (max-width: $break-xs) {
-margin-top: 10px;
-padding: 0 15px;
-}
-
-}
-
-img{width: 100%;}
-.contact-wrapper{
-
-font-size: 20px;
-line-height: 20px;
-.icon
-{
-font-size: 40px; 
-color:$secondary;
-margin-left:10px;
-@media screen and (max-width: $break-xs) {
-width: 40px;
-height: 40px;
-text-align: center;
-}
-
-
-}
-a{
-font-size: 28px;
-display: inline; 
-@media screen and (max-width: $break-xs) {
-font-size:1.3em;
-}
-
-}
-.street{
-line-height: 40px;
-}
-.street-num{
-background-color: $secondary;
-width: 40px;
-height: 40px;
-color: $text1;
-padding: 5px;
-text-align: center;
-margin-left: 10px;
-}
-@media screen and (max-width: $break-xs) {
-font-size: 1.3em;
-}
-
-}
-
-.text-community{
--webkit-animation: animationOpacity 1s ease-in; /* Safari 4+ */
--moz-animation:animationOpacity 1s ease-in; /* Fx 5+ */
--o-animation:animationOpacity 1s ease-in; /* Opera 12+ */
-animation:animationOpacity 1s ease-in; /* IE 10+, Fx 29+ */
-border: 3px solid $theme-color2-bright;
-padding: 15px;
-margin-top: 20px;
-background-color: #fff;
-p { 
-  font-size:18px;
-
-}
-
-.action{
-    &.campaign{
-    &:before{
-    font-family: st;
-    font-size: 18px;
-    content: '\e000';
-    color:$yellow
-  } 
+  h3 { 
+    @include medium-title-bold;
+    text-align: center;
   }
- &.party{
-    &:before{
-    font-family: st;
-    font-size: 18px;
-    content: '\78';
-    color:$pink
-  } 
+  h4 { 
+    @include small-title-bold;
+    text-align: center;
+    margin: 0;
+    padding-top: 10px;
   }
-}
-img{
-width: 40px;
-}
-
-}
-
-.opening-hours{  
-  .open-close{
-  font-size:30px;
-  text-align: right;
-  line-height: 40px;
-    @media screen and (max-width: $break-xs) {
+  .tab-content {
+    position: relative;
     padding: 0;
-    margin: 10px 0;
-    text-align: right;
-    border-bottom: 1px solid $theme-color2-bright;
+    li {
+      padding: 0;
+  .street-view{
+    width: 100%;
+    height: auto;
+  }
+  .portrait{
+    position: absolute;
+    z-index: 1;
+    top: 5px;
+    right: 5px;
+    img{
+    height: 50px;
+    width: 50px;
+    border: 1px solid $theme-color2-bright;
     }
   }
-    .opening-hours-info{
-      p { font-size: 18px; }
-    @media screen and (max-width: $break-xs) { padding: 0; }
+  .campaign-text p{
+    font-size: 20px;
+  .action{
+    &:before{
+    padding: 3px;
+    text-align: center;
+    font-size: 18px;
+     color:#fff;
+     border-radius: 50%;
     }
-    @media screen and (max-width: $break-xs) {
-    p{ font-size: 1.2em; line-height: 1.2em; } 
+      &.campaign{
+        &:before{
+      font-family: st;
+      content: '\e000';
+      background-color: #fdc415;
+        }
     }
-}  
+    &.party{
+      &:before{
+      font-family: st;
+      content: "\78";
+      background-color: #FD1576;
+      }
+    }
 
-
-
-
-.social{
-text-align: center;
-line-height: 68px;        
-height: 70px;
-width: 100%;
-font-size: 40px;
-border: 3px solid $theme-color2;
-background:#fff;
-color:$theme-color2;
--webkit-transition-property: background,color,box-shadow;
--moz-transition-property: background,color,box-shadow;
--o-transition-property: background,color,box-shadow;
-transition-property: background,color,box-shadow;
--webkit-transition-duration: .5s;
--moz-transition-duration: .5s;
--o-transition-duration: .5s;
-transition-duration: .5s;
--webkit-transition-timing-function: linear;
--moz-transition-timing-function: linear;
--o-transition-timing-function: linear;
-transition-timing-function: linear;
-  @media screen and (max-width: $break-xs){
-  line-height: 48px;
-  width: 80px;
-  font-size: 30px;
-  height: 50px;
+   }
   }
-
-  &:hover{
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-  background-color:$theme-color2;
-  color:$text1;
-  text-decoration: none;
-
-  }
-
+}
+}
 }
 
-
-// mobile business-info-wrapper
-@media screen and (max-width: $break-xs){
-position:absolute;
-top: 0px;
-right: 0;
-padding: 0px 0 10px 0;
-background-color: #fff;
-}
-@media  screen and (max-width: $break-md) and (orientation: landscape) {
-position:absolute;
-top: 0px;
-padding: 0px 0 10px 0;
-background-color: #fff;
-}
-
-}
-
+// campaigns-info
 .campaign-info-wrapper{
   .sales-list {
    ul { list-style: none; padding: 0;

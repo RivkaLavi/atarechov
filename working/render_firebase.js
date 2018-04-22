@@ -89,15 +89,6 @@ function enrichBizTags(bizArray, tagDict) {
   return rv;
 }
 
-function changeClasses(error, options, response) {
-  console.log('Running changeClasses()');
-  var openClasses = $('li.open').click(function () {
-    $('.business-info-wrapper').removeClass('display_none');
-    $('.street-info-wrapper').addClass('display_none');
-    $('.campaign-info-wrapper').addClass('display_none');
-  });
-}
-
 function changeContent(error, options, response) {
   console.log('Running changeClasses()');
   var openClasses = $('li.open').click(function () {
@@ -141,7 +132,6 @@ function changeContent(error, options, response) {
   }
 }
 
-//var observer = new MutationObserver(changeClasses);
 var observer = new MutationObserver(changeContent);
 
 // compile map

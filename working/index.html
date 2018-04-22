@@ -349,33 +349,26 @@
               <ul id="business_info" class="tab-content">
                 {{#each biz_info}}
                 <li class="tab-pane text-style" id="{{this.tab_link}}">
+                  <!-- close button for mobile -->
                   <div class="hidden-md hidden-sm hidden-lg ">
                     <button type="button" class="close top-close" title="סגירה">
                       <i class="fa fa-times" aria-hidden="true"></i>
                     </button>
                   </div>
-                  <img src='{{this.street_view}}'> </img>
+                  <!-- street view-->
+                  <img src='{{this.street_view}}' class ="street-view"> </img>
                   {{#if this.profile_image}}
+                  <!-- profile image -->
                   <div class="hidden-xs portrait pull-right  ">
                     <img src='{{this.profile_image}}' class="img-circle"> </img>
                   </div>
                   {{/if}}
-                  <h2>{{this.business_name}}</h2>
-                  <div class="col-md-12 col-xs-12 contact-wrapper padding0">
-                    <address>
-                      <div class="col-md-7 col-xs-12 landscape-6">
-                        <span class="street-num pull-right">{{this.address_num}}</span>
-                        <span class="street">{{this.address_street}}</span>
-                      </div>
-                      <div class="col-md-5 col-xs-12 landscape-6">
-                        <a href="#{{this.business_phone}}">
-                          <span class="icon fa fa-mobile" aria-hidden="true"></span> {{this.business_phone}}</a>
-                      </div>
-                    </address>
-                  </div>
-
+                  <!-- business name -->
+                  <h3><span class="anderline">{{this.business_name}}</span></h3>
+                  <!-- campaign -->
+                  <h4>{{this.campaign_title}}</h4>
                   {{#if this.campaign_string}}
-                  <div class="col-md-12 col-xs-12 text-community ">
+                  <div class="col-md-12 col-xs-12 campaign-text margin1 ">
                     <p>
                       <img src='{{this.profile_image}}' class="hidden-md hidden-sm hidden-lg "> </img>
                       <span class="{{this.action}}"></span>
@@ -384,11 +377,22 @@
                     </p>
                   </div>
                   {{/if}}
-                  <div class="col-md-12 col-xs-12 opening-hours-info">
-                    <h2 class="open-close">פתוח עכשיו</h2>
+                  {{#if this.events_string}}
+                  <div class="col-md-12 col-xs-12 campaign-text margin1">
+                    <p>
+                      <img src='{{this.profile_image}}' class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class="{{this.action}}"></span>
+                      <span> {{this.events_string}}</span>
+                      <a href="{{this.cross_campaign_link}}">{{this.cross_campaign_partner}}</a>
+                    </p>
+                  </div>
+                  {{/if}}
+                    <!-- opening hours -->
+                  <div class="col-md-6 col-xs-6 opening-hours-info pull-right">
+                    <h4>שעות פתיחה</h4>
                     <p>
                       <span class="day">
-                        ראשון - חמישי :
+                        א' - ה' :
                       </span>
                       <span class="hours">
                         {{this.opening_hours_su_th}}
@@ -396,7 +400,7 @@
                     </p>
                     <p>
                       <span class="day">
-                        שישי :
+                        ו' :
                       </span>
                       <span class="hours">
                         {{this.opening_hours_fr}}
@@ -411,13 +415,27 @@
                       </span>
                     </p>
                   </div>
+                  <!-- amenties tags -->
                   <div class="col-md-12 margin1 hidden-xs">
                     <ul id="features">
                      {{#each tag_list}}
                      <li class="{{this.klass}} pull-right"> <span class="description">{{this.description}}</span></li>
                      {{/each}}
                   </ul>
-                   
+                   <!-- contacts -->
+                  <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+                      <address>
+                        <div class="col-md-7 col-xs-12 landscape-6">
+                          <span class="street-num pull-right">{{this.address_num}}</span>
+                          <span class="street">{{this.address_street}}</span>
+                        </div>
+                        <div class="col-md-5 col-xs-12 landscape-6">
+                          <a href="#{{this.business_phone}}">
+                            <span class="icon fa fa-mobile" aria-hidden="true"></span> {{this.business_phone}}</a>
+                        </div>
+                      </address>
+                    </div>
+                     <!-- facebook -->
                   <div class="col-md-12 margin2">
                       {{#if this.facebook_link}}
                     <a class="col-md-5 social pull-right fa fa-facebook" href="{{this.facebook_link}}" title="facebook"> </a>
