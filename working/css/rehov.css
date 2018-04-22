@@ -1,6 +1,5 @@
 @charset "UTF-8";
 section {
-  /* width */
   /* Track */
   /* Handle */
   /* Handle on hover */ }
@@ -120,10 +119,6 @@ section {
   cursor: url(../images/Cat-Track-icon.png), auto;
   overflow: scroll; }
 
-a, button {
-  cursor: url(../images/Cat-button-icon.png), auto;
-  /* fallback: no `url()` support or images disabled */ }
-
 /* \/\/--- Top line ---\/\/ */
 .header-address {
   background: #fdc415;
@@ -227,6 +222,43 @@ a, button {
       .poster-header p {
         font-size: 26px; } }
 
+.content-changer-map-buttons h3 {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 5px 5px; }
+  @media screen and (max-width: 768px) {
+    .content-changer-map-buttons h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #42709e; } }
+
+@media screen and (max-width: 768px) {
+  .content-changer-map-buttons {
+    text-align: center;
+    background-color: #e2e2e2; } }
+
+@media screen and (max-width: 768px) {
+  .content-changer-info-buttons {
+    text-align: center; } }
+
+.content-changer-info-buttons button {
+  color: #42709e;
+  background-color: #ffffff;
+  font-size: 30px;
+  border: none;
+  margin: 5px 5px; }
+  .content-changer-info-buttons button .menu-icon {
+    color: #fdc415;
+    font-size: 25px;
+    width: 30px;
+    transition: color .2s ease; }
+  .content-changer-info-buttons button:hover .menu-icon {
+    color: #ff3c00; }
+  @media screen and (max-width: 1557px) {
+    .content-changer-info-buttons button {
+      font-size: 18px;
+      padding: 0; } }
+
 /*map*/
 .map-wrapper {
   overflow: scroll;
@@ -237,55 +269,6 @@ a, button {
     position: absolute;
     top: -70px;
     right: -317px; }
-  .map-wrapper .street-info {
-    position: absolute;
-    top: 0px;
-    background: rgba(0, 0, 0, 0.63);
-    padding: 5px 10px;
-    box-shadow: -1px 1px 2px transparent;
-    -webkit-transition-property: background,color,box-shadow;
-    -moz-transition-property: background,color,box-shadow;
-    -o-transition-property: background,color,box-shadow;
-    transition-property: background,color,box-shadow;
-    -webkit-transition-duration: .5s;
-    -moz-transition-duration: .5s;
-    -o-transition-duration: .5s;
-    transition-duration: .5s;
-    -webkit-transition-timing-function: linear;
-    -moz-transition-timing-function: linear;
-    -o-transition-timing-function: linear;
-    transition-timing-function: linear; }
-    @media screen and (max-width: 450px) {
-      .map-wrapper .street-info {
-        margin: 10px 0 0 0; } }
-    .map-wrapper .street-info:hover {
-      box-shadow: -1px 1px 40px rgba(0, 0, 0, 0.43);
-      background: rgba(0, 0, 0, 0.63); }
-    .map-wrapper .street-info button {
-      width: 60px;
-      height: 60px;
-      color: #fdc415;
-      background-color: #ffffff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      border: 3px solid #d9f4ff;
-      margin: 5px 5px;
-      -webkit-transition-property: background,color,box-shadow;
-      -moz-transition-property: background,color;
-      -o-transition-property: background,color;
-      transition-property: background,color;
-      -webkit-transition-duration: .5s;
-      -moz-transition-duration: .5s;
-      -o-transition-duration: .5s;
-      transition-duration: .5s;
-      -webkit-transition-timing-function: linear;
-      -moz-transition-timing-function: linear;
-      -o-transition-timing-function: linear;
-      transition-timing-function: linear; }
-      .map-wrapper .street-info button:hover {
-        color: #fff;
-        background-color: #fdc415; }
 
 .street-info-wrapper {
   background-color: #fff; }
@@ -297,7 +280,7 @@ a, button {
     width: 40px;
     opacity: 1;
     float: left; }
-  @media screen and (max-width: 450px) {
+  @media screen and (max-width: 768px) {
     .street-info-wrapper {
       position: absolute;
       top: 0px;
@@ -492,6 +475,36 @@ a, button {
   position: absolute;
   margin-top: 67px; }
 
+/*map events*/
+.local-event {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  background-color: #fff;
+  box-shadow: 0px 9px 50px rgba(0, 0, 0, 0.6);
+  -webkit-transition-property: box-shadow;
+  -moz-transition-property: box-shadow;
+  -o-transition-property: box-shadow;
+  transition-property: box-shadow;
+  -webkit-transition-duration: .3s;
+  -moz-transition-duration: .3s;
+  -o-transition-duration: .3s;
+  transition-duration: .3s;
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  padding: 5px; }
+  .local-event:hover {
+    box-shadow: 0px 9px 80px rgba(0, 0, 0, 0.6); }
+  .local-event .details {
+    display: none; }
+  .local-event:hover .details {
+    display: block; }
+  .local-event.position-top-449 {
+    top: 449px;
+    right: 283px; }
+
 .business-map {
   position: absolute; }
   .business-map.position1 {
@@ -605,7 +618,8 @@ a, button {
 
 #business_info_wrapper.business-info-wrapper {
   position: relative;
-  padding-right: 0; }
+  padding-right: 0;
+  background-color: #fff; }
   #business_info_wrapper.business-info-wrapper ul {
     padding: 0; }
   #business_info_wrapper.business-info-wrapper .tab-pane {
@@ -715,40 +729,6 @@ a, button {
     #business_info_wrapper.business-info-wrapper .opening-hours p {
       font-size: 1.2em;
       line-height: 1.2em; } }
-  #business_info_wrapper.business-info-wrapper .feature {
-    color: #000;
-    background-color: #d9f4ff;
-    margin-left: 1%;
-    text-align: center;
-    font-size: 1.3em;
-    line-height: 1.3em;
-    padding: 10px 2px;
-    width: 19%;
-    height: 50px;
-    cursor: url(../images/info.png), auto; }
-    @media screen and (max-width: 1200px) {
-      #business_info_wrapper.business-info-wrapper .feature {
-        width: 100%;
-        margin-bottom: 5px; } }
-    #business_info_wrapper.business-info-wrapper .feature .description {
-      display: none;
-      color: transparent; }
-    #business_info_wrapper.business-info-wrapper .feature img {
-      color: #000;
-      -webkit-transition: color .3s ease-in-out;
-      -moz-transition: color .3s ease-in-out;
-      -o-transition: color .3s ease-in-out;
-      transition: color .3s ease-in;
-      height: 30px; }
-    #business_info_wrapper.business-info-wrapper .feature:hover img {
-      color: transparent;
-      display: none; }
-    #business_info_wrapper.business-info-wrapper .feature:hover .description {
-      display: block;
-      color: #000; }
-    @media screen and (max-width: 1200px) {
-      #business_info_wrapper.business-info-wrapper .feature:hover {
-        height: 68px; } }
   #business_info_wrapper.business-info-wrapper .social {
     text-align: center;
     line-height: 68px;
@@ -795,56 +775,148 @@ a, button {
       padding: 0px 0 10px 0;
       background-color: #fff; } }
 
-@media screen and (max-width: 450px) {
-  .campaign-info-wrapper {
-    position: absolute;
-    top: 0px;
-    right: 0;
-    padding: 0px 0 10px 0;
-    background-color: #fff; } }
-
-@media screen and (max-width: 768px) and (orientation: landscape) {
-  .campaign-info-wrapper {
-    position: absolute;
-    top: 0px;
-    padding: 0px 0 10px 0;
-    background-color: #fff; } }
-
-.campaign-info-wrapper .top-close {
-  color: #ff3c00;
-  background-color: #d9f4ff;
-  border-radius: 50%;
-  height: 40px;
-  width: 40px;
-  opacity: 1;
-  float: left;
-  border: 3px solid #ff3c00; }
-
-@media screen and (max-width: 450px) {
-  .campaign-info-wrapper h2 {
-    margin-top: -30px; } }
-
-@media screen and (max-width: 768px) and (orientation: landscape) {
-  .campaign-info-wrapper h2 {
-    margin-top: -30px; } }
-
-.campaign-info-wrapper .campaign-list {
-  list-style-type: none;
-  padding: 0; }
-  .campaign-info-wrapper .campaign-list .campaign-unit {
-    padding: 10px;
-    border: 1px solid #d9f4ff; }
-    .campaign-info-wrapper .campaign-list .campaign-unit h3 {
-      display: inline; }
-    .campaign-info-wrapper .campaign-list .campaign-unit img {
-      width: 70px; }
-    .campaign-info-wrapper .campaign-list .campaign-unit:before {
+.campaign-info-wrapper {
+  font-size: 18px; }
+  .campaign-info-wrapper .sales-list ul {
+    list-style: none;
+    padding: 0; }
+    .campaign-info-wrapper .sales-list ul li {
+      margin-bottom: 15px; }
+      .campaign-info-wrapper .sales-list ul li .icons {
+        color: #ff3c00;
+        margin-right: 5px; }
+      .campaign-info-wrapper .sales-list ul li .business-name {
+        color: #42709e;
+        font-weight: 700;
+        margin-right: 5px; }
+      .campaign-info-wrapper .sales-list ul li .campaign-string {
+        font-size: 20px;
+        color: #42709e; }
+  @media screen and (max-width: 450px) {
+    .campaign-info-wrapper {
       position: absolute;
-      right: -12px;
-      font-family: street;
-      content: '\0059';
-      color: #fdc415;
-      font-size: 20px;
-      margin-left: 10px; }
+      top: 0px;
+      right: 0;
+      padding: 0px 0 10px 0;
+      background-color: #fff; } }
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    .campaign-info-wrapper {
+      position: absolute;
+      top: 0px;
+      padding: 0px 0 10px 0;
+      background-color: #fff; } }
+  .campaign-info-wrapper .top-close {
+    color: #ff3c00;
+    background-color: #d9f4ff;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    opacity: 1;
+    float: left;
+    border: 3px solid #ff3c00; }
+  @media screen and (max-width: 450px) {
+    .campaign-info-wrapper h2 {
+      margin-top: -30px; } }
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    .campaign-info-wrapper h2 {
+      margin-top: -30px; } }
+  .campaign-info-wrapper .campaign-list {
+    list-style-type: none;
+    padding: 0; }
+    .campaign-info-wrapper .campaign-list .campaign-unit {
+      padding: 10px;
+      border: 1px solid #d9f4ff; }
+      .campaign-info-wrapper .campaign-list .campaign-unit h3 {
+        display: inline; }
+      .campaign-info-wrapper .campaign-list .campaign-unit img {
+        width: 70px; }
+      .campaign-info-wrapper .campaign-list .campaign-unit:before {
+        position: absolute;
+        right: -12px;
+        font-family: street;
+        content: '\0059';
+        color: #fdc415;
+        font-size: 20px;
+        margin-left: 10px; }
 
-/***** medias******/
+.feature {
+  color: #000;
+  background-color: #d9f4ff;
+  margin-left: 1%;
+  text-align: center;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  padding: 10px 2px;
+  width: 19%;
+  height: 50px;
+  cursor: url(../images/info.png), auto; }
+  @media screen and (max-width: 1200px) {
+    .feature {
+      width: 100%;
+      margin-bottom: 5px; } }
+  .feature .description {
+    display: none;
+    color: transparent; }
+  .feature img {
+    color: #000;
+    -webkit-transition: color .3s ease-in-out;
+    -moz-transition: color .3s ease-in-out;
+    -o-transition: color .3s ease-in-out;
+    transition: color .3s ease-in;
+    height: 30px; }
+  .feature:hover img {
+    color: transparent;
+    display: none; }
+  .feature:hover .description {
+    display: block;
+    color: #000; }
+  @media screen and (max-width: 1200px) {
+    .feature:hover {
+      height: 68px; } }
+
+ul#features li {
+  width: 19%;
+  margin: .5%;
+  list-style: none;
+  color: #000;
+  background-color: #d9f4ff;
+  text-align: center;
+  font-size: 14px;
+  line-height: 68px;
+  padding: 10px 2px;
+  height: 57px;
+  cursor: url(../images/info.png), auto;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center 5px;
+  background-size: 30px; }
+  ul#features li.kosher {
+    background-image: url(../images/my-icons/kosher.svg); }
+  ul#features li.meat {
+    background-image: url(../images/my-icons/meat.svg); }
+  ul#features li.dairy {
+    background-image: url(../images/my-icons/cheese.svg); }
+  ul#features li.fish {
+    background-image: url(../images/my-icons/fish.svg); }
+  ul#features li.delivery {
+    background-image: url(../images/my-icons/Helmet.svg); }
+  ul#features li.draft-beer {
+    background-image: url(../images/my-icons/Bar.svg); }
+  ul#features li.shade {
+    background-image: url(../images/my-icons/Beach.svg); }
+  ul#features li.child-friendly {
+    background-image: url(../images/my-icons/Children.svg); }
+  ul#features li.gluten-free {
+    background-image: url(../images/my-icons/gluten-free.svg); }
+  ul#features li.vegan-friendly {
+    background-image: url(../images/my-icons/Healthy.svg); }
+  ul#features li.accessible {
+    background-image: url(../images/my-icons/Wheelchair.svg); }
+  ul#features li.oil-painting {
+    background-image: url(../images/my-icons/paint-palette.svg); }
+  ul#features li.ceramics {
+    background-image: url(../images/my-icons/pottery.svg); }
+  ul#features li.knitting {
+    background-image: url(../images/my-icons/knitting.svg); }
+  ul#features li.sewing {
+    background-image: url(../images/my-icons/needle.svg); }

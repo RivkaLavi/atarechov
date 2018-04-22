@@ -1,0 +1,63 @@
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <title>Firebase example</title>
+  </head>
+  <body>
+  <script id="biz-template" type="text/x-handlebars-template">
+    <div id='mega'>
+		<ul id="biz" class="nav tabs">
+			{{#each group1}}
+			<li class="{{this.action}} open">
+				<a href="#{{this.tab_link}}" data-toggle="tab"  title="{{this.business_name}}">
+				<span class="icon {{this.icon}}"></span>
+				<strong>{{business_name}}</strong> </a>
+			</li>
+			{{/each}}
+		</ul>
+		<ul id="biz2" class="nav tabs width441">
+			{{#each group2}}
+			<li class="open {{this.action}} pull-right">
+				<a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+				<span class="{{this.icon}}"></span>
+				<strong class="business-name">{{this.business_name}}</strong> </a>
+			</li>
+			{{/each}}
+		</ul>
+		<ul id="biz3" class="nav tabs">
+			{{#each group3}}
+			<li class="open {{this.action}} pull-right">
+				<a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+				<span class="{{this.icon}}"></span>
+				<strong class="business-name">{{this.business_name}}</strong> </a>
+			</li>
+			{{/each}}
+		</ul>
+		<ul id="biz4" class="nav tabs">
+			{{#each group4}}
+			<li class="open {{this.action}} pull-right">
+				<a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+				<span class="{{this.icon}}"></span>
+				<strong class="business-name">{{this.business_name}}</strong> </a>
+			</li>
+			{{/each}}
+		</ul>
+		<ul id="biz5" class="nav tabs">
+			{{#each group5}}
+			<li class="open {{this.action}} pull-right">
+				<a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+				<span class="{{this.icon}}"></span>
+				<strong class="business-name">{{this.business_name}}</strong> </a>
+			</li>
+			{{/each}}
+		</ul>
+    </div>
+  </script>
+  <script src="render_firebase.js"></script>
+  </body>
+</html>
+
+

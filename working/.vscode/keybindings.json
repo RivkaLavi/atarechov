@@ -1,0 +1,8 @@
+{
+    "key": "'",
+    "command": "editor.action.insertSnippet",
+    "args": {
+        "snippet": "'"
+    },
+    "when": "editorTextFocus && !editorReadonly"
+}
