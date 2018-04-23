@@ -13,7 +13,7 @@ section {
   section ::-webkit-scrollbar-thumb {
     background: #ff3c00; }
   section ::-webkit-scrollbar-thumb:hover {
-    background: #42709e; }
+    background: #1060b1; }
 
 @media screen and (max-width: 450px), screen and (max-width: 768px) and (orientation: landscape) {
   .xs-visibity.visibityclose {
@@ -111,7 +111,7 @@ section {
       font-size: 14px; } }
 
 .anderline {
-  border-bottom: 3px solid #42709e;
+  border-bottom: 3px solid #1060b1;
   padding-bottom: 5px; }
 
 .arrow-right {
@@ -234,7 +234,7 @@ section {
     .content-changer-map-buttons h3 {
       font-size: 18px;
       font-weight: 700;
-      color: #42709e; } }
+      color: #1060b1; } }
 
 @media screen and (max-width: 768px) {
   .content-changer-map-buttons {
@@ -246,7 +246,7 @@ section {
     text-align: center; } }
 
 .content-changer-info-buttons button {
-  color: #42709e;
+  color: #1060b1;
   background-color: #ffffff;
   font-size: 30px;
   border: none;
@@ -267,7 +267,8 @@ section {
 .map-wrapper {
   overflow: scroll;
   height: 2000px;
-  position: relative; }
+  position: relative;
+  border: 2px solid #e2e2e2; }
   .map-wrapper img {
     width: 1700px;
     position: absolute;
@@ -304,7 +305,7 @@ section {
   .street-info-wrapper .menu-external-links button {
     width: 60px;
     height: 60px;
-    color: #42709e;
+    color: #1060b1;
     background-color: #ffffff;
     text-align: center;
     font-size: 30px;
@@ -324,7 +325,7 @@ section {
     transition-timing-function: linear; }
     .street-info-wrapper .menu-external-links button:hover {
       color: #fff;
-      background-color: #42709e; }
+      background-color: #1060b1; }
   .street-info-wrapper .gallery-wrapper .picture-unit {
     position: relative;
     width: 46%;
@@ -588,7 +589,7 @@ section {
     height: 61px;
     width: 122px;
     background-color: #fff !important;
-    color: #42709e;
+    color: #1060b1;
     font-weight: 700;
     font-size: 14px;
     line-height: 18px; }
@@ -599,7 +600,7 @@ section {
     .business-map li a span.icon {
       float: left;
       color: #fff;
-      background-color: #42709e;
+      background-color: #1060b1;
       height: 61px;
       width: 61px;
       position: relative;
@@ -622,24 +623,34 @@ section {
 
 .business-info-wrapper {
   position: relative;
-  top: 10px;
+  top: 0px;
   bottom: auto;
   right: auto;
   left: 10px;
-  border: 1px solid #42709e; }
+  border: 2px solid #e2e2e2;
+  padding: 0;
+  width: 33%; }
+  @media screen and (max-width: 768px) {
+    .business-info-wrapper {
+      width: 100%;
+      background-color: #fff;
+      top: 0;
+      right: 0;
+      height: 100%; } }
   .business-info-wrapper h3 {
     color: #000;
     font-size: 26px;
     font-weight: 700;
-    letter-spacing: 0.5px;
-    text-align: center; }
+    letter-spacing: 0.5px; }
+    .business-info-wrapper h3 .anderline {
+      padding: 0px 10px 5px 0px; }
   .business-info-wrapper h4 {
     color: #000;
     font-size: 20px;
     font-weight: 700;
-    text-align: center;
-    margin: 0;
-    padding-top: 10px; }
+    display: inline-block;
+    background-color: #d9f4ff;
+    padding: 0px 5px; }
   .business-info-wrapper .tab-content {
     position: relative;
     padding: 0; }
@@ -651,28 +662,113 @@ section {
       .business-info-wrapper .tab-content li .portrait {
         position: absolute;
         z-index: 1;
-        top: 5px;
-        right: 5px; }
+        top: -10px;
+        right: -10px; }
         .business-info-wrapper .tab-content li .portrait img {
-          height: 50px;
-          width: 50px;
-          border: 1px solid #d9f4ff; }
-      .business-info-wrapper .tab-content li .campaign-text p {
-        font-size: 20px; }
-        .business-info-wrapper .tab-content li .campaign-text p .action:before {
-          padding: 3px;
-          text-align: center;
-          font-size: 18px;
-          color: #fff;
-          border-radius: 50%; }
-        .business-info-wrapper .tab-content li .campaign-text p .action.campaign:before {
-          font-family: st;
-          content: '\e000';
-          background-color: #fdc415; }
-        .business-info-wrapper .tab-content li .campaign-text p .action.party:before {
-          font-family: st;
-          content: "\78";
-          background-color: #FD1576; }
+          height: 55px;
+          width: 55px;
+          border: 2px solid #fff;
+          box-shadow: 0px 8px 17px 3px rgba(0, 0, 0, 0.2); }
+      .business-info-wrapper .tab-content li .campaign-text {
+        border: 1px solid #e2e2e2;
+        padding: 5px;
+        margin: 5px; }
+        .business-info-wrapper .tab-content li .campaign-text p {
+          font-size: 20px; }
+          .business-info-wrapper .tab-content li .campaign-text p .action:before {
+            padding: 3px;
+            text-align: center;
+            font-size: 18px;
+            color: #fff;
+            border-radius: 50%; }
+          .business-info-wrapper .tab-content li .campaign-text p .action.campaign:before {
+            font-family: st;
+            content: '\e000';
+            background-color: #fdc415; }
+          .business-info-wrapper .tab-content li .campaign-text p.party:before {
+            font-family: st;
+            content: "\78";
+            background-color: #FD1576; }
+  .business-info-wrapper .opening-hours-info {
+    padding: 0px 10px; }
+    .business-info-wrapper .opening-hours-info .day {
+      font-weight: 700; }
+  .business-info-wrapper .features-wrapper {
+    background-color: #d9f4ff;
+    padding: 0; }
+    .business-info-wrapper .features-wrapper #features {
+      padding: 0; }
+      @media screen and (max-width: 1200px) {
+        .business-info-wrapper .features-wrapper #features {
+          padding: 1%; } }
+      .business-info-wrapper .features-wrapper #features li {
+        position: relative;
+        width: 25%;
+        list-style: none;
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        letter-spacing: 1px;
+        padding: 10px 2px;
+        height: 80px;
+        background-repeat: no-repeat;
+        background-position: center 15px;
+        background-size: 30px; }
+        @media screen and (max-width: 1200px) {
+          .business-info-wrapper .features-wrapper #features li {
+            width: 48%;
+            margin: 1%; } }
+        .business-info-wrapper .features-wrapper #features li .description {
+          position: absolute;
+          border-left: 2px solid #d9f4ff;
+          bottom: 6px;
+          right: 0;
+          background-color: #1060b1;
+          width: 100%;
+          font-weight: 700; }
+        .business-info-wrapper .features-wrapper #features li.kosher {
+          background-image: url(../images/my-icons/kosher.svg); }
+        .business-info-wrapper .features-wrapper #features li.meat {
+          background-image: url(../images/my-icons/meat.svg); }
+        .business-info-wrapper .features-wrapper #features li.dairy {
+          background-image: url(../images/my-icons/cheese.svg); }
+        .business-info-wrapper .features-wrapper #features li.fish {
+          background-image: url(../images/my-icons/fish.svg); }
+        .business-info-wrapper .features-wrapper #features li.delivery {
+          background-image: url(../images/my-icons/Helmet.svg); }
+        .business-info-wrapper .features-wrapper #features li.draft-beer {
+          background-image: url(../images/my-icons/Bar.svg); }
+        .business-info-wrapper .features-wrapper #features li.shade {
+          background-image: url(../images/my-icons/Beach.svg); }
+        .business-info-wrapper .features-wrapper #features li.child-friendly {
+          background-image: url(../images/my-icons/Children.svg); }
+        .business-info-wrapper .features-wrapper #features li.gluten-free {
+          background-image: url(../images/my-icons/gluten-free.svg); }
+        .business-info-wrapper .features-wrapper #features li.vegan-friendly {
+          background-image: url(../images/my-icons/Healthy.svg); }
+        .business-info-wrapper .features-wrapper #features li.accessible {
+          background-image: url(../images/my-icons/Wheelchair.svg); }
+        .business-info-wrapper .features-wrapper #features li.oil-painting {
+          background-image: url(../images/my-icons/paint-palette.svg); }
+        .business-info-wrapper .features-wrapper #features li.ceramics {
+          background-image: url(../images/my-icons/pottery.svg); }
+        .business-info-wrapper .features-wrapper #features li.knitting {
+          background-image: url(../images/my-icons/knitting.svg); }
+        .business-info-wrapper .features-wrapper #features li.sewing {
+          background-image: url(../images/my-icons/needle.svg); }
+  .business-info-wrapper .contact-wrapper {
+    text-align: center;
+    font-size: 20px; }
+    .business-info-wrapper .contact-wrapper a {
+      text-decoration: none; }
+  .business-info-wrapper .social-wrapper {
+    text-align: center; }
+    .business-info-wrapper .social-wrapper a.social {
+      text-decoration: none;
+      font-size: 30px;
+      border-top: 3px solid #1060b1;
+      padding: 15px;
+      float: left; }
 
 .campaign-info-wrapper {
   font-size: 18px; }
@@ -685,12 +781,12 @@ section {
         color: #ff3c00;
         margin-right: 5px; }
       .campaign-info-wrapper .sales-list ul li .business-name {
-        color: #42709e;
+        color: #1060b1;
         font-weight: 700;
         margin-right: 5px; }
       .campaign-info-wrapper .sales-list ul li .campaign-string {
         font-size: 20px;
-        color: #42709e; }
+        color: #1060b1; }
   @media screen and (max-width: 450px) {
     .campaign-info-wrapper {
       position: absolute;
@@ -737,85 +833,3 @@ section {
         color: #fdc415;
         font-size: 20px;
         margin-left: 10px; }
-
-.feature {
-  color: #000;
-  background-color: #d9f4ff;
-  margin-left: 1%;
-  text-align: center;
-  font-size: 1.3em;
-  line-height: 1.3em;
-  padding: 10px 2px;
-  width: 19%;
-  height: 50px;
-  cursor: url(../images/info.png), auto; }
-  @media screen and (max-width: 1200px) {
-    .feature {
-      width: 100%;
-      margin-bottom: 5px; } }
-  .feature .description {
-    display: none;
-    color: transparent; }
-  .feature img {
-    color: #000;
-    -webkit-transition: color .3s ease-in-out;
-    -moz-transition: color .3s ease-in-out;
-    -o-transition: color .3s ease-in-out;
-    transition: color .3s ease-in;
-    height: 30px; }
-  .feature:hover img {
-    color: transparent;
-    display: none; }
-  .feature:hover .description {
-    display: block;
-    color: #000; }
-  @media screen and (max-width: 1200px) {
-    .feature:hover {
-      height: 68px; } }
-
-ul#features li {
-  width: 19%;
-  margin: .5%;
-  list-style: none;
-  color: #000;
-  background-color: #d9f4ff;
-  text-align: center;
-  font-size: 14px;
-  line-height: 68px;
-  padding: 10px 2px;
-  height: 57px;
-  cursor: url(../images/info.png), auto;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-position: center 5px;
-  background-size: 30px; }
-  ul#features li.kosher {
-    background-image: url(../images/my-icons/kosher.svg); }
-  ul#features li.meat {
-    background-image: url(../images/my-icons/meat.svg); }
-  ul#features li.dairy {
-    background-image: url(../images/my-icons/cheese.svg); }
-  ul#features li.fish {
-    background-image: url(../images/my-icons/fish.svg); }
-  ul#features li.delivery {
-    background-image: url(../images/my-icons/Helmet.svg); }
-  ul#features li.draft-beer {
-    background-image: url(../images/my-icons/Bar.svg); }
-  ul#features li.shade {
-    background-image: url(../images/my-icons/Beach.svg); }
-  ul#features li.child-friendly {
-    background-image: url(../images/my-icons/Children.svg); }
-  ul#features li.gluten-free {
-    background-image: url(../images/my-icons/gluten-free.svg); }
-  ul#features li.vegan-friendly {
-    background-image: url(../images/my-icons/Healthy.svg); }
-  ul#features li.accessible {
-    background-image: url(../images/my-icons/Wheelchair.svg); }
-  ul#features li.oil-painting {
-    background-image: url(../images/my-icons/paint-palette.svg); }
-  ul#features li.ceramics {
-    background-image: url(../images/my-icons/pottery.svg); }
-  ul#features li.knitting {
-    background-image: url(../images/my-icons/knitting.svg); }
-  ul#features li.sewing {
-    background-image: url(../images/my-icons/needle.svg); }

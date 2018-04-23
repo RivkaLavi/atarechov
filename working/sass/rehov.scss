@@ -1,7 +1,7 @@
 $font-stack:   'Assistant',  Helvetica, sans-serif;
 $primary: #c0f1ff;
 $secondary: #ff3c00;
-$theme-color2:#42709e;
+$theme-color2:#1060b1;
 $theme-color2-bright:#d9f4ff;
 $yellow:#fdc415;
 $pink:#FD1576;
@@ -413,6 +413,7 @@ padding: 0;
 overflow: scroll;
 height: 2000px;
 position: relative;
+border: 2px solid #e2e2e2;
   img{
   width: 1700px;
   position: absolute;
@@ -830,20 +831,30 @@ transition-timing-function:  ease-out;
 // business-info
 .business-info-wrapper {
   position: relative;
-  top: 10px;
-   bottom: auto; 
-   right: auto; left: 10px;
-  border: 1px solid $theme-color2;
-
+  top: 0px;
+  bottom: auto; 
+  right: auto;
+  left: 10px;
+  border: 2px solid #e2e2e2;
+  padding: 0;
+  width: 33%;
+  @media screen and (max-width: $break-md){
+    width: 100%;
+    background-color: #fff;
+    top: 0;
+    right: 0;
+    height: 100%;
+      }
+      
   h3 { 
     @include medium-title-bold;
-    text-align: center;
+.anderline{ padding: 0px 10px 5px 0px;}
   }
   h4 { 
     @include small-title-bold;
-    text-align: center;
-    margin: 0;
-    padding-top: 10px;
+    display: inline-block;
+    background-color: #d9f4ff;
+    padding: 0px 5px;
   }
   .tab-content {
     position: relative;
@@ -857,16 +868,24 @@ transition-timing-function:  ease-out;
   .portrait{
     position: absolute;
     z-index: 1;
-    top: 5px;
-    right: 5px;
+    top: -10px;
+    right: -10px;
     img{
-    height: 50px;
-    width: 50px;
-    border: 1px solid $theme-color2-bright;
+    height: 55px;
+    width: 55px;
+    border: 2px solid #fff;
+    box-shadow: 0px 8px 17px 3px rgba(0, 0, 0, 0.2);
     }
   }
-  .campaign-text p{
+  .campaign-text {
+    border: 1px solid #e2e2e2;
+    padding: 5px;
+    margin: 5px;
+    
+  p{
+
     font-size: 20px;
+
   .action{
     &:before{
     padding: 3px;
@@ -882,6 +901,7 @@ transition-timing-function:  ease-out;
       background-color: #fdc415;
         }
     }
+  }
     &.party{
       &:before{
       font-family: st;
@@ -893,9 +913,85 @@ transition-timing-function:  ease-out;
    }
   }
 }
-}
-}
 
+}
+.opening-hours-info {
+  padding: 0px 10px;
+  .day{
+    font-weight: 700;
+  }
+}
+.features-wrapper{
+  background-color: $theme-color2-bright;
+padding: 0;
+#features {
+padding: 0;
+@media screen and (max-width: $break-lg){
+  padding: 1%;
+    }
+  li{   position: relative;
+    width: 25%;
+    list-style: none;
+    color: #fff;
+     text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 10px 2px;
+    height: 80px;
+    background-repeat: no-repeat;
+    background-position: center 15px;
+    background-size: 30px;
+
+    @media screen and (max-width: $break-lg){
+      width: 48%;
+      margin: 1%;
+        }
+  .description{
+    position: absolute;
+    border-left: 2px solid $theme-color2-bright;
+    bottom: 6px;
+    right: 0;
+    background-color: $theme-color2;
+    width: 100%;
+    font-weight: 700;
+  }
+
+  &.kosher {  background-image: url(../images/my-icons/kosher.svg)}
+  &.meat { background-image: url(../images/my-icons/meat.svg)}
+  &.dairy { background-image: url(../images/my-icons/cheese.svg)}
+  &.fish { background-image: url(../images/my-icons/fish.svg)}
+  &.delivery { background-image: url(../images/my-icons/Helmet.svg)}
+  &.draft-beer { background-image: url(../images/my-icons/Bar.svg)}
+  &.shade { background-image: url(../images/my-icons/Beach.svg)}
+  &.child-friendly { background-image: url(../images/my-icons/Children.svg)}
+  &.gluten-free { background-image: url(../images/my-icons/gluten-free.svg)}
+  &.vegan-friendly { background-image: url(../images/my-icons/Healthy.svg)}
+  &.accessible { background-image: url(../images/my-icons/Wheelchair.svg)}
+  &.oil-painting { background-image: url(../images/my-icons/paint-palette.svg)}
+  &.ceramics { background-image: url(../images/my-icons/pottery.svg)}
+  &.knitting { background-image: url(../images/my-icons/knitting.svg)}
+  &.sewing { background-image: url(../images/my-icons/needle.svg)}
+}
+}
+}
+.contact-wrapper{
+  text-align: center;
+  font-size: 20px;
+  a{
+    text-decoration: none;
+  }
+}
+.social-wrapper{
+  text-align: center;
+  a.social{
+    text-decoration: none;
+    font-size: 30px;
+    border-top: 3px solid #1060b1;
+    padding: 15px;
+    float: left;
+  }
+}
+}
 // campaigns-info
 .campaign-info-wrapper{
   .sales-list {
@@ -965,81 +1061,6 @@ margin-left: 10px;
 }
 }
 
-// tags
-.feature{
-  color: $text2;
-  background-color: $theme-color2-bright;
-  margin-left: 1%;
-  text-align: center;
-  font-size: 1.3em;
-  line-height: 1.3em;
-  padding: 10px 2px;
-  width: 19%;
-  height: 50px;
-  cursor: url(../images/info.png), auto;
-  
-      @media screen and (max-width: $break-lg) {
-        width: 100%;
-        margin-bottom: 5px;
-      }
-  
-
-      .description {
-        display:none;
-        color: transparent;
-      }
-    img{
-      color:#000;
-      -webkit-transition: color .3s ease-in-out;
-      -moz-transition: color .3s ease-in-out;
-      -o-transition: color .3s ease-in-out;
-      transition: color .3s ease-in;
-      height: 30px;
-    }
-  
-  &:hover { 
-    img { color: transparent; display: none; }
-    .description { display:block; color: #000;}
-    @media screen and (max-width: $break-lg) {
-      height: 68px;
-    }
-    
-   }
-  
-  }
-
-ul#features li {
-  width: 19%;
-  margin: .5%;
-  list-style: none;
-  color: #000;
-  background-color: #d9f4ff;
-  text-align: center;
-  font-size: 14px;
-  line-height: 68px;
-  padding: 10px 2px;
-  height: 57px;
-  cursor: url(../images/info.png), auto;
-  text-align: center;
-  background-repeat: no-repeat;
-  background-position: center 5px;
-  background-size: 30px;
-&.kosher {  background-image: url(../images/my-icons/kosher.svg)}
-&.meat { background-image: url(../images/my-icons/meat.svg)}
-&.dairy { background-image: url(../images/my-icons/cheese.svg)}
-&.fish { background-image: url(../images/my-icons/fish.svg)}
-&.delivery { background-image: url(../images/my-icons/Helmet.svg)}
-&.draft-beer { background-image: url(../images/my-icons/Bar.svg)}
-&.shade { background-image: url(../images/my-icons/Beach.svg)}
-&.child-friendly { background-image: url(../images/my-icons/Children.svg)}
-&.gluten-free { background-image: url(../images/my-icons/gluten-free.svg)}
-&.vegan-friendly { background-image: url(../images/my-icons/Healthy.svg)}
-&.accessible { background-image: url(../images/my-icons/Wheelchair.svg)}
-&.oil-painting { background-image: url(../images/my-icons/paint-palette.svg)}
-&.ceramics { background-image: url(../images/my-icons/pottery.svg)}
-&.knitting { background-image: url(../images/my-icons/knitting.svg)}
-&.sewing { background-image: url(../images/my-icons/needle.svg)}
-}
 
 
 

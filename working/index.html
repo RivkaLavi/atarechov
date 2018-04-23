@@ -359,16 +359,16 @@
                   <img src='{{this.street_view}}' class ="street-view"> </img>
                   {{#if this.profile_image}}
                   <!-- profile image -->
-                  <div class="hidden-xs portrait pull-right  ">
-                    <img src='{{this.profile_image}}' class="img-circle"> </img>
+                  <div class="hidden-xs portrait ">
+                    <img src='{{this.profile_image}}' class=""> </img>
                   </div>
                   {{/if}}
                   <!-- business name -->
                   <h3><span class="anderline">{{this.business_name}}</span></h3>
                   <!-- campaign -->
-                  <h4>{{this.campaign_title}}</h4>
+                  <h4 class= "margin1">{{this.campaign_title}}</h4>
                   {{#if this.campaign_string}}
-                  <div class="col-md-12 col-xs-12 campaign-text margin1 ">
+                  <div class="campaign-text margin1 ">
                     <p>
                       <img src='{{this.profile_image}}' class="hidden-md hidden-sm hidden-lg "> </img>
                       <span class="{{this.action}}"></span>
@@ -378,7 +378,7 @@
                   </div>
                   {{/if}}
                   {{#if this.events_string}}
-                  <div class="col-md-12 col-xs-12 campaign-text margin1">
+                  <div class="campaign-text margin1">
                     <p>
                       <img src='{{this.profile_image}}' class="hidden-md hidden-sm hidden-lg "> </img>
                       <span class="{{this.action}}"></span>
@@ -388,8 +388,9 @@
                   </div>
                   {{/if}}
                     <!-- opening hours -->
-                  <div class="col-md-6 col-xs-6 opening-hours-info pull-right">
-                    <h4>שעות פתיחה</h4>
+                    <h4 class= "margin1">שעות פתיחה</h4>
+                  <div class="opening-hours-info margin1">
+
                     <p>
                       <span class="day">
                         א' - ה' :
@@ -416,17 +417,19 @@
                     </p>
                   </div>
                   <!-- amenties tags -->
-                  <div class="col-md-12 margin1 hidden-xs">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin1 features-wrapper">
                     <ul id="features">
                      {{#each tag_list}}
                      <li class="{{this.klass}} pull-right"> <span class="description">{{this.description}}</span></li>
                      {{/each}}
                   </ul>
+                  </div>
                    <!-- contacts -->
-                  <div class="col-md-12 col-xs-12 contact-wrapper padding0">
+                  <div class="col-md-12 col-xs-12 contact-wrapper padding0 margin1">
                       <address>
                         <div class="col-md-7 col-xs-12 landscape-6">
-                          <span class="street-num pull-right">{{this.address_num}}</span>
+                            <span class="icon fa fa-map-marker" aria-hidden="true"></span> 
+                          <span class="street-num ">{{this.address_num}}</span>
                           <span class="street">{{this.address_street}}</span>
                         </div>
                         <div class="col-md-5 col-xs-12 landscape-6">
@@ -436,9 +439,9 @@
                       </address>
                     </div>
                      <!-- facebook -->
-                  <div class="col-md-12 margin2">
+                  <div class="col-md-12 margin2 social-wrapper padding0">
                       {{#if this.facebook_link}}
-                    <a class="col-md-5 social pull-right fa fa-facebook" href="{{this.facebook_link}}" title="facebook"> </a>
+                    <a class="social fa fa-facebook" href="{{this.facebook_link}}" title="facebook"> </a>
                     {{/if}}
                     <div class="col-md-2 external-link"> </div>
                   </div>
