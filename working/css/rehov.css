@@ -117,7 +117,7 @@ section {
 .arrow-right {
   border-top: 19px solid transparent;
   border-bottom: 19px solid transparent;
-  border-left: 19px solid #d9f4ff; }
+  border-left: 19px solid #c7efff; }
 
 .dragscroll {
   cursor: url(../images/Cat-Track-icon.png), auto;
@@ -136,17 +136,16 @@ section {
     .header-address {
       height: 24px; } }
   .header-address .brand-cat img {
-    width: 100%; }
-    @media screen and (max-width: 768px) {
-      .header-address .brand-cat img {
-        margin-top: 15px; } }
+    width: 55px;
+    padding: 7px 0px 3px 10px; }
     @media screen and (max-width: 768px) and (orientation: landscape) {
       .header-address .brand-cat img {
         right: 8px;
-        width: 32px; } }
+        width: 45px; } }
     @media screen and (max-width: 450px), screen and (max-width: 768px) and (orientation: landscape) {
       .header-address .brand-cat img {
-        margin-top: 0px; } }
+        margin-top: 0px;
+        width: 32px; } }
   .header-address h1.main-address {
     color: #fff;
     line-height: 8px; }
@@ -162,7 +161,7 @@ section {
   @media screen and (max-width: 450px), screen and (max-width: 768px) and (orientation: landscape) {
     .poster-header {
       background-image: inherit;
-      background-color: #d9f4ff;
+      background-color: #c7efff;
       padding-bottom: 5px; } }
   .poster-header .header .content-wrapper {
     animation-delay: .3s; }
@@ -232,36 +231,42 @@ section {
   margin: 5px 5px; }
   @media screen and (max-width: 768px) {
     .content-changer-map-buttons h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: #1060b1; } }
+      font-size: 30px;
+      color: #fff; } }
 
 @media screen and (max-width: 768px) {
   .content-changer-map-buttons {
     text-align: center;
-    background-color: #e2e2e2; } }
+    background-color: #1060b1;
+    box-shadow: -1px 2px 9px 1px rgba(0, 0, 0, 0.17); } }
 
-@media screen and (max-width: 768px) {
-  .content-changer-info-buttons {
-    text-align: center; } }
+@media screen and (max-width: 450px) {
+  .buttons-changer-wrapper {
+    padding: 5px; } }
 
-.content-changer-info-buttons button {
-  color: #1060b1;
-  background-color: #ffffff;
-  font-size: 30px;
-  border: none;
-  margin: 5px 5px; }
-  .content-changer-info-buttons button .menu-icon {
-    color: #fdc415;
-    font-size: 25px;
-    width: 30px;
-    transition: color .2s ease; }
-  .content-changer-info-buttons button:hover .menu-icon {
-    color: #ff3c00; }
-  @media screen and (max-width: 1557px) {
-    .content-changer-info-buttons button {
-      font-size: 18px;
-      padding: 0; } }
+.buttons-changer-wrapper .content-changer-info-buttons {
+  padding: 0 10px 0px 5px; }
+  @media screen and (max-width: 768px) {
+    .buttons-changer-wrapper .content-changer-info-buttons {
+      text-align: center; } }
+  @media screen and (max-width: 450px) {
+    .buttons-changer-wrapper .content-changer-info-buttons {
+      padding: 0 0px; } }
+  .buttons-changer-wrapper .content-changer-info-buttons button {
+    color: #1060b1;
+    background-color: #ffffff;
+    font-size: 30px;
+    border: none; }
+    .buttons-changer-wrapper .content-changer-info-buttons button .menu-icon {
+      color: #fdc415;
+      font-size: 25px;
+      width: 30px;
+      transition: color .2s ease; }
+    .buttons-changer-wrapper .content-changer-info-buttons button:hover .menu-icon, .buttons-changer-wrapper .content-changer-info-buttons button:active .menu-icon, .buttons-changer-wrapper .content-changer-info-buttons button:focus .menu-icon {
+      color: #ff3c00; }
+    @media screen and (max-width: 1557px) {
+      .buttons-changer-wrapper .content-changer-info-buttons button {
+        font-size: 18px; } }
 
 /*map*/
 .map-wrapper {
@@ -275,41 +280,68 @@ section {
     top: -70px;
     right: -317px; }
 
-.street-info-wrapper {
+.street-info-wrapper, .campaign-info-wrapper, .business-info-wrapper {
   background-color: #fff; }
-  .street-info-wrapper .top-close {
-    color: #ff3c00;
-    background-color: #d9f4ff;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    opacity: 1;
-    float: left; }
+  .street-info-wrapper .top-close, .campaign-info-wrapper .top-close, .business-info-wrapper .top-close {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    z-index: 1;
+    background-color: #1060b1;
+    border: none;
+    padding: 0;
+    box-shadow: -1px 2px 9px 1px rgba(0, 0, 0, 0.17); }
+    .street-info-wrapper .top-close .close, .campaign-info-wrapper .top-close .close, .business-info-wrapper .top-close .close {
+      position: relative;
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      margin: 10px;
+      overflow: hidden;
+      opacity: 1; }
+      .street-info-wrapper .top-close .close:hover::before, .street-info-wrapper .top-close .close:hover::after, .campaign-info-wrapper .top-close .close:hover::before, .campaign-info-wrapper .top-close .close:hover::after, .business-info-wrapper .top-close .close:hover::before, .business-info-wrapper .top-close .close:hover::after {
+        background: #1060b1; }
+      .street-info-wrapper .top-close .close::before, .street-info-wrapper .top-close .close::after, .campaign-info-wrapper .top-close .close::before, .campaign-info-wrapper .top-close .close::after, .business-info-wrapper .top-close .close::before, .business-info-wrapper .top-close .close::after {
+        content: '';
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        top: 50%;
+        left: 0;
+        margin-top: -1px;
+        background: #fff; }
+      .street-info-wrapper .top-close .close::before, .campaign-info-wrapper .top-close .close::before, .business-info-wrapper .top-close .close::before {
+        transform: rotate(45deg); }
+      .street-info-wrapper .top-close .close::after, .campaign-info-wrapper .top-close .close::after, .business-info-wrapper .top-close .close::after {
+        transform: rotate(-45deg); }
+      .street-info-wrapper .top-close .close.thick::before, .street-info-wrapper .top-close .close.thick::after, .campaign-info-wrapper .top-close .close.thick::before, .campaign-info-wrapper .top-close .close.thick::after, .business-info-wrapper .top-close .close.thick::before, .business-info-wrapper .top-close .close.thick::after {
+        height: 4px;
+        margin-top: -2px; }
   @media screen and (max-width: 768px) {
-    .street-info-wrapper {
+    .street-info-wrapper, .campaign-info-wrapper, .business-info-wrapper {
       position: absolute;
-      top: 0px;
+      top: -40px;
       right: 0;
-      padding: 0px 0 10px 0;
+      padding: 0px 15px 10px 15px;
       background-color: #fff; } }
   @media screen and (max-width: 768px) and (orientation: landscape) {
-    .street-info-wrapper {
+    .street-info-wrapper, .campaign-info-wrapper, .business-info-wrapper {
       position: absolute;
       top: 0px;
       padding: 0px 0 10px 0;
       background-color: #fff; } }
-  .street-info-wrapper h2 {
+  .street-info-wrapper h2, .campaign-info-wrapper h2, .business-info-wrapper h2 {
     font-size: 30px;
     line-height: 1em;
     font-weight: 700; }
-  .street-info-wrapper .menu-external-links button {
+  .street-info-wrapper .menu-external-links button, .campaign-info-wrapper .menu-external-links button, .business-info-wrapper .menu-external-links button {
     width: 60px;
     height: 60px;
     color: #1060b1;
     background-color: #ffffff;
     text-align: center;
     font-size: 30px;
-    border: 3px solid #d9f4ff;
+    border: 3px solid #c7efff;
     margin: 5px 5px;
     -webkit-transition-property: background,color,box-shadow;
     -moz-transition-property: background,color;
@@ -323,10 +355,10 @@ section {
     -moz-transition-timing-function: linear;
     -o-transition-timing-function: linear;
     transition-timing-function: linear; }
-    .street-info-wrapper .menu-external-links button:hover {
+    .street-info-wrapper .menu-external-links button:hover, .campaign-info-wrapper .menu-external-links button:hover, .business-info-wrapper .menu-external-links button:hover {
       color: #fff;
       background-color: #1060b1; }
-  .street-info-wrapper .gallery-wrapper .picture-unit {
+  .street-info-wrapper .gallery-wrapper .picture-unit, .campaign-info-wrapper .gallery-wrapper .picture-unit, .business-info-wrapper .gallery-wrapper .picture-unit {
     position: relative;
     width: 46%;
     float: right;
@@ -335,13 +367,13 @@ section {
     padding: 0;
     overflow: hidden; }
     @media screen and (max-width: 450px), screen and (max-width: 1200px) {
-      .street-info-wrapper .gallery-wrapper .picture-unit {
+      .street-info-wrapper .gallery-wrapper .picture-unit, .campaign-info-wrapper .gallery-wrapper .picture-unit, .business-info-wrapper .gallery-wrapper .picture-unit {
         width: 100%; } }
-    .street-info-wrapper .gallery-wrapper .picture-unit img {
+    .street-info-wrapper .gallery-wrapper .picture-unit img, .campaign-info-wrapper .gallery-wrapper .picture-unit img, .business-info-wrapper .gallery-wrapper .picture-unit img {
       max-width: fit-content;
       min-width: 100%;
       height: auto; }
-  .street-info-wrapper .gallery-wrapper .picture-ïnfo {
+  .street-info-wrapper .gallery-wrapper .picture-ïnfo, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo, .business-info-wrapper .gallery-wrapper .picture-ïnfo {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -359,7 +391,7 @@ section {
     -moz-transition-duration: .3s;
     -o-transition-duration: .3s;
     transition-duration: .3s; }
-    .street-info-wrapper .gallery-wrapper .picture-ïnfo .icon {
+    .street-info-wrapper .gallery-wrapper .picture-ïnfo .icon, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo .icon, .business-info-wrapper .gallery-wrapper .picture-ïnfo .icon {
       color: #fdc415;
       font-size: 20px;
       line-height: 28px;
@@ -368,16 +400,16 @@ section {
       background-color: #fff;
       border-radius: 50%;
       margin: 10px 0px;
-      border: 2px solid #d9f4ff; }
-    .street-info-wrapper .gallery-wrapper .picture-ïnfo p {
+      border: 2px solid #c7efff; }
+    .street-info-wrapper .gallery-wrapper .picture-ïnfo p, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo p, .business-info-wrapper .gallery-wrapper .picture-ïnfo p {
       font-family: "Assistant", Helvetica, sans-serif;
       font-size: 20px;
       display: none; }
-    .street-info-wrapper .gallery-wrapper .picture-ïnfo:hover {
+    .street-info-wrapper .gallery-wrapper .picture-ïnfo:hover, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo:hover, .business-info-wrapper .gallery-wrapper .picture-ïnfo:hover {
       width: 100%;
       height: 268px;
       background: rgba(0, 0, 0, 0.63); }
-      .street-info-wrapper .gallery-wrapper .picture-ïnfo:hover p {
+      .street-info-wrapper .gallery-wrapper .picture-ïnfo:hover p, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo:hover p, .business-info-wrapper .gallery-wrapper .picture-ïnfo:hover p {
         display: block;
         -webkit-animation-delay: 2s;
         /* Safari 4.0 - 8.0 */
@@ -485,7 +517,12 @@ section {
   position: absolute;
   width: 200px;
   height: auto;
-  background-color: #fff;
+  color: white;
+  background-color: #ff3c00;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid #fff;
+  text-align: center;
   box-shadow: 0px 9px 50px rgba(0, 0, 0, 0.6);
   -webkit-transition-property: box-shadow;
   -moz-transition-property: box-shadow;
@@ -502,10 +539,9 @@ section {
   padding: 5px; }
   .local-event:hover {
     box-shadow: 0px 9px 80px rgba(0, 0, 0, 0.6); }
-  .local-event .details {
-    display: none; }
-  .local-event:hover .details {
-    display: block; }
+  .local-event .date, .local-event .hour {
+    display: block;
+    font-weight: 700; }
   .local-event.position-top-449 {
     top: 449px;
     right: 283px; }
@@ -537,7 +573,7 @@ section {
     .business-map {
       right: 10px; } }
   .business-map li.active {
-    outline: 3px solid #d9f4ff; }
+    outline: 3px solid #c7efff; }
     .business-map li.active a {
       box-shadow: none; }
   .business-map li:hover a span.icon {
@@ -595,8 +631,6 @@ section {
     line-height: 18px; }
     .business-map li a:hover {
       box-shadow: 0px 3px 26px rgba(0, 0, 0, 0.6); }
-    .business-map li a:focus {
-      outline: 3px solid #d9f4ff; }
     .business-map li a span.icon {
       float: left;
       color: #fff;
@@ -627,7 +661,6 @@ section {
   bottom: auto;
   right: auto;
   left: 10px;
-  border: 2px solid #e2e2e2;
   padding: 0;
   width: 33%; }
   @media screen and (max-width: 768px) {
@@ -641,7 +674,8 @@ section {
     color: #000;
     font-size: 26px;
     font-weight: 700;
-    letter-spacing: 0.5px; }
+    letter-spacing: 0.5px;
+    text-align: center; }
     .business-info-wrapper h3 .anderline {
       padding: 0px 10px 5px 0px; }
   .business-info-wrapper h4 {
@@ -662,17 +696,19 @@ section {
       .business-info-wrapper .tab-content li .portrait {
         position: absolute;
         z-index: 1;
-        top: -10px;
-        right: -10px; }
+        top: -2px;
+        right: 0px; }
         .business-info-wrapper .tab-content li .portrait img {
           height: 55px;
           width: 55px;
-          border: 2px solid #fff;
+          border: 2px solid #1060b1;
           box-shadow: 0px 8px 17px 3px rgba(0, 0, 0, 0.2); }
       .business-info-wrapper .tab-content li .campaign-text {
         border: 1px solid #e2e2e2;
-        padding: 5px;
-        margin: 5px; }
+        padding: 5px; }
+        @media screen and (max-width: 450px) {
+          .business-info-wrapper .tab-content li .campaign-text {
+            margin: 10px 10px 0 10px; } }
         .business-info-wrapper .tab-content li .campaign-text p {
           font-size: 20px; }
           .business-info-wrapper .tab-content li .campaign-text p .action:before {
@@ -694,8 +730,11 @@ section {
     .business-info-wrapper .opening-hours-info .day {
       font-weight: 700; }
   .business-info-wrapper .features-wrapper {
-    background-color: #d9f4ff;
+    border-bottom: 3px solid #c7efff;
     padding: 0; }
+    @media screen and (max-width: 450px) {
+      .business-info-wrapper .features-wrapper {
+        background-color: transparent; } }
     .business-info-wrapper .features-wrapper #features {
       padding: 0; }
       @media screen and (max-width: 1200px) {
@@ -714,14 +753,17 @@ section {
         background-repeat: no-repeat;
         background-position: center 15px;
         background-size: 30px; }
-        @media screen and (max-width: 1200px) {
+        @media screen and (max-width: 450px) {
           .business-info-wrapper .features-wrapper #features li {
-            width: 48%;
+            font-size: 10px; } }
+        @media screen and (max-width: 450px) {
+          .business-info-wrapper .features-wrapper #features li {
+            width: 23%;
             margin: 1%; } }
         .business-info-wrapper .features-wrapper #features li .description {
           position: absolute;
-          border-left: 2px solid #d9f4ff;
-          bottom: 6px;
+          border-left: 2px solid #c7efff;
+          bottom: 0px;
           right: 0;
           background-color: #1060b1;
           width: 100%;
@@ -756,59 +798,58 @@ section {
           background-image: url(../images/my-icons/knitting.svg); }
         .business-info-wrapper .features-wrapper #features li.sewing {
           background-image: url(../images/my-icons/needle.svg); }
-  .business-info-wrapper .contact-wrapper {
+  .business-info-wrapper .contacts-wrapper {
     text-align: center;
-    font-size: 20px; }
-    .business-info-wrapper .contact-wrapper a {
-      text-decoration: none; }
-  .business-info-wrapper .social-wrapper {
-    text-align: center; }
-    .business-info-wrapper .social-wrapper a.social {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1060b1;
+    margin-top: 10px; }
+    .business-info-wrapper .contacts-wrapper a.social {
       text-decoration: none;
       font-size: 30px;
       border-top: 3px solid #1060b1;
-      padding: 15px;
-      float: left; }
+      padding: 15px; }
+      @media screen and (max-width: 1200px) {
+        .business-info-wrapper .contacts-wrapper a.social {
+          margin-top: 10px; } }
 
 .campaign-info-wrapper {
   font-size: 18px; }
+  .campaign-info-wrapper h3 {
+    padding-bottom: 20px; }
   .campaign-info-wrapper .sales-list ul {
     list-style: none;
     padding: 0; }
     .campaign-info-wrapper .sales-list ul li {
-      margin-bottom: 15px; }
-      .campaign-info-wrapper .sales-list ul li .icons {
-        color: #ff3c00;
-        margin-right: 5px; }
-      .campaign-info-wrapper .sales-list ul li .business-name {
+      position: relative;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+      border: 1px solid #1060b1;
+      padding-bottom: 10px; }
+      .campaign-info-wrapper .sales-list ul li .icons::before {
+        display: block;
+        font-size: 30px;
+        position: absolute;
+        background-color: #fff;
         color: #1060b1;
-        font-weight: 700;
-        margin-right: 5px; }
+        padding: 10px;
+        top: -10px;
+        right: -10px;
+        box-shadow: -1px 2px 9px 1px rgba(0, 0, 0, 0.17); }
+      .campaign-info-wrapper .sales-list ul li .business-name {
+        display: block;
+        margin-top: -3px;
+        font-size: 26px;
+        line-height: 47px; }
+      .campaign-info-wrapper .sales-list ul li .business-cmc-name {
+        font-size: 20px;
+        color: #1060b1;
+        font-weight: bold; }
       .campaign-info-wrapper .sales-list ul li .campaign-string {
+        display: block;
         font-size: 20px;
         color: #1060b1; }
-  @media screen and (max-width: 450px) {
-    .campaign-info-wrapper {
-      position: absolute;
-      top: 0px;
-      right: 0;
-      padding: 0px 0 10px 0;
-      background-color: #fff; } }
-  @media screen and (max-width: 768px) and (orientation: landscape) {
-    .campaign-info-wrapper {
-      position: absolute;
-      top: 0px;
-      padding: 0px 0 10px 0;
-      background-color: #fff; } }
-  .campaign-info-wrapper .top-close {
-    color: #ff3c00;
-    background-color: #d9f4ff;
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    opacity: 1;
-    float: left;
-    border: 3px solid #ff3c00; }
   @media screen and (max-width: 450px) {
     .campaign-info-wrapper h2 {
       margin-top: -30px; } }
@@ -820,7 +861,7 @@ section {
     padding: 0; }
     .campaign-info-wrapper .campaign-list .campaign-unit {
       padding: 10px;
-      border: 1px solid #d9f4ff; }
+      border: 1px solid #c7efff; }
       .campaign-info-wrapper .campaign-list .campaign-unit h3 {
         display: inline; }
       .campaign-info-wrapper .campaign-list .campaign-unit img {

@@ -2,7 +2,7 @@ $font-stack:   'Assistant',  Helvetica, sans-serif;
 $primary: #c0f1ff;
 $secondary: #ff3c00;
 $theme-color2:#1060b1;
-$theme-color2-bright:#d9f4ff;
+$theme-color2-bright:#c7efff;
 $yellow:#fdc415;
 $pink:#FD1576;
 $text1:#fff;
@@ -92,7 +92,7 @@ color: $theme-color2;
 background-color: #ffffff;
 font-size: 30px;
 border: none;
-margin: 5px 5px;
+
 
 .menu-icon {
   color: $yellow;
@@ -100,7 +100,7 @@ margin: 5px 5px;
   width: 30px;
   transition: color .2s ease;
 }
-    &:hover{
+    &:hover, &:active, &:focus{
       .menu-icon {
         color: $secondary;
       }
@@ -285,10 +285,11 @@ height: 50px;
 
 .brand-cat{ 
 img{
-width: 100%;
-@media screen and (max-width: $break-md) { margin-top: 15px; }
-@media  screen and (max-width: $break-md) and (orientation: landscape) { right: 8px;  width: 32px;}
-@media screen and (max-width: $break-xs), screen and (max-width: $break-md) and (orientation: landscape) { margin-top: 0px; }
+  width: 55px;
+  padding: 7px 0px 3px 10px;
+
+@media  screen and (max-width: $break-md) and (orientation: landscape) { right: 8px;  width: 45px;}
+@media screen and (max-width: $break-xs), screen and (max-width: $break-md) and (orientation: landscape) { margin-top: 0px; width: 32px; }
 }     
 }
 h1.main-address { color: $text1; line-height: 8px;
@@ -385,29 +386,36 @@ background-repeat: no-repeat;
     line-height: 30px;
     margin: 5px 5px;
     @media screen and (max-width: $break-md){
-      font-size: 18px;
-      font-weight: 700;
-      color: $theme-color2;
-           }
+      font-size: 30px;
+      color: #fff;
+         }
   }
   @media screen and (max-width: $break-md){
     text-align: center;
-    background-color: #e2e2e2;
+    background-color: $theme-color2;
+    box-shadow: -1px 2px 9px 1px rgba(0, 0, 0, 0.17);
          }
 }
+.buttons-changer-wrapper{
+  @media screen and (max-width: $break-xs){
+    padding: 5px;
+         }
   .content-changer-info-buttons{
+    padding: 0 10px 0px 5px;
   @media screen and (max-width: $break-md){
     text-align: center;
         }
+   @media screen and (max-width: $break-xs){
+      padding: 0 0px;
+         }
   button{
   @include menu-button;
   @media screen and (max-width: 1557px){
 font-size: 18px;
-padding: 0;
     }
-
   }
   }
+}
 /*map*/
 .map-wrapper{
 overflow: scroll;
@@ -422,22 +430,64 @@ border: 2px solid #e2e2e2;
   }
 
 }
-.street-info-wrapper{
+
+// close-button
+.street-info-wrapper, .campaign-info-wrapper, .business-info-wrapper{
 .top-close{
-color:$secondary;
-background-color: $theme-color2-bright;
-border-radius: 50%;
-height: 40px;
-width: 40px;
-opacity: 1;
-float:left;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  z-index: 1;
+background-color:$theme-color2;
+border: none;
+padding: 0;
+box-shadow: -1px 2px 9px 1px rgba(0, 0, 0, 0.17);
+.close{
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  margin: 10px;
+  overflow: hidden;
+  opacity: 1;
+  &:hover {
+    &::before, &::after {
+      background: $theme-color2;
+    }
+  }
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #fff;
+  }
+  &::before {
+    transform: (rotate(45deg));
+  }
+  &::after {
+  transform: (rotate(-45deg));
+  }
+
+  &.thick {
+    &::before, &::after {
+      height: 4px;
+      margin-top: -2px;
+    }
+  }
+
+}
 }
 background-color:#fff;
 @media screen and (max-width: $break-md){
 position:absolute;
-top: 0px;
+top:-40px;
 right: 0;
-padding: 0px 0 10px 0;
+padding: 0px 15px 10px 15px;
 background-color: #fff;
 }
 @media  screen and (max-width: $break-md) and (orientation: landscape) {
@@ -638,8 +688,8 @@ right: 5px;
 .business-name{
 position: absolute;
 margin-top: 0px;
-
 }
+
 }
 }
 // top-icon
@@ -688,13 +738,19 @@ margin-top: 67px;
   position: absolute;
   width: 200px;
   height: auto;
-  background-color: #fff;
+  color: white;
+  background-color: $secondary;
+  font-size: 18px;
+  padding: 10px;
+  border: 1px solid #fff;
+  text-align: center;
   @include big-shadow;
   padding: 5px;
-  .details { display: none;}
-  &:hover{
-    .details { display: block;}
+  .date, .hour{
+    display: block;
+    font-weight: 700;
   }
+ 
   &.position-top-449{
     top: 449px;
     right: 283px;
@@ -794,9 +850,6 @@ color: $theme-color2;
 font-weight: 700;
 font-size: 14px;
 line-height: 18px;
-&:focus{
-outline: 3px solid  $theme-color2-bright;
-}
 span.icon{
 float: left;
 color: #fff;
@@ -835,7 +888,6 @@ transition-timing-function:  ease-out;
   bottom: auto; 
   right: auto;
   left: 10px;
-  border: 2px solid #e2e2e2;
   padding: 0;
   width: 33%;
   @media screen and (max-width: $break-md){
@@ -848,7 +900,8 @@ transition-timing-function:  ease-out;
       
   h3 { 
     @include medium-title-bold;
-.anderline{ padding: 0px 10px 5px 0px;}
+   .anderline{ padding: 0px 10px 5px 0px;}
+   text-align: center;
   }
   h4 { 
     @include small-title-bold;
@@ -868,24 +921,22 @@ transition-timing-function:  ease-out;
   .portrait{
     position: absolute;
     z-index: 1;
-    top: -10px;
-    right: -10px;
+    top: -2px;
+    right: 0px;
     img{
     height: 55px;
     width: 55px;
-    border: 2px solid #fff;
+    border: 2px solid $theme-color2;
     box-shadow: 0px 8px 17px 3px rgba(0, 0, 0, 0.2);
     }
   }
   .campaign-text {
     border: 1px solid #e2e2e2;
     padding: 5px;
-    margin: 5px;
-    
-  p{
-
-    font-size: 20px;
-
+    @media screen and (max-width: $break-xs){
+      margin: 10px 10px 0 10px;
+        }
+   p{ font-size: 20px;
   .action{
     &:before{
     padding: 3px;
@@ -922,8 +973,11 @@ transition-timing-function:  ease-out;
   }
 }
 .features-wrapper{
-  background-color: $theme-color2-bright;
+  border-bottom: 3px solid $theme-color2-bright;
 padding: 0;
+@media screen and (max-width: $break-xs){
+  background-color: transparent;
+    }
 #features {
 padding: 0;
 @media screen and (max-width: $break-lg){
@@ -941,15 +995,19 @@ padding: 0;
     background-repeat: no-repeat;
     background-position: center 15px;
     background-size: 30px;
+    @media screen and (max-width: $break-xs){
+      font-size: 10px;
+        }
 
-    @media screen and (max-width: $break-lg){
-      width: 48%;
+    @media screen and (max-width: $break-xs){
+      width: 23%;
       margin: 1%;
         }
+
   .description{
     position: absolute;
     border-left: 2px solid $theme-color2-bright;
-    bottom: 6px;
+    bottom: 0px;
     right: 0;
     background-color: $theme-color2;
     width: 100%;
@@ -965,7 +1023,7 @@ padding: 0;
   &.shade { background-image: url(../images/my-icons/Beach.svg)}
   &.child-friendly { background-image: url(../images/my-icons/Children.svg)}
   &.gluten-free { background-image: url(../images/my-icons/gluten-free.svg)}
-  &.vegan-friendly { background-image: url(../images/my-icons/Healthy.svg)}
+  &.vegan-friendly { background-image: url(../images/my-icons/strawberry.svg)}
   &.accessible { background-image: url(../images/my-icons/Wheelchair.svg)}
   &.oil-painting { background-image: url(../images/my-icons/paint-palette.svg)}
   &.ceramics { background-image: url(../images/my-icons/pottery.svg)}
@@ -974,60 +1032,69 @@ padding: 0;
 }
 }
 }
-.contact-wrapper{
+.contacts-wrapper{
   text-align: center;
   font-size: 20px;
-  a{
-    text-decoration: none;
-  }
-}
-.social-wrapper{
-  text-align: center;
+  font-weight: 700;
+  color: $theme-color2;
+  margin-top: 10px;
   a.social{
     text-decoration: none;
     font-size: 30px;
     border-top: 3px solid #1060b1;
     padding: 15px;
-    float: left;
+    @media screen and (max-width: $break-lg){
+      margin-top: 10px;
+      }
   }
 }
 }
 // campaigns-info
 .campaign-info-wrapper{
+  h3 {padding-bottom: 20px;}
   .sales-list {
    ul { list-style: none; padding: 0;
-    li { margin-bottom: 15px;
-    .icons { color: $secondary; margin-right: 5px;}
-    .business-name { color: $theme-color2; font-weight: 700; margin-right: 5px;}
-    .campaign-string { font-size: 20px; color: $theme-color2;}
+    li {
+      position: relative;
+       margin-bottom: 20px;
+       text-align: center;
+       width: 100%;
+       border: 1px solid $theme-color2;;
+       padding-bottom: 10px;
+
+    .icons { 
+     &::before{
+     display: block;
+     font-size: 30px;
+     position: absolute;
+     background-color: #fff;
+     color: $theme-color2;
+     padding: 10px;
+     top: -10px;
+     right: -10px;
+     box-shadow: -1px 2px 9px 1px rgba(0, 0, 0, 0.17);
+    } 
+    }
+    .business-name {
+    display: block;
+     margin-top: -3px;
+    font-size: 26px;
+    line-height: 47px;
+    }
+    .business-cmc-name{
+      font-size: 20px;
+      color: $theme-color2;
+      font-weight: bold;
+    }
+    .campaign-string {
+       display: block;
+       font-size: 20px;
+       color: $theme-color2;
+      }
    }
   }
 }
 font-size: 18px;
-
-@media screen and (max-width: $break-xs){
-position:absolute;
-top: 0px;
-right: 0;
-padding: 0px 0 10px 0;
-background-color: #fff;
-}
-@media  screen and (max-width: $break-md) and (orientation: landscape) {
-position:absolute;
-top: 0px;
-padding: 0px 0 10px 0;
-background-color: #fff;
-}
-.top-close{
-color:$secondary;
-background-color: $theme-color2-bright;
-border-radius: 50%;
-height: 40px;
-width: 40px;
-opacity: 1;
-float:left;
-border: 3px solid $secondary;
-}
 h2{
 @media screen and (max-width: $break-xs){
 margin-top: -30px;

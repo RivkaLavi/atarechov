@@ -38,18 +38,16 @@
   <div>
     <!--top brand row-->
     <div class="col-md-12 col-sm-12 col-xs-12 margin0 header-address">
-      <div class="col-md-1 col-sm-1 col-xs-1 pull-right padding0 brand-cat">
-        <img src="images/cat.svg" alt="logo"> </div>
-      <div class="col-md-11 col-sm-11 col-xs-11 pull-right">
+      <span class="pull-right  brand-cat">
+        <img src="images/cat.svg" alt="logo"> </span>
         <h1 class="main-address  pull-right">
           <span class="label-bold">אתר רחוב</span>
           <span class="label-light">כפר-סבא - מדרחוב ירושלים</span>
         </h1>
-      </div>
     </div>
         <!--header-->
         <section class="header">
-          <div class="container">
+          <div class="container-fluid">
             <div class="row">
               <div class="col-md-12 header">
             <h1>כל מה שקורה במדרחוב ירושלים - המבצעים, הארועים והעסקים</h1>
@@ -60,7 +58,7 @@
         </section>
     <!--promotion-->
     <section class="poster-header">
-      <div class="container">
+      <div class="container-fluid">
         <div class="row">
           <div class="col-md-12 header">
             <div class="col-md-4 col-sm-4 col-xs-12 pull-right date-wrapper animate-container animated wow zoomIn">
@@ -87,8 +85,9 @@
       </div>
     </section>
     <!-- content changer buttons -->
-    <div class="col-md-12 ">
+    <div class="col-md-12 padding0 buttons-changer-wrapper">
       <div class="col-md-4 col-sm-4 col-xs-12 pull-right content-changer-info-buttons">
+          <div class=" anderline">
           <button type="button" formaction="#street-info" class="open-info-street">
               <span class="menu-icon fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
               </span>
@@ -100,6 +99,7 @@
               <span>המבצעים והארועים</span>
             </button>
       </div>
+    </div>
       <div class="col-md-8 col-sm-8 col-xs-12 content-changer-map-buttons">
          <h3>מפה - העסקים והארועים</h3> 
       </div>
@@ -116,10 +116,7 @@
                 <date><br>
                  <span class="date"> 12/9/18</span> 
                  <span class="hour"> 19:00</span> 
-                 <span class= "details">
-                  מתרשמים, מחליפים פרטים, שותים בירה, אוכלים פיצה וממשיכים עם תקוות לעתיד
-                 </span>
-                </date>
+                 </date>
               </div>"
 
               <table id="business_details" class="table table-condensed table-striped"></table>
@@ -234,8 +231,8 @@
         <!--street info-->
         <div id="street-info" class="col-md-4  col-sm-4 col-xs-12  street-info-wrapper landscape-12 padding0 xs-visibity visibityclose display_none" >
           <div class="hidden-md hidden-sm hidden-lg ">
-            <button type="button" class="close top-close" title="סגירה">
-              <i class="fa fa-times" aria-hidden="true"></i>
+            <button type="button" class="top-close" title="סגירה">
+                <span class="close thick"></span>
             </button>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 pull-right">
@@ -309,18 +306,17 @@
         <!--campaign-info-wrapper-->
         <div id="campaign-info"  class="col-md-4  col-sm-4 col-xs-12  campaign-info-wrapper landscape-12 xs-visibity visibityclose " >
           <div class="hidden-md hidden-sm hidden-lg ">
-            <button type="button" class="close top-close" title="סגירה">
-              <i class="fa fa-times" aria-hidden="true"></i>
+            <button type="button" class="top-close" title="סגירה">
+                <span class="close thick"></span>
             </button>
           </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
             <h3>כל המבצעים ברחוב</h3>
             <div id="sales_template_parent" class="sales-list">
                 <script id="sales-template" type="text/x-handlebars-template">
                   <ul>
                     {{#each sale}}
-                     <li>
-                      <span class='{{this.icon}} icons'> <span class='business-name'>{{this.business_name}}</span> <br> <span class='campaign-string'>{{this.campaign_string}}</span> <span class='business-name'>{{this.cross_campaign_partner}}</span>
+                     <li class="col-lg-6">
+                      <span class='{{this.icon}} icons'> <span class='business-name'>{{this.business_name}}</span><span class='campaign-string'>{{this.campaign_string}}</span> <span class='business-cmc-name'>{{this.cross_campaign_partner}}</span>
                     </li>
                      </li>
                     {{/each}}
@@ -332,14 +328,13 @@
                 <script id="events-template" type="text/x-handlebars-template">
                   <ul>
                     {{#each sale}}
-                     <li>
-                      <span class='{{this.icon}}'></span> <span class='business-name'>{{this.business_name}}</span> <span class='{{this.action}}'></span> <span class='campaign-string'>{{this.events_string}}</span>
+                     <li class="col-lg-6">
+                      <span class='{{this.icon}}'></span> <span class='busines-name'>{{this.business_name}}</span> <span class='{{this.action}}'></span> <span class='campaign-string'>{{this.events_string}}</span>
                      </li>
                     {{/each}}
                   </ul>
                 </script>
               </div>
-          </div>
         </div>
         <!--end-campaign-info-wrapper-->
         <!--business info-->
@@ -351,8 +346,8 @@
                 <li class="tab-pane text-style" id="{{this.tab_link}}">
                   <!-- close button for mobile -->
                   <div class="hidden-md hidden-sm hidden-lg ">
-                    <button type="button" class="close top-close" title="סגירה">
-                      <i class="fa fa-times" aria-hidden="true"></i>
+                    <button type="button" class="top-close" title="סגירה">
+                        <span class="close thick"></span>
                     </button>
                   </div>
                   <!-- street view-->
@@ -368,9 +363,8 @@
                   <!-- campaign -->
                   <h4 class= "margin1">{{this.campaign_title}}</h4>
                   {{#if this.campaign_string}}
-                  <div class="campaign-text margin1 ">
+                  <div class="campaign-text margin1">
                     <p>
-                      <img src='{{this.profile_image}}' class="hidden-md hidden-sm hidden-lg "> </img>
                       <span class="{{this.action}}"></span>
                       <span> {{this.campaign_string}}</span>
                       <a href="{{this.cross_campaign_link}}">{{this.cross_campaign_partner}}</a>
@@ -425,26 +419,23 @@
                   </ul>
                   </div>
                    <!-- contacts -->
-                  <div class="col-md-12 col-xs-12 contact-wrapper padding0 margin1">
-                      <address>
-                        <div class="col-md-7 col-xs-12 landscape-6">
-                            <span class="icon fa fa-map-marker" aria-hidden="true"></span> 
-                          <span class="street-num ">{{this.address_num}}</span>
-                          <span class="street">{{this.address_street}}</span>
-                        </div>
-                        <div class="col-md-5 col-xs-12 landscape-6">
-                          <a href="#{{this.business_phone}}">
-                            <span class="icon fa fa-mobile" aria-hidden="true"></span> {{this.business_phone}}</a>
-                        </div>
-                      </address>
-                    </div>
-                     <!-- facebook -->
-                  <div class="col-md-12 margin2 social-wrapper padding0">
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin2 contacts-wrapper padding0">
+                      <div class ="col-md-4 col-xs-12">
+                      <span class="icon fa fa-map-marker" aria-hidden="true"></span> 
+                      <span class="street-num ">{{this.address_num}}</span>
+                      <span class="street">{{this.address_street}}</span>
+                  </div>
+                  <div class ="col-md-4 col-xs-12">
                       {{#if this.facebook_link}}
                     <a class="social fa fa-facebook" href="{{this.facebook_link}}" title="facebook"> </a>
                     {{/if}}
-                    <div class="col-md-2 external-link"> </div>
                   </div>
+                <span>
+                    <div class ="col-md-4 col-xs-12">
+                <a href="#{{this.business_phone}}">
+                    <span class="icon fa fa-mobile" aria-hidden="true"></span> {{this.business_phone}}</a>
+                  </span>
+                </div>
                 </li>
                 {{/each}}
               </ul>

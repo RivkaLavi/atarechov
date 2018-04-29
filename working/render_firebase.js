@@ -17,7 +17,7 @@ tagDict = {
   "נחמדים לילדים": "child-friendly",
   "נחמדים לחיות": "animal-friendly",
   "ידידותי לצליאק": "gluten-free",
-  "ידידותי למים": "vegan-friendly",
+  "ידידותי לטבעונים": "vegan-friendly",
   "נגיש": "accessible",
   "ציור שמן": "oil-painting",
   "קרמיקה": "ceramics",
