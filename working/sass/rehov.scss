@@ -736,24 +736,50 @@ margin-top: 67px;
 /*map events*/
 .local-event {
   position: absolute;
-  width: 200px;
+  width: 230px;
   height: auto;
-  color: white;
-  background-color: $secondary;
-  font-size: 18px;
+  color: black;
+  background-color: #c7efff;
+  font-size: 20px;
   padding: 10px;
-  border: 1px solid #fff;
+  border: 1px solid #000000;
   text-align: center;
-  @include big-shadow;
   padding: 5px;
+  &:before{
+    content:"";
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    height: 60px;
+    width: 60px;
+    background-repeat: no-repeat;
+
+  }
+  &:after{
+    content:"";
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    height: 60px;
+    width: 60px;
+     background-repeat: no-repeat;
+  }
   .date, .hour{
     display: block;
     font-weight: 700;
   }
- 
+
   &.position-top-449{
     top: 449px;
     right: 283px;
+    &::before{background-image: url(../images/my-icons/cat1.svg);background-position: right 10px;}
+    &:after{ transform:scaleX(-1);background-image: url(../images/my-icons/cat1.svg);background-position: left 10px;}
+  } 
+  &.position-top-1500px{
+    top: 1500px;
+    right: 283px;
+    &::before{background-image: url(../images/my-icons/bycicle.svg); background-position: right 0px;}
+    &:after{ transform:scaleX(-1);background-image: url(../images/my-icons/cat3.svg); background-position: left 0px;width: 40px;}
   } 
 }
 
@@ -1072,7 +1098,7 @@ padding: 0;
      padding: 10px;
      top: -10px;
      right: -10px;
-     box-shadow: -1px 2px 9px 1px rgba(0, 0, 0, 0.17);
+     border: 3px solid $theme-color2-bright;
     } 
     }
     .business-name {

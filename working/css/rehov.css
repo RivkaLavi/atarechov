@@ -515,36 +515,55 @@ section {
 /*map events*/
 .local-event {
   position: absolute;
-  width: 200px;
+  width: 230px;
   height: auto;
-  color: white;
-  background-color: #ff3c00;
-  font-size: 18px;
+  color: black;
+  background-color: #c7efff;
+  font-size: 20px;
   padding: 10px;
-  border: 1px solid #fff;
+  border: 1px solid #000000;
   text-align: center;
-  box-shadow: 0px 9px 50px rgba(0, 0, 0, 0.6);
-  -webkit-transition-property: box-shadow;
-  -moz-transition-property: box-shadow;
-  -o-transition-property: box-shadow;
-  transition-property: box-shadow;
-  -webkit-transition-duration: .3s;
-  -moz-transition-duration: .3s;
-  -o-transition-duration: .3s;
-  transition-duration: .3s;
-  -webkit-transition-timing-function: ease-out;
-  -moz-transition-timing-function: ease-out;
-  -o-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
   padding: 5px; }
-  .local-event:hover {
-    box-shadow: 0px 9px 80px rgba(0, 0, 0, 0.6); }
+  .local-event:before {
+    content: "";
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    height: 60px;
+    width: 60px;
+    background-repeat: no-repeat; }
+  .local-event:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    height: 60px;
+    width: 60px;
+    background-repeat: no-repeat; }
   .local-event .date, .local-event .hour {
     display: block;
     font-weight: 700; }
   .local-event.position-top-449 {
     top: 449px;
     right: 283px; }
+    .local-event.position-top-449::before {
+      background-image: url(../images/my-icons/cat1.svg);
+      background-position: right 10px; }
+    .local-event.position-top-449:after {
+      transform: scaleX(-1);
+      background-image: url(../images/my-icons/cat1.svg);
+      background-position: left 10px; }
+  .local-event.position-top-1500px {
+    top: 1500px;
+    right: 283px; }
+    .local-event.position-top-1500px::before {
+      background-image: url(../images/my-icons/bycicle.svg);
+      background-position: right 0px; }
+    .local-event.position-top-1500px:after {
+      transform: scaleX(-1);
+      background-image: url(../images/my-icons/cat3.svg);
+      background-position: left 0px;
+      width: 40px; }
 
 .business-map {
   position: absolute; }
@@ -787,7 +806,7 @@ section {
         .business-info-wrapper .features-wrapper #features li.gluten-free {
           background-image: url(../images/my-icons/gluten-free.svg); }
         .business-info-wrapper .features-wrapper #features li.vegan-friendly {
-          background-image: url(../images/my-icons/Healthy.svg); }
+          background-image: url(../images/my-icons/strawberry.svg); }
         .business-info-wrapper .features-wrapper #features li.accessible {
           background-image: url(../images/my-icons/Wheelchair.svg); }
         .business-info-wrapper .features-wrapper #features li.oil-painting {
@@ -836,7 +855,7 @@ section {
         padding: 10px;
         top: -10px;
         right: -10px;
-        box-shadow: -1px 2px 9px 1px rgba(0, 0, 0, 0.17); }
+        border: 3px solid #c7efff; }
       .campaign-info-wrapper .sales-list ul li .business-name {
         display: block;
         margin-top: -3px;
