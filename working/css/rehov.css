@@ -114,11 +114,6 @@ section {
   border-bottom: 3px solid #1060b1;
   padding-bottom: 5px; }
 
-.arrow-right {
-  border-top: 19px solid transparent;
-  border-bottom: 19px solid transparent;
-  border-left: 19px solid #c7efff; }
-
 .dragscroll {
   cursor: url(../images/Cat-Track-icon.png), auto;
   overflow: scroll; }
@@ -169,7 +164,7 @@ section {
       .poster-header .header .content-wrapper {
         width: 50%; } }
   .poster-header .date-wrapper {
-    padding: 20px;
+    padding: 15px;
     text-align: center; }
     @media screen and (max-width: 450px) {
       .poster-header .date-wrapper {
@@ -177,6 +172,49 @@ section {
     @media screen and (max-width: 768px) and (orientation: landscape) {
       .poster-header .date-wrapper {
         width: 50%; } }
+    .poster-header .date-wrapper:before, .poster-header .date-wrapper:after {
+      content: "";
+      position: absolute;
+      height: 60px;
+      width: 60px;
+      background-repeat: no-repeat; }
+      @media screen and (max-width: 1067px) {
+        .poster-header .date-wrapper:before, .poster-header .date-wrapper:after {
+          height: 40px;
+          width: 40px; } }
+      @media screen and (max-width: 767px) {
+        .poster-header .date-wrapper:before, .poster-header .date-wrapper:after {
+          height: 60px;
+          width: 60px; } }
+      @media screen and (max-width: 424px) {
+        .poster-header .date-wrapper:before, .poster-header .date-wrapper:after {
+          height: 30px;
+          width: 30px; } }
+    .poster-header .date-wrapper.babysitters::before {
+      background-image: url(../images/my-icons/cat1.svg);
+      background-position: right 10px;
+      right: 30px;
+      bottom: 30px; }
+      @media screen and (max-width: 1190px) {
+        .poster-header .date-wrapper.babysitters::before {
+          right: 20px;
+          bottom: 55px; } }
+      @media screen and (max-width: 795px) {
+        .poster-header .date-wrapper.babysitters::before {
+          bottom: 30px; } }
+    .poster-header .date-wrapper.babysitters:after {
+      transform: scaleX(-1);
+      background-image: url(../images/my-icons/cat1.svg);
+      background-position: left 10px;
+      left: 30px;
+      bottom: 30px; }
+      @media screen and (max-width: 1190px) {
+        .poster-header .date-wrapper.babysitters:after {
+          left: 20px;
+          bottom: 55px; } }
+      @media screen and (max-width: 795px) {
+        .poster-header .date-wrapper.babysitters:after {
+          bottom: 30px; } }
     .poster-header .date-wrapper date {
       font-size: 60px;
       font-family: 'Poppins';
@@ -191,7 +229,7 @@ section {
         background-color: #ff3c00;
         color: #fff;
         line-height: 1em;
-        padding: 5px 0 0 0; }
+        padding: 5px 0 0 13px; }
     .poster-header .date-wrapper .poster-location {
       color: #fff;
       background-color: #ff3c00;
@@ -237,7 +275,6 @@ section {
 @media screen and (max-width: 768px) {
   .content-changer-map-buttons {
     text-align: center;
-    background-color: #1060b1;
     box-shadow: -1px 2px 9px 1px rgba(0, 0, 0, 0.17); } }
 
 @media screen and (max-width: 450px) {
@@ -290,7 +327,21 @@ section {
     background-color: #1060b1;
     border: none;
     padding: 0;
-    box-shadow: -1px 2px 9px 1px rgba(0, 0, 0, 0.17); }
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.6);
+    -webkit-transition-property: box-shadow;
+    -moz-transition-property: box-shadow;
+    -o-transition-property: box-shadow;
+    transition-property: box-shadow;
+    -webkit-transition-duration: .3s;
+    -moz-transition-duration: .3s;
+    -o-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-transition-timing-function: ease-out;
+    -moz-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+    transition-timing-function: ease-out; }
+    .street-info-wrapper .top-close:hover, .campaign-info-wrapper .top-close:hover, .business-info-wrapper .top-close:hover {
+      box-shadow: 0px 3px 26px rgba(0, 0, 0, 0.6); }
     .street-info-wrapper .top-close .close, .campaign-info-wrapper .top-close .close, .business-info-wrapper .top-close .close {
       position: relative;
       display: inline-block;
@@ -299,8 +350,6 @@ section {
       margin: 10px;
       overflow: hidden;
       opacity: 1; }
-      .street-info-wrapper .top-close .close:hover::before, .street-info-wrapper .top-close .close:hover::after, .campaign-info-wrapper .top-close .close:hover::before, .campaign-info-wrapper .top-close .close:hover::after, .business-info-wrapper .top-close .close:hover::before, .business-info-wrapper .top-close .close:hover::after {
-        background: #1060b1; }
       .street-info-wrapper .top-close .close::before, .street-info-wrapper .top-close .close::after, .campaign-info-wrapper .top-close .close::before, .campaign-info-wrapper .top-close .close::after, .business-info-wrapper .top-close .close::before, .business-info-wrapper .top-close .close::after {
         content: '';
         position: absolute;
@@ -358,74 +407,76 @@ section {
     .street-info-wrapper .menu-external-links button:hover, .campaign-info-wrapper .menu-external-links button:hover, .business-info-wrapper .menu-external-links button:hover {
       color: #fff;
       background-color: #1060b1; }
-  .street-info-wrapper .gallery-wrapper .picture-unit, .campaign-info-wrapper .gallery-wrapper .picture-unit, .business-info-wrapper .gallery-wrapper .picture-unit {
-    position: relative;
-    width: 46%;
-    float: right;
-    height: 230px;
-    margin: 2%;
-    padding: 0;
-    overflow: hidden; }
-    @media screen and (max-width: 450px), screen and (max-width: 1200px) {
-      .street-info-wrapper .gallery-wrapper .picture-unit, .campaign-info-wrapper .gallery-wrapper .picture-unit, .business-info-wrapper .gallery-wrapper .picture-unit {
-        width: 100%; } }
-    .street-info-wrapper .gallery-wrapper .picture-unit img, .campaign-info-wrapper .gallery-wrapper .picture-unit img, .business-info-wrapper .gallery-wrapper .picture-unit img {
-      max-width: fit-content;
-      min-width: 100%;
-      height: auto; }
-  .street-info-wrapper .gallery-wrapper .picture-ïnfo, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo, .business-info-wrapper .gallery-wrapper .picture-ïnfo {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 50px;
-    height: 50px;
-    background: rgba(0, 0, 0, 0.63);
-    text-align: center;
-    color: #fff;
-    -webkit-transition: width,height,background;
-    /* Safari */
-    transition: width,height,background;
-    -moz-transition: width,height,background;
-    -o-transition: width,height,background;
-    -webkit-transition-duration: .3s;
-    -moz-transition-duration: .3s;
-    -o-transition-duration: .3s;
-    transition-duration: .3s; }
-    .street-info-wrapper .gallery-wrapper .picture-ïnfo .icon, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo .icon, .business-info-wrapper .gallery-wrapper .picture-ïnfo .icon {
-      color: #fdc415;
-      font-size: 20px;
-      line-height: 28px;
-      height: 30px;
-      width: 30px;
-      background-color: #fff;
-      border-radius: 50%;
-      margin: 10px 0px;
-      border: 2px solid #c7efff; }
-    .street-info-wrapper .gallery-wrapper .picture-ïnfo p, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo p, .business-info-wrapper .gallery-wrapper .picture-ïnfo p {
-      font-family: "Assistant", Helvetica, sans-serif;
-      font-size: 20px;
-      display: none; }
-    .street-info-wrapper .gallery-wrapper .picture-ïnfo:hover, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo:hover, .business-info-wrapper .gallery-wrapper .picture-ïnfo:hover {
-      width: 100%;
-      height: 268px;
-      background: rgba(0, 0, 0, 0.63); }
-      .street-info-wrapper .gallery-wrapper .picture-ïnfo:hover p, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo:hover p, .business-info-wrapper .gallery-wrapper .picture-ïnfo:hover p {
-        display: block;
-        -webkit-animation-delay: 2s;
-        /* Safari 4.0 - 8.0 */
-        animation-delay: 2s;
-        -o-animation: 2s;
-        -moz-animation: 2s;
-        -webkit-animation: animationOpacity 2s linear;
-        /* Safari 4+ */
-        -moz-animation: animationOpacity 2s linear;
-        /* Fx 5+ */
-        -o-animation: animationOpacity 2s linear;
-        /* Opera 12+ */
-        animation: animationOpacity 2s linear;
-        /* IE 10+, Fx 29+ */
+  .street-info-wrapper .gallery-wrapper, .campaign-info-wrapper .gallery-wrapper, .business-info-wrapper .gallery-wrapper {
+    padding-right: 0px; }
+    .street-info-wrapper .gallery-wrapper .picture-unit, .campaign-info-wrapper .gallery-wrapper .picture-unit, .business-info-wrapper .gallery-wrapper .picture-unit {
+      position: relative;
+      width: 46%;
+      float: right;
+      height: 230px;
+      margin: 2%;
+      padding: 0;
+      overflow: hidden; }
+      @media screen and (max-width: 450px), screen and (max-width: 1200px) {
+        .street-info-wrapper .gallery-wrapper .picture-unit, .campaign-info-wrapper .gallery-wrapper .picture-unit, .business-info-wrapper .gallery-wrapper .picture-unit {
+          width: 100%; } }
+      .street-info-wrapper .gallery-wrapper .picture-unit img, .campaign-info-wrapper .gallery-wrapper .picture-unit img, .business-info-wrapper .gallery-wrapper .picture-unit img {
+        max-width: fit-content;
+        min-width: 100%;
+        height: auto; }
+    .street-info-wrapper .gallery-wrapper .picture-ïnfo, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo, .business-info-wrapper .gallery-wrapper .picture-ïnfo {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 50px;
+      height: 50px;
+      background: rgba(0, 0, 0, 0.63);
+      text-align: center;
+      color: #fff;
+      -webkit-transition: width,height,background;
+      /* Safari */
+      transition: width,height,background;
+      -moz-transition: width,height,background;
+      -o-transition: width,height,background;
+      -webkit-transition-duration: .3s;
+      -moz-transition-duration: .3s;
+      -o-transition-duration: .3s;
+      transition-duration: .3s; }
+      .street-info-wrapper .gallery-wrapper .picture-ïnfo .icon, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo .icon, .business-info-wrapper .gallery-wrapper .picture-ïnfo .icon {
+        color: #fdc415;
+        font-size: 20px;
+        line-height: 28px;
+        height: 30px;
+        width: 30px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin: 10px 0px;
+        border: 2px solid #c7efff; }
+      .street-info-wrapper .gallery-wrapper .picture-ïnfo p, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo p, .business-info-wrapper .gallery-wrapper .picture-ïnfo p {
+        font-family: "Assistant", Helvetica, sans-serif;
+        font-size: 20px;
+        display: none; }
+      .street-info-wrapper .gallery-wrapper .picture-ïnfo:hover, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo:hover, .business-info-wrapper .gallery-wrapper .picture-ïnfo:hover {
         width: 100%;
-        padding: 10px; }
+        height: 268px;
+        background: rgba(0, 0, 0, 0.63); }
+        .street-info-wrapper .gallery-wrapper .picture-ïnfo:hover p, .campaign-info-wrapper .gallery-wrapper .picture-ïnfo:hover p, .business-info-wrapper .gallery-wrapper .picture-ïnfo:hover p {
+          display: block;
+          -webkit-animation-delay: 2s;
+          /* Safari 4.0 - 8.0 */
+          animation-delay: 2s;
+          -o-animation: 2s;
+          -moz-animation: 2s;
+          -webkit-animation: animationOpacity 2s linear;
+          /* Safari 4+ */
+          -moz-animation: animationOpacity 2s linear;
+          /* Fx 5+ */
+          -o-animation: animationOpacity 2s linear;
+          /* Opera 12+ */
+          animation: animationOpacity 2s linear;
+          /* IE 10+, Fx 29+ */
+          width: 100%;
+          padding: 10px; }
 
 /*map tabs*/
 .buisness-tabs.lengthwise-icon.right-icon li.action:hover:after {
@@ -524,46 +575,41 @@ section {
   border: 1px solid #000000;
   text-align: center;
   padding: 5px; }
-  .local-event:before {
-    content: "";
-    position: absolute;
-    right: 5px;
-    bottom: 5px;
-    height: 60px;
-    width: 60px;
-    background-repeat: no-repeat; }
-  .local-event:after {
-    content: "";
-    position: absolute;
-    left: 5px;
-    bottom: 5px;
-    height: 60px;
-    width: 60px;
-    background-repeat: no-repeat; }
   .local-event .date, .local-event .hour {
     display: block;
     font-weight: 700; }
+  .local-event:before, .local-event:after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    height: 60px;
+    width: 60px;
+    background-repeat: no-repeat; }
   .local-event.position-top-449 {
     top: 449px;
     right: 283px; }
     .local-event.position-top-449::before {
       background-image: url(../images/my-icons/cat1.svg);
-      background-position: right 10px; }
+      background-position: right 10px;
+      right: 5px; }
     .local-event.position-top-449:after {
       transform: scaleX(-1);
       background-image: url(../images/my-icons/cat1.svg);
-      background-position: left 10px; }
+      background-position: left 10px;
+      left: 5px; }
   .local-event.position-top-1500px {
     top: 1500px;
     right: 283px; }
     .local-event.position-top-1500px::before {
       background-image: url(../images/my-icons/bycicle.svg);
-      background-position: right 0px; }
+      background-position: right 0px;
+      right: 5px; }
     .local-event.position-top-1500px:after {
       transform: scaleX(-1);
       background-image: url(../images/my-icons/cat3.svg);
       background-position: left 0px;
-      width: 40px; }
+      width: 40px;
+      left: 5px; }
 
 .business-map {
   position: absolute; }
@@ -893,3 +939,115 @@ section {
         color: #fdc415;
         font-size: 20px;
         margin-left: 10px; }
+
+/* jssor slider loading skin spin css */
+.jssorl-009-spin img {
+  animation-name: jssorl-009-spin;
+  animation-duration: 1.6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; }
+
+@keyframes jssorl-009-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.jssorb031 {
+  position: absolute; }
+
+.jssorb031 .i {
+  position: absolute;
+  cursor: pointer; }
+
+.jssorb031 .i .b {
+  fill: #000;
+  fill-opacity: 0.5;
+  stroke: #fff;
+  stroke-width: 1200;
+  stroke-miterlimit: 10;
+  stroke-opacity: 0.3; }
+
+.jssorb031 .i:hover .b {
+  fill: #fff;
+  fill-opacity: .7;
+  stroke: #000;
+  stroke-opacity: .5; }
+
+.jssorb031 .iav .b {
+  fill: #fff;
+  stroke: #000;
+  fill-opacity: 1; }
+
+.jssorb031 .i.idn {
+  opacity: .3; }
+
+.slider-wrapper {
+  min-height: 50px; }
+  .slider-wrapper .slider-container {
+    visibility: hidden;
+    position: relative;
+    margin: 0 auto;
+    top: 0px;
+    left: 0px;
+    width: 1300px;
+    height: 200px;
+    overflow: hidden; }
+    .slider-wrapper .slider-container .loading {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.7); }
+      .slider-wrapper .slider-container .loading img {
+        margin-top: -19px;
+        position: relative;
+        top: 50%;
+        width: 38px;
+        height: 38px; }
+    .slider-wrapper .slider-container .slides {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 1300px;
+      height: 500px;
+      overflow: hidden; }
+    .slider-wrapper .slider-container .navigator {
+      position: absolute;
+      bottom: 12px;
+      right: 12px; }
+      .slider-wrapper .slider-container .navigator .i {
+        width: 16px;
+        height: 16px; }
+        .slider-wrapper .slider-container .navigator .i svg {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%; }
+    .slider-wrapper .slider-container .arrows {
+      display: block;
+      position: absolute;
+      cursor: pointer;
+      width: 55px;
+      height: 55px;
+      top: 0px; }
+      .slider-wrapper .slider-container .arrows:hover {
+        opacity: .8; }
+      .slider-wrapper .slider-container .arrows .a {
+        fill: none;
+        stroke: #fff;
+        stroke-width: 360;
+        stroke-miterlimit: 10; }
+      .slider-wrapper .slider-container .arrows svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%; }
+      .slider-wrapper .slider-container .arrows.arrow-left {
+        left: 25px; }
+      .slider-wrapper .slider-container .arrows.arrow-right {
+        right: 25px; }

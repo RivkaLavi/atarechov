@@ -18,8 +18,9 @@
 	.st12{font-size:18px;}
 	.st13{fill:#7ECE7E;stroke:#707070;stroke-width:0.8504;stroke-miterlimit:10;}
 	.st14{fill:#FFFFFF;stroke:#707070;stroke-width:0.8504;stroke-miterlimit:10;}
-	.st15{fill:#ABF2F4;stroke:#707070;stroke-width:0.8504;stroke-miterlimit:10;}
-	.st16{fill:#E27D23;stroke:#FFFFFF;stroke-width:0.8504;stroke-miterlimit:10;}
+	.st15{font-size:14px;}
+	.st16{fill:#ABF2F4;stroke:#707070;stroke-width:0.8504;stroke-miterlimit:10;}
+	.st17{fill:#E27D23;stroke:#FFFFFF;stroke-width:0.8504;stroke-miterlimit:10;}
 </style>
 <g id="Layer_1_1_">
 	
@@ -110,18 +111,18 @@
 		c0.5-0.1,0.9,0,1.2,0.1"/>
 	
 		<ellipse transform="matrix(0.4644 -0.8856 0.8856 0.4644 -19.6153 983.1796)" class="st14" cx="803.1" cy="507.8" rx="1.5" ry="1.2"/>
-	<text transform="matrix(1 0 0 1 769.0494 555.75)" class="st9 st10 st12">פסל צב</text>
+	<text transform="matrix(1 0 0 1 774.6998 555.75)" class="st9 st10 st15">פסל צב</text>
 </g>
 <text transform="matrix(1 0 0 1 397.5574 712)" class="st9 st10 st12">מוזיאון ארכיאולוגי</text>
-<circle class="st15" cx="319.5" cy="815.3" r="33.8"/>
-<path class="st16" d="M314.2,796.4c0.5-0.6,2.3-2.5,5.2-2.8c1.9-0.2,4.6,0.1,4.8,1.2c0.3,1.4-1.8,6.8-8.2,5.2
+<circle class="st16" cx="319.5" cy="815.3" r="33.8"/>
+<path class="st17" d="M314.2,796.4c0.5-0.6,2.3-2.5,5.2-2.8c1.9-0.2,4.6,0.1,4.8,1.2c0.3,1.4-1.8,6.8-8.2,5.2
 	c-3.7-1-8.5-3.5-8.5-3.5l-0.2,6.3C307.3,802.8,311.6,799.3,314.2,796.4z"/>
 <circle class="st5" cx="321.1" cy="796" r="0.9"/>
-<path class="st16" d="M334.7,816.5c-0.8,0.1-3.4,0.2-5.7-1.5c-1.5-1.1-3.3-3.3-2.7-4.2c0.8-1.2,6-3.7,9.5,1.9c2,3.2,3.8,8.4,3.8,8.4
+<path class="st17" d="M334.7,816.5c-0.8,0.1-3.4,0.2-5.7-1.5c-1.5-1.1-3.3-3.3-2.7-4.2c0.8-1.2,6-3.7,9.5,1.9c2,3.2,3.8,8.4,3.8,8.4
 	l4.5-4.5C344.1,816.6,338.6,816.1,334.7,816.5z"/>
 <ellipse transform="matrix(0.6872 -0.7265 0.7265 0.6872 -486.8602 493.3116)" class="st5" cx="329.4" cy="812" rx="0.9" ry="0.9"/>
-<path class="st16" d="M312.6,827.5c0.6-0.5,2.8-1.9,5.6-1.7c1.9,0.2,4.5,1.1,4.5,2.1c0,1.5-3.2,6.3-9.1,3.4
+<path class="st17" d="M312.6,827.5c0.6-0.5,2.8-1.9,5.6-1.7c1.9,0.2,4.5,1.1,4.5,2.1c0,1.5-3.2,6.3-9.1,3.4
 	c-3.4-1.7-7.6-5.2-7.6-5.2l-1.5,6.2C304.6,832.2,309.5,829.8,312.6,827.5z"/>
 <ellipse transform="matrix(0.2073 -0.9783 0.9783 0.2073 -557.2124 969.304)" class="st5" cx="319.5" cy="828.5" rx="0.9" ry="0.9"/>
-<text transform="matrix(1 0 0 1 281.5862 863.1667)" class="st9 st10 st12">בריכת דגים</text>
+<text transform="matrix(1 0 0 1 290.0081 863.1667)" class="st9 st10 st15">בריכת דגים</text>
 </svg>
