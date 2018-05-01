@@ -3,10 +3,7 @@
 
 <head>
   <title>Midrachov Kfar Saba מדרחוב ירושלים כפר סבא</title>
-  <link rel="shortcut icon" href="images/icon.ico" type="image/x-icon">
-  <link rel="apple-touch-icon" href="images/icon-fire.png">
-  <link rel="apple-touch-icon" sizes="48x48" href="48x48.png">
-  <link rel="apple-touch-icon" sizes="32x32" href="32x32.png">
+  <link rel="shortcut icon" href="images/cat2.ico" type="image/x-icon">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!--styles-->
@@ -38,18 +35,16 @@
   <div>
     <!--top brand row-->
     <div class="col-md-12 col-sm-12 col-xs-12 margin0 header-address">
-      <div class="col-md-1 col-sm-1 col-xs-1 pull-right padding0 brand-cat">
-        <img src="images/cat.svg" alt="logo"> </div>
-      <div class="col-md-11 col-sm-11 col-xs-11 pull-right">
+      <span class="pull-right  brand-cat">
+        <img src="images/cat.svg" alt="logo"> </span>
         <h1 class="main-address  pull-right">
           <span class="label-bold">אתר רחוב</span>
           <span class="label-light">כפר-סבא - מדרחוב ירושלים</span>
         </h1>
-      </div>
     </div>
         <!--header-->
         <section class="header">
-          <div class="container">
+          <div class="container-fluid">
             <div class="row">
               <div class="col-md-12 header">
             <h1>כל מה שקורה במדרחוב ירושלים - המבצעים, הארועים והעסקים</h1>
@@ -58,37 +53,94 @@
             </div>
           </div>
         </section>
-    <!--promotion-->
-    <section class="poster-header">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 header">
-            <div class="col-md-4 col-sm-4 col-xs-12 pull-right date-wrapper animate-container animated wow zoomIn">
-              <date>
-                <span class="poster-date ">12/2/17</span>
-                </br>
-                <span class="poster-hour">18:00</span>
-              </date>
-              <p class="poster-location">נפגשים מול בניס ליד הצב</p>
-            </div>
-            <div class="col-md-8 col-sm-8 col-xs-12 pull-right content-wrapper animate-container animated wow bounceIn">
-              <h2>
-                <span class="title-part-1">
-                  מיפגש
-                </span>
-                <span class="title-part-2">
-                  הורים + ביביסטריות
-                </span>
-              </h2>
-              <p>מתרשמים, מחליפים פרטים, שותים בירה, אוכלים פיצה וממשיכים עם תקוות לעתיד</p>
-            </div>
+<!-- promotion slider -->
+        <div class="slider-wrapper">
+          <!-- Jssor Slider Begin -->
+          <div id="slider1_container" class="slider-container">
+              <!-- Loading Screen -->
+              <div data-u="loading" class="jssorl-009-spin loading"">
+                  <img src="images/loading/static-svg/spin.svg" />
+              </div>
+              <!-- Slides Container -->
+              <div data-u="slides" class="slides">
+                <!-- promotion 1 -->
+                      <div class="poster-header">
+                        <div class="col-md-12 header">
+                          <div class="col-md-4 col-sm-4 col-xs-12 pull-right date-wrapper animate-container animated wow zoomIn babysitters">
+                            <date>
+                              <div class="poster-date ">12/7/18</div>
+                              <div class="poster-hour">18:00</div>
+                            </date>
+                            <p class="poster-location">נפגשים מול בניס ליד הצב</p>
+                          </div>
+                          <div class="col-md-8 col-sm-8 col-xs-12 pull-right content-wrapper animate-container animated wow bounceIn">
+                            <h2>
+                              <span class="title-part-1">
+                                מיפגש
+                              </span>
+                              <span class="title-part-2">
+                                הורים + ביביסטריות
+                              </span>
+                            </h2>
+                            <p>מתרשמים, מחליפים פרטים, שותים בירה, אוכלים פיצה וממשיכים עם תקוות לעתיד</p>
+                          </div>
+                        </div>
+                      </div>
+                    <!-- promotion 2 -->
+                        <div class="poster-header">
+                          <div class="col-md-12 header">
+                            <div class="col-md-4 col-sm-4 col-xs-12 pull-right date-wrapper animate-container animated wow zoomIn babysitters">
+                              <date>
+                                <div class="poster-date ">12/7/18</div>
+                                <div class="poster-hour">18:00</div>
+                              </date>
+                              <p class="poster-location">נפגשים מול בניס ליד הצב</p>
+                            </div>
+                            <div class="col-md-8 col-sm-8 col-xs-12 pull-right content-wrapper animate-container animated wow bounceIn">
+                              <h2>
+                                <span class="title-part-1">
+                                  מיפגש
+                                </span>
+                                <span class="title-part-2">
+                                  הורים + ביביסטריות
+                                </span>
+                              </h2>
+                              <p>מתרשמים, מחליפים פרטים, שותים בירה, אוכלים פיצה וממשיכים עם תקוות לעתיד</p>
+                            </div>
+                          </div>
+                        </div>
+              </div>
+              <!--#region Bullet Navigator Skin Begin -->
+              <!-- Help: https://www.jssor.com/development/slider-with-bullet-navigator.html -->
+              <div data-u="navigator" class="jssorb031 navigator" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                  <div data-u="prototype" class="i"">
+                      <svg viewBox="0 0 16000 16000">
+                          <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                      </svg>
+                  </div>
+              </div>
+              <!--#endregion Bullet Navigator Skin End -->
+          
+              <!--#region Arrow Navigator Skin Begin -->
+              <!-- Help: https://www.jssor.com/development/slider-with-arrow-navigator.html -->
+              <div data-u="arrowleft" class="arrows arrow-left" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                  <svg viewBox="0 0 16000 16000">
+                      <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                  </svg>
+              </div>
+              <div data-u="arrowright" class="arrows arrow-right" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                  <svg viewBox="0 0 16000 16000" ">
+                      <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                  </svg>
+              </div>
+              <!--#endregion Arrow Navigator Skin End -->
           </div>
-        </div>
+          <!-- Jssor Slider End -->
       </div>
-    </section>
     <!-- content changer buttons -->
-    <div class="col-md-12 ">
+    <div class="col-md-12 padding0 buttons-changer-wrapper">
       <div class="col-md-4 col-sm-4 col-xs-12 pull-right content-changer-info-buttons">
+          <div class=" anderline">
           <button type="button" formaction="#street-info" class="open-info-street">
               <span class="menu-icon fa fa-info" aria-hidden="true" title="street-information" href="#street-info" data-toggle="tab">
               </span>
@@ -100,6 +152,7 @@
               <span>המבצעים והארועים</span>
             </button>
       </div>
+    </div>
       <div class="col-md-8 col-sm-8 col-xs-12 content-changer-map-buttons">
          <h3>מפה - העסקים והארועים</h3> 
       </div>
@@ -111,18 +164,22 @@
           <script id="map-template" type="text/x-handlebars-template">
             <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper ">
               <img src="images/map_midrechov.svg" alt="map"> </img>
-              <div class="local-event position-top-449"">
-                מפגש - הורים ביביסיטריות
-                <date><br>
-                 <span class="date"> 12/9/18</span> 
-                 <span class="hour"> 19:00</span> 
-                 <span class= "details">
-                  מתרשמים, מחליפים פרטים, שותים בירה, אוכלים פיצה וממשיכים עם תקוות לעתיד
-                 </span>
-                </date>
-              </div>"
 
-              <table id="business_details" class="table table-condensed table-striped"></table>
+            <div class="local-event position-top-449"">
+              מפגש - הורים ביביסיטריות
+              <date><br>
+                <span class="date"> 12/7/18</span> 
+                <span class="hour"> 18:00</span> 
+                </date>
+            </div>
+            <div class="local-event position-top-1500px"">
+              ארוע השוואת אופניים
+                <date><br>
+                  <span class="date"> 20/9/18</span> 
+                  <span class="hour"> 17:00</span> 
+                  </date>
+              </div>
+               <table id="business_details" class="table table-condensed table-striped"></table>
               <!-- block1 -->
               <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
                 <nav class="nav-sidebar">
@@ -234,8 +291,8 @@
         <!--street info-->
         <div id="street-info" class="col-md-4  col-sm-4 col-xs-12  street-info-wrapper landscape-12 padding0 xs-visibity visibityclose display_none" >
           <div class="hidden-md hidden-sm hidden-lg ">
-            <button type="button" class="close top-close" title="סגירה">
-              <i class="fa fa-times" aria-hidden="true"></i>
+            <button type="button" class="top-close" title="סגירה">
+                <span class="close thick"></span>
             </button>
           </div>
           <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 pull-right">
@@ -250,8 +307,8 @@
               <span class="fa fa-map" aria-hidden="true"></span>
             </button>
           </div>
-          <div class="col-md-12 padding0 gallery-wrapper">
-            <div class="col-md-12 gallery-row">
+          <div class="col-md-12  gallery-wrapper">
+            <div class="col-md-12 gallery-row padding0">
               <!--picture-unit 1-->
               <div class="picture-unit ">
                 <div class="picture-ïnfo">
@@ -268,7 +325,7 @@
                 <img src="images/gallery/gal-s-2.jpg"> </div>
             </div>
             <!--end gallery-row-->
-            <div class="col-md-12 gallery-row">
+            <div class="col-md-12 gallery-row padding0">
               <!--picture-unit 3-->
               <div class="picture-unit">
                 <div class="picture-ïnfo">
@@ -285,7 +342,7 @@
                 <img src="images/gallery/gal-s-4.jpg"> </div>
             </div>
             <!--end gallery-row-->
-            <div class="col-md-12 gallery-row">
+            <div class="col-md-12 gallery-row padding0">
               <!--picture-unit 5-->
               <div class="picture-unit">
                 <div class="picture-ïnfo">
@@ -309,18 +366,17 @@
         <!--campaign-info-wrapper-->
         <div id="campaign-info"  class="col-md-4  col-sm-4 col-xs-12  campaign-info-wrapper landscape-12 xs-visibity visibityclose " >
           <div class="hidden-md hidden-sm hidden-lg ">
-            <button type="button" class="close top-close" title="סגירה">
-              <i class="fa fa-times" aria-hidden="true"></i>
+            <button type="button" class="top-close" title="סגירה">
+                <span class="close thick"></span>
             </button>
           </div>
-          <div class="col-md-12 col-sm-12 col-xs-12 pull-right">
             <h3>כל המבצעים ברחוב</h3>
             <div id="sales_template_parent" class="sales-list">
                 <script id="sales-template" type="text/x-handlebars-template">
                   <ul>
                     {{#each sale}}
-                     <li>
-                      <span class='{{this.icon}} icons'> <span class='business-name'>{{this.business_name}}</span> <br> <span class='campaign-string'>{{this.campaign_string}}</span> <span class='business-name'>{{this.cross_campaign_partner}}</span>
+                     <li class="col-lg-6">
+                      <span class='{{this.icon}} icons'> <span class='business-name'>{{this.business_name}}</span><span class='campaign-string'>{{this.campaign_string}}</span> <span class='business-cmc-name'>{{this.cross_campaign_partner}}</span>
                     </li>
                      </li>
                     {{/each}}
@@ -332,14 +388,13 @@
                 <script id="events-template" type="text/x-handlebars-template">
                   <ul>
                     {{#each sale}}
-                     <li>
-                      <span class='{{this.icon}}'></span> <span class='business-name'>{{this.business_name}}</span> <span class='{{this.action}}'></span> <span class='campaign-string'>{{this.events_string}}</span>
+                     <li class="col-lg-6">
+                      <span class='{{this.icon}}'></span> <span class='busines-name'>{{this.business_name}}</span> <span class='{{this.action}}'></span> <span class='campaign-string'>{{this.events_string}}</span>
                      </li>
                     {{/each}}
                   </ul>
                 </script>
               </div>
-          </div>
         </div>
         <!--end-campaign-info-wrapper-->
         <!--business info-->
@@ -349,46 +404,50 @@
               <ul id="business_info" class="tab-content">
                 {{#each biz_info}}
                 <li class="tab-pane text-style" id="{{this.tab_link}}">
+                  <!-- close button for mobile -->
                   <div class="hidden-md hidden-sm hidden-lg ">
-                    <button type="button" class="close top-close" title="סגירה">
-                      <i class="fa fa-times" aria-hidden="true"></i>
+                    <button type="button" class="top-close" title="סגירה">
+                        <span class="close thick"></span>
                     </button>
                   </div>
-                  <img src='{{this.street_view}}'> </img>
+                  <!-- street view-->
+                  <img src='{{this.street_view}}' class ="street-view"> </img>
                   {{#if this.profile_image}}
-                  <div class="hidden-xs portrait pull-right  ">
-                    <img src='{{this.profile_image}}' class="img-circle"> </img>
+                  <!-- profile image -->
+                  <div class="hidden-xs portrait ">
+                    <img src='{{this.profile_image}}' class=""> </img>
                   </div>
                   {{/if}}
-                  <h2>{{this.business_name}}</h2>
-                  <div class="col-md-12 col-xs-12 contact-wrapper padding0">
-                    <address>
-                      <div class="col-md-7 col-xs-12 landscape-6">
-                        <span class="street-num pull-right">{{this.address_num}}</span>
-                        <span class="street">{{this.address_street}}</span>
-                      </div>
-                      <div class="col-md-5 col-xs-12 landscape-6">
-                        <a href="#{{this.business_phone}}">
-                          <span class="icon fa fa-mobile" aria-hidden="true"></span> {{this.business_phone}}</a>
-                      </div>
-                    </address>
-                  </div>
-
+                  <!-- business name -->
+                  <h3><span class="anderline">{{this.business_name}}</span></h3>
+                  <!-- campaign -->
+                  <h4 class= "margin1">{{this.campaign_title}}</h4>
                   {{#if this.campaign_string}}
-                  <div class="col-md-12 col-xs-12 text-community ">
+                  <div class="campaign-text margin1">
                     <p>
-                      <img src='{{this.profile_image}}' class="hidden-md hidden-sm hidden-lg "> </img>
                       <span class="{{this.action}}"></span>
                       <span> {{this.campaign_string}}</span>
                       <a href="{{this.cross_campaign_link}}">{{this.cross_campaign_partner}}</a>
                     </p>
                   </div>
                   {{/if}}
-                  <div class="col-md-12 col-xs-12 opening-hours-info">
-                    <h2 class="open-close">פתוח עכשיו</h2>
+                  {{#if this.events_string}}
+                  <div class="campaign-text margin1">
+                    <p>
+                      <img src='{{this.profile_image}}' class="hidden-md hidden-sm hidden-lg "> </img>
+                      <span class="{{this.action}}"></span>
+                      <span> {{this.events_string}}</span>
+                      <a href="{{this.cross_campaign_link}}">{{this.cross_campaign_partner}}</a>
+                    </p>
+                  </div>
+                  {{/if}}
+                    <!-- opening hours -->
+                    <h4 class= "margin1">שעות פתיחה</h4>
+                  <div class="opening-hours-info margin1">
+
                     <p>
                       <span class="day">
-                        ראשון - חמישי :
+                        א' - ה' :
                       </span>
                       <span class="hours">
                         {{this.opening_hours_su_th}}
@@ -396,7 +455,7 @@
                     </p>
                     <p>
                       <span class="day">
-                        שישי :
+                        ו' :
                       </span>
                       <span class="hours">
                         {{this.opening_hours_fr}}
@@ -411,19 +470,32 @@
                       </span>
                     </p>
                   </div>
-                  <div class="col-md-12 margin1 hidden-xs">
+                  <!-- amenties tags -->
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin1 features-wrapper">
                     <ul id="features">
                      {{#each tag_list}}
                      <li class="{{this.klass}} pull-right"> <span class="description">{{this.description}}</span></li>
                      {{/each}}
                   </ul>
-                   
-                  <div class="col-md-12 margin2">
-                      {{#if this.facebook_link}}
-                    <a class="col-md-5 social pull-right fa fa-facebook" href="{{this.facebook_link}}" title="facebook"> </a>
-                    {{/if}}
-                    <div class="col-md-2 external-link"> </div>
                   </div>
+                   <!-- contacts -->
+                   <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 margin2 contacts-wrapper padding0">
+                      <div class ="col-md-4 col-xs-12">
+                      <span class="icon fa fa-map-marker" aria-hidden="true"></span> 
+                      <span class="street-num ">{{this.address_num}}</span>
+                      <span class="street">{{this.address_street}}</span>
+                  </div>
+                  <div class ="col-md-4 col-xs-12">
+                      {{#if this.facebook_link}}
+                    <a class="social fa fa-facebook" href="{{this.facebook_link}}" title="facebook"> </a>
+                    {{/if}}
+                  </div>
+                <span>
+                    <div class ="col-md-4 col-xs-12">
+                <a href="#{{this.business_phone}}">
+                    <span class="icon fa fa-mobile" aria-hidden="true"></span> {{this.business_phone}}</a>
+                  </span>
+                </div>
                 </li>
                 {{/each}}
               </ul>
@@ -447,6 +519,64 @@
     </section>
     <!-- database connection -->
     <script src="render_firebase.js"></script>
+        <!-- slider -->
+        <script src="js/jquery-1.9.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/docs.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+    
+        <!-- jssor slider scripts-->
+        <script type="text/javascript" src="js/jssor.slider.min.js"></script>
+        <script>
+            jQuery(document).ready(function ($) {
+    
+                var options = {
+                    $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
+                    $AutoPlay: 1,                                       //[Optional] Auto play or not, to enable slideshow, this option must be set to greater than 0. Default value is 0. 0: no auto play, 1: continuously, 2: stop at last slide, 4: stop on click, 8: stop on user navigation (by arrow/bullet/thumbnail/drag/arrow key navigation)
+                    $Idle: 4000,                                        //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                    $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+    
+                    $ArrowKeyNavigation: 1,   			                //[Optional] Steps to go for each navigation request by pressing arrow key, default value is 1.
+                    $SlideEasing: $Jease$.$OutQuint,                    //[Optional] Specifies easing for right to left animation, default value is $Jease$.$OutQuad
+                    $SlideDuration: 1200,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                    $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide, default value is 20
+                    //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                    //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                    $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                    $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                    $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                    $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
+    
+                    $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
+                        $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
+                        $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                        $SpacingX: 8,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                        $Orientation: 1                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                    },
+    
+                    $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
+                        $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
+                        $ChanceToShow: 2                                 //[Optional] Steps to go for each navigation request, default value is 1
+                    }
+                };
+                 var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+                //responsive code begin
+                //you can remove responsive code if you don't want the slider scales while window resizing
+                function ScaleSlider() {
+                    var bodyWidth = document.body.clientWidth;
+                    if (bodyWidth)
+                        jssor_slider1.$ScaleWidth(Math.min(bodyWidth, 1920));
+                    else
+                        window.setTimeout(ScaleSlider, 30);
+                }
+                ScaleSlider();
+                $(window).bind("load", ScaleSlider);
+                $(window).bind("resize", ScaleSlider);
+                $(window).bind("orientationchange", ScaleSlider);
+                //responsive code end
+            });
+        </script>
 </body>
 
 </html>

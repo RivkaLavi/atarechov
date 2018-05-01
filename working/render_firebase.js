@@ -17,7 +17,7 @@ tagDict = {
   "נחמדים לילדים": "child-friendly",
   "נחמדים לחיות": "animal-friendly",
   "ידידותי לצליאק": "gluten-free",
-  "ידידותי למים": "vegan-friendly",
+  "ידידותי לטבעונים": "vegan-friendly",
   "נגיש": "accessible",
   "ציור שמן": "oil-painting",
   "קרמיקה": "ceramics",
@@ -89,15 +89,6 @@ function enrichBizTags(bizArray, tagDict) {
   return rv;
 }
 
-function changeClasses(error, options, response) {
-  console.log('Running changeClasses()');
-  var openClasses = $('li.open').click(function () {
-    $('.business-info-wrapper').removeClass('display_none');
-    $('.street-info-wrapper').addClass('display_none');
-    $('.campaign-info-wrapper').addClass('display_none');
-  });
-}
-
 function changeContent(error, options, response) {
   console.log('Running changeClasses()');
   var openClasses = $('li.open').click(function () {
@@ -141,7 +132,6 @@ function changeContent(error, options, response) {
   }
 }
 
-//var observer = new MutationObserver(changeClasses);
 var observer = new MutationObserver(changeContent);
 
 // compile map
