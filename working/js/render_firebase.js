@@ -140,7 +140,8 @@ function changeContent(error, options, response) {
     }
   }
   var desiredXPosition = window.matchMedia("(max-width: 768px)")
-  cellResponsive(desiredXPosition);
+  cellResponsive(desiredXPosition);  // Call listener function at run time
+  desiredXPosition.addListener(cellResponsive);  // Attach listener on state changes
 }
 
 var observer = new MutationObserver(changeContent);
