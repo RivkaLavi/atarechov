@@ -130,6 +130,16 @@ function changeContent(error, options, response) {
   function myFunction() {
     document.getElementById("map").style.overflow = "scroll";
   }
+
+  function cellResponsive(desiredXPosition) {
+    var element = document.getElementById("business_info_wrapper")
+    if (desiredXPosition.matches) { // If media query matches
+      element.style.cssText ="position: absolute; top: 0px; right: 0px;"
+    } else {
+      element.style.cssText = "position: relative; top: 0px; bottom: auto; right: auto; left: 10px;";
+    }
+  }
+  var desiredXPosition = window.matchMedia("(max-width: 768px)")
 }
 
 var observer = new MutationObserver(changeContent);
