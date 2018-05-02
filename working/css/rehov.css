@@ -148,20 +148,34 @@ section {
       .header-address h1.main-address {
         margin-top: 0px; } }
 
+/* \/\/--- header ---\/\/ */
+.header h2 {
+  color: #ff3c00 !important;
+  color: #000;
+  font-size: 40px;
+  font-weight: 400; }
+  @media screen and (max-width: 768px) {
+    .header h2 {
+      font-size: 20px;
+      text-align: center; } }
+
 /* \/\/--- Intro -Event ---\/\/ */
 .poster-header {
-  background-image: url(../images/poster2.jpg);
   background-size: cover;
   background-repeat: no-repeat; }
+  .poster-header.bycicle {
+    background-image: url(../images/poster6.jpg); }
+  .poster-header.babysiters {
+    background-image: url(../images/poster2.jpg); }
   @media screen and (max-width: 450px), screen and (max-width: 768px) and (orientation: landscape) {
     .poster-header {
       background-image: inherit;
       background-color: #c7efff;
       padding-bottom: 5px; } }
-  .poster-header .header .content-wrapper {
+  .poster-header .content-wrapper {
     animation-delay: .3s; }
     @media screen and (max-width: 768px) and (orientation: landscape) {
-      .poster-header .header .content-wrapper {
+      .poster-header .content-wrapper {
         width: 50%; } }
   .poster-header .date-wrapper {
     padding: 15px;
@@ -216,7 +230,9 @@ section {
         .poster-header .date-wrapper.babysitters:after {
           bottom: 30px; } }
     .poster-header .date-wrapper date {
-      font-size: 60px;
+      color: #000;
+      font-size: 40px;
+      font-weight: 700;
       font-family: 'Poppins';
       line-height: 1.3em;
       color: #ff3c00; }
@@ -240,7 +256,9 @@ section {
       padding: 5px; }
   .poster-header h2 {
     color: #000;
-    font-size: 60px;
+    color: #000;
+    font-size: 40px;
+    font-weight: 700;
     font-weight: 700; }
     @media screen and (max-width: 768px) and (orientation: landscape) {
       .poster-header h2 {
@@ -251,12 +269,14 @@ section {
         margin: 0;
         text-align: center; } }
   .poster-header p {
-    font-size: 30px;
+    color: #000;
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     line-height: 1.3em;
     font-weight: 700; }
     @media screen and (max-width: 450px) {
       .poster-header p {
-        font-size: 26px;
         margin: 0;
         text-align: center; } }
     @media screen and (max-width: 768px) and (orientation: landscape) {
@@ -269,13 +289,13 @@ section {
   margin: 5px 5px; }
   @media screen and (max-width: 768px) {
     .content-changer-map-buttons h3 {
-      font-size: 30px;
-      color: #fff; } }
+      font-size: 20px;
+      color: #1060b1;
+      font-weight: 700; } }
 
 @media screen and (max-width: 768px) {
   .content-changer-map-buttons {
-    text-align: center;
-    box-shadow: -1px 2px 9px 1px rgba(0, 0, 0, 0.17); } }
+    text-align: center; } }
 
 @media screen and (max-width: 450px) {
   .buttons-changer-wrapper {
@@ -991,7 +1011,7 @@ section {
     top: 0px;
     left: 0px;
     width: 1300px;
-    height: 200px;
+    min-height: 200px;
     overflow: hidden; }
     .slider-wrapper .slider-container .loading {
       position: absolute;
@@ -1012,7 +1032,7 @@ section {
       left: 0px;
       top: 0px;
       width: 1300px;
-      height: 500px;
+      height: 300px;
       overflow: hidden; }
     .slider-wrapper .slider-container .navigator {
       position: absolute;

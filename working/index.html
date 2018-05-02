@@ -46,15 +46,15 @@
         <section class="header">
           <div class="container-fluid">
             <div class="row">
-              <div class="col-md-12 header">
-            <h1>כל מה שקורה במדרחוב ירושלים - המבצעים, הארועים והעסקים</h1>
+              <div class="col-md-12 col-sm-12 col-xs-12">
+            <h2>כל מה שקורה במדרחוב ירושלים - המבצעים, הארועים והעסקים</h2>
                 </div>
               </div>
             </div>
           </div>
         </section>
 <!-- promotion slider -->
-        <div class="slider-wrapper">
+        <div class="slider-wrapper hidden-xs hidden-sm">
           <!-- Jssor Slider Begin -->
           <div id="slider1_container" class="slider-container">
               <!-- Loading Screen -->
@@ -64,8 +64,8 @@
               <!-- Slides Container -->
               <div data-u="slides" class="slides">
                 <!-- promotion 1 -->
-                      <div class="poster-header">
-                        <div class="col-md-12 header">
+                      <div class="poster-header babysiters">
+                        <div class="col-md-12">
                           <div class="col-md-4 col-sm-4 col-xs-12 pull-right date-wrapper animate-container animated wow zoomIn babysitters">
                             <date>
                               <div class="poster-date ">12/7/18</div>
@@ -87,8 +87,8 @@
                         </div>
                       </div>
                     <!-- promotion 2 -->
-                        <div class="poster-header">
-                          <div class="col-md-12 header">
+                        <div class="poster-header bycicle">
+                          <div class="col-md-12">
                             <div class="col-md-4 col-sm-4 col-xs-12 pull-right date-wrapper animate-container animated wow zoomIn babysitters">
                               <date>
                                 <div class="poster-date ">12/7/18</div>
@@ -123,7 +123,7 @@
           
               <!--#region Arrow Navigator Skin Begin -->
               <!-- Help: https://www.jssor.com/development/slider-with-arrow-navigator.html -->
-              <div data-u="arrowleft" class="arrows arrow-left" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+              <!-- <div data-u="arrowleft" class="arrows arrow-left" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
                   <svg viewBox="0 0 16000 16000">
                       <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
                   </svg>
@@ -132,7 +132,7 @@
                   <svg viewBox="0 0 16000 16000" ">
                       <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
                   </svg>
-              </div>
+              </div> -->
               <!--#endregion Arrow Navigator Skin End -->
           </div>
           <!-- Jssor Slider End -->
@@ -295,11 +295,11 @@
                 <span class="close thick"></span>
             </button>
           </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 pull-right">
-            <h2>רחוב ירושלים כפר סבא</h2>
+          <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 pull-right">
+            <h3>רחוב ירושלים כפר סבא</h3>
           </div>
           <!--menu-->
-          <div class="menu-external-links col-lg-6 col-md-12 col-sm12 col-xs-12">
+          <div class="menu-external-links col-lg-4 col-md-12 col-sm12 col-xs-12">
             <button type="button" formaction="">
               <span class="fa fa-facebook" aria-hidden="true"></span>
             </button>
@@ -534,15 +534,15 @@
                 var options = {
                     $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
                     $AutoPlay: 1,                                       //[Optional] Auto play or not, to enable slideshow, this option must be set to greater than 0. Default value is 0. 0: no auto play, 1: continuously, 2: stop at last slide, 4: stop on click, 8: stop on user navigation (by arrow/bullet/thumbnail/drag/arrow key navigation)
-                    $Idle: 4000,                                        //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                    $Idle: 8000,                                        //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
                     $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
     
                     $ArrowKeyNavigation: 1,   			                //[Optional] Steps to go for each navigation request by pressing arrow key, default value is 1.
                     $SlideEasing: $Jease$.$OutQuint,                    //[Optional] Specifies easing for right to left animation, default value is $Jease$.$OutQuad
-                    $SlideDuration: 1200,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                    $SlideDuration: 9000,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
                     $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide, default value is 20
                     //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
-                    //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                    //$SlideHeight: 250,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
                     $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
                     $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
                     $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
