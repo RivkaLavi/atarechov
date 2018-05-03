@@ -304,8 +304,35 @@ h1.main-address { color: $text1; line-height: 8px;
 .poster-header{
 background-size: cover;
 background-repeat: no-repeat;
-&.bycicle {background-image:url(../images/poster6.jpg);}
-&.babysiters {background-image:url(../images/poster2.jpg);}
+&.bycicle {
+  background-image:url(../images/poster6.jpg);
+  .date-wrapper{
+    &:before{background-image: url(../images/my-icons/bycicle.svg);background-position: right 0px; right: 30px; bottom: 30px;
+      @media  screen and (max-width: 1190px) { right: 20px; bottom: 55px }
+      @media  screen and (max-width: 795px) { bottom: 30px }
+      
+    }
+    &:after{ transform:scaleX(-1);background-image: url(../images/my-icons/cat3.svg);background-position: left 0px; left: 30px; bottom: 30px;
+      @media  screen and (max-width: 1190px) { left: 20px; bottom: 55px }
+      @media  screen and (max-width: 795px) { bottom: 30px }
+    }
+  }
+}
+&.babysiters {
+  background-image:url(../images/poster2.jpg);
+  .date-wrapper{
+    &:before{background-image: url(../images/my-icons/cat1.svg);background-position: right 10px; right: 30px; bottom: 30px;
+      @media  screen and (max-width: 1190px) { right: 20px; bottom: 55px }
+      @media  screen and (max-width: 795px) { bottom: 30px }
+      
+    }
+    &:after{ transform:scaleX(-1);background-image: url(../images/my-icons/cat1.svg);background-position: left 10px; left: 30px; bottom: 30px;
+      @media  screen and (max-width: 1190px) { left: 20px; bottom: 55px }
+      @media  screen and (max-width: 795px) { bottom: 30px }
+    }
+
+  }
+}
   @media screen and (max-width: $break-xs),screen and (max-width: $break-md) and (orientation: landscape) {
   background-image:inherit;
   background-color: $theme-color2-bright;
@@ -335,22 +362,13 @@ background-repeat: no-repeat;
     @media  screen and (max-width: 767px) {height: 60px; width: 60px; }
     @media  screen and (max-width: 424px) {height: 30px; width: 30px; }
   }
-  &.babysitters{
-    &::before{background-image: url(../images/my-icons/cat1.svg);background-position: right 10px; right: 30px; bottom: 30px;
-      @media  screen and (max-width: 1190px) { right: 20px; bottom: 55px }
-      @media  screen and (max-width: 795px) { bottom: 30px }
-      
-    }
-    &:after{ transform:scaleX(-1);background-image: url(../images/my-icons/cat1.svg);background-position: left 10px; left: 30px; bottom: 30px;
-      @media  screen and (max-width: 1190px) { left: 20px; bottom: 55px }
-      @media  screen and (max-width: 795px) { bottom: 30px }
-    }
-  }
+
     date {
       @include big-title-bold;
     font-family: 'Poppins';
     line-height: 1.3em;
-    color: $secondary;
+    color: #fff;
+    letter-spacing: 10px;
     .poster-date{  font-weight: 700;}
     .poster-hour{
     font-weight: 300;
@@ -363,7 +381,7 @@ background-repeat: no-repeat;
     }
    }
   .poster-location{
-  color:$text1;
+  color:#fff;
   background-color:$secondary;
   font-size:20px;
   margin-top: -12px;
@@ -373,10 +391,10 @@ background-repeat: no-repeat;
   }
 }
     h2 {   
-    color:$text2;
     @include big-title-bold;
+    color:#fff;
     font-weight: 700;
-      @media  screen and (max-width: $break-md) and (orientation: landscape) {
+       @media  screen and (max-width: $break-md) and (orientation: landscape) {
       font-size: 26px;
       }
       @media screen and (max-width: $break-xs) {
@@ -389,6 +407,7 @@ background-repeat: no-repeat;
     @include medium-title-bold;
   line-height: 1.3em;
   font-weight: 700;
+  color:#fff;
   @media screen and (max-width: $break-xs) {
   margin: 0;
   text-align: center

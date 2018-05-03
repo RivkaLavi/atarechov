@@ -165,8 +165,58 @@ section {
   background-repeat: no-repeat; }
   .poster-header.bycicle {
     background-image: url(../images/poster6.jpg); }
+    .poster-header.bycicle .date-wrapper:before {
+      background-image: url(../images/my-icons/bycicle.svg);
+      background-position: right 0px;
+      right: 30px;
+      bottom: 30px; }
+      @media screen and (max-width: 1190px) {
+        .poster-header.bycicle .date-wrapper:before {
+          right: 20px;
+          bottom: 55px; } }
+      @media screen and (max-width: 795px) {
+        .poster-header.bycicle .date-wrapper:before {
+          bottom: 30px; } }
+    .poster-header.bycicle .date-wrapper:after {
+      transform: scaleX(-1);
+      background-image: url(../images/my-icons/cat3.svg);
+      background-position: left 0px;
+      left: 30px;
+      bottom: 30px; }
+      @media screen and (max-width: 1190px) {
+        .poster-header.bycicle .date-wrapper:after {
+          left: 20px;
+          bottom: 55px; } }
+      @media screen and (max-width: 795px) {
+        .poster-header.bycicle .date-wrapper:after {
+          bottom: 30px; } }
   .poster-header.babysiters {
     background-image: url(../images/poster2.jpg); }
+    .poster-header.babysiters .date-wrapper:before {
+      background-image: url(../images/my-icons/cat1.svg);
+      background-position: right 10px;
+      right: 30px;
+      bottom: 30px; }
+      @media screen and (max-width: 1190px) {
+        .poster-header.babysiters .date-wrapper:before {
+          right: 20px;
+          bottom: 55px; } }
+      @media screen and (max-width: 795px) {
+        .poster-header.babysiters .date-wrapper:before {
+          bottom: 30px; } }
+    .poster-header.babysiters .date-wrapper:after {
+      transform: scaleX(-1);
+      background-image: url(../images/my-icons/cat1.svg);
+      background-position: left 10px;
+      left: 30px;
+      bottom: 30px; }
+      @media screen and (max-width: 1190px) {
+        .poster-header.babysiters .date-wrapper:after {
+          left: 20px;
+          bottom: 55px; } }
+      @media screen and (max-width: 795px) {
+        .poster-header.babysiters .date-wrapper:after {
+          bottom: 30px; } }
   @media screen and (max-width: 450px), screen and (max-width: 768px) and (orientation: landscape) {
     .poster-header {
       background-image: inherit;
@@ -204,38 +254,14 @@ section {
         .poster-header .date-wrapper:before, .poster-header .date-wrapper:after {
           height: 30px;
           width: 30px; } }
-    .poster-header .date-wrapper.babysitters::before {
-      background-image: url(../images/my-icons/cat1.svg);
-      background-position: right 10px;
-      right: 30px;
-      bottom: 30px; }
-      @media screen and (max-width: 1190px) {
-        .poster-header .date-wrapper.babysitters::before {
-          right: 20px;
-          bottom: 55px; } }
-      @media screen and (max-width: 795px) {
-        .poster-header .date-wrapper.babysitters::before {
-          bottom: 30px; } }
-    .poster-header .date-wrapper.babysitters:after {
-      transform: scaleX(-1);
-      background-image: url(../images/my-icons/cat1.svg);
-      background-position: left 10px;
-      left: 30px;
-      bottom: 30px; }
-      @media screen and (max-width: 1190px) {
-        .poster-header .date-wrapper.babysitters:after {
-          left: 20px;
-          bottom: 55px; } }
-      @media screen and (max-width: 795px) {
-        .poster-header .date-wrapper.babysitters:after {
-          bottom: 30px; } }
     .poster-header .date-wrapper date {
       color: #000;
       font-size: 40px;
       font-weight: 700;
       font-family: 'Poppins';
       line-height: 1.3em;
-      color: #ff3c00; }
+      color: #fff;
+      letter-spacing: 10px; }
       .poster-header .date-wrapper date .poster-date {
         font-weight: 700; }
       .poster-header .date-wrapper date .poster-hour {
@@ -256,9 +282,9 @@ section {
       padding: 5px; }
   .poster-header h2 {
     color: #000;
-    color: #000;
     font-size: 40px;
     font-weight: 700;
+    color: #fff;
     font-weight: 700; }
     @media screen and (max-width: 768px) and (orientation: landscape) {
       .poster-header h2 {
@@ -274,7 +300,8 @@ section {
     font-weight: 700;
     letter-spacing: 0.5px;
     line-height: 1.3em;
-    font-weight: 700; }
+    font-weight: 700;
+    color: #fff; }
     @media screen and (max-width: 450px) {
       .poster-header p {
         margin: 0;
