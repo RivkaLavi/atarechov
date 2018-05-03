@@ -304,8 +304,8 @@ h1.main-address { color: $text1; line-height: 8px;
 .poster-header{
 background-size: cover;
 background-repeat: no-repeat;
-&.bycicle{background-image:url(../images/poster6.jpg);}
-&.babysiters{background-image:url(../images/poster2.jpg);}
+&.bycicle {background-image:url(../images/poster6.jpg);}
+&.babysiters {background-image:url(../images/poster2.jpg);}
   @media screen and (max-width: $break-xs),screen and (max-width: $break-md) and (orientation: landscape) {
   background-image:inherit;
   background-color: $theme-color2-bright;
@@ -1241,6 +1241,19 @@ margin-left: 10px;
     }
   }
  }
+
+//  footer
+.footer {
+  background-color: $secondary;
+  margin-top: 30px;
+  height: 40px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 40px;
+  a { color: #fff; }
+  .contacts { text-align: left;}
+  img{ width: 40px;}
+} 
 
 
 

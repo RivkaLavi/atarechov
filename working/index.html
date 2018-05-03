@@ -162,7 +162,7 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div id="map_template_parent">
           <script id="map-template" type="text/x-handlebars-template">
-            <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper ">
+            <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper">
               <img src="images/map_midrechov.svg" alt="map"> </img>
 
             <div class="local-event position-top-449"">
@@ -504,19 +504,21 @@
         </div>
       </div>
     </section>
-    <section id="test_template">
-      <div id="sales_template_parent">
-        <script id="sales-template" type="text/x-handlebars-template">
-          <ul>
-            {{#each sale}}
-            <li>
-              {{this.campaign_string}}
-            </li>
-            {{/each}}
-          </ul>
-        </script>
+    <footer>
+      <div class="footer col-md-12 col-sm-12 col-xs-12 container-fluid">
+      <div class="col-md-4 col-sm-6 col-xs-12 contacts">
+           <i class="fa fa-phone" aria-hidden="true" href=""></i> <a href="tel:052-682-1826">052-682-1826</a> <span> | רבקה לביא</span>
+       </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+           <a href="#">על אתר רחוב</a>
       </div>
-    </section>
+      <div class="footer-title col-md-4 col-sm-6 col-xs-12">
+        אתר רחוב - מידרחוב ירושלים כפר-סבא
+        <img src="images/cat.svg" alt="logo">
+      </div>
+    </div>
+    </footer>
+
     <!-- database connection -->
     <script src="render_firebase.js"></script>
         <!-- slider -->
