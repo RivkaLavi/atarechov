@@ -134,7 +134,7 @@ function changeContent(error, options, response) {
   function cellResponsive(desiredXPosition) {
     var element = document.getElementById("business_info_wrapper")
     if (desiredXPosition.matches) { // If media query matches
-      element.style.cssText ="position: absolute; top: 0px; right: 0px;"
+      element.style.cssText ="position: fixed; top: 0px; right: 0px;"
     } else {
       element.style.cssText = "position: relative; top: 0px; bottom: auto; right: auto; left: 10px;";
     }

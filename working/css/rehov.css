@@ -415,6 +415,7 @@ section {
         margin-top: -2px; }
   @media screen and (max-width: 768px) {
     .street-info-wrapper, .campaign-info-wrapper, .business-info-wrapper {
+      display: none;
       position: absolute;
       top: -40px;
       right: 0;
