@@ -682,6 +682,9 @@ section {
   .business-map.position7 {
     top: 1400px;
     right: 35px; }
+  .business-map.position8 {
+    top: 2105px;
+    right: 929px; }
   @media screen and (max-width: 450px) {
     .business-map {
       right: 10px; } }
@@ -1113,3 +1116,6 @@ section {
     text-align: left; }
   .footer img {
     width: 40px; }
+    @media screen and (max-width: 450px) {
+      .footer img {
+        width: 20px; } }

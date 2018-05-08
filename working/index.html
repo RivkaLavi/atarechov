@@ -285,6 +285,21 @@
                   </ul>
                 </nav>
               </div>
+                            <!-- block8 -->
+                            <div class="business-map position8 buisness-tabs lengthwise-icon left-icon">
+                                <nav class="nav-sidebar">
+                                  <ul id="biz8" class="nav tabs">
+                                    {{#each group8}}
+                                    <li class="open {{this.action}}">
+                                      <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
+                                        <span class="icon {{this.icon}}"></span>
+                                        <strong class="business-name">{{this.business_name}}</strong>
+                                      </a>
+                                    </li>
+                                    {{/each}}
+                                  </ul>
+                                </nav>
+                              </div>
             </div>
           </script>
         </div>
@@ -450,7 +465,7 @@
                         א' - ה' :
                       </span>
                       <span class="hours">
-                        {{this.opening_hours_su_th}}
+                        {{this.opening_hours_workweek}}
                       </span>
                     </p>
                     <p>
@@ -458,7 +473,7 @@
                         ו' :
                       </span>
                       <span class="hours">
-                        {{this.opening_hours_fr}}
+                        {{this.opening_hours_friday}}
                       </span>
                     </p>
                     <p>
@@ -466,7 +481,7 @@
                         שבת :
                       </span>
                       <span class="hours">
-                        {{this.opening_hours_sa}}
+                        {{this.opening_hours_saturday}}
                       </span>
                     </p>
                   </div>
@@ -492,7 +507,7 @@
                   </div>
                 <span>
                     <div class ="col-md-4 col-xs-12">
-                <a href="#{{this.business_phone}}">
+                <a href="tel:{{this.business_phone}}">
                     <span class="icon fa fa-mobile" aria-hidden="true"></span> {{this.business_phone}}</a>
                   </span>
                 </div>

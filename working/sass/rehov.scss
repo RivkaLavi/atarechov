@@ -839,6 +839,13 @@ right: 925px;
     right: 35px;
     }
   
+
+    &.position8{
+      top: 2105px;
+      right: 929px;
+      }
+
+
 @media screen and (max-width: $break-xs) {
 right: 10px;
 }
@@ -1272,7 +1279,12 @@ margin-left: 10px;
   line-height: 40px;
   a { color: #fff; }
   .contacts { text-align: left;}
-  img{ width: 40px;}
+  img{
+    width: 40px;
+    @media screen and (max-width: $break-xs){
+      width: 20px;
+      }
+  }
 } 
 
 
