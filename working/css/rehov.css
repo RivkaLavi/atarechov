@@ -358,11 +358,19 @@ section {
   height: 2000px;
   position: relative;
   border: 2px solid #e2e2e2; }
+  @media screen and (max-width: 450px) {
+    .map-wrapper {
+      height: 1424px; } }
   .map-wrapper img {
     width: 1700px;
     position: absolute;
     top: -70px;
     right: -317px; }
+    @media screen and (max-width: 450px) {
+      .map-wrapper img {
+        width: 1067px;
+        top: -8px;
+        right: -174px; } }
 
 .street-info-wrapper, .campaign-info-wrapper, .business-info-wrapper {
   background-color: #fff; }
@@ -555,17 +563,24 @@ section {
 
 .buisness-tabs.crosswise-icon ul {
   overflow: hidden; }
-  .buisness-tabs.crosswise-icon ul.width441 {
-    width: 411px; }
+  .buisness-tabs.crosswise-icon ul.width485 {
+    width: 485px; }
   .buisness-tabs.crosswise-icon ul.width560 {
     width: 560px; }
   .buisness-tabs.crosswise-icon ul li {
     float: left;
     margin: 23px 0 30px 13px; }
+    @media screen and (max-width: 450px) {
+      .buisness-tabs.crosswise-icon ul li {
+        margin: 23px 0 30px 5px; } }
     .buisness-tabs.crosswise-icon ul li a {
       height: 122px;
       width: 61px;
       display: block; }
+      @media screen and (max-width: 450px) {
+        .buisness-tabs.crosswise-icon ul li a {
+          height: 100px;
+          width: 44px; } }
 
 .buisness-tabs.crosswise-icon.bottom-icon ul li a {
   padding-top: 5px; }
@@ -636,6 +651,10 @@ section {
   .local-event.position-top-449 {
     top: 449px;
     right: 283px; }
+    @media screen and (max-width: 450px) {
+      .local-event.position-top-449 {
+        top: 300px;
+        right: 164px; } }
     .local-event.position-top-449::before {
       background-image: url(../images/my-icons/cat1.svg);
       background-position: right 10px;
@@ -648,6 +667,10 @@ section {
   .local-event.position-top-1500px {
     top: 1500px;
     right: 283px; }
+    @media screen and (max-width: 450px) {
+      .local-event.position-top-1500px {
+        top: 996px;
+        right: 182px; } }
     .local-event.position-top-1500px::before {
       background-image: url(../images/my-icons/bycicle.svg);
       background-position: right 0px;
@@ -664,27 +687,59 @@ section {
   .business-map.position1 {
     top: 94px;
     right: 35px; }
+    @media screen and (max-width: 450px) {
+      .business-map.position1 {
+        top: 49px;
+        right: -22px; } }
   .business-map.position2 {
     top: 141px;
     right: 239px; }
+    @media screen and (max-width: 450px) {
+      .business-map.position2 {
+        top: 78px;
+        right: 125px; } }
   .business-map.position3 {
     top: 94px;
-    right: 474px; }
+    right: 546px; }
+    @media screen and (max-width: 450px) {
+      .business-map.position3 {
+        top: 49px;
+        right: 308px; } }
   .business-map.position4 {
     top: 94px;
     right: 239px; }
+    @media screen and (max-width: 450px) {
+      .business-map.position4 {
+        top: 49px;
+        right: 123px; } }
   .business-map.position5 {
     top: 331px;
-    right: 539px; }
+    right: 607px; }
+    @media screen and (max-width: 450px) {
+      .business-map.position5 {
+        top: 214px;
+        right: 369px; } }
   .business-map.position6 {
     top: 486px;
-    right: 925px; }
+    right: 991px; }
+    @media screen and (max-width: 450px) {
+      .business-map.position6 {
+        top: 350px;
+        right: 599px; } }
   .business-map.position7 {
     top: 1400px;
     right: 35px; }
+    @media screen and (max-width: 450px) {
+      .business-map.position7 {
+        top: 890px;
+        right: -21px; } }
   .business-map.position8 {
     top: 2105px;
     right: 929px; }
+    @media screen and (max-width: 450px) {
+      .business-map.position8 {
+        top: 1305px;
+        right: 567px; } }
   @media screen and (max-width: 450px) {
     .business-map {
       right: 10px; } }
@@ -747,6 +802,11 @@ section {
     line-height: 18px; }
     .business-map li a:hover {
       box-shadow: 0px 3px 26px rgba(0, 0, 0, 0.6); }
+    @media screen and (max-width: 450px) {
+      .business-map li a {
+        height: 44px;
+        width: 105px;
+        padding: 5px 5px; } }
     .business-map li a span.icon {
       float: left;
       color: #fff;
@@ -770,6 +830,13 @@ section {
       -moz-transition-timing-function: ease-out;
       -o-transition-timing-function: ease-out;
       transition-timing-function: ease-out; }
+      @media screen and (max-width: 450px) {
+        .business-map li a span.icon {
+          height: 44px;
+          width: 44px;
+          line-height: 50px;
+          font-size: 25px;
+          top: -5px; } }
 
 .business-info-wrapper {
   position: relative;
@@ -843,6 +910,8 @@ section {
             background-color: #FD1576; }
   .business-info-wrapper .opening-hours-info {
     padding: 0px 10px; }
+    .business-info-wrapper .opening-hours-info .hours {
+      direction: ltr; }
     .business-info-wrapper .opening-hours-info .day {
       font-weight: 700; }
   .business-info-wrapper .features-wrapper {

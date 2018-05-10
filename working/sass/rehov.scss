@@ -461,11 +461,19 @@ overflow: scroll;
 height: 2000px;
 position: relative;
 border: 2px solid #e2e2e2;
+@media screen and (max-width: $break-xs){
+  height: 1424px;
+  }
   img{
   width: 1700px;
   position: absolute;
   top: -70px;
   right: -317px;
+  @media screen and (max-width: $break-xs){
+    width: 1067px;
+    top: -8px;
+    right: -174px;
+    }
   }
 
 }
@@ -543,11 +551,9 @@ font-weight: 700;
 .gallery-wrapper{
   padding-right: 0px;
 .picture-unit{
-
 @media screen and (max-width: $break-xs), screen and (max-width: $break-lg){
 width:100%;
 }
-
 position: relative;
 width: 46%;
 float: right;
@@ -569,7 +575,6 @@ top:0px;
 right:0px;
 width: 50px;
 height: 50px;
-
 background: rgba(0, 0, 0, 0.63);
 text-align: center;
 color:$text1;
@@ -596,15 +601,12 @@ p{
 font-family: $font-stack;
 font-size: 20px;
 display: none;
-
-
 }
 &:hover{
 width: 100%;
 height: 268px;
 background: rgba(0, 0, 0, 0.63);
 p{
-
 display:block;
 -webkit-animation-delay: 2s; /* Safari 4.0 - 8.0 */
 animation-delay: 2s;
@@ -619,7 +621,6 @@ padding: 10px;
 }
 }
 }
-
 }
 }
 
@@ -644,7 +645,6 @@ padding: 10px;
     a span.icon{
     float: right;
     right: -5px;
-
     }
     }
     }
@@ -676,24 +676,25 @@ padding: 10px;
 
 }
 //  end-lengthwise-icons
-
-
-
-
 &.crosswise-icon{
 ul{
 overflow: hidden;
-&.width441{width: 411px;}
+&.width485{width: 485px;}
 &.width560{width: 560px;}
 li{
 float: left;
 margin: 23px 0 30px 13px;
+@media screen and (max-width: $break-xs){
+  margin: 23px 0 30px 5px;
+       }
 a{
 height:122px;
 width: 61px;
-
 display: block;
-
+@media screen and (max-width: $break-xs){
+  height:100px;
+width: 44px;
+       }
 }
 }
 }
@@ -761,13 +762,10 @@ right: 5px;
 .business-name{
 position: absolute;
 margin-top: 67px;
-
 }
 }
-
 }
 }
-
 }
 /*map events*/
 .local-event {
@@ -796,12 +794,20 @@ margin-top: 67px;
   &.position-top-449{
     top: 449px;
     right: 283px;
+    @media screen and (max-width: $break-xs) {
+      top: 300px;
+      right: 164px;
+       }
     &::before{background-image: url(../images/my-icons/cat1.svg);background-position: right 10px; right: 5px;}
     &:after{ transform:scaleX(-1);background-image: url(../images/my-icons/cat1.svg);background-position: left 10px; left: 5px;}
   } 
   &.position-top-1500px{
     top: 1500px;
     right: 283px;
+    @media screen and (max-width: $break-xs) {
+      top: 996px;
+      right: 182px;
+       }
     &::before{background-image: url(../images/my-icons/bycicle.svg); background-position: right 0px; right: 5px;}
     &:after{ transform:scaleX(-1);background-image: url(../images/my-icons/cat3.svg); background-position: left 0px;width: 40px; left: 5px;}
   } 
@@ -809,42 +815,71 @@ margin-top: 67px;
 
 .business-map{
 position: absolute;
-&.position1{
-top: 94px;
-right: 35px;
-}
-&.position2{
-top: 141px;
-right: 239px;
-}
-&.position3{
-top: 94px;
-right: 474px;
-}
-&.position4{
-top: 94px;
-right: 239px;
-}
-&.position5{
-top: 331px;
-right:539px;
-}
-&.position6{
-top: 486px;
-right: 925px;
-}
-
-  &.position7{
-    top: 1400px;
-    right: 35px;
-    }
-  
-
-    &.position8{
+// groups positions
+      &.position1{
+      top: 94px;
+      right: 35px;
+      @media screen and (max-width: $break-xs) {
+        top: 49px;
+        right: -22px;
+         }
+      }
+      &.position2{
+      top: 141px;
+      right: 239px;
+      @media screen and (max-width: $break-xs) {
+        top: 78px;
+        right: 125px;
+         }
+      }
+      &.position3{
+      top: 94px;
+      right: 546px;
+      @media screen and (max-width: $break-xs) {
+        top: 49px;
+        right: 308px;;
+         }
+      }
+      &.position4{
+      top: 94px;
+      right: 239px;
+      @media screen and (max-width: $break-xs) {
+        top: 49px;
+        right: 123px;
+         }
+      }
+      &.position5{
+      top: 331px;
+      right:607px;
+      @media screen and (max-width: $break-xs) {
+        top: 214px;
+        right: 369px;
+         }
+      }
+      &.position6{
+      top: 486px;
+      right: 991px;
+      @media screen and (max-width: $break-xs) {
+        top: 350px;
+        right: 599px;
+         }
+      }
+    &.position7{
+      top: 1400px;
+      right: 35px;
+      @media screen and (max-width: $break-xs) {
+        top: 890px;
+        right: -21px;
+         }
+      }
+      &.position8{
       top: 2105px;
       right: 929px;
+      @media screen and (max-width: $break-xs) {
+        top: 1305px;
+        right: 567px;
+         }
       }
-
 
 @media screen and (max-width: $break-xs) {
 right: 10px;
@@ -861,8 +896,6 @@ a span.icon{
 background-color: #0b3967;
 }
 }
-
-
     &.action{
       &.campaign:after{ content: '\e000'; background-color: $yellow;}
       &.party:after{ content: '\78'  ; background-color : $pink ; }
@@ -884,8 +917,6 @@ background-color: #0b3967;
         -moz-transition-duration: .3s;
         -o-transition-duration: .3s;
         transition-duration: .3s;
-
-
           }
           &:hover{
                   &:after{
@@ -894,8 +925,7 @@ background-color: #0b3967;
                   font-size: 25px;
                   top: 9px;
                   }
-
-            }
+                 }
     }
 a{
 @include shadow;
@@ -907,6 +937,11 @@ color: $theme-color2;
 font-weight: 700;
 font-size: 14px;
 line-height: 18px;
+@media screen and (max-width: $break-xs) {
+  height: 44px;
+  width: 105px;
+  padding: 5px 5px;
+  }
 span.icon{
 float: left;
 color: #fff;
@@ -915,7 +950,6 @@ height: 61px;
 width: 61px;
 position: relative;
 top: -10px;
-
 text-align: center;
 line-height: 58px;
 font-size: 30px;
@@ -931,7 +965,13 @@ transition-duration: .3s;
 -moz-transition-timing-function:  ease-out;
 -o-transition-timing-function:  ease-out;
 transition-timing-function:  ease-out;
-
+@media screen and (max-width: $break-xs) {
+  height: 44px;
+  width: 44px;
+  line-height: 50px;
+  font-size: 25px;
+  top: -5px;
+  }
 }
 }
 }
@@ -1025,6 +1065,7 @@ transition-timing-function:  ease-out;
 }
 .opening-hours-info {
   padding: 0px 10px;
+  .hours{ direction: ltr; }
   .day{
     font-weight: 700;
   }
