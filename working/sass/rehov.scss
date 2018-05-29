@@ -179,10 +179,10 @@ transition-timing-function: ease-out;
 
 .xs-visibity{
 &.visibityclose {
-@media screen and (max-width: $break-xs), screen and (max-width: $break-md) and (orientation: landscape) { display: none; }
+@media screen and (max-width: 767px), screen and (max-width: $break-md) and (orientation: landscape) { display: none; }
 }
 &.visibityopen{
-@media screen and (max-width: $break-xs), screen and (max-width: $break-md) and (orientation: landscape) { display:block; }
+@media screen and (max-width: 767px), screen and (max-width: $break-md) and (orientation: landscape) { display:block; }
 }
 }
 
@@ -525,14 +525,6 @@ padding: 0;
 }
 }
 background-color:#fff;
-@media screen and (max-width: $break-md){
-display:none;
-position:absolute;
-top:-40px;
-right: 0;
-padding: 0px 15px 10px 15px;
-background-color: #fff;
-}
 @media  screen and (max-width: $break-md) and (orientation: landscape) {
 position:absolute;
 top: 0px;
@@ -653,17 +645,23 @@ padding: 10px;
       li{
       margin-bottom: 10px;
       &.action{
-      &:hover{
-      &:after{
-      top: 9px;
-      right:auto;
-      left:-17px;
-      }
-      }
+        &:hover{
+          &:after{
+          top: 9px;
+          right:auto;
+          left:-17px;
+          @media screen and (max-width: $break-xs), screen and (max-width: $break-lg){
+            top: 3px;
+            }
+          }
+        }
     &:after{
     top: 13px;
     right:auto;
     left: -13px;
+    @media screen and (max-width: $break-xs), screen and (max-width: $break-lg){
+      top: 8px;
+      }
     }
     }
     a span.icon{
@@ -703,6 +701,7 @@ width: 44px;
 ul li {
 a{
 padding-top: 5px;
+text-align: center;
 }
 &.action{
 &:hover{
@@ -717,16 +716,16 @@ right: 19px
 }
 }
 a span.icon{
-bottom: -56px ;
+position: absolute;
+bottom: 0px;
 top: auto;
-right: 5px;
+right: 0;
 
 }
 .business-name{
-position: absolute;
-margin-top: 0px;
+position: relative;
+margin-top: -30px;
 }
-
 }
 }
 // top-icon
@@ -734,23 +733,31 @@ margin-top: 0px;
 ul li {
 a{
 padding-top: 0px;
+text-align: center;
 }
 &.action{
   &:after{
     top: -23px;
     right: 18px;
-
+    @media screen and (max-width: $break-xs) {
+      right: 10px
+       }
     }
 &:hover{
 &:after{
 top: -23px;
 right: 13px;
-
+@media screen and (max-width: $break-xs) {
+  right: 5px
+   }
 }
 }
 &:after{
 top:-12px;
-right: 19px
+right: 19px;
+@media screen and (max-width: $break-xs) {
+  right: 10px
+   }
 }
 }
 a span.icon{
@@ -760,8 +767,7 @@ right: 5px;
 
 }
 .business-name{
-position: absolute;
-margin-top: 67px;
+position: relative;
 }
 }
 }
@@ -941,6 +947,8 @@ line-height: 18px;
   height: 44px;
   width: 105px;
   padding: 5px 5px;
+  font-size: 12px;
+line-height: 14px;
   }
 span.icon{
 float: left;
@@ -1021,8 +1029,8 @@ transition-timing-function:  ease-out;
     top: -2px;
     right: 0px;
     img{
-    height: 55px;
-    width: 55px;
+    height: 70px;
+    width: 70px;
     border: 2px solid $theme-color2;
     box-shadow: 0px 8px 17px 3px rgba(0, 0, 0, 0.2);
     }

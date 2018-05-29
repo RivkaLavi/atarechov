@@ -19,8 +19,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-sheetrock/1.1.4/dist/sheetrock.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-  <script type="text/javascript" src="https://cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js"></script>
-  <script type="text/javascript" src="js/scroll.js"></script>
   <script type="text/javascript">
     window.onscroll = bizInfoScroller; //calling bizInfoScroller each time we scroll
   </script>
@@ -202,8 +200,8 @@
                     {{#each group2}}
                     <li class="open {{this.action}} pull-right">
                       <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
-                        <span class="{{this.icon}}"></span>
                         <strong class="business-name">{{this.business_name}}</strong>
+                        <span class="{{this.icon}}"></span>
                       </a>
                     </li>
                     {{/each}}

@@ -15,7 +15,7 @@ section {
   section ::-webkit-scrollbar-thumb:hover {
     background: #1060b1; }
 
-@media screen and (max-width: 450px), screen and (max-width: 768px) and (orientation: landscape) {
+@media screen and (max-width: 767px), screen and (max-width: 768px) and (orientation: landscape) {
   .xs-visibity.visibityclose {
     display: none; } }
 
@@ -421,14 +421,6 @@ section {
       .street-info-wrapper .top-close .close.thick::before, .street-info-wrapper .top-close .close.thick::after, .campaign-info-wrapper .top-close .close.thick::before, .campaign-info-wrapper .top-close .close.thick::after, .business-info-wrapper .top-close .close.thick::before, .business-info-wrapper .top-close .close.thick::after {
         height: 4px;
         margin-top: -2px; }
-  @media screen and (max-width: 768px) {
-    .street-info-wrapper, .campaign-info-wrapper, .business-info-wrapper {
-      display: none;
-      position: absolute;
-      top: -40px;
-      right: 0;
-      padding: 0px 15px 10px 15px;
-      background-color: #fff; } }
   @media screen and (max-width: 768px) and (orientation: landscape) {
     .street-info-wrapper, .campaign-info-wrapper, .business-info-wrapper {
       position: absolute;
@@ -553,10 +545,16 @@ section {
     top: 9px;
     right: auto;
     left: -17px; }
+    @media screen and (max-width: 450px), screen and (max-width: 1200px) {
+      .buisness-tabs.lengthwise-icon.left-icon li.action:hover:after {
+        top: 3px; } }
   .buisness-tabs.lengthwise-icon.left-icon li.action:after {
     top: 13px;
     right: auto;
     left: -13px; }
+    @media screen and (max-width: 450px), screen and (max-width: 1200px) {
+      .buisness-tabs.lengthwise-icon.left-icon li.action:after {
+        top: 8px; } }
   .buisness-tabs.lengthwise-icon.left-icon li a span.icon {
     float: left;
     right: 5px; }
@@ -583,7 +581,8 @@ section {
           width: 44px; } }
 
 .buisness-tabs.crosswise-icon.bottom-icon ul li a {
-  padding-top: 5px; }
+  padding-top: 5px;
+  text-align: center; }
 
 .buisness-tabs.crosswise-icon.bottom-icon ul li.action:hover:after {
   top: 110px;
@@ -594,28 +593,39 @@ section {
   right: 19px; }
 
 .buisness-tabs.crosswise-icon.bottom-icon ul li a span.icon {
-  bottom: -56px;
+  position: absolute;
+  bottom: 0px;
   top: auto;
-  right: 5px; }
+  right: 0; }
 
 .buisness-tabs.crosswise-icon.bottom-icon ul li .business-name {
-  position: absolute;
-  margin-top: 0px; }
+  position: relative;
+  margin-top: -30px; }
 
 .buisness-tabs.crosswise-icon.top-icon ul li a {
-  padding-top: 0px; }
+  padding-top: 0px;
+  text-align: center; }
 
 .buisness-tabs.crosswise-icon.top-icon ul li.action:after {
   top: -23px;
   right: 18px; }
+  @media screen and (max-width: 450px) {
+    .buisness-tabs.crosswise-icon.top-icon ul li.action:after {
+      right: 10px; } }
 
 .buisness-tabs.crosswise-icon.top-icon ul li.action:hover:after {
   top: -23px;
   right: 13px; }
+  @media screen and (max-width: 450px) {
+    .buisness-tabs.crosswise-icon.top-icon ul li.action:hover:after {
+      right: 5px; } }
 
 .buisness-tabs.crosswise-icon.top-icon ul li.action:after {
   top: -12px;
   right: 19px; }
+  @media screen and (max-width: 450px) {
+    .buisness-tabs.crosswise-icon.top-icon ul li.action:after {
+      right: 10px; } }
 
 .buisness-tabs.crosswise-icon.top-icon ul li a span.icon {
   bottom: 61;
@@ -623,8 +633,7 @@ section {
   right: 5px; }
 
 .buisness-tabs.crosswise-icon.top-icon ul li .business-name {
-  position: absolute;
-  margin-top: 67px; }
+  position: relative; }
 
 /*map events*/
 .local-event {
@@ -806,7 +815,9 @@ section {
       .business-map li a {
         height: 44px;
         width: 105px;
-        padding: 5px 5px; } }
+        padding: 5px 5px;
+        font-size: 12px;
+        line-height: 14px; } }
     .business-map li a span.icon {
       float: left;
       color: #fff;
@@ -882,8 +893,8 @@ section {
         top: -2px;
         right: 0px; }
         .business-info-wrapper .tab-content li .portrait img {
-          height: 55px;
-          width: 55px;
+          height: 70px;
+          width: 70px;
           border: 2px solid #1060b1;
           box-shadow: 0px 8px 17px 3px rgba(0, 0, 0, 0.2); }
       .business-info-wrapper .tab-content li .campaign-text {
