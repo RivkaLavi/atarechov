@@ -906,7 +906,7 @@ section {
       .business-info-wrapper .tab-content li .campaign-text {
         border: 1px solid #e2e2e2;
         padding: 5px; }
-        @media screen and (max-width: 450px) {
+        @media screen and (max-width: 768px) {
           .business-info-wrapper .tab-content li .campaign-text {
             margin: 10px 10px 0 10px; } }
         .business-info-wrapper .tab-content li .campaign-text p {

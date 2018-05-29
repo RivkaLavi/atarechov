@@ -1044,7 +1044,7 @@ transition-timing-function:  ease-out;
   .campaign-text {
     border: 1px solid #e2e2e2;
     padding: 5px;
-    @media screen and (max-width: $break-xs){
+    @media screen and (max-width: $break-md){
       margin: 10px 10px 0 10px;
         }
    p{ font-size: 20px;
