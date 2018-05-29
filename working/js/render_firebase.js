@@ -112,27 +112,27 @@ function changeContent(error, options, response) {
     $('.campaign-info-wrapper').removeClass('display_none');
   });
 
-  // xs-visibity
+  // xs-visibility
 
-    $('.xs-visibity').addClass('visibityclose');
+    $('.business-info-wrapper').addClass('visibilityclose');
     $('.open').click(function () {
-      $('.xs-visibity').removeClass('visibityclose');
+      $('.xs-visibility').removeClass('visibilityclose');
     });
   
 
 
   $('.open-info-street').click(function () {
-    $('.xs-visibity').addClass('visibityopen');
+    $('.xs-visibility').removeClass('visibilityclose');
   });
 
   $('.open-campaign-info').click(function () {
-    $('.xs-visibity').addClass('visibityopen');
+    $('.xs-visibility').removeClass('visibilityclose');
   });
 
   // xs-close-button
   $('.top-close').click(function () {
     console.log('close wrapper')
-    $('.xs-visibity').addClass('display_none');
+    $('.xs-visibility').addClass('display_none');
   });
 
   function myFunction() {

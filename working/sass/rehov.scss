@@ -177,11 +177,11 @@ transition-timing-function: ease-out;
 //visibility - info colun
 
 
-.xs-visibity{
-&.visibityclose {
+.xs-visibility{
+&.visibilityclose {
 @media screen and (max-width: 767px), screen and (max-width: $break-md) and (orientation: landscape) { display: none; }
 }
-&.visibityopen{
+&.visibilityopen{
 @media screen and (max-width: 767px), screen and (max-width: $break-md) and (orientation: landscape) { display:block; }
 }
 }
@@ -525,6 +525,12 @@ padding: 0;
 }
 }
 background-color:#fff;
+@media  screen and (max-width: $break-md){
+  position:absolute;
+  top: -35px;
+  right: 0;
+  background-color: #fff;
+  }
 @media  screen and (max-width: $break-md) and (orientation: landscape) {
 position:absolute;
 top: 0px;

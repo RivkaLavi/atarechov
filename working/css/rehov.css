@@ -16,11 +16,11 @@ section {
     background: #1060b1; }
 
 @media screen and (max-width: 767px), screen and (max-width: 768px) and (orientation: landscape) {
-  .xs-visibity.visibityclose {
+  .xs-visibility.visibilityclose {
     display: none; } }
 
-@media screen and (max-width: 450px), screen and (max-width: 768px) and (orientation: landscape) {
-  .xs-visibity.visibityopen {
+@media screen and (max-width: 767px), screen and (max-width: 768px) and (orientation: landscape) {
+  .xs-visibility.visibilityopen {
     display: block; } }
 
 @-webkit-keyframes animationOpacity {
@@ -421,6 +421,12 @@ section {
       .street-info-wrapper .top-close .close.thick::before, .street-info-wrapper .top-close .close.thick::after, .campaign-info-wrapper .top-close .close.thick::before, .campaign-info-wrapper .top-close .close.thick::after, .business-info-wrapper .top-close .close.thick::before, .business-info-wrapper .top-close .close.thick::after {
         height: 4px;
         margin-top: -2px; }
+  @media screen and (max-width: 768px) {
+    .street-info-wrapper, .campaign-info-wrapper, .business-info-wrapper {
+      position: absolute;
+      top: -35px;
+      right: 0;
+      background-color: #fff; } }
   @media screen and (max-width: 768px) and (orientation: landscape) {
     .street-info-wrapper, .campaign-info-wrapper, .business-info-wrapper {
       position: absolute;
