@@ -160,101 +160,122 @@ section {
       text-align: center; } }
 
 /* \/\/--- Intro -Event ---\/\/ */
-.poster-header {
+#myCarousel .list-group {
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+#myCarousel list-group-item {
+  border-radius: 0px;
+  cursor: pointer; }
+
+#myCarousel .list-group .active {
+  background-color: #eee; }
+
+@media (min-width: 992px) {
+  #myCarousel .carousel-controls {
+    display: none; } }
+
+@media (max-width: 991px) {
+  #myCarousel .carousel-caption p,
+  #myCarousel .list-group {
+    display: none; } }
+
+#myCarousel .poster-header {
   background-size: cover;
   background-repeat: no-repeat; }
-  .poster-header.bycicle {
+  #myCarousel .poster-header.bycicle {
     background-image: url(../images/poster6.jpg); }
-    .poster-header.bycicle .date-wrapper:before {
+    #myCarousel .poster-header.bycicle .date-wrapper:before {
       background-image: url(../images/my-icons/bycicle.svg);
       background-position: right 0px;
       right: 30px;
       bottom: 30px; }
       @media screen and (max-width: 1190px) {
-        .poster-header.bycicle .date-wrapper:before {
+        #myCarousel .poster-header.bycicle .date-wrapper:before {
           right: 20px;
           bottom: 55px; } }
       @media screen and (max-width: 795px) {
-        .poster-header.bycicle .date-wrapper:before {
+        #myCarousel .poster-header.bycicle .date-wrapper:before {
           bottom: 30px; } }
-    .poster-header.bycicle .date-wrapper:after {
+    #myCarousel .poster-header.bycicle .date-wrapper:after {
       transform: scaleX(-1);
       background-image: url(../images/my-icons/cat3.svg);
       background-position: left 0px;
       left: 30px;
       bottom: 30px; }
       @media screen and (max-width: 1190px) {
-        .poster-header.bycicle .date-wrapper:after {
+        #myCarousel .poster-header.bycicle .date-wrapper:after {
           left: 20px;
           bottom: 55px; } }
       @media screen and (max-width: 795px) {
-        .poster-header.bycicle .date-wrapper:after {
+        #myCarousel .poster-header.bycicle .date-wrapper:after {
           bottom: 30px; } }
-  .poster-header.babysiters {
+  #myCarousel .poster-header.babysiters {
     background-image: url(../images/poster2.jpg); }
-    .poster-header.babysiters .date-wrapper:before {
+    #myCarousel .poster-header.babysiters .date-wrapper:before {
       background-image: url(../images/my-icons/cat1.svg);
       background-position: right 10px;
       right: 30px;
       bottom: 30px; }
       @media screen and (max-width: 1190px) {
-        .poster-header.babysiters .date-wrapper:before {
+        #myCarousel .poster-header.babysiters .date-wrapper:before {
           right: 20px;
           bottom: 55px; } }
       @media screen and (max-width: 795px) {
-        .poster-header.babysiters .date-wrapper:before {
+        #myCarousel .poster-header.babysiters .date-wrapper:before {
           bottom: 30px; } }
-    .poster-header.babysiters .date-wrapper:after {
+    #myCarousel .poster-header.babysiters .date-wrapper:after {
       transform: scaleX(-1);
       background-image: url(../images/my-icons/cat1.svg);
       background-position: left 10px;
       left: 30px;
       bottom: 30px; }
       @media screen and (max-width: 1190px) {
-        .poster-header.babysiters .date-wrapper:after {
+        #myCarousel .poster-header.babysiters .date-wrapper:after {
           left: 20px;
           bottom: 55px; } }
       @media screen and (max-width: 795px) {
-        .poster-header.babysiters .date-wrapper:after {
+        #myCarousel .poster-header.babysiters .date-wrapper:after {
           bottom: 30px; } }
   @media screen and (max-width: 450px), screen and (max-width: 768px) and (orientation: landscape) {
-    .poster-header {
+    #myCarousel .poster-header {
       background-image: inherit;
       background-color: #c7efff;
       padding-bottom: 5px; } }
-  .poster-header .content-wrapper {
+  #myCarousel .poster-header .content-wrapper {
     animation-delay: .3s; }
     @media screen and (max-width: 768px) and (orientation: landscape) {
-      .poster-header .content-wrapper {
+      #myCarousel .poster-header .content-wrapper {
         width: 50%; } }
-  .poster-header .date-wrapper {
+  #myCarousel .poster-header .date-wrapper {
     padding: 15px;
     text-align: center; }
     @media screen and (max-width: 450px) {
-      .poster-header .date-wrapper {
+      #myCarousel .poster-header .date-wrapper {
         padding: 0px; } }
     @media screen and (max-width: 768px) and (orientation: landscape) {
-      .poster-header .date-wrapper {
+      #myCarousel .poster-header .date-wrapper {
         width: 50%; } }
-    .poster-header .date-wrapper:before, .poster-header .date-wrapper:after {
+    #myCarousel .poster-header .date-wrapper:before, #myCarousel .poster-header .date-wrapper:after {
       content: "";
       position: absolute;
       height: 60px;
       width: 60px;
       background-repeat: no-repeat; }
       @media screen and (max-width: 1067px) {
-        .poster-header .date-wrapper:before, .poster-header .date-wrapper:after {
+        #myCarousel .poster-header .date-wrapper:before, #myCarousel .poster-header .date-wrapper:after {
           height: 40px;
           width: 40px; } }
       @media screen and (max-width: 767px) {
-        .poster-header .date-wrapper:before, .poster-header .date-wrapper:after {
+        #myCarousel .poster-header .date-wrapper:before, #myCarousel .poster-header .date-wrapper:after {
           height: 60px;
           width: 60px; } }
       @media screen and (max-width: 424px) {
-        .poster-header .date-wrapper:before, .poster-header .date-wrapper:after {
+        #myCarousel .poster-header .date-wrapper:before, #myCarousel .poster-header .date-wrapper:after {
           height: 30px;
           width: 30px; } }
-    .poster-header .date-wrapper date {
+    #myCarousel .poster-header .date-wrapper date {
       color: #000;
       font-size: 40px;
       font-weight: 700;
@@ -262,9 +283,9 @@ section {
       line-height: 1.3em;
       color: #fff;
       letter-spacing: 10px; }
-      .poster-header .date-wrapper date .poster-date {
+      #myCarousel .poster-header .date-wrapper date .poster-date {
         font-weight: 700; }
-      .poster-header .date-wrapper date .poster-hour {
+      #myCarousel .poster-header .date-wrapper date .poster-hour {
         font-weight: 300;
         letter-spacing: 0.1em;
         display: block;
@@ -272,7 +293,7 @@ section {
         color: #fff;
         line-height: 1em;
         padding: 5px 0 0 13px; }
-    .poster-header .date-wrapper .poster-location {
+    #myCarousel .poster-header .date-wrapper .poster-location {
       color: #fff;
       background-color: #ff3c00;
       font-size: 20px;
@@ -280,21 +301,21 @@ section {
       font-weight: 700;
       letter-spacing: 1px;
       padding: 5px; }
-  .poster-header h2 {
+  #myCarousel .poster-header h2 {
     color: #000;
     font-size: 40px;
     font-weight: 700;
     color: #fff;
     font-weight: 700; }
     @media screen and (max-width: 768px) and (orientation: landscape) {
-      .poster-header h2 {
+      #myCarousel .poster-header h2 {
         font-size: 26px; } }
     @media screen and (max-width: 450px) {
-      .poster-header h2 {
+      #myCarousel .poster-header h2 {
         font-size: 26px;
         margin: 0;
         text-align: center; } }
-  .poster-header p {
+  #myCarousel .poster-header p {
     color: #000;
     font-size: 26px;
     font-weight: 700;
@@ -303,11 +324,11 @@ section {
     font-weight: 700;
     color: #fff; }
     @media screen and (max-width: 450px) {
-      .poster-header p {
+      #myCarousel .poster-header p {
         margin: 0;
         text-align: center; } }
     @media screen and (max-width: 768px) and (orientation: landscape) {
-      .poster-header p {
+      #myCarousel .poster-header p {
         font-size: 26px; } }
 
 .content-changer-map-buttons h3 {

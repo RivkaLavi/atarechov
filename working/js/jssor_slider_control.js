@@ -11,7 +11,7 @@
                     $SlideDuration: 9000,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
                     $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide, default value is 20
                     //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
-                    //$SlideHeight: 250,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                   $SlideHeight: 250,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
                     $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
                     $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
                     $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
@@ -20,13 +20,13 @@
                     $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
                         $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
                         $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
-                        $SpacingX: 8,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                        $SpacingX: 0,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
                         $Orientation: 1                                //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
                     },
     
                     $ArrowNavigatorOptions: {                           //[Optional] Options to specify and enable arrow navigator or not
                         $Class: $JssorArrowNavigator$,                  //[Requried] Class to create arrow navigator instance
-                        $ChanceToShow: 2                                 //[Optional] Steps to go for each navigation request, default value is 1
+                        $ChanceToShow: 1                                 //[Optional] Steps to go for each navigation request, default value is 1
                     }
                 };
                  var jssor_slider1 = new $JssorSlider$("slider1_container", options);

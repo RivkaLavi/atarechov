@@ -300,7 +300,27 @@ h1.main-address { color: $text1; line-height: 8px;
   }
 }
 /* \/\/--- Intro -Event ---\/\/ */
+#myCarousel{
+  .list-group {
+  position:absolute;
+  top:0;
+  right:0;
+  }
+  list-group-item {
+  border-radius:0px;
+  cursor:pointer;
+  }
+  .list-group .active {
+  background-color:#eee;	
+  }
 
+@media (min-width: 992px) { 
+ .carousel-controls {display:none;} 	
+}
+@media (max-width: 991px) { 
+.carousel-caption p,
+.list-group {display:none;} 
+}
 .poster-header{
 background-size: cover;
 background-repeat: no-repeat;
@@ -417,7 +437,7 @@ background-repeat: no-repeat;
   }
  }
 }
-
+}
 
 .content-changer-map-buttons{
   h3 {
