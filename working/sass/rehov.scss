@@ -378,7 +378,7 @@ height: 300px;
    }
    @media  screen and (max-width: 991px ) {
      text-align: center;
-   p, details { line-height: 20px; font-size: 20px}
+   .details { line-height: 20px; font-size: 16px}
    }
   }
 
@@ -405,9 +405,9 @@ height: 300px;
     line-height: 1.3em;
     color: #fff;
     letter-spacing: 10px;
-    .poster-date{ font-weight: 700; }
+    .poster-date{ font-weight: 700; text-shadow: 1px -1px 6px #000; }
     .poster-hour{
-    font-weight: 300;
+    font-weight: bold;
     letter-spacing: 0.1em;
     display: block;
     background-color: $secondary;
@@ -425,7 +425,7 @@ height: 300px;
   color:#fff;
   background-color:$secondary;
   font-size:20px;
-  margin-top: -12px;
+  margin: -12px 0 0 0;
   font-weight: 700;
   letter-spacing: 1px;
   padding: 5px;
@@ -435,7 +435,7 @@ height: 300px;
     @include big-title-bold;
     color:#fff;
     font-weight: 700;
-    text-shadow: 1px -1px 8px #333;
+    text-shadow: 1px -1px 6px #000;
        @media  screen and (max-width: $break-md) and (orientation: landscape) {
       font-size: 20px;
       }
@@ -444,26 +444,24 @@ height: 300px;
         margin: 0 0 10px 0;
        }
       @media screen and (max-width: $break-xs) {
-        font-size: 20px;
-        margin: 0;
+        font-size: 24px;
+        margin: 0 0 10px 0;
         text-align: center
        }
     }
-  p, .details {
+  .details {
   @include medium-title-bold;
   line-height: 1.3em;
   font-weight: 700;
   color:#fff;
-  text-shadow: 1px -1px 8px #333;
+  text-shadow: 1px -1px 2px #000;
   @media screen and (max-width: $break-xs) {
   margin: 0;
   text-align: center;
-  font-size: 18px;
-  text-shadow: inherit;
+  font-size: 16px;
   }
   @media  screen and (max-width: 991px) {
   font-size: 16px;
-  text-shadow: inherit;
   }
  }
 .small-p {

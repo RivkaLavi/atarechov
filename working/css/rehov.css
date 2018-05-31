@@ -237,9 +237,9 @@ section {
     @media screen and (max-width: 991px) {
       #myCarousel .poster-header .content-wrapper {
         text-align: center; }
-        #myCarousel .poster-header .content-wrapper p, #myCarousel .poster-header .content-wrapper details {
+        #myCarousel .poster-header .content-wrapper .details {
           line-height: 20px;
-          font-size: 20px; } }
+          font-size: 16px; } }
   #myCarousel .poster-header .date-wrapper {
     padding: 15px;
     text-align: center; }
@@ -272,9 +272,10 @@ section {
       color: #fff;
       letter-spacing: 10px; }
       #myCarousel .poster-header .date-wrapper date .poster-date {
-        font-weight: 700; }
+        font-weight: 700;
+        text-shadow: 1px -1px 6px #000; }
       #myCarousel .poster-header .date-wrapper date .poster-hour {
-        font-weight: 300;
+        font-weight: bold;
         letter-spacing: 0.1em;
         display: block;
         background-color: #ff3c00;
@@ -292,7 +293,7 @@ section {
       color: #fff;
       background-color: #ff3c00;
       font-size: 20px;
-      margin-top: -12px;
+      margin: -12px 0 0 0;
       font-weight: 700;
       letter-spacing: 1px;
       padding: 5px; }
@@ -302,7 +303,7 @@ section {
     font-weight: 700;
     color: #fff;
     font-weight: 700;
-    text-shadow: 1px -1px 8px #333; }
+    text-shadow: 1px -1px 6px #000; }
     @media screen and (max-width: 768px) and (orientation: landscape) {
       #myCarousel .poster-header h2 {
         font-size: 20px; } }
@@ -312,10 +313,10 @@ section {
         margin: 0 0 10px 0; } }
     @media screen and (max-width: 450px) {
       #myCarousel .poster-header h2 {
-        font-size: 20px;
-        margin: 0;
+        font-size: 24px;
+        margin: 0 0 10px 0;
         text-align: center; } }
-  #myCarousel .poster-header p, #myCarousel .poster-header .details {
+  #myCarousel .poster-header .details {
     color: #000;
     font-size: 26px;
     font-weight: 700;
@@ -323,17 +324,15 @@ section {
     line-height: 1.3em;
     font-weight: 700;
     color: #fff;
-    text-shadow: 1px -1px 8px #333; }
+    text-shadow: 1px -1px 2px #000; }
     @media screen and (max-width: 450px) {
-      #myCarousel .poster-header p, #myCarousel .poster-header .details {
+      #myCarousel .poster-header .details {
         margin: 0;
         text-align: center;
-        font-size: 18px;
-        text-shadow: inherit; } }
+        font-size: 16px; } }
     @media screen and (max-width: 991px) {
-      #myCarousel .poster-header p, #myCarousel .poster-header .details {
-        font-size: 16px;
-        text-shadow: inherit; } }
+      #myCarousel .poster-header .details {
+        font-size: 16px; } }
   #myCarousel .poster-header .small-p {
     color: #000;
     font-size: 20px;
