@@ -293,7 +293,7 @@ h1.main-address { color: $text1; line-height: 8px;
 .header{
   h2 { color: $secondary !important;
   @include big-title-regular;
-  @media  screen and (max-width: $break-md){
+  @media  screen and (max-width: 991px){
     font-size: 20px;
     text-align: center;
   }
@@ -306,14 +306,46 @@ h1.main-address { color: $text1; line-height: 8px;
   top:0;
   right:0;
   }
-  list-group-item {
+  .list-group-item {
   border-radius:0px;
   cursor:pointer;
+  &.active {
+    background-color: $theme-color2;	
+    color: #fff;
+    .date-wrapper {
+     color:#000;
+      box-shadow: 1px 6px 9px rgba(0, 0, 0, 0.27);
+     }
+    h4 { color: #fff; } 
+    }
+    h4 {
+      display: inline;
+       @include small-title-bold;
+       color: $theme-color2;
+      }
+     .date-wrapper{
+        text-align: center;
+        font-size: 19px;
+        height: 100%;
+        background-color: $primary;
+        font-weight: bold;
+        padding-top: 10px;
+        .poster-date, .poster-hour { display: block;}
+        
+      }
+      .poster-location { font-weight: bold;}
   }
-  .list-group .active {
-  background-color:#eee;	
-  }
-
+ .carousel-control{ 
+  background-image: none;
+  color: $theme-color2;
+  opacity: 1;
+  top: 47%;
+  bottom: auto;
+  width: 8%;
+  @media  screen and (min-width: $break-xs) {
+    width: 4%;
+   }
+ } 
 @media (min-width: 992px) { 
  .carousel-controls {display:none;} 	
 }
@@ -324,34 +356,15 @@ h1.main-address { color: $text1; line-height: 8px;
 .poster-header{
 background-size: cover;
 background-repeat: no-repeat;
-&.bycicle {
-  background-image:url(../images/poster6.jpg);
-  .date-wrapper{
-    &:before{background-image: url(../images/my-icons/bycicle.svg);background-position: right 0px; right: 30px; bottom: 30px;
-      @media  screen and (max-width: 1190px) { right: 20px; bottom: 55px }
-      @media  screen and (max-width: 795px) { bottom: 30px }
-      
-    }
-    &:after{ transform:scaleX(-1);background-image: url(../images/my-icons/cat3.svg);background-position: left 0px; left: 30px; bottom: 30px;
-      @media  screen and (max-width: 1190px) { left: 20px; bottom: 55px }
-      @media  screen and (max-width: 795px) { bottom: 30px }
-    }
-  }
+height: 300px;
+&.yoga {
+  background-image:url(../images/yoga.jpg);
+}
+&.bracelets {
+  background-image:url(../images/poster2.jpg);
 }
 &.babysiters {
-  background-image:url(../images/poster2.jpg);
-  .date-wrapper{
-    &:before{background-image: url(../images/my-icons/cat1.svg);background-position: right 10px; right: 30px; bottom: 30px;
-      @media  screen and (max-width: 1190px) { right: 20px; bottom: 55px }
-      @media  screen and (max-width: 795px) { bottom: 30px }
-      
-    }
-    &:after{ transform:scaleX(-1);background-image: url(../images/my-icons/cat1.svg);background-position: left 10px; left: 30px; bottom: 30px;
-      @media  screen and (max-width: 1190px) { left: 20px; bottom: 55px }
-      @media  screen and (max-width: 795px) { bottom: 30px }
-    }
-
-  }
+  background-image:url(../images/babysitter.jpg);
 }
   @media screen and (max-width: $break-xs),screen and (max-width: $break-md) and (orientation: landscape) {
   background-image:inherit;
@@ -363,15 +376,19 @@ background-repeat: no-repeat;
     @media  screen and (max-width: $break-md) and (orientation: landscape) {
     width: 50%;
    }
+   @media  screen and (max-width: 991px ) {
+     text-align: center;
+   p, details { line-height: 20px; font-size: 20px}
+   }
   }
 
   .date-wrapper{
   padding: 15px;
   text-align:center;
-  @media screen and (max-width: $break-xs) {padding: 0px;}
-  @media  screen and (max-width: $break-md) and (orientation: landscape) {
-  width: 50%;
+  @media (min-width: 992px){
+ display: none;
   }
+
   &:before, &:after{
     content:"";
     position: absolute;
@@ -384,12 +401,11 @@ background-repeat: no-repeat;
   }
 
     date {
-      @include big-title-bold;
-    font-family: 'Poppins';
+     @include big-title-bold;
     line-height: 1.3em;
     color: #fff;
     letter-spacing: 10px;
-    .poster-date{  font-weight: 700;}
+    .poster-date{ font-weight: 700; }
     .poster-hour{
     font-weight: 300;
     letter-spacing: 0.1em;
@@ -398,7 +414,12 @@ background-repeat: no-repeat;
     color:$text1;
     line-height: 1em;
     padding: 5px 0 0 13px;
+    @media screen and (max-width: $break-xs) { padding-bottom: 10px;}
     }
+    @media screen and (max-width: $break-xs) {
+      text-align: center;
+      font-size: 30px;
+      }
    }
   .poster-location{
   color:#fff;
@@ -414,28 +435,47 @@ background-repeat: no-repeat;
     @include big-title-bold;
     color:#fff;
     font-weight: 700;
+    text-shadow: 1px -1px 8px #333;
        @media  screen and (max-width: $break-md) and (orientation: landscape) {
-      font-size: 26px;
+      font-size: 20px;
       }
+      @media screen and (max-width: 991px) {
+        font-size: 30px;
+        margin: 0 0 10px 0;
+       }
       @media screen and (max-width: $break-xs) {
-        font-size: 26px;
+        font-size: 20px;
         margin: 0;
         text-align: center
        }
     }
-  p {
-    @include medium-title-bold;
+  p, .details {
+  @include medium-title-bold;
   line-height: 1.3em;
   font-weight: 700;
   color:#fff;
+  text-shadow: 1px -1px 8px #333;
   @media screen and (max-width: $break-xs) {
   margin: 0;
-  text-align: center
+  text-align: center;
+  font-size: 18px;
+  text-shadow: inherit;
   }
-  @media  screen and (max-width: $break-md) and (orientation: landscape) {
-  font-size: 26px;
+  @media  screen and (max-width: 991px) {
+  font-size: 16px;
+  text-shadow: inherit;
   }
  }
+.small-p {
+  @include small-title-bold;
+  color:#fff;
+  @media screen and (max-width: $break-xs) {
+    font-size: 14px;
+    }
+    @media  screen and (max-width: 991px) {
+      font-size: 14px;
+      }
+}
 }
 }
 
