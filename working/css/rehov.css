@@ -181,7 +181,11 @@ section {
     color: #000;
     font-size: 20px;
     font-weight: 700;
-    color: #1060b1; }
+    color: #1060b1;
+    padding: 0; }
+    @media (max-width: 1199px) {
+      #myCarousel .list-group-item h4 {
+        font-size: 18px; } }
   #myCarousel .list-group-item .date-wrapper {
     text-align: center;
     font-size: 19px;
@@ -191,8 +195,15 @@ section {
     padding-top: 10px; }
     #myCarousel .list-group-item .date-wrapper .poster-date, #myCarousel .list-group-item .date-wrapper .poster-hour {
       display: block; }
+      @media (max-width: 1199px) {
+        #myCarousel .list-group-item .date-wrapper .poster-date, #myCarousel .list-group-item .date-wrapper .poster-hour {
+          font-size: 16px; } }
   #myCarousel .list-group-item .poster-location {
-    font-weight: bold; }
+    font-weight: bold;
+    padding: 0; }
+    @media (max-width: 1199px) {
+      #myCarousel .list-group-item .poster-location {
+        font-size: 16px; } }
 
 #myCarousel .carousel-control {
   background-image: none;

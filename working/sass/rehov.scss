@@ -322,6 +322,10 @@ h1.main-address { color: $text1; line-height: 8px;
       display: inline;
        @include small-title-bold;
        color: $theme-color2;
+       padding: 0;
+       @media (max-width: 1199px) { 
+        font-size: 18px;
+       }
       }
      .date-wrapper{
         text-align: center;
@@ -330,10 +334,21 @@ h1.main-address { color: $text1; line-height: 8px;
         background-color: $primary;
         font-weight: bold;
         padding-top: 10px;
-        .poster-date, .poster-hour { display: block;}
+        .poster-date, .poster-hour { 
+          display: block;
+          @media (max-width: 1199px) { 
+            font-size: 16px;
+           }
+        }
         
       }
-      .poster-location { font-weight: bold;}
+      .poster-location {
+        font-weight: bold;
+        padding: 0;
+        @media (max-width: 1199px) { 
+          font-size: 16px;
+         }
+      }
   }
  .carousel-control{ 
   background-image: none;
