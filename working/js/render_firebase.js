@@ -151,6 +151,21 @@ function changeContent(error, options, response) {
   cellResponsive(desiredXPosition);  // Call listener function at run time
   desiredXPosition.addListener(cellResponsive);  // Attach listener on state changes
 
+  function bizInfoScroller(){
+      var element = document.getElementById("business_info_wrapper");
+      var desiredXPosition = window.matchMedia("(min-width: 768px)")
+      if (desiredXPosition.matches) {
+        var desiredPosition = 420;
+        if(window.pageYOffset >= desiredPosition){
+           element.style.cssText += "position: fixed; top: 0px; bottom: auto; right: 0px; left: auto;";
+          }
+        else {
+           element.style.cssText += "position: relative; top: 0px; bottom: auto; right: auto; left: 10px;";
+         }
+      }
+  }
+  window.onscroll = bizInfoScroller;
+
   // Drag scroller
   // From https://github.com/asvd/dragscroll
   console.log('Running drag scroller');
