@@ -229,6 +229,9 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   height: 300px; }
+  @media (max-width: 400px) {
+    #myCarousel .poster-header {
+      height: 350px; } }
   #myCarousel .poster-header .credit {
     position: absolute;
     left: 0;
@@ -237,12 +240,19 @@ section {
     height: 60px;
     width: 60px;
     box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.6); }
+    @media (max-width: 400px) {
+      #myCarousel .poster-header .credit {
+        height: 35px;
+        width: 35px; } }
     #myCarousel .poster-header .credit.merkazHaIr {
       background-image: url("../images/logo_merkazHair.png");
       background-position: center;
       background-size: 60px;
       background-repeat: no-repeat;
       border: 1px solid #e2e2e2; }
+      @media (max-width: 400px) {
+        #myCarousel .poster-header .credit.merkazHaIr {
+          background-size: 35px; } }
   #myCarousel .poster-header.yoga {
     background-image: url(../images/yoga.jpg); }
   #myCarousel .poster-header.bracelets {
