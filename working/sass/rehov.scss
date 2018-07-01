@@ -372,6 +372,22 @@ h1.main-address { color: $text1; line-height: 8px;
 background-size: cover;
 background-repeat: no-repeat;
 height: 300px;
+.credit{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  height: 60px;
+  width: 60px;
+  box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.6);
+  &.merkazHaIr{
+  background-image: url('../images/logo_merkazHair.png');
+  background-position: center;
+  background-size: 60px;
+  background-repeat: no-repeat;
+  border: 1px solid #e2e2e2;
+  }
+} 
 &.yoga {
   background-image:url(../images/yoga.jpg);
 }
@@ -1313,13 +1329,6 @@ margin-left: 10px;
 }
 }
 
-        /* jssor slider loading skin spin css */
-        .jssorl-009-spin img {
-          animation-name: jssorl-009-spin;
-          animation-duration: 1.6s;
-          animation-iteration-count: infinite;
-          animation-timing-function: linear;
-      }
 
       @keyframes jssorl-009-spin {
           from {

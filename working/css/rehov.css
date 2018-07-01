@@ -229,6 +229,20 @@ section {
   background-size: cover;
   background-repeat: no-repeat;
   height: 300px; }
+  #myCarousel .poster-header .credit {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    height: 60px;
+    width: 60px;
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.6); }
+    #myCarousel .poster-header .credit.merkazHaIr {
+      background-image: url("../images/logo_merkazHair.png");
+      background-position: center;
+      background-size: 60px;
+      background-repeat: no-repeat;
+      border: 1px solid #e2e2e2; }
   #myCarousel .poster-header.yoga {
     background-image: url(../images/yoga.jpg); }
   #myCarousel .poster-header.bracelets {
@@ -1122,13 +1136,6 @@ section {
         color: #fdc415;
         font-size: 20px;
         margin-left: 10px; }
-
-/* jssor slider loading skin spin css */
-.jssorl-009-spin img {
-  animation-name: jssorl-009-spin;
-  animation-duration: 1.6s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear; }
 
 @keyframes jssorl-009-spin {
   from {
