@@ -92,7 +92,7 @@
                           <div class="col-xs-12 pull-right date-wrapper animate-container animated wow zoomIn">
                             <date>
                               <div class="poster-date ">20/7</div>
-                              <div class="poster-hour">13:00 - 14:30</div>
+                              <div class="poster-hour">18:00</div>
                             </date>
                             <p class="poster-location">נפגשים בסככה</p>
                           </div>
@@ -208,7 +208,26 @@
     </div>
     <!--map-->
     <section>
-      <div class="col-md-12 col-sm-12 col-xs-12">    on}} open">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div id="map_template_parent">
+          <script id="map-template" type="text/x-handlebars-template">
+            <div id="map" class="dragscroll col-md-8 col-sm-8 col-xs-12 map-wrapper">
+              <img src="images/map_midrechov.svg" alt="map"> </img>
+
+            <div class="local-event position-top-449"">
+              מפגש - הורים ביביסיטריות
+              <date><br>
+                <span class="date"> 20/7/18</span> 
+                <span class="hour"> 15:30</span> 
+                </date>
+            </div>
+               <table id="business_details" class="table table-condensed table-striped"></table>
+              <!-- block1 -->
+              <div class="business-map position1 buisness-tabs lengthwise-icon left-icon">
+                <nav class="nav-sidebar">
+                  <ul id="biz" class="nav tabs">
+                    {{#each group1}}
+                    <li class="{{this.action}} open">
                       <a href="#{{this.tab_link}}" data-toggle="tab" title="{{this.business_name}}">
                         <span class="icon {{this.icon}}"></span>
                         <strong>{{this.business_name}}</strong>
