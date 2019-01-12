@@ -1,0 +1,3 @@
+To deploy to firebase - https://streeter.site/, run firebase deploy
+In case of problems, try upgrading firebase-tools - npm install -g firebase-tools
+For verbose output, run with --debug flag
